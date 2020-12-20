@@ -73,7 +73,7 @@
 						<li><a href="#">고객센터</a></li>
 					</ul>
 					<address>
-						<em>&copy; Copyright</em> <a href="http://fundinggo.co.kr">fundinggo.co.kr</a>
+						<em>&copy; Copyright</em> <a href="<%=request.getContextPath()%>/mainArticle.jsp">fundinggo.co.kr</a>
 						<span>All Rights Reserved</span>
 					</address>
 				</div>

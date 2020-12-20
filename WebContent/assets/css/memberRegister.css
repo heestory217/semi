@@ -1,0 +1,182 @@
+@charset "UTF-8";
+*{ font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+
+.registerWrapper {
+    border: 2px ridge #80808059;
+    border-radius: 1%;
+    width: 400px;
+}
+
+.registerWrapperBody h3 {
+    color: gray;
+}
+
+.registerWrapper {
+    padding: 25px 0px;
+}
+
+.registerWrapper {
+    border: none;
+    box-shadow: rgb(239,239,239)0px 1px 2px 1px;
+    width: 318px;
+    margin: 0 auto;
+    padding: 40px 35px;
+    border: 1px solid rgb(228,228,228);
+    border-radius: 5px;
+}
+
+.registerWrapperBody {
+    padding: 10px;
+}
+
+form#frmRegister {
+    display: block;
+    margin-top: 0em;
+    box-sizing: inherit;
+}
+
+.registerInputDiv {margin-bottom: 20px;word-break: break-all;display: block;}
+
+body {
+    line-height: 1.7em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+label.registerInputLabel {
+    color: rgb(117, 117, 117);
+    cursor: default;
+}
+
+::selection {
+    background: #CCE2FF;
+    color: rgba(0,0,0,0.87);
+}
+
+.registerInputDiv input {
+ 
+    font: inherit;
+    color: inherit;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    text-align: start;
+    box-shadow: none;
+    border: 1px solid rgb(228,228,228);
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 5px;
+    outline: none;
+}
+.registerInputText {
+    border: 1px solid rgb(228,228,228);
+    border-radius: 4px;
+    background: rgb(255,255,255);
+    width: 100%;
+    padding: 0.5em;
+    outline: none;
+    font: inherit;
+    color: inherit;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+button.btRegister {
+	overflow: visible;
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: none;
+    border:none;
+    vertical-align: baseline;
+    box-shadow: transparent 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.1) 0px 0em 0px 0px inset;
+    user-select: none;
+    transition: opacity 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s, box-shadow 0.1s ease 0s, background 0.1s ease 0s;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 0.285714rem;
+    text-transform: none;
+    font-weight: bold;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    background: rgb(250,100,98);
+    color: rgb(255,255,255);
+    padding: 1em 1.5em;
+    font-size: 1em;
+    width: 100%;
+    opacity: 1;
+    margin: 0;
+    height: 45px;
+    
+}
+
+.register-loginWrapper {
+    word-break: break-all;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 40px;
+    border-top: 1px solid rgb(239,239,239);
+}
+
+
+.register-loginWrapper p {
+    margin-top: 0;
+    color: rgb(117,117,117);
+    margin-bottom: 0px;
+}
+
+.register-loginWrapper a {
+    color: #FA6462;
+    text-decoration: none;
+    background: transparent;
+}
+
+p.agreeP {
+    border-top: 1px solid rgb(239,239,239);
+    border-bottom: 1px solid rgb(239,239,239);
+    margin: 10px 0px 20px;
+    padding: 20px 10px;
+    word-break: keep-all;
+    font-size: 1.1em;
+    color: rgb(117,117,117);
+}
+
+input#ckbAgree {
+    box-sizing: border-box;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 3;
+    width: 17px;
+    height: 17px;
+}
+
+.registerInputDiv label:last-child {
+    color: rgba(0,0,0,0.87);
+    transition: color 0.1s ease;
+    position: relative;
+    display: inline-block;
+    padding-left: 1.85714em;
+    font-size: 1em;
+}
+
+input#ckbAgree {
+    display: inline;
+}
+
+.registerInputDiv label:last-child {width: 80%;}
+
+p.agreeP {
+    width: 90%;
+}
+
+input#ckbAgree {
+    width: 5%;
+    vertical-align: bottom;
+}

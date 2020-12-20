@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/css_jayeon.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main_footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/discover.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/myPageOption.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/memberRegister.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>

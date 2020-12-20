@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+.dropDown-myPage span {
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+hr {
+    color: gray;
+}
+
+.myPage-Profile a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #808080;
+}
+
+.myPageOption>a {
+    text-decoration: none;
+    color: #5a5959;
+}
+.myPageOption-top span {
+    DISPLAY: inline-block;
+    WIDTH: 90%;
+    TEXT-ALIGN: CENTER;
+    FONT-WEIGHT: bold;
+    COLOR: #504d4d;
+}
+
+.myPageOption-top {
+    PADDING-TOP: 4PX;
+    PADDING-BOTTOM: 5PX;
+}
+
+.myPageOption-top {
+    BORDER-BOTTOM-STYLE: ridge;
+    BORDER-BOTTOM-COLOR: #80808017;
+}
+
+.myPageOption {
+    PADDING: 5PX;
+    FONT-WEIGHT: 900;
+    FONT-SIZE: 1.4REM;
+}
+.myPageOption-middle img {border-radius: 50%;}
+
+.myPageOption-bottom {
+    border-bottom: 1px ridge #938a8a61;
+    border-top: 1px ridge #938a8a61;
+    width: 70%;
+}
+
+.myPageOption-middle {
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.myPage-Profile {
+    width: 80%;
+    margin-left: 150px;
+}
+
+.myPageOption-bottom {padding-top: 20px;padding-bottom: 20px;}
+
+.myPageOption-bottom2 {
+    padding-top: 20px;
+}
+
+.myPageOption-top span {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}

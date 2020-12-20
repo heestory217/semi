@@ -7,14 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/owl.carousel.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/barfiller.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/animate.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/font-awesome.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/top.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/css_jayeon.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main_footer.css">
-<script src="../assets/js/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
+<script src="<%=request.getContextPath() %>/assets/js/jquery-3.5.1.min.js"></script>
+<!-- <script type="text/javascript">
 	$(function(){
 		$('.search-icon').click(function(){
 			if($('.search-wrapper').css("display")=="none"){
@@ -27,7 +30,7 @@
 			$('.top_container').show();
 		});
 	});
-</script>
+</script> -->
 </head>
 
 <body>
@@ -82,7 +85,7 @@
 				</div>
 				
 				<div class="nav-column right-nav">
-					<nav id="menu" class="d-lg-block">
+					<nav id="menu" class="d-lg-block right-nav-detail">
 						<span class="search-icon fa fa-search"></span>
 						<a href="<%=request.getContextPath() %>/login/login.jsp" class="login">
 							<span>로그인 / 회원가입</span>

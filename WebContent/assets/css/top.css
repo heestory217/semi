@@ -21,18 +21,12 @@
 .top_container .logo-column a.f_logo{
 	width: 160px;
 	margin:0 auto;
-	line-height:65px;	
+	padding-top:18px;	
 }
 
 .top_container .logo-column a.f_logo >img{
 	margin-left:0;
 }
-
-/* #bootstrap-override .fa-search:before{
-	background-image: url('../assets/img/search.png');
-	width:24px;
-}  */
-
 
 header >.top_container{
 	margin: 0 auto;
@@ -42,14 +36,11 @@ header >.top_container{
 
 .top_container .nav-column {
   padding:0;
+  height:65px;
 }
 
 .top_container .right-nav{
-	width:300px;
-}
-
-.top_container .right-nav{
-	padding:0 15px 0 0;
+	padding:0 30px 0 0;
 	width:300px;
 }
 
@@ -61,7 +52,8 @@ header >.top_container{
 .top_container #menu a{
 	font-weight:bold;
 	line-height: 65px;
-	font-size:14px;
+	font-size:16px;
+	color:#000;
 }
 
 .top_container #menu ul ul{
@@ -93,10 +85,21 @@ header >.top_container{
 	font-size: 14px;
 }
 
+.top_container #menu ul > li{
+	display:list-item;
+	list-style:none;
+	float:left;
+}
+
+.top_container #menu ul ul{
+	width: 180px;
+}
+
 .top_container #menu span{
 	line-height: 65px;
 	margin-left: 8px;
-	font-size:14px;
+	font-size:16px;
+	color:#000;
 }
 
 .top_container #menu span:hover{
@@ -111,7 +114,12 @@ header >.top_container{
 	float:right;
 }
 
+.right-nav-detail{
+	float:right;
+}
+
 .top_container #menu span > img{
 	width:34px;
 	margin-left:0;
+	padding-top:15px;	
 }

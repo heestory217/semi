@@ -15,7 +15,7 @@
 	<!-- 메인이미지 슬라이드 시작 -->
 	<div class="hero-slider">
 		<div class="single-slide"
-			style="background-image: url(assets/img/mainTopBanner1.PNG)">
+			style="background-image: url(<%=request.getContextPath()%>/assets/img/mainTopBanner1.PNG)">
 			<div class="inner">
 				<div class="container">
 					<div class="row">
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div class="single-slide"
-			style="background-image: url(assets/img/mainTopBanner2.jpg)">
+			style="background-image: url(<%=request.getContextPath()%>/assets/img/mainTopBanner2.jpg)">
 			<div class="inner">
 				<div class="container">
 					<div class="row justify-content-center">
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<div class="single-slide"
-			style="background-image: url(assets/img/mainTopBanner3.PNG)">
+			style="background-image: url(<%=request.getContextPath()%>/assets/img/mainTopBanner3.PNG)">
 			<div class="inner">
 				<div class="container">
 					<div class="row">
@@ -85,7 +85,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_1.JPG" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_1.JPG"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -101,7 +103,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_2.jpeg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_2.jpeg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -117,7 +121,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_3.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_3.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -133,7 +139,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_4.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_4.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -149,7 +157,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_5.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_5.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -165,7 +175,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_6.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_6.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -199,7 +211,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_7.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_7.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -215,7 +229,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_8.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_8.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -231,7 +247,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_9.jpg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_9.jpg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -249,7 +267,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_10.jpeg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_10.jpeg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -265,7 +285,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_11.jpeg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_11.jpeg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -281,7 +303,9 @@
 				<div class="single-portfolio col-md-4">
 					<div class="inner">
 						<div class="portfolio-img">
-							<img src="assets/img/projectImage_12.jpeg" alt="project-image">
+							<img
+								src="<%=request.getContextPath()%>/assets/img/projectImage_12.jpeg"
+								alt="project-image">
 							<div class="hover-content">
 								<div>
 									<a href="#" class="button">프로젝트 보러가기</a>
@@ -307,8 +331,8 @@
 	<!-- 자연 -->
 	<div class="testimonial-area sp bg1">
 		<div class="container">
-			<div class="section-title white">
-				<p>진행중인 기획전</p>
+			<div class="title">
+				<p style="font-size: 20px; font-weight: bold;">진행중인 기획전</p>
 			</div>
 			<div class="testimonial-slider">
 				<div class="single-slide">
@@ -359,23 +383,16 @@
 				</div>
 			</div>
 			<!-- 자연 끝 -->
-
-
-			<!-- 배너 -->
-
-			<a href="project_upload.jsp">
-				<div style="background-color: #4698ff;">
-					<img alt="banner" src="assets/img/mainBanner.png">
-				</div>
-			</a>
-			<!-- 배너 끝 -->
-
-
-
-			<!-- footer위치 -->
-			<%@ include file="inc/bottom.jsp"%>
-
-
-
-
+</div>
 		</div>
+	</div>
+	<!-- 배너 -->
+	<div
+		style="margin-top:100px;background-image: url(<%=request.getContextPath()%>/assets/img/mainBanner.png);
+				top:0px; bottom:0px; width:100%; height:380px; background-size:cover; background-repeat:no-repeat; backgorund-position:center;">
+		<a href="project_upload.jsp"> </a>
+	</div>
+	<!-- 배너 끝 -->
+
+	<!-- footer위치 -->
+	<%@ include file="inc/bottom.jsp"%>

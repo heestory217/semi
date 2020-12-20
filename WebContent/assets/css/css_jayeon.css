@@ -73,12 +73,18 @@
     background: white;
 }
 
-
-
-.testimonial-area .section-title {
-    margin-bottom: 10px;
-    margin-left: 10px;
+.testimonial-area .title {
+   /*  margin-bottom: 10px;
+    margin-left: 10px; */
+    text-align:left;
 }
+
+.testimonial-area .container .title > p{
+	color:#000;
+    font-size:20px;
+    font-weight: bold;	
+}
+
 .testimonial-slider .single-slide img {
     width: 280px;
 }
@@ -86,7 +92,6 @@
 .testimonial-slider .single-slide img {
     width: -webkit-fill-available;
 }
-
 
 .single-slide {
     padding: 0px;

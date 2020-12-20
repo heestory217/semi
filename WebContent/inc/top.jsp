@@ -58,7 +58,7 @@
 				<div class="close-button">
 					<div class="close-button-wrapper">
 						<div class="close-button">
-							<img src="<%=request.getContextPath() %>/assets/img/close.png" alt="">
+							<a href="#"><img src="<%=request.getContextPath() %>/assets/img/close.png" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -76,6 +76,7 @@
 									<li><a href="<%=request.getContextPath() %>/discover.jsp">인기 프로젝트</a></li>
 									<li><a href="<%=request.getContextPath() %>/discover.jsp">성공 임박 프로젝트</a></li>
 									<li><a href="<%=request.getContextPath() %>/discover.jsp">신규추천 프로젝트</a></li>
+									<li style="margin-bottom:10px;"><a href="<%=request.getContextPath() %>/category_page.jsp">카테고리별 프로젝트</a></li>
 								</ul>
 							</li>
 							<li><a href="<%=request.getContextPath() %>/projectManager/projectUpload.jsp" class="menu-style">프로젝트 올리기</a></li>

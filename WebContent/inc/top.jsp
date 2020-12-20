@@ -78,7 +78,7 @@
 									<li><a href="<%=request.getContextPath() %>/discover.jsp">신규추천 프로젝트</a></li>
 								</ul>
 							</li>
-							<li><a href="#" class="menu-style">프로젝트 올리기</a></li>
+							<li><a href="<%=request.getContextPath() %>/projectManager/projectUpload.jsp" class="menu-style">프로젝트 올리기</a></li>
 						</ul>
 					</nav>
 				</div>

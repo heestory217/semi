@@ -91,33 +91,8 @@
 	<div class="page-title sp"
 		style="background-image: url(assets/img/page-title.jpg)">
 		<div class="container text-center">
-			<h2>About Us</h2>
-			<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam,
-				feugiat vitae.</p>
-		</div>
-	</div>
-	<div class="about-area sp">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="about-content">
-						<h3>USA’s most trusted 3D and graphic designing studio, a
-							very passionate team inside.</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-							ullamco laboris nisi ut aliquip.</p>
-						<p>Exa commodo consequat.Pellentesque habitant morbi tristique
-							senectus et netus et malesuada fames ac turpis egestas.</p>
-						<a href="#" class="button">More about</a>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="about-img">
-						<img src="assets/img/about.png" alt="">
-					</div>
-				</div>
-			</div>
+			<h2>약관 및 정책</h2>
+			<p>펀딩고의 약관 및 정책 정보를 담은 페이지입니다.<br>상세 문의는 1:1 문의하기를 이용해주세요.</p>
 		</div>
 	</div>
 	<div class="skill-area spb">
@@ -184,19 +159,19 @@
 			<ul class="nav tabs-nav" id="pills-tab" role="tablist">
 				<li class="nav-item"><a class="nav-link active"
 					id="pills-home-tab" data-toggle="pill" href="#mission"> <i
-						class="fa fa-puzzle-piece"></i> <span>Our Missioin</span>
+						class="fa fa-puzzle-piece"></i> <span>이용약관</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
 					data-toggle="pill" href="#vision"> <i class="fa fa-binoculars"></i>
-						<span>Our Vision</span>
+						<span>개인정보 처리방침</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
 					data-toggle="pill" href="#funds"> <i class="fa fa-pie-chart"></i>
-						<span>Investments & Fundings</span>
+						<span>공개검토 기준</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
 					data-toggle="pill" href="#history"> <i class="fa fa-qrcode"></i>
-						<span>Our History</span>
+						<span>프로젝트 선정 기준</span>
 				</a></li>
 
 			</ul>

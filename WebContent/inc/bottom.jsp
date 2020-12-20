@@ -21,9 +21,9 @@
 				<div class="col-md-6 col-lg-3 footer_widget">
 					<div class="inner">
 						<ul>
-							<li><a href="#">이용약관</a></li>
-							<li><a href="#">개인정보취급방침</a></li>
-							<li><a href="#">고객센터</a></li>
+							<li><a href="<%=request.getContextPath()%>/helpCenter/publicReviewPolicy.jsp">이용약관</a></li>
+							<li><a href="<%=request.getContextPath()%>/helpCenter/publicReviewPolicy.jsp">개인정보 처리방침</a></li>
+							<li><a href="<%=request.getContextPath()%>/fg_contact.jsp">고객센터</a></li>
 						</ul>
 					</div>
 				</div>

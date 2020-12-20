@@ -27,7 +27,7 @@
 					</div>
 					<div class="single-info">
 						<h5>이메일</h5>
-						<p>fundinggo@fundinggo.com</p>
+						<p>fundingo@fundingo.com</p>
 					</div>
 					<div class="single-info">
 						<h5>주소</h5>

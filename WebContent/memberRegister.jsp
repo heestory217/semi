@@ -10,7 +10,7 @@
 
 	<!-- header 위치 -->
 	<%@ include file="inc/top.jsp"%>
-
+<div class="registerContainer">
 <div class="registerWrapper"> 
 	<div class="registerWrapperBody"> 
  	
@@ -37,7 +37,7 @@
 			</div>
 			
 			<div class="registerInputDiv" style="margin-bottom: 10px;">
-				<p class="agreeP">원활한 서비스 제공을 위해 개인정보 수집/이용에 동의해주세요</p>
+				<p class="agreeP">원활한 서비스 제공을 위해 개인정보 수집/이용에 동의해주세요.</p>
 				
 				<label for="ckbAgree" >개인정보 수집·이용에 동의합니다. (필수)</label>
 				<input id="ckbAgree" type="checkbox" required="">				
@@ -48,13 +48,12 @@
 		
 		<div class="register-loginWrapper">
 			<p style="color:#757575;margin-bottom:0">이미 계정이 있으신가요?</p>
-			<a href="#">기존 계정으로 로그인하기</a>
+			<a href="<%=request.getContextPath() %>/login.jsp">기존 계정으로 로그인하기</a>
 		</div>
 	</div>  <!-- register bodyWrapper -->
+	</div>
 </div>	<!-- registerWrapper -->
 	
 </div>
-
-
 	<!-- footer위치 -->
 	<%@ include file="inc/bottom.jsp"%>

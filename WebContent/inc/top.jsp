@@ -81,7 +81,7 @@
 				</div>
 				
 				<div class="logo-column">
-					<a href="<%=request.getContextPath() %>/inc/top.jsp" class="f_logo"> 
+					<a href="<%=request.getContextPath() %>/mainArticle.jsp" class="f_logo"> 
 						<img src="<%=request.getContextPath() %>/assets/img/topLogo.png" alt="로고 이미지">
 					</a>
 				</div>

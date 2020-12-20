@@ -46,7 +46,7 @@
 							</a>
 						</div>
 						<div class="media">
-							<a href="#"> <img src="<%=request.getContextPath() %>/assets/img/requestbutton.png"
+							<a href="<%=request.getContextPath() %>/fg_contact.jsp"> <img src="<%=request.getContextPath() %>/assets/img/requestbutton.png"
 								class="d-flex mr-3" alt="문의하기">
 							</a>
 						</div>

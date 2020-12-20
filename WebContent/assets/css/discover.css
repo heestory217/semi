@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.search-desc{
+	height:60px;
+	font-size: 18px;
+	line-height:78px;
+}
+.search-title{
+	font-weight:bold;
+}
+.search-qty{
+	color: #FF6F40;
+}
+.project-content{
+	text-align:left;
+	color:#6d7784;
+	padding-top:25px;
+}
+.goal-percent{
+	color:#FF6F40;
+}
+
+.more-btn{
+	margin:40px 0 60px 0;
+}

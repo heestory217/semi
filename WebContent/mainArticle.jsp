@@ -387,10 +387,13 @@
 		</div>
 	</div>
 	<!-- 배너 -->
-	<div
-		style="margin-top:100px;background-image: url(<%=request.getContextPath()%>/assets/img/mainBanner.png);
-				top:0px; bottom:0px; width:100%; height:380px; background-size:cover; background-repeat:no-repeat; backgorund-position:center;">
-		<a href="project_upload.jsp"> </a>
+	<div class="project-start-banner">
+		<div class="banner-wrapper">
+			<div class="banner-background" style="background-image:url(<%=request.getContextPath()%>/assets/img/projectstart-banner-background.png);"></div>
+			<h2 class="banner-title">마음속 프로젝트 아이디어, 펀딩고에서 현실로</h2>
+			<p class="banner-desc">프로젝트를 위한 자금도 마련하고, 든든한 후원자 네트워크도 확보하세요.</p>
+		</div>
+	
 	</div>
 	<!-- 배너 끝 -->
 

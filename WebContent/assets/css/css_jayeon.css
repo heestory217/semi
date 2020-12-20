@@ -117,3 +117,42 @@ em {
     color: #383535;
     padding: 1px;
 }
+
+
+
+
+ /* 메인-배너 스타일 */  
+.project-start-banner{
+	margin-top:80px;
+}  
+.banner-wrapper{
+	position:relative;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	color:rgb(255, 255, 255);
+	font-size: 16px;
+	cursor:pointer;
+	background: linear-gradient(135deg, rgb(153, 69, 209) 0%, rgb(105, 78, 216) 60%, rgb(54, 154, 201) 100%);
+}
+
+.banner-background{
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	height:100%;
+	/* background-image: url('<%=request.getContextPath()%>/assets/img/project-banner-background.png'); */
+	background-size: cover;
+	background-position: center center;
+	opacity:0.5;
+}
+.banner-title{
+	font-size:25px;
+	color:#fff;
+	padding-top:16px;
+}	

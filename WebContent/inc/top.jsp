@@ -1,0 +1,97 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>펀딩고 :: FUNDINGO</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/top.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/css_jayeon.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main_footer.css">
+<script src="../assets/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.search-icon').click(function(){
+			if($('.search-wrapper').css("display")=="none"){
+				$('.top_container').hide();
+				$('.search-wrapper').show();
+			}	
+		});
+		$('.close-button').click(function(){
+			$('.search-wrapper').hide();
+			$('.top_container').show();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<header class="header-wrap">
+<!-- 		<div class="search-wrapper">
+			<div class="container search-header">
+				<div class="search-icon">
+					<img src="../assets/img/search.png">
+				</div>
+				<div class="search-input">
+					<form action="" class="search-input-detail" method="">
+						<input type="search" action="" 
+							placeholder="검색어를 입력해주세요." value="">
+					    <input type="submit" class="search-ok" value="검색">
+					</form>
+				</div>
+				<div class="close-button">
+					<div class="close-button-wrapper">
+						<div class="close-button">
+							<img src="../assets/img/close.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="search-con">
+				
+			</div>
+		</div> -->
+	
+		<div class="container top_container">
+			<div class="row">
+				<div class="nav-column left-nav">
+					<nav id="menu" class="d-lg-block" style="float:left">
+						<ul>
+							<li class="has-child"><a href="#" class="menu-style">프로젝트 둘러보기</a>
+								<ul class="sub-menu">
+									<li><a href="#">모든 프로젝트</a></li>
+									<li><a href="#">인기 프로젝트</a></li>
+									<li><a href="#">성공 임박 프로젝트</a></li>
+									<li><a href="#">신규추천 프로젝트</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="menu-style">프로젝트 올리기</a></li>
+						</ul>
+					</nav>
+				</div>
+				
+				<div class="logo-column">
+					<a href="<%=request.getContextPath() %>/inc/top.jsp" class="f_logo"> 
+						<img src="<%=request.getContextPath() %>/assets/img/topLogo.png" alt="로고 이미지">
+					</a>
+				</div>
+				
+				<div class="nav-column right-nav">
+					<nav id="menu" class="d-lg-block">
+						<span class="search-icon fa fa-search"></span>
+						<a href="<%=request.getContextPath() %>/login/login.jsp" class="login">
+							<span>로그인 / 회원가입</span>
+							<span>
+								<img alt="유저 이미지" src="<%=request.getContextPath() %>/assets/img/user-account.png">
+							</span>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+/*****************************
+ *   06. testimonial-area
+ ******************************/
+.testimonial-area .section-title {
+  margin-bottom: 10px; 
+ 
+  width: 100%;
+  z-index: 1;
+  position: relative
+  
+  }
+
+.testimonial-slider .single-slide {
+  background-color: white;
+  padding: 35px;
+  border-radius: 5px;
+  font-weight: 300;
+  color: #7d91aa;
+  border: 1px solid; }
+  
+  .testimonial-slider .single-slide img {
+    width: auto; }
+  .testimonial-slider .single-slide .client-info {
+    overflow: hidden; }
+    .testimonial-slider .single-slide .client-info .client-img {
+      width: 58px;
+      float: left;
+      border-radius: 50%;
+      overflow: hidden; }
+    .testimonial-slider .single-slide .client-info .client-data {
+      padding-left: 78px; }
+      .testimonial-slider .single-slide .client-info .client-data h4 {
+        font-size: 16px;
+        margin: 4px 0 0; }
+        
+.testimonial-slider .owl-nav > div {
+  background-color: #222222;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  left: -55px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 4px; }
+  @media only screen and (max-width: 991px) {
+    .testimonial-slider .owl-nav > div {
+      left: -12.5px;
+      height: 25px;
+      width: 25px;
+      line-height: 25px; }
+      .testimonial-slider .owl-nav > div i {
+        font-size: 13px; } }
+  .testimonial-slider .owl-nav > div.owl-next {
+    left: auto;
+    right: -55px; }
+    @media only screen and (max-width: 991px) {
+      .testimonial-slider .owl-nav > div.owl-next {
+        right: -12.5px; } }
+        
+        
+        
+ /* 자연수정 */       
+ 
+
+.testimonial-area.sp.bg1 {
+    padding: 10px;
+    background: white;
+}
+
+
+
+.testimonial-area .section-title {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.testimonial-slider .single-slide img {
+    width: 280px;
+}
+
+.testimonial-slider .single-slide img {
+    width: -webkit-fill-available;
+}
+
+
+.single-slide {
+    padding: 0px;
+    margin: 0;
+}
+.client-data span {
+    color: #4b4949;
+    font-weight: bold;
+}
+
+em {
+    color: #FF6F40;
+    font-size: 0.8em;
+}
+
+.client-data span:last-child {
+    font-size: 0.8em;
+}
+
+.section-title-white p{
+    font-weight: bold;
+    text-align: left;
+    color: #383535;
+    padding: 1px;
+}

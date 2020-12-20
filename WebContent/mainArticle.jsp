@@ -75,7 +75,7 @@
 
 
 	<!-- 첫번 째 프로젝트 시작 부분 -->
-	<div class="portfolio-area sp">
+	<div class="portfolio-area sp" style="padding-bottom:0;">
 		<div class="container">
 			<div class="section-title">
 				<h2>주목할만한 프로젝트</h2>
@@ -94,9 +94,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>내 소중한 취향과 공간을 지켜주는 ‘세이프보드’ 가림막</h3></a><span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>내 소중한 취향과 공간을 지켜주는 ‘세이프보드’ 가림막</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -112,9 +112,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>일회용카메라 프로젝트: 내가 찍은 사람이 그린 사진</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>일회용카메라 프로젝트: 내가 찍은 사람이 그린 사진</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -130,9 +130,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>반전 매력 을지로 가게들과 함께한 근사한 패브릭 제품들</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>반전 매력 을지로 가게들과 함께한 근사한 패브릭 제품들</h5></a> 
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -148,9 +148,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>Souvenir de 남해! 추억에 물들여지는 당신의 공간</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>Souvenir de 남해! 추억에 물들여지는 당신의 공간</h5></a> 
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -166,9 +166,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>LP커버는 보이는게 더 예쁘잖아요. 두루주 원목 LP 액자</h3></a><span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>LP커버는 보이는게 더 예쁘잖아요. 두루주 원목 LP 액자</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -184,9 +184,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>진리의 세상: 어디에나 있지만, 어디에도 없는 아트 오브제</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>진리의 세상: 어디에나 있지만, 어디에도 없는 아트 오브제</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -220,9 +220,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>개화기를 담은 점술 카드 "모던 레노먼드"</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>개화기를 담은 점술 카드 "모던 레노먼드"</h5></a> 
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -238,9 +238,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>f o l d r i p. 종이 팝업 드리퍼</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>f o l d r i p. 종이 팝업 드리퍼</h5></a> 
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -256,11 +256,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>
+						<div class="project-content">
+							<a href="#"><h5>
 									새로운 파이를 굽자! 여성예술인 인터뷰집
 									<OVEN>
-								</h3></a> <span>% 달성</span>
+								</h5></a> <div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -276,9 +276,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>'이런 장르 처음이야!!' 졸업작품 단편영화 '배달'</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>'이런 장르 처음이야!!' 졸업작품 단편영화 '배달'</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -294,9 +294,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>당신에게 딱 맞는 MBTI 사고성향별 다이어리</h3></a> <span>%
-								달성</span>
+						<div class="project-content">
+							<a href="#"><h5>당신에게 딱 맞는 MBTI 사고성향별 다이어리</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>
@@ -312,8 +312,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-content">
-							<a href="#"><h3>겨울용 괴담집: 크리피파스타</h3></a> <span>% 달성</span>
+						<div class="project-content">
+							<a href="#"><h5>겨울용 괴담집: 크리피파스타</h5></a>
+							<div class="goal-percent"><span>78</span>%달성</div>
 						</div>
 					</div>
 				</div>

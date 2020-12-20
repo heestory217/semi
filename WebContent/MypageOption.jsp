@@ -11,20 +11,21 @@
 	<!-- header 위치 -->
 	<%@ include file="inc/top.jsp"%>
 	
-	
+
 	<div class="dropDown-myPage">
 		<div class="myPageOption-top">
-			<span>내 페이지</span> 	
-			  <a href="#"> 
-			  	<img src="<%=request.getContextPath() %>/assets/img/closeIcon.png" width="15px" height="15px" alt="닫기 아이콘">
-			  </a> 
-		 
+			<div class="container myPageOption-container">
+				<span>내 페이지</span> 	
+				  <a href="#" class="myPage-closeBtn"> 
+				  	<img src="<%=request.getContextPath() %>/assets/img/closeIcon.png" width="15px" height="15px" alt="닫기 아이콘">
+				  </a> 
+			 </div>
 		</div>
-		<div class="myPage-Profile">
+		<div class="container myPage-Profile">
 		
 			<div class="myPageOption-middle">
 				<a href="#">
-					<img src="<%=request.getContextPath() %>/assets/img/mypageIcon.png" width="30px" height="30px" alt="마이페이지 아이콘">
+					<img src="<%=request.getContextPath() %>/assets/img/user-account.png" width="50px" alt="마이페이지 아이콘">
 					<span>Nn(이름)</span>
 				</a>
 			</div>

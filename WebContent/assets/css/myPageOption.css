@@ -29,26 +29,37 @@ hr {
 }
 
 .myPageOption-top {
-    PADDING-TOP: 4PX;
-    PADDING-BOTTOM: 5PX;
+    /* PADDING-TOP: 4PX;
+    PADDING-BOTTOM: 5PX; */
 }
 
 .myPageOption-top {
-    BORDER-BOTTOM-STYLE: ridge;
-    BORDER-BOTTOM-COLOR: #80808017;
+/*     BORDER-BOTTOM-STYLE: ridge;
+    BORDER-BOTTOM-COLOR: #80808017; */
+    box-shadow:rgba(10, 10, 10, 0.1) 0px 1px 2px 0px;
+    height:65px;
+}
+.myPageOption-container{
+	margin:0 auto;
+	padding:0;
+}
+.myPage-closeBtn{
+	float:right;
+	padding:26px 15px 0 0;
 }
 
 .myPageOption {
-    PADDING: 5PX;
+    /* PADDING: 5PX; */
     FONT-WEIGHT: 900;
-    FONT-SIZE: 1.4REM;
+    FONT-SIZE: 1.3REM;
+    margin-bottom:24px;
 }
 .myPageOption-middle img {border-radius: 50%;}
 
 .myPageOption-bottom {
-    border-bottom: 1px ridge #938a8a61;
-    border-top: 1px ridge #938a8a61;
-    width: 70%;
+    border-bottom: 1px solid rgb(239, 239, 239);
+    border-top: 1px solid rgb(239, 239, 239);
+    /* width: 70%; */
 }
 
 .myPageOption-middle {
@@ -58,8 +69,8 @@ hr {
 }
 
 .myPage-Profile {
-    width: 80%;
-    margin-left: 150px;
+   /*  width: 80%;
+    margin-left: 150px; */
 }
 
 .myPageOption-bottom {padding-top: 20px;padding-bottom: 20px;}
@@ -69,6 +80,7 @@ hr {
 }
 
 .myPageOption-top span {
-    padding-top: 10px;
-    padding-bottom: 20px;
+  /*   padding-top: 10px;
+    padding-bottom: 20px; */
+    line-height:65px;
 }

@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/top.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/css_jayeon.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main_footer.css">
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
 <script src="<%=request.getContextPath() %>/assets/js/jquery-3.5.1.min.js"></script>
 <!-- <script type="text/javascript">
 	$(function(){

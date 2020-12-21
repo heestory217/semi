@@ -17,7 +17,7 @@
 		</ul>
 	</div>
 	<hr>
-	<form action="a.jsp" method="post" name="publicFrm">
+	<form action="projectUpload_start.jsp" method="post" name="publicFrm">
 		<ul style="list-style: none";>
 			<li>
 				<div>

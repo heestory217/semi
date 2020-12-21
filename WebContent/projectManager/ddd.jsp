@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +61,7 @@
 
 		<div class="container top_container">
 			<div class="row">
-				<div class="nav-column left-nav" style="padding-left:30px;">
+				<div class="nav-column left-nav">
 					<div class="logo-column">
 						<a href="<%=request.getContextPath()%>/mainArticle.jsp"
 							class="f_logo"> <img
@@ -76,8 +76,8 @@
 						</nav>
 					</div>
 				</div>
-				<div class="nav-column" style="margin-left: 65%;">
-					<nav id="menu" class="d-lg-block right-nav-detail"> 
+				<div class="nav-column right-nav" style="margin-left: 54%;">
+					<nav id="menu" class="d-lg-block right-nav-detail">
 						</span> <a href="<%=request.getContextPath()%>/fg_contact.jsp"
 							class="login"> <span>1:1 문의하기</span>
 						</a>

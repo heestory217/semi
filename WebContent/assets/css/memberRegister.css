@@ -193,3 +193,13 @@ input#ckbAgree {
 input#userName, #email, #emailConfirm, #password, #passwordConfirm {
     width: 95%;
 }
+
+/* 추추가 */
+
+.registerWrapper {
+    width: 60%;
+}
+
+input#ckbAgree {
+    vertical-align: -webkit-baseline-middle;
+}

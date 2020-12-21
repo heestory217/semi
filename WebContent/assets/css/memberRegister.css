@@ -1,7 +1,7 @@
 @charset "UTF-8";
 *{ font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
 
-.registerWrapper {
+/* .registerWrapper {
     margin-top: 150px;
     margin-bottom: 150px;
 }
@@ -10,19 +10,19 @@
     border-radius: 1%;
     width: 400px;
 }
-
+ */
 .registerWrapperBody h3 {
     color: gray;
 }
 
-.registerWrapper {
+/* .registerWrapper {
     padding: 25px 0px;
 }
-
+ */
 .registerWrapper {
-    border: none;
+    /* border: none; */
     box-shadow: rgb(239,239,239)0px 1px 2px 1px;
-    width: 318px;
+    /* width: 318px; */
     padding: 40px 35px;
     border: 1px solid rgb(228,228,228);
     border-radius: 5px;
@@ -186,9 +186,9 @@ input#ckbAgree {
 
 
 /* 추가수정 */
-.registerWrapper {
+/* .registerWrapper {
     width: 400px;
-}
+} */
 .registerInputDiv input {
     width: 90%;
 }
@@ -202,15 +202,17 @@ input#userName, #email, #emailConfirm, #passwordConfirm {
 
 /* 추추가 */
 
-.registerWrapper {
+/* .registerWrapper {
     width: 60%;
-}
+} */
 
 input#ckbAgree {
     vertical-align: -webkit-baseline-middle;
 }
 
 .registerWrapper {
-    margin-left: 30%;
-    width: 400px;
+    width: 568px;
+    position: relative;
+    left: 35.5%;
+    margin: 50 0;
 }

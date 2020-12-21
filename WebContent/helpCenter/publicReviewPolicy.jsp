@@ -78,9 +78,8 @@
 				</div>
 				<div class="nav-column right-nav" style="margin-left: 54%;">
 					<nav id="menu" class="d-lg-block right-nav-detail">
-						</span> <a
-							href="<%=request.getContextPath()%>/fg_contact.jsp" class="login">
-							<span>1:1 문의하기</span>
+						</span> <a href="<%=request.getContextPath()%>/fg_contact.jsp"
+							class="login"> <span>1:1 문의하기</span>
 						</a>
 					</nav>
 				</div>
@@ -88,72 +87,19 @@
 		</div>
 	</header>
 <body>
+	<!-- 타이틀 시작 -->
 	<div class="page-title sp"
 		style="background-image: url(assets/img/page-title.jpg)">
 		<div class="container text-center">
 			<h2>약관 및 정책</h2>
-			<p>펀딩고의 약관 및 정책 정보를 담은 페이지입니다.<br>상세 문의는 1:1 문의하기를 이용해주세요.</p>
+			<p>
+				펀딩고의 약관 및 정책 정보를 담은 페이지입니다.<br>상세 문의는 1:1 문의하기를 이용해주세요.
+			</p>
 		</div>
 	</div>
-	<div class="skill-area spb">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="skill-title">
-						<h2>Our skills</h2>
-						<p>Lorem ipsum dolor sit amet conse</p>
-						<a href="#" class="button">See our work</a>
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div class="row">
-						<div class="col-sm-6 single-skill">
-							<h4>HTML</h4>
-							<div class="barfiller">
-								<span class="tip"></span> <span class="fill"
-									data-percentage="50"></span>
-							</div>
-						</div>
-						<div class="col-sm-6 single-skill">
-							<h4>PHP</h4>
-							<div class="barfiller">
-								<span class="tip"></span> <span class="fill"
-									data-percentage="50"></span>
-							</div>
-						</div>
-						<div class="col-sm-6 single-skill">
-							<h4>JavaScript</h4>
-							<div class="barfiller">
-								<span class="tip"></span> <span class="fill"
-									data-percentage="50"></span>
-							</div>
-						</div>
-						<div class="col-sm-6 single-skill">
-							<h4>CSS</h4>
-							<div class="barfiller">
-								<span class="tip"></span> <span class="fill"
-									data-percentage="50"></span>
-							</div>
-						</div>
-						<div class="col-sm-6 single-skill">
-							<h4>AJAX</h4>
-							<div class="barfiller">
-								<span class="tip"></span> <span class="fill"
-									data-percentage="50"></span>
-							</div>
-						</div>
-						<div class="col-sm-6 single-skill">
-							<h4>Database</h4>
-							<div class="barfiller">
-								<span class="tip"></span> <span class="fill"
-									data-percentage="50"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- 타이틀 끝 -->
+
+	<!-- 약관1 시작 -->
 	<div class="tabs-area spb">
 		<div class="container">
 			<ul class="nav tabs-nav" id="pills-tab" role="tablist">
@@ -179,7 +125,9 @@
 				<div class="tab-pane fade show active" id="mission" role="tabpanel">
 					<div class="row">
 						<div class="col-md-6">
-							<img src="http://lorempicsum.com/simpsons/490/200/2" alt="">
+							<p>When I was just starting 6th grade I got my first job.
+								Paperboy! Boy, was I excited. At that time I had spent a lot of
+								time actually playing the video official game Paperboy disked.</p>
 						</div>
 						<div class="col-md-6">
 							<p>When I was just starting 6th grade I got my first job.
@@ -268,39 +216,166 @@
 
 		</div>
 	</div>
-	<div class="spb">
-		<div class="brand-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 col-6 single-brand">
-						<div class="inner">
-							<a href="#"> <img src="assets/img/brand1.png" alt="">
-							</a>
+	<!-- 약관1 끝 -->
+
+	<!-- 약관2 시작 -->
+	<div class="service-area bg2 sp" style="margin-bottom: 5%">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-4 col-md-6 single-service">
+					<div class="inner">
+						<div class="title">
+							<div class="icon">
+								<i class="fa fa-bullhorn"></i>
+							</div>
+							<h4>공지사항</h4>
+						</div>
+						<div class="content">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames.</p>
 						</div>
 					</div>
-					<div class="col-md-3 col-6 single-brand">
-						<div class="inner">
-							<a href="#"> <img src="assets/img/brand2.png" alt="">
-							</a>
+				</div>
+				<div class="col-lg-4 col-md-6 single-service">
+					<div class="inner">
+						<div class="title">
+							<div class="icon">
+								<i class="fa fa-magic"></i>
+							</div>
+							<h4>창작자 가이드</h4>
+						</div>
+						<div class="content">
+							<p>
+								<a href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">오늘의
+									창작자님을 위해 준비한 상세가이드입니다.<br>클릭시, 상세가이드 페이지로 넘어갑니다.
+								</a>
+							</p>
 						</div>
 					</div>
-					<div class="col-md-3 col-6 single-brand">
-						<div class="inner">
-							<a href="#"> <img src="assets/img/brand3.png" alt="">
-							</a>
+				</div>
+				<div class="col-lg-4 col-md-6 single-service">
+					<div class="inner">
+						<div class="title">
+							<div class="icon">
+								<i class="fa fa-bar-chart"></i>
+							</div>
+							<h4>수수료 정책</h4>
+						</div>
+						<div class="content">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames.</p>
 						</div>
 					</div>
-					<div class="col-md-3 col-6 single-brand">
-						<div class="inner">
-							<a href="#"> <img src="assets/img/brand4.png" alt="">
-							</a>
+				</div>
+				<!-- 	<div class="col-lg-4 col-md-6 single-service">
+					<div class="inner">
+						<div class="title">
+							<div class="icon">
+								<i class="fa fa-film"></i>
+							</div>
+							<h4>Video Making</h4>
+						</div>
+						<div class="content">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 single-service">
+					<div class="inner">
+						<div class="title">
+							<div class="icon">
+								<i class="fa fa-camera"></i>
+							</div>
+							<h4>Photography</h4>
+						</div>
+						<div class="content">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 single-service">
+					<div class="inner">
+						<div class="title">
+							<div class="icon">
+								<i class="fa fa-music"></i>
+							</div>
+							<h4>Music Composing</h4>
+						</div>
+						<div class="content">
+							<p>Pellentesque habitant morbi tristique senectus et netus et
+								malesuada fames.</p>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<!-- 약관2 끝 -->
+
+	<!-- 스킬 시작 -->
+	<!-- 	<div class="skill-area spb">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="skill-title">
+						<h2>Our skills</h2>
+						<p>Lorem ipsum dolor sit amet conse</p>
+						<a href="#" class="button">See our work</a>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-sm-6 single-skill">
+							<h4>HTML</h4>
+							<div class="barfiller">
+								<span class="tip"></span> <span class="fill"
+									data-percentage="50"></span>
+							</div>
+						</div>
+						<div class="col-sm-6 single-skill">
+							<h4>PHP</h4>
+							<div class="barfiller">
+								<span class="tip"></span> <span class="fill"
+									data-percentage="50"></span>
+							</div>
+						</div>
+						<div class="col-sm-6 single-skill">
+							<h4>JavaScript</h4>
+							<div class="barfiller">
+								<span class="tip"></span> <span class="fill"
+									data-percentage="50"></span>
+							</div>
+						</div>
+						<div class="col-sm-6 single-skill">
+							<h4>CSS</h4>
+							<div class="barfiller">
+								<span class="tip"></span> <span class="fill"
+									data-percentage="50"></span>
+							</div>
+						</div>
+						<div class="col-sm-6 single-skill">
+							<h4>AJAX</h4>
+							<div class="barfiller">
+								<span class="tip"></span> <span class="fill"
+									data-percentage="50"></span>
+							</div>
+						</div>
+						<div class="col-sm-6 single-skill">
+							<h4>Database</h4>
+							<div class="barfiller">
+								<span class="tip"></span> <span class="fill"
+									data-percentage="50"></span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
+	</div> -->
+	<!-- 스킬 끝 -->
 	<footer>
 		<%@ include file="../inc/bottom.jsp"%>
 	</footer>

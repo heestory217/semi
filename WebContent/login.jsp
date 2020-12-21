@@ -11,6 +11,9 @@
 	<%@ include file="inc/top.jsp"%>
 	
 	<div class="simpleForm">
+		<div class="loginTitle">
+			<h2>로그인</h2>
+		</div>	
 		<div class="loginForm">
 			<form name="frmLogin" method="post" action="#">
 				<input type="email" id="login"  class="emailInput" 

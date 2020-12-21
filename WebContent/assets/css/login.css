@@ -158,3 +158,5 @@ a.registerLink {
 .simpleForm {
     width: 50%;
 }
+
+.simpleForm {margin-left: 30%;margin-right: 30%;background: white;}

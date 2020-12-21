@@ -203,3 +203,8 @@ input#userName, #email, #emailConfirm, #password, #passwordConfirm {
 input#ckbAgree {
     vertical-align: -webkit-baseline-middle;
 }
+
+.registerWrapper {
+    margin-left: 30%;
+    width: 400px;
+}

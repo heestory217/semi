@@ -347,7 +347,7 @@
 							<h4>수수료 정책</h4>
 						</div>
 						<div class="content">
-							<p><a href="<%=request.getContextPath()%>/helpCenter/feeAndFundingPolicy.jsp">펀딩고의 '이용 수수료' 그리고 '후원금 정산'에 대한 모든 정보를 알려드릴게요</a></p>
+							<p><a href="<%=request.getContextPath()%>/feeAndFundingPolicy.jsp">펀딩고의 '이용 수수료' 그리고 '후원금 정산'에 대한 모든 정보를 알려드릴게요</a></p>
 						</div>
 					</div>
 				</div>

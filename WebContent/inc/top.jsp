@@ -100,7 +100,7 @@
 						<a href="<%=request.getContextPath() %>/login.jsp" class="login">
 							<span>로그인 / 회원가입</span>
 							<span>
-								<img alt="유저 이미지" src="<%=request.getContextPath() %>/assets/img/user-account.png">
+								<img alt="유저 이미지" src="<%=request.getContextPath() %>/assets/img/user-account.png" style="padding-top:0;">
 							</span>
 						</a>
 					</nav>

@@ -91,7 +91,7 @@
 	</div>
 </footer>
 
-<!--Required JS files-->
+<!-- <!--Required JS files-->
 <script src="assets/js/jquery-2.2.4.min.js"></script>
 <script src="assets/js/vendor/popper.min.js"></script>
 <script src="assets/js/vendor/bootstrap.min.js"></script>
@@ -100,7 +100,7 @@
 <script src="assets/js/vendor/jquery.barfiller.js"></script>
 <script src="assets/js/vendor/loopcounter.js"></script>
 <script src="assets/js/vendor/slicknav.min.js"></script>
-<script src="assets/js/active.js"></script>
+<script src="assets/js/active.js"></script> -->
 
 
 </body>

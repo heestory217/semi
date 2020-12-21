@@ -1270,7 +1270,7 @@ footer {
 /*****************************
  *   16. table - 희정
  ***************************** */
-table.type02 {
+.funding-policy .type02 {
   border-collapse: separate;
   border-spacing: 0;
   text-align: left;

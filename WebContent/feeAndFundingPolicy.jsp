@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../inc/top.jsp"%>
+
+
+<%@ include file="/inc/top.jsp"%>
 
 <!-- 타이틀 시작 -->
-<div class="page-title sp"
-	style="background-image: url(assets/img/page-title.jpg)">
+<div class="page-title sp">
 	<div class="container text-center">
 		<h3>펀딩고 수수료 및 후원금 정산 정책</h3>
 		<p>시행일: 2019. 12. 30</p>
@@ -14,7 +15,7 @@
 <!-- 내용 시작 -->
 <div class="container"
 	style="margin: 0 auto; padding: 0 8%; margin-bottom: 10%;">
-	<section>
+	<section class="funding-policy">
 		<h5>1. 프로젝트 심사기준 및 제출서류</h5>
 		<p>1) 펀딩고에서 펀딩을 진행하는 모든 프로젝트는 창작자의 신청을 접수한 펀딩고 운영진의 공개 검토 절차를
 			거칩니다.</p>
@@ -79,7 +80,7 @@
 		<h5>2. 이용 수수료</h5>
 		<p>창작자는 프로젝트 기금 모집이 "성사"되면 펀딩고에게 수수료를 지급하여야 합니다. 수수료에는 플랫폼 수수료와 결제
 			등 대행수수료가 있습니다.</p>
-		<ul style="margin-left: 20px;">
+		<ul style="margin-left: 20px;" >
 			<li>플랫폼 수수료: 펀딩고 플랫폼 서비스를 이용함에 따라 발생하는 수수료로 총 모인 금액의 5%(부가세
 				별도)입니다.</li>
 			<li>결제 등 대행수수료: 해당 수수료는 결제 완료된 금액의 3%(부가가치세 별도)이며, 프로젝트 진행에 따라
@@ -94,7 +95,7 @@
 		<p>&nbsp;</p>
 		<h5>3. 후원금 정산</h5>
 		<p>(1) 후원금 결제 및 정산 과정</p>
-		<ul style="margin-left: 40px;">
+		<ul style="margin-left: 40px;" class="funding-policy">
 			<li>결제 및 정산 과정은 아래와 같습니다.</li>
 			<table class="type02">
 				<tr>
@@ -126,7 +127,7 @@
 				해야 합니다.</li>
 			<li>본 정책에 달리 정하지 않은 사항은 펀딩고 이용약관에 따릅니다.</li>
 		</ul>
-	</section>
-</div>
+	</div>
+</section>
 <!-- 내용 끝-->
 <%@ include file="../inc/bottom.jsp"%>

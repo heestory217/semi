@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/myPageOption.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/memberRegister.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/login.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/feeAndFundingPolicy.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>

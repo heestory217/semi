@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 
 
-<div class="preloader">
+<!-- <div class="preloader">
 	<span class="preloader-spin"></span>
 </div>
-<div class="site">
+<div class="site"> -->
 
 
 	<!-- header 위치 -->

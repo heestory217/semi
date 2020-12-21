@@ -1,6 +1,10 @@
 @charset "UTF-8";
 *{ font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
 
+.registerContainer{
+	padding: 60px 0;
+}
+
 .registerWrapper {
     border: 2px ridge #80808059;
     border-radius: 1%;
@@ -9,6 +13,7 @@
 
 .registerWrapperBody h3 {
     color: gray;
+    margin-bottom:30px;
 }
 
 .registerWrapper {
@@ -18,7 +23,7 @@
 .registerWrapper {
     border: none;
     box-shadow: rgb(239,239,239)0px 1px 2px 1px;
-    width: 318px;
+    width: 330px;
     margin: 0 auto;
     padding: 40px 35px;
     border: 1px solid rgb(228,228,228);
@@ -137,8 +142,8 @@ button.btRegister {
 p.agreeP {
     border-top: 1px solid rgb(239,239,239);
     border-bottom: 1px solid rgb(239,239,239);
-    margin: 10px 0px 20px;
-    padding: 20px 10px;
+    /* margin: 10px 0px 20px;
+    padding: 20px 10px; */
     word-break: keep-all;
     font-size: 1.1em;
     color: rgb(117,117,117);
@@ -173,23 +178,11 @@ input#ckbAgree {
 .registerInputDiv label:last-child {width: 80%;}
 
 p.agreeP {
-    width: 90%;
+    /* width: 90%; */
+    padding:20px 0;
 }
 
 input#ckbAgree {
     width: 5%;
     vertical-align: bottom;
-}
-
-
-/* 추가수정 */
-.registerWrapper {
-    width: 400px;
-}
-.registerInputDiv input {
-    width: 90%;
-}
-
-input#userName, #email, #emailConfirm, #password, #passwordConfirm {
-    width: 95%;
 }

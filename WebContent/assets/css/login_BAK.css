@@ -142,15 +142,3 @@ a.registerLink {
     cursor: pointer;
     color: #FA6462;
 }
-
-
-
-
-/* 추가수정 */
-.loginForm {
-}
-
-.simpleForm {
-    width: 300px;
-    margin-left: 40%;
-}

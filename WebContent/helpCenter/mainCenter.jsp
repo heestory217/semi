@@ -317,8 +317,7 @@
 							<h4>공지사항</h4>
 						</div>
 						<div class="content">
-							<p>Pellentesque habitant morbi tristique senectus et netus et
-								malesuada fames.</p>
+							<p><a href="">펀딩고의 새로운 소식을 전달드립니다.<br>최신 공지사항을 보러가려면 클릭하세요!</a></p>
 						</div>
 					</div>
 				</div>
@@ -333,7 +332,7 @@
 						<div class="content">
 							<p>
 								<a href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">오늘의
-									창작자님을 위해 준비한 상세가이드입니다.<br>클릭시, 상세가이드 페이지로 넘어갑니다.
+									창작자님을 위해 준비한 상세가이드입니다.<br>클릭 시 상세가이드 페이지로 넘어갑니다.
 								</a>
 							</p>
 						</div>
@@ -348,8 +347,7 @@
 							<h4>수수료 정책</h4>
 						</div>
 						<div class="content">
-							<p>Pellentesque habitant morbi tristique senectus et netus et
-								malesuada fames.</p>
+							<p><a href="<%=request.getContextPath()%>/helpCenter/feeAndFundingPolicy.jsp">펀딩고의 '이용 수수료' 그리고 '후원금 정산'에 대한 모든 정보를 알려드릴게요</a></p>
 						</div>
 					</div>
 				</div>

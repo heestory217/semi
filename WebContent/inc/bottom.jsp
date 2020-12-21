@@ -14,7 +14,7 @@
 							<li><a
 								href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">창작자
 									가이드</a></li>
-							<li><a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">수수료 정책</a></li>
+							<li><a href="<%=request.getContextPath()%>/helpCenter/feeAndFundingPolicy.jsp">수수료 정책</a></li>
 						</ul>
 					</div>
 				</div>

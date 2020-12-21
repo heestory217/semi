@@ -1,18 +1,39 @@
 @charset "UTF-8";
-
-.simpleForm{
-	padding: 50px 0;
+.simpleForm {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #f6f5f5;
+    line-height: 1.7em;
+    color: rgba(0,0,0,0.87);
+    border: 1px ridge #80808059;
+    border-radius: 4px;
+    margin: 50px 100px;
+    padding: 50px;
 }
+
+.loginForm {
+    padding: 10px 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
 
 .loginForm{
 	box-shadow: rgb(239, 239, 239) 0px 1px 2px 1px;
-	width: 318px;
 	margin:0 auto;
 	padding:40px 35px;
 	border: 1px solid rgb(228, 228, 228);
 	border-radius: 5px;
 	font-size: 13px;
 }
+.simpleForm{
+	padding: 50px 0;
+	margin-left: 50%;
+    width: 30%;
+	margin-left: 30%;margin-right: 30%;background: white;
+}
+
 
 .emailInput{
 	border:1px solid rgb(228, 228, 228);
@@ -59,8 +80,6 @@
     border-bottom: 1px solid rgb(228,228,228);
 }
 
-form {}
-
 .emailInput, .passwordInput {
     box-sizing: inherit;
     letter-spacing: normal;
@@ -81,25 +100,6 @@ form {}
     margin-bottom: 8px;
 }
 
-.simpleForm {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    min-width: 320px;
-    background: #f6f5f5;
-    line-height: 1.7em;
-    color: rgba(0,0,0,0.87);
-    border: 1px ridge #80808059;
-    border-radius: 4px;
-    margin: 50px 100px;
-    padding: 50px;
-}
-
-.loginForm {
-    padding: 10px 0px;
-    overflow: hidden;
-    text-align: center;
-}
 
 button.loginButton {
     opacity: 1;
@@ -144,19 +144,7 @@ a.registerLink {
 }
 
 
-
-
-/* 추가수정 */
-.loginForm {
+.loginTitle {
+    text-align: center;
 }
 
-.simpleForm {
-    width: 300px;
-    margin-left: 40%;
-}
-/* 추추가 */
-.simpleForm {
-    width: 50%;
-}
-
-.simpleForm {margin-left: 30%;margin-right: 30%;background: white;}

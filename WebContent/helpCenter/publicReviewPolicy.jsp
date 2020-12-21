@@ -246,8 +246,11 @@
 							<h4>창작자 가이드</h4>
 						</div>
 						<div class="content">
-							<p>Pellentesque habitant morbi tristique senectus et netus et
-								malesuada fames.</p>
+							<p>
+								<a href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">오늘의
+									창작자님을 위해 준비한 상세가이드입니다.<br>클릭시, 상세가이드 페이지로 넘어갑니다.
+								</a>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -265,7 +268,7 @@
 						</div>
 					</div>
 				</div>
-			<!-- 	<div class="col-lg-4 col-md-6 single-service">
+				<!-- 	<div class="col-lg-4 col-md-6 single-service">
 					<div class="inner">
 						<div class="title">
 							<div class="icon">

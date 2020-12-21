@@ -140,7 +140,7 @@ header >.top_container{
 	float:right;
 }
 
-.top_container #menu span > img{
+.login > img{
 	width:34px;
-	margin-left:0;
+	margin-left:10;
 }

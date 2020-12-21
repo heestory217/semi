@@ -70,7 +70,7 @@
 						</a>
 						<nav id="menu" class="d-lg-block right-nav-detail">
 							<a
-								href="<%=request.getContextPath()%>/helpCenter/publicReviewPolicy.jsp">
+								href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">
 								<span>헬프센터</span>
 							</a>
 						</nav>

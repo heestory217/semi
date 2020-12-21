@@ -1,4 +1,4 @@
-package com.mymvc.common;
+package com.mytf.common;
 
 public class PagingVO { 
 	private int currentPage; //현재페이지

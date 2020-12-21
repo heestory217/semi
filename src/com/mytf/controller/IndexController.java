@@ -1,4 +1,4 @@
-package com.mymvc.controller;
+package com.mytf.controller;
 
 import java.sql.SQLException;
 import java.util.List;

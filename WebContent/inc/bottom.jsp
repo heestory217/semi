@@ -10,11 +10,11 @@
 				<div class="col-md-6 col-lg-3 footer_widget">
 					<div class="inner">
 						<ul>
-							<li><a href="#">공지사항</a></li>
+							<li><a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">공지사항</a></li>
 							<li><a
 								href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">창작자
 									가이드</a></li>
-							<li><a href="#">수수료 정책</a></li>
+							<li><a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">수수료 정책</a></li>
 						</ul>
 					</div>
 				</div>
@@ -24,9 +24,9 @@
 					<div class="inner">
 						<ul>
 							<li><a
-								href="<%=request.getContextPath()%>/helpCenter/publicReviewPolicy.jsp">이용약관</a></li>
+								href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">이용약관</a></li>
 							<li><a
-								href="<%=request.getContextPath()%>/helpCenter/publicReviewPolicy.jsp">개인정보
+								href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">개인정보
 									처리방침</a></li>
 							<li><a href="<%=request.getContextPath()%>/fg_contact.jsp">고객센터</a></li>
 						</ul>

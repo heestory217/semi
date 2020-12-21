@@ -142,7 +142,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane fade" id="openCriteria" role="tabpanel">
+				<div class="tab-pane fade" id="funds" role="tabpanel">
 					<div class="row">
 						<div class="container">
 							<h1>프로젝트 공개검토 기준</h1>

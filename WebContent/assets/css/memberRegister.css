@@ -193,7 +193,10 @@ input#ckbAgree {
     width: 90%;
 }
 
-input#userName, #email, #emailConfirm, #password, #passwordConfirm {
+
+/* 비밀번호 창 가로크기 안맞아서 뺌 (#password) 
+근데 왜 적용이 안되죠.. - 희정 */
+input#userName, #email, #emailConfirm, #passwordConfirm {
     width: 95%;
 }
 

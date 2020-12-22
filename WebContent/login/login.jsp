@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/animate.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/font-awesome.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css">
+<%-- <link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css"> --%>
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/top.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/css_jayeon.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/main_footer.css">

@@ -14,8 +14,8 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/top.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/project_Upload.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/quick-website.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/projectUpload.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
@@ -39,7 +39,7 @@
 				<div class="logo-column">
 					<a href="<%=request.getContextPath()%>/mainArticle.jsp"
 						class="f_logo"> <img
-						src="<%=request.getContextPath()%>/assets/img/topLogo.png"
+						src="<%=request.getContextPath()%>/img/topLogo.png"
 						alt="로고 이미지">
 					</a>
 				</div>
@@ -69,7 +69,7 @@
 	</div>
 	<div class="announce_g" style="margin-bottom: 20px;">
 		<p>
-			프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
+			<img alt="notice" src="../icons/alert-circle.svg">&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
 		</p>
 	</div>
 	<!-- 확인사항 배너 끝-->
@@ -86,9 +86,7 @@
 					<div class="card-header py-4" id="heading-2-1"
 						data-toggle="collapse" role="button" data-target="#collapse-2-1"
 						aria-expanded="false" aria-controls="collapse-2-1">
-						<h6 class="mb-0">
-							<i data-feather="file" class="mr-3"></i>1. 프로젝트 개요
-						</h6>
+						<h6 class="mb-0">1. 프로젝트 개요</h6>
 					</div>
 					<div id="collapse-2-1" class="collapse"
 						aria-labelledby="heading-2-1" data-parent="#accordion-2">
@@ -97,11 +95,10 @@
 							<div class="projectBox">
 								<div>
 									<div>
-										<label for="projectName">프로젝트 제목</label> <label
-											for="projectName">프로젝트에 멋진 제목을 붙여주세요. 감정에 호소하는 제목보다는
-											만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다. 공간이 부족한 곳에 쓰일
-											7자 이내의 짧은 제목도 정해주세요. </label> <br> <input type="text"
-											name="projectName" placeholder="제목을 입력하세요" maxlength="22">
+										<label for="projectName">프로젝트 제목</label><br>
+											<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
+											만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
+											<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22">
 									</div>
 									<br>
 									<div>
@@ -110,17 +107,16 @@
 									</div>
 									<br>
 									<div>
-										<label for="projectDetail">프로젝트 요약</label> <br> <label
-											for="projectDetail">후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</label>
+										<label for="projectDetail">프로젝트 요약</label> <br> 
+										<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
 										<textarea rows="3" cols="130" name="projectDetail"
 											placeholder="프로젝트 요약을 입력해주세요"></textarea>
 									</div>
 									<br>
 									<div>
-										<label for="ctNo">프로젝트 카테고리</label> <br> <label
-											for="ctNo">프로젝트의 성격에 맞는 카테고리를 선택해 주세요. (프로젝트 성격과 맞지
-											않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</label>
-										<br> <select name="category">
+										<label for="ctNo">프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
+											않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
+										<select name="category">
 											<option value="1">제품디자인</option>
 											<option value="2">문구도서</option>
 											<option value="3">문화예술</option>
@@ -138,8 +134,8 @@
 								<div>
 									<div>
 										<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의
-										사진을 올려주세요. 얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
-										형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <input
+										사진을 올려주세요. <br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
+										형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <br><input
 											type="file" name="fileName">
 									</div>
 
@@ -170,9 +166,7 @@
 					<div class="card-header py-4" id="heading-2-2"
 						data-toggle="collapse" role="button" data-target="#collapse-2-2"
 						aria-expanded="false" aria-controls="collapse-2-2">
-						<h6 class="mb-0">
-							<i data-feather="unlock" class="mr-3"></i>2. 펀딩 및 선물 구성
-						</h6>
+						<h6 class="mb-0">2. 펀딩 및 선물 구성</h6>
 					</div>
 					<div id="collapse-2-2" class="collapse"
 						aria-labelledby="heading-2-2" data-parent="#accordion-2">
@@ -181,13 +175,13 @@
 							<div class="projectBox">
 								<div>
 									<div>
-										<label for="goalAmount">목표 금액</label> <label for="goalAmount">이번
-											프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? 마감일 자정까지 목표 금액을 100% 이상
-											달성하셔야만 모인 후원금이 결제 됩니다. 막판에 후원을 취소하는 후원자들도 있는 점을 감안해 10% 이상 초과
-											달성을 목표로 하시는게 안전합니다. (목표 금액은 제작비, 선물 배송비, 창작자의 인건비, 예비 비용 등을
-											고려하시기 바랍니다.)<span style="color: #FF6F40;">5,000원 이상인
+										<label for="goalAmount">목표 금액</label> <p>이번
+											프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? <br>마감일 자정까지 목표 금액을 100% 이상
+											달성하셔야만 모인 후원금이 결제 됩니다. <br>막판에 후원을 취소하는 후원자들도 있는 점을 감안해 10% 이상 초과
+											달성을 목표로 하시는게 안전합니다. <br>(목표 금액은 제작비, 선물 배송비, 창작자의 인건비, 예비 비용 등을
+											고려하시기 바랍니다.)<br><span style="color: #FF6F40;">5,000원 이상인
 												금액을 입력해주세요.</span>
-										</label> <br> <input type="number" name="goalAmount">원
+										</p> <br> <input type="text" name="goalAmount" style="width:200px;"">원
 									</div>
 								</div>
 							</div>
@@ -200,7 +194,7 @@
 										<label for="goalAmount">프로젝트 공개일시</label>
 										<p>
 											<strong>심사 승인 후</strong>, 설정하신 일시에 <strong>프로젝트가
-												자동으로 공개</strong>되니 신중하게 정해주세요. 설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실 수도 있습니다.
+												자동으로 공개</strong>되니 신중하게 정해주세요. <br>설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실 수도 있습니다.
 										</p>
 										<!-- 달력넣기 -->
 										일
@@ -215,7 +209,7 @@
 											<!-- 위에서 설정한 걸로 넣기 날짜 -->
 											<strong>마감일을 정할 때 주의할 점</strong><br> 프로젝트는 <span
 												style="color: #FF6F40;">0000년 00월 00일</span>로 부터 최대 60일 동안
-											진행하실 수 있고 마감일 자정에 종료됩니다. 이미 선물을 만드셨다면, 선물 실행일 중에 마감일보다 이른 날짜가
+											진행하실 수 있고 마감일 자정에 종료됩니다. <br>이미 선물을 만드셨다면, 선물 실행일 중에 마감일보다 이른 날짜가
 											있지 않은지 꼭 확인해주세요.
 										</p>
 										<strong><p>
@@ -238,7 +232,7 @@
 							<p>프로젝트 주요 일정</p>
 							<div class="projectBox">
 								<div>
-										<p>프로젝트 공개일 : 2020년 12월 22일</p>
+										<p>프로젝트 공개일 : <span style="color: #FF6F40;font-weight: bold;">2020년 12월 22일</span></p>
 								</div>
 							</div>
 							<br>
@@ -247,13 +241,9 @@
 							<div class="projectBox">
 								<div>
 									<div>
-										<label for="goalAmount">목표 금액</label> <label for="goalAmount">이번
-											프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? 마감일 자정까지 목표 금액을 100% 이상
-											달성하셔야만 모인 후원금이 결제 됩니다. 막판에 후원을 취소하는 후원자들도 있는 점을 감안해 10% 이상 초과
-											달성을 목표로 하시는게 안전합니다. (목표 금액은 제작비, 선물 배송비, 창작자의 인건비, 예비 비용 등을
-											고려하시기 바랍니다.)<span style="color: #FF6F40;">5,000원 이상인
-												금액을 입력해주세요.</span>
-										</label> <br> <input type="number" name="goalAmount">원
+									
+									<p>선물</p>
+									
 									</div>
 								</div>
 							</div>
@@ -263,15 +253,15 @@
 							<div class="projectBox">
 								<div>
 									<div>
-										<p>환불 및 교환 정책</p>
-										<p>펀딩 마감 후의 환불 및 교환 요청은 창작자가 약속하는 아래 정책에 따릅니다. 이는 후원자의 불만 또는 분쟁 발생시 중요한 기준이 되니, 신중히 작성해 주세요.</p>
-										<strong><span style="color: #FF6F40;">[    ] 안의 예시 문구를 프로젝트에 적합한 내용으로 변경해주세요. (환불 및 교환 정책 작성 가이드 확인하기)</span></strong>
+										<label for="projectPolicy">환불 및 교환 정책</label>
+										<p>펀딩 마감 후의 환불 및 교환 요청은 창작자가 약속하는 아래 정책에 따릅니다. <br>이는 후원자의 불만 또는 분쟁 발생시 중요한 기준이 되니, 신중히 작성해 주세요.</p>
+										<strong><span style="color: #FF6F40;">[    ] 안의 예시 문구를 프로젝트에 적합한 내용으로 변경해주세요.</span></strong>
 										<ul style="margin-left: 20px;">
 											<li>'모든 프로젝트 공통' 내용은 필수로 적어주세요.</li>
 											<li>'배송 필요 선물' '현장수령 선물' '디지털 콘텐츠 선물' 내용들은 이번 프로젝트에 해당되는 사항만 골라 작성해 주세요.</li>
 											<li>후원자의 단순 변심, 제품의 파손 및 불량, 창작자의 예기치 못한 선물 실행 지연 등 다양한 상황을 고려하여 내용을 작성해 주세요.</li>
 										</ul>
-										<textarea rows="15" cols="130">
+										<textarea rows="15" cols="130" name="projectPolicy">
 모든 프로젝트 공통
 - 프로젝트 마감일 후에는 즉시 제작 및 실행에 착수하는 프로젝트 특성상 단순 변심에 의한 후원금 환불이 불가능합니다.
 - 예상 전달일로부터 [    ]일 이상 선물 전달이 이뤄지지 않을 경우, 환불을 원하시는 분들께는 [ 수수료를 제한 / 수수료를 포함한 ] 후원금을 환불해 드립니다.
@@ -317,19 +307,12 @@
 					<div class="card-header py-4" id="heading-2-3"
 						data-toggle="collapse" role="button" data-target="#collapse-2-3"
 						aria-expanded="false" aria-controls="collapse-2-3">
-						<h6 class="mb-0">
-							<i data-feather="folder" class="mr-3"></i>3. 스토리텔링
-						</h6>
+						<h6 class="mb-0">3. 스토리텔링</h6>
 					</div>
 					<div id="collapse-2-3" class="collapse"
 						aria-labelledby="heading-2-3" data-parent="#accordion-2">
 						<div class="card-body">
-							<p>Anim pariatur cliche reprehenderit, enim eiusmod high life
-								accusamus terry richardson ad squid. 3 wolf moon officia aute,
-								non cupidatat skateboard dolor brunch. Food truck quinoa
-								nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-								put a bird on it squid single-origin coffee nulla assumenda
-								shoreditch et.</p>
+							<p>Api자리</p>
 						</div>
 					</div>
 				</div>
@@ -339,9 +322,7 @@
 					<div class="card-header py-4" id="heading-2-4"
 						data-toggle="collapse" role="button" data-target="#collapse-2-4"
 						aria-expanded="false" aria-controls="collapse-2-3">
-						<h6 class="mb-0">
-							<i data-feather="folder" class="mr-3"></i>4. 계좌 설정
-						</h6>
+						<h6 class="mb-0">4. 계좌 설정</h6>
 					</div>
 					<div id="collapse-2-4" class="collapse"
 						aria-labelledby="heading-2-4" data-parent="#accordion-2">
@@ -357,7 +338,7 @@
 									
 								</div>
 							</div>
-							
+								<br>
 							<p>본인 인증</p>
 							<div class="projectBox">
 								<div>
@@ -368,15 +349,15 @@
 									
 								</div>
 							</div>
-							
+								<br>
 							<p>입금 계좌</p>
 							<div class="projectBox">
 								<div>
 									<div>
-										<input type="radio" name="bank" value="private">개인
+										<input type="radio" name="bank" value="private"><span style="margin-right: 30px;">개인</span>
 										<input type="radio" name="bank" value="business">사업자(개인사업자 포함)
 									</div>
-									
+									<br>
 									<div>
 										<label for="birth">예금주 생년월일</label> 
 										<input type="text" name="birth" maxlength="6">
@@ -394,10 +375,7 @@
 										
 									<div>
 										<label for="bankName">계좌 번호</label>
-										<input type="number" name="bankName" maxlength="16">
-									</div>
-									<div>
-									<input type="checkbox">세금계산서 발행 여부
+										<input type="text" name="bankName" maxlength="16">
 									</div>
 								</div>
 							</div>

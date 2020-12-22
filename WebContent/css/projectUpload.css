@@ -66,8 +66,8 @@
 	margin: 0 auto;
 }
 
-.projectBox div input {
-	width: 40%;
+.projectBox div input[text] {
+	width: 20%;
 }
 
 .projectBox div textarea {
@@ -78,3 +78,21 @@
 	width: 20%;
 }
 
+.projectBox label {
+	width: 150px;
+	color:#2d3666;
+	font-weight: 400;
+}
+
+.projectBox div input[type='radio'] {
+	margin-right: 10px;
+}
+
+.card-body{
+	color: black;
+}
+
+.card-body > p{
+	color:#2d3666;
+	font-weight: 600;
+}

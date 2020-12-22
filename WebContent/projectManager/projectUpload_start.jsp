@@ -89,100 +89,116 @@
 <body>
 	<!-- 타이틀 시작 -->
 	<div class="announce_title">
-		<h3><span class="button-2">준비중</span>눈길을 사로잡는 제목</h3>
+		<h3>
+			<span class="button-2">준비중</span>눈길을 사로잡는 제목
+		</h3>
 	</div>
 	<!-- 타이틀 끝 -->
+
 	<!-- 확인사항 배너 -->
 	<div class="announce_b" style="margin-bottom: 5px;">
 		<p>공개검토 요청 전에 어떤 것을 확인해야 할까요?</p>
 	</div>
 	<div class="announce_g">
 		<p>
-			<i class="fa fa-bullhorn"></i>&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
+			<i class="fa fa-bullhorn"></i>&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야
+			합니다.
 		</p>
 	</div>
 	<!-- 확인사항 배너 끝-->
 
-	
+
 	<div class="tabs-area spb" style="margin-top: 15px;">
 		<div class="container">
 			<ul class="nav tabs-nav" id="pills-tab" role="tablist">
 				<li class="nav-item"><a class="nav-link active"
-					id="pills-home-tab" data-toggle="pill" href="#mission"><span>프로젝트
+					id="pills-home-tab" data-toggle="pill" href="#프로젝트"><span>프로젝트
 							개요</span> </a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
-					data-toggle="pill" href="#vision"> <span>펀딩 및 선물 구성</span>
+					data-toggle="pill" href="#펀딩선물"> <span>펀딩 및 선물 구성</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
-					data-toggle="pill" href="#funds"> <span>스토리텔링</span>
+					data-toggle="pill" href="#스토리텔링"> <span>스토리텔링</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
-					data-toggle="pill" href="#history"> <span>계좌 설정</span>
+					data-toggle="pill" href="#계좌설정"> <span>계좌 설정</span>
 				</a></li>
 
 			</ul>
+			<div class="tab-content" id="pills-tabContent">
+				<div class="tab-pane fade show active" id="프로젝트" role="tabpanel">
+					<!-- 입력 시작 -->
+					<p>프로젝트개요</p>
+					<div class="projectBox">
+						<form action="">
+							<label for="projectName">프로젝트 제목</label> <label for="projectName">프로젝트에
+								멋진 제목을 붙여주세요. 감정에 호소하는 제목보다는 만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게
+								써주시는 것이 좋습니다. 공간이 부족한 곳에 쓰일 7자 이내의 짧은 제목도 정해주세요. </label> <br> <input
+								type="text" name="projectName" placeholder="제목을 입력하세요"
+								maxlength="22"> <br> <label for="fileName">프로젝트
+								대표이미지</label> <br> <input type="file" name="fileName"> <br>
+							<label for="projectDetail">프로젝트 요약</label> <br> <label
+								for="projectDetail">후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</label>
+							<textarea rows="3" cols="130" name="projectDetail"
+								placeholder="프로젝트 요약을 입력해주세요"></textarea>
+							<br> <label for="ctNo">프로젝트 카테고리</label> <br> <label
+								for="ctNo">프로젝트의 성격에 맞는 카테고리를 선택해 주세요. (프로젝트 성격과 맞지 않는
+								카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</label> <br>
+							<select name="category">
+								<option value="1">제품디자인</option>
+								<option value="2">문구도서</option>
+								<option value="3">문화예술</option>
+								<option value="4">푸드</option>
+								<option value="5">패션</option>
+							</select>
+						</form>
+					</div>
+					<br>
+					<p>창작자 정보</p>
+					<div class="projectBox">
+						<form action="">
+							<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의 사진을
+							올려주세요. 얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일 형식은
+							jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <input
+								type="file" name="fileName"> <br> <label for="name">창작자
+								이름</label> <br> <input type="text" name="name" disabled="disabled"
+								value="회원이름" style="width: 20%;"> <br> <label
+								for="memberIntro">창작자 소개</label> <br>
+							<textarea rows="3" cols="130" name="memberIntro"
+								placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
+						</form>
+					</div>
+				</div>
+				<br>
 
-			<!-- 입력 시작 -->
-			<p>프로젝트개요</p>
-			<div class="projectBox">
-				<form action="">
-					<label for="projectName">프로젝트 제목</label> 
-					<label for="projectName">프로젝트에 멋진 제목을 붙여주세요. 감정에 호소하는 제목보다는 만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게
-						써주시는 것이 좋습니다. 공간이 부족한 곳에 쓰일 7자 이내의 짧은 제목도 정해주세요.
-					</label> 
-					<br> 
-					<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22"> <br>
-					<label for="fileName">프로젝트 대표이미지</label> <br> 
-					<input type="file" name="fileName"> <br> 
-					<label for="projectDetail">프로젝트 요약</label> <br> 
-					<label for="projectDetail">후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</label>
-					<textarea rows="3" cols="130" name="projectDetail"
-						placeholder="프로젝트 요약을 입력해주세요"></textarea>
-					<br> 
-					<label for="ctNo">프로젝트 카테고리</label> <br> 
-					<label for="ctNo">프로젝트의 성격에 맞는 카테고리를 선택해 주세요.
-(프로젝트 성격과 맞지 않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</label> <br> 
-					<select name="category">
-						<option value="1">제품디자인</option>
-						<option value="2">문구도서</option>
-						<option value="3">문화예술</option>
-						<option value="4">푸드</option>
-						<option value="5">패션</option>
-					</select>
-				</form>
+				<div class="tab-pane fade" id="펀딩선물" role="tabpanel">
+					<p>펀딩선물</p>
+				</div>
+				<div class="tab-pane fade" id="스토리텔링" role="tabpanel">
+					<p>스토리텔링</p>
+				</div>
+				<div class="tab-pane fade" id="계좌설정" role="tabpanel">
+					<p>계좌설정</p>
+				</div>
+			
+			
 			</div>
-			<br>
-			<p>창작자 정보</p>
-			<div class="projectBox">
-				<form action="">
-					<label for="fileName">프로필 이미지</label> <br>
-				창작자님 개인이나 팀의 사진을 올려주세요. 얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br>
-				파일 형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.
-					<input type="file" name="fileName"> <br> 
-					<label for="name">창작자 이름</label> <br> 
-					<input type="text" name="name" disabled="disabled" value="회원이름" style="width:20%;"> <br> 
-						<label for="memberIntro">창작자 소개</label> <br>
-					<textarea rows="3" cols="130" name="memberIntro" placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
-				</form>
+			
+			<!-- 버튼 -->
+			<div class="announce_w">
+				<p>
+					<span class="button">이전</span> <span class="button">다음</span>
+				</p>
 			</div>
+			<!-- 버튼 -->
 		</div>
-			<br>
-	<!-- 버튼 -->
-	<div class="announce_w">
-		<p>
-			<span class="button">이전</span>
-			<span class="button">다음</span>
-		</p>
-	</div>
-	<!-- 버튼 -->
-	</div>
-	
-	
-	<!-- 입력 끝-->
 
-	<footer>
-		<%@ include file="../inc/bottom.jsp"%>
-	</footer>
+
+		<!-- 입력 끝-->
+
+		<footer>
+			<%@ include file="../inc/bottom.jsp"%>
+		</footer>
 
 
 

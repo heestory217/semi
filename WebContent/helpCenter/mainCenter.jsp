@@ -15,38 +15,38 @@
 	href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i"
 	rel="stylesheet">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/owl.carousel.css">
+	href="<%=request.getContextPath()%>/css/owl.carousel.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/barfiller.css">
+	href="<%=request.getContextPath()%>/css/barfiller.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/animate.css">
+	href="<%=request.getContextPath()%>/css/animate.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/font-awesome.min.css">
+	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
+	href="<%=request.getContextPath()%>/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/slicknav.css">
+	href="<%=request.getContextPath()%>/css/slicknav.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/main.css">
+	href="<%=request.getContextPath()%>/css/main.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/main_footer.css">
+	href="<%=request.getContextPath()%>/css/main_footer.css">
 </head>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/main.css">
+	href="<%=request.getContextPath()%>/css/main.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/top.css">
+	href="<%=request.getContextPath()%>/css/top.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/css_jayeon.css">
+	href="<%=request.getContextPath()%>/css/css_jayeon.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/main_footer.css">
+	href="<%=request.getContextPath()%>/css/main_footer.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/discover.css">
+	href="<%=request.getContextPath()%>/css/discover.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/myPageOption.css">
+	href="<%=request.getContextPath()%>/css/myPageOption.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/memberRegister.css">
+	href="<%=request.getContextPath()%>/css/memberRegister.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/login.css">
+	href="<%=request.getContextPath()%>/css/login.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'

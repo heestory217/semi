@@ -8,13 +8,11 @@
 	font-size: 2em;
 }
 
-.announce_title  .button-2 {
+.announce_title {
 	font-size: 14px;
 	line-height: 28px;
-	border: 2px solid;
 	color: #fff;
 	background-color: transparent;
-	border: 2px solid #c1c2c5;
 	color: #2d3666;
 	border-radius: 6px;
 	font-weight: 400;
@@ -80,3 +78,4 @@
 .projectBox div select {
 	width: 20%;
 }
+

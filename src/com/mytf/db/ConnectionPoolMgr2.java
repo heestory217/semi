@@ -1,4 +1,4 @@
-package com.mymvc.db;
+package com.mytf.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

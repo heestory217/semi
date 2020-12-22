@@ -13,11 +13,11 @@
 		아래 사항들을 확인한 후 프로젝트를 올려 주세요.
 		<hr>
 		<ul style="list-style: none";>
-			<li><a href="<%=request.getContextPath()%>/helpCenter/publicReviewPolicy.jsp" target="_blank" rel="noopener norefferrer">프로젝트 공개검토 기준</a></li>
+			<li><a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp" target="_blank" rel="noopener norefferrer">프로젝트 공개검토 기준</a></li>
 		</ul>
 	</div>
 	<hr>
-	<form action="a.jsp" method="post" name="publicFrm">
+	<form action="projectUpload_start.jsp" method="post" name="publicFrm">
 		<ul style="list-style: none";>
 			<li>
 				<div>

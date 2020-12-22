@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+.announce_title>h3 {
+	width: 1110px;
+	text-align: center;
+	padding: 50px;
+	margin: 0 auto;
+	font-size: 2em;
+}
+
+.announce_title  .button-2 {
+	font-size: 14px;
+	line-height: 28px;
+	border: 2px solid;
+	color: #fff;
+	background-color: transparent;
+	border: 2px solid #c1c2c5;
+	color: #2d3666;
+	border-radius: 6px;
+	font-weight: 400;
+	margin-right: 20px;
+}
+
+.announce_title > .button-2:hover {
+	color: #fff;
+	background-color: #333;
+	border-color: #333;
+}
+
+
+.announce_b>p {
+	width: 1110px;
+	text-align: center;
+	background-color: #DCF4FF;
+	padding: 12px;
+	margin: 0 auto;
+	color: #0019DA;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+.announce_g>p {
+	width: 1110px;
+	text-align: center;
+	background-color: #F6F6F6;
+	padding: 12px;
+	margin: 0 auto;
+	color: #313131;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+.announce_w>p {
+	width: 1110px;
+	text-align: center;
+	background-color: white;
+	padding: 12px;
+	margin: 0 auto;
+	color: #313131;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+.projectBox form {
+	border: 1px solid #cad4de;
+	padding: 40px;
+	border-radius: 4px;
+	margin: 0 auto;
+}
+
+.projectBox form input {
+	width: 40%;
+}
+
+.projectBox form textarea {
+	width: 100%;
+	height: 80px;
+}
+
+.projectBox form select {
+	width: 20%;
+}

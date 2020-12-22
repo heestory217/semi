@@ -1,4 +1,4 @@
-package com.mymvc.common;
+package com.mytf.common;
 
 import java.util.Date;
 

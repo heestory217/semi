@@ -32,7 +32,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_1.JPG"
+								src="<%=request.getContextPath()%>/img/projectImage_1.JPG"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -50,7 +50,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_2.jpeg"
+								src="<%=request.getContextPath()%>/img/projectImage_2.jpeg"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -68,7 +68,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_3.jpg"
+								src="<%=request.getContextPath()%>/img/projectImage_3.jpg"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -86,7 +86,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_4.jpg"
+								src="<%=request.getContextPath()%>/img/projectImage_4.jpg"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -104,7 +104,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_5.jpg"
+								src="<%=request.getContextPath()%>/img/projectImage_5.jpg"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -122,7 +122,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_6.jpg"
+								src="<%=request.getContextPath()%>/img/projectImage_6.jpg"
 								alt="project-image">
 							<div class="hover-content">
 								<div>

@@ -97,11 +97,9 @@
 				<div class="nav-column right-nav">
 					<nav id="menu" class="d-lg-block right-nav-detail">
 						<span class="search-icon fa fa-search"></span>
-						<a href="<%=request.getContextPath() %>/login.jsp" class="login">
+						<a href="<%=request.getContextPath() %>/login/login.jsp" class="login">
 							<span>로그인 / 회원가입</span>
-								<img alt="유저 이미지" src="<%=request.getContextPath() %>/img/user-account.png">
-							<!-- <span>
-							</span> -->
+							<img alt="유저 이미지" src="<%=request.getContextPath() %>/img/user-account.png">
 						</a>
 					</nav>
 				</div>

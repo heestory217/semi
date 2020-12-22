@@ -27,7 +27,7 @@
             <div class="single-portfolio col-md-4 branding photography design">
                 <div class="inner">
                     <div class="portfolio-img">
-                        <img src="<%=request.getContextPath()%>/assets/img/projectImage_1.JPG" alt="portfolio-image">
+                        <img src="<%=request.getContextPath()%>/img/projectImage_1.JPG" alt="portfolio-image">
                         <div class="hover-content">
                             <div>
                                 <a href="#" class="button">프로젝트 보러가기</a>
@@ -43,7 +43,7 @@
             <div class="single-portfolio col-md-4 ceramics design photography">
                 <div class="inner">
                     <div class="portfolio-img">
-                        <img src="<%=request.getContextPath()%>/assets/img/projectImage_2.jpeg" alt="portfolio-image">
+                        <img src="<%=request.getContextPath()%>/img/projectImage_2.jpeg" alt="portfolio-image">
                         <div class="hover-content">
                             <div>
                                 <a href="#" class="button">프로젝트 보러가기</a>
@@ -59,7 +59,7 @@
             <div class="single-portfolio col-md-4 ceramics branding ceramics">
                 <div class="inner">
                     <div class="portfolio-img">
-                        <img src="<%=request.getContextPath()%>/assets/img/projectImage_3.jpg" alt="portfolio-image">
+                        <img src="<%=request.getContextPath()%>/img/projectImage_3.jpg" alt="portfolio-image">
                         <div class="hover-content">
                             <div>
                                 <a href="#" class="button">프로젝트 보러가기</a>
@@ -75,7 +75,7 @@
             <div class="single-portfolio col-md-4 design photography">
                 <div class="inner">
                     <div class="portfolio-img">
-                        <img src="<%=request.getContextPath()%>/assets/img/projectImage_4.jpg" alt="portfolio-image">
+                        <img src="<%=request.getContextPath()%>/img/projectImage_4.jpg" alt="portfolio-image">
                         <div class="hover-content">
                             <div>
                                 <a href="#" class="button">프로젝트 보러가기</a>
@@ -91,7 +91,7 @@
             <div class="single-portfolio col-md-4 ceramics photography branding">
                 <div class="inner">
                     <div class="portfolio-img">
-                        <img src="<%=request.getContextPath()%>/assets/img/projectImage_5.jpg" alt="portfolio-image">
+                        <img src="<%=request.getContextPath()%>/img/projectImage_5.jpg" alt="portfolio-image">
                         <div class="hover-content">
                             <div>
                                 <a href="#" class="button">프로젝트 보러가기</a>
@@ -107,7 +107,7 @@
             <div class="single-portfolio col-md-4 branding design">
                 <div class="inner">
                     <div class="portfolio-img">
-                        <img src="<%=request.getContextPath()%>/assets/img/projectImage_6.jpg" alt="portfolio-image">
+                        <img src="<%=request.getContextPath()%>/img/projectImage_6.jpg" alt="portfolio-image">
                         <div class="hover-content">
                             <div>
                                 <a href="#" class="button">프로젝트 보러가기</a>

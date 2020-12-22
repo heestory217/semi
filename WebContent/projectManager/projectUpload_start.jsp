@@ -11,35 +11,33 @@
 	href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i"
 	rel="stylesheet">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/owl.carousel.css">
+	href="<%=request.getContextPath()%>/css/owl.carousel.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/barfiller.css">
+	href="<%=request.getContextPath()%>/css/barfiller.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/animate.css">
+	href="<%=request.getContextPath()%>/css/animate.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/font-awesome.min.css">
+	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css">
+	href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/top.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/main.css">
+	href="<%=request.getContextPath()%>/css/css_jayeon.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/top.css">
+	href="<%=request.getContextPath()%>/css/main_footer.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/css_jayeon.css">
+	href="<%=request.getContextPath()%>/css/discover.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/main_footer.css">
+	href="<%=request.getContextPath()%>/css/myPageOption.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/discover.css">
+	href="<%=request.getContextPath()%>/css/memberRegister.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/myPageOption.css">
+	href="<%=request.getContextPath()%>/css/login.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/memberRegister.css">
+	href="<%=request.getContextPath()%>/css/feeAndFundingPolicy.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/login.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/feeAndFundingPolicy.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/project_Upload.css">
+	href="<%=request.getContextPath()%>/css/project_Upload.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
@@ -48,11 +46,6 @@
 	rel='stylesheet' type='text/css'>
 
 
-<script
-	src="<%=request.getContextPath()%>/assets/js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript">
-	
-</script>
 </head>
 <body>
 	<!-- 헤더시작 -->
@@ -112,78 +105,130 @@
 		<div class="container">
 			<ul class="nav tabs-nav" id="pills-tab" role="tablist">
 				<li class="nav-item"><a class="nav-link active"
-					id="pills-home-tab" data-toggle="pill" href="#프로젝트"><span>프로젝트
+					id="pills-home-tab" data-toggle="pill" href="#stroytelling" onclick="show(projectIntro);"><span>프로젝트
 							개요</span> </a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
-					data-toggle="pill" href="#펀딩선물"> <span>펀딩 및 선물 구성</span>
+					data-toggle="pill" href="#fundingGift"> <span>펀딩 및 선물 구성</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
-					data-toggle="pill" href="#스토리텔링"> <span>스토리텔링</span>
+					data-toggle="pill" href="#stroytelling"> <span>스토리텔링</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" id="pills-profile-tab"
-					data-toggle="pill" href="#계좌설정"> <span>계좌 설정</span>
+					data-toggle="pill" href="#accountSetting"> <span>계좌 설정</span>
 				</a></li>
 
 			</ul>
 			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="프로젝트" role="tabpanel">
-					<!-- 입력 시작 -->
-					<p>프로젝트개요</p>
-					<div class="projectBox">
-						<form action="">
-							<label for="projectName">프로젝트 제목</label> <label for="projectName">프로젝트에
-								멋진 제목을 붙여주세요. 감정에 호소하는 제목보다는 만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게
-								써주시는 것이 좋습니다. 공간이 부족한 곳에 쓰일 7자 이내의 짧은 제목도 정해주세요. </label> <br> <input
-								type="text" name="projectName" placeholder="제목을 입력하세요"
-								maxlength="22"> <br> <label for="fileName">프로젝트
-								대표이미지</label> <br> <input type="file" name="fileName"> <br>
-							<label for="projectDetail">프로젝트 요약</label> <br> <label
-								for="projectDetail">후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</label>
-							<textarea rows="3" cols="130" name="projectDetail"
-								placeholder="프로젝트 요약을 입력해주세요"></textarea>
-							<br> <label for="ctNo">프로젝트 카테고리</label> <br> <label
-								for="ctNo">프로젝트의 성격에 맞는 카테고리를 선택해 주세요. (프로젝트 성격과 맞지 않는
-								카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</label> <br>
-							<select name="category">
-								<option value="1">제품디자인</option>
-								<option value="2">문구도서</option>
-								<option value="3">문화예술</option>
-								<option value="4">푸드</option>
-								<option value="5">패션</option>
-							</select>
-						</form>
+				<form action="">
+					<div class="tab-pane fade show active" id="projectIntro" role="tabpanel">
+						<!-- 입력 시작 -->
+						<p>프로젝트개요</p>
+						<div class="projectBox">
+							<div>
+
+								<div>
+									<label for="projectName">프로젝트 제목</label> <label
+										for="projectName">프로젝트에 멋진 제목을 붙여주세요. 감정에 호소하는 제목보다는
+										만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다. 공간이 부족한 곳에 쓰일
+										7자 이내의 짧은 제목도 정해주세요. </label> <br> <input type="text"
+										name="projectName" placeholder="제목을 입력하세요" maxlength="22">
+								</div>
+
+								<br>
+
+								<div>
+									<label for="fileName">프로젝트 대표이미지</label> <br> <input
+										type="file" name="fileName">
+								</div>
+
+								<br>
+
+								<div>
+									<label for="projectDetail">프로젝트 요약</label> <br> <label
+										for="projectDetail">후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</label>
+									<textarea rows="3" cols="130" name="projectDetail"
+										placeholder="프로젝트 요약을 입력해주세요"></textarea>
+								</div>
+
+								<br>
+
+								<div>
+									<label for="ctNo">프로젝트 카테고리</label> <br> <label for="ctNo">프로젝트의
+										성격에 맞는 카테고리를 선택해 주세요. (프로젝트 성격과 맞지 않는 카테고리를 선택하실 시 후원자가 해당
+										프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</label> <br> <select
+										name="category">
+										<option value="1">제품디자인</option>
+										<option value="2">문구도서</option>
+										<option value="3">문화예술</option>
+										<option value="4">푸드</option>
+										<option value="5">패션</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<br>
+
+						<p>창작자 정보</p>
+						<div class="projectBox">
+							<div>
+								<div>
+									<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의
+									사진을 올려주세요. 얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
+									형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <input
+										type="file" name="fileName">
+								</div>
+
+								<br>
+
+								<div>
+									<label for="name">창작자 이름</label> <br> <input type="text"
+										name="name" disabled="disabled" value="회원이름"
+										style="width: 20%;">
+								</div>
+
+								<br>
+
+								<div>
+									<label for="memberIntro">창작자 소개</label> <br>
+									<textarea rows="3" cols="130" name="memberIntro"
+										placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
+								</div>
+							</div>
+						</div>
+						<!-- box -->
 					</div>
 					<br>
-					<p>창작자 정보</p>
-					<div class="projectBox">
-						<form action="">
-							<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의 사진을
-							올려주세요. 얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일 형식은
-							jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <input
-								type="file" name="fileName"> <br> <label for="name">창작자
-								이름</label> <br> <input type="text" name="name" disabled="disabled"
-								value="회원이름" style="width: 20%;"> <br> <label
-								for="memberIntro">창작자 소개</label> <br>
-							<textarea rows="3" cols="130" name="memberIntro"
-								placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
-						</form>
-					</div>
-				</div>
-				<br>
 
-				<div class="tab-pane fade" id="펀딩선물" role="tabpanel">
-					<p>펀딩선물</p>
-				</div>
-				<div class="tab-pane fade" id="스토리텔링" role="tabpanel">
-					<p>스토리텔링</p>
-				</div>
-				<div class="tab-pane fade" id="계좌설정" role="tabpanel">
-					<p>계좌설정</p>
-				</div>
-			
-			
+					<div class="tab-pane fade" id="fundingGift" role="tabpanel">
+						<p>펀딩선물</p>
+						<div class="projectBox">
+							<div>
+							<input type="text" value="내용">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="stroytelling" role="tabpanel">
+						<p>스토리텔링</p>
+						<div class="projectBox">
+							<div>
+							<input type="text" value="내용">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="accountSetting" role="tabpanel">
+						<p>계좌설정</p>
+						<div class="projectBox">
+							<div>
+							<input type="text" value="내용">
+							</div>
+						</div>
+					</div>
+
+				</form>
+
 			</div>
-			
+
 			<!-- 버튼 -->
 			<div class="announce_w">
 				<p>

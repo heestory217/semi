@@ -21,9 +21,6 @@ $(function(){
 
 </script>
 
-<div class="preloader">
-	<span class="preloader-spin"></span>
-</div>
 <div class="site">
 
 

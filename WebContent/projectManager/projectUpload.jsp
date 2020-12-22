@@ -69,7 +69,7 @@
 	</div>
 	<div class="announce_g" style="margin-bottom: 20px;">
 		<p>
-			<i data-feather="alert-circle"></i> 프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
+			프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
 		</p>
 	</div>
 	<!-- 확인사항 배너 끝-->
@@ -300,6 +300,14 @@
 							</div>
 							<br>
 							
+							<p>상품 정보 고시</p>
+							<div class="projectBox">
+								<div>
+									<div></div>
+								</div>
+							</div>
+							
+							
 						</div>
 					</div>
 				</div>
@@ -338,12 +346,62 @@
 					<div id="collapse-2-4" class="collapse"
 						aria-labelledby="heading-2-4" data-parent="#accordion-2">
 						<div class="card-body">
-							<p>Anim pariatur cliche reprehenderit, enim eiusmod high life
-								accusamus terry richardson ad squid. 3 wolf moon officia aute,
-								non cupidatat skateboard dolor brunch. Food truck quinoa
-								nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
-								put a bird on it squid single-origin coffee nulla assumenda
-								shoreditch et.</p>
+						
+							<p>이메일</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="email">이메일 주소</label>
+										<input type="text" name="email">
+									</div>
+									
+								</div>
+							</div>
+							
+							<p>본인 인증</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="hp">휴대폰 번호</label>
+										<input type="text" name="hp">
+									</div>
+									
+								</div>
+							</div>
+							
+							<p>입금 계좌</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<input type="radio" name="bank" value="private">개인
+										<input type="radio" name="bank" value="business">사업자(개인사업자 포함)
+									</div>
+									
+									<div>
+										<label for="birth">예금주 생년월일</label> 
+										<input type="text" name="birth" maxlength="6">
+									</div>
+										
+									<div>
+										<label for="bankOwner">예금주명</label> 
+										<input type="text" name="bankOwner" maxlength="6">
+									</div>
+									
+									<div>
+										<label for="bankName">은행명</label> 
+										<input type="text" name="bankName" maxlength="6">
+									</div>
+										
+									<div>
+										<label for="bankName">계좌 번호</label>
+										<input type="number" name="bankName" maxlength="16">
+									</div>
+									<div>
+									<input type="checkbox">세금계산서 발행 여부
+									</div>
+								</div>
+							</div>
+						
 						</div>
 					</div>
 				</div>
@@ -361,7 +419,7 @@
 	</footer>
 
 	</div>
-
+	
 	<!--Required JS files-->
 	<script src="<%=request.getContextPath()%>/js/jquery-2.2.4.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/vendor/popper.min.js"></script>
@@ -375,7 +433,6 @@
 	<script src="<%=request.getContextPath()%>/js/vendor/loopcounter.js"></script>
 	<script src="<%=request.getContextPath()%>/js/vendor/slicknav.min.js"></script>
 	<script src="<%=request.getContextPath()%>/js/active.js"></script>
-	<script src="<%=request.getContextPath()%>/js/feather.min.js"></script>
 
 </body>
 </html>

@@ -35,6 +35,8 @@ public class LoginOkController implements Controller{
 				session.setAttribute("email",email);			
 				GoMemberVO gVo=gService.selectByEmail(email);
 				session.setAttribute("name", gVo.getName());
+				//회원번호 저장
+				session.setAttribute("memberNo", gVo.getMemberNo());
 				
 				//2)쿠키에 저장 X			
 				msg=gVo.getName()+"님이 로그인 하셨습니다.";

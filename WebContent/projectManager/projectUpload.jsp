@@ -7,23 +7,15 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/owl.carousel.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/animate.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/top.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/main_footer.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/project_Upload.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/quick-website.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/project_Upload.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/quick-website.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
@@ -104,7 +96,6 @@
 							<p>프로젝트개요</p>
 							<div class="projectBox">
 								<div>
-
 									<div>
 										<label for="projectName">프로젝트 제목</label> <label
 											for="projectName">프로젝트에 멋진 제목을 붙여주세요. 감정에 호소하는 제목보다는
@@ -112,25 +103,19 @@
 											7자 이내의 짧은 제목도 정해주세요. </label> <br> <input type="text"
 											name="projectName" placeholder="제목을 입력하세요" maxlength="22">
 									</div>
-
 									<br>
-
 									<div>
 										<label for="fileName">프로젝트 대표이미지</label> <br> <input
 											type="file" name="fileName">
 									</div>
-
 									<br>
-
 									<div>
 										<label for="projectDetail">프로젝트 요약</label> <br> <label
 											for="projectDetail">후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</label>
 										<textarea rows="3" cols="130" name="projectDetail"
 											placeholder="프로젝트 요약을 입력해주세요"></textarea>
 									</div>
-
 									<br>
-
 									<div>
 										<label for="ctNo">프로젝트 카테고리</label> <br> <label
 											for="ctNo">프로젝트의 성격에 맞는 카테고리를 선택해 주세요. (프로젝트 성격과 맞지
@@ -210,6 +195,7 @@
 							<p>펀딩 기간 설정</p>
 							<div class="projectBox">
 								<div>
+									<!-- 프로젝트 공개일시 -->
 									<div>
 										<label for="goalAmount">프로젝트 공개일시</label>
 										<p>
@@ -222,6 +208,7 @@
 										에 펀딩을 시작합니다.
 									</div>
 									<div>
+										<!-- 프로젝트 마감일시 -->
 										<!-- 공개일시를 먼저 선택해야 사용가능함 disable false -->
 										<label for="duedate">프로젝트 마감일시</label>
 										<p>
@@ -245,6 +232,74 @@
 									</div>
 								</div>
 							</div>
+							
+							<br>
+							
+							<p>프로젝트 주요 일정</p>
+							<div class="projectBox">
+								<div>
+										<p>프로젝트 공개일 : 2020년 12월 22일</p>
+								</div>
+							</div>
+							<br>
+							
+							<p>선물 구성</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="goalAmount">목표 금액</label> <label for="goalAmount">이번
+											프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? 마감일 자정까지 목표 금액을 100% 이상
+											달성하셔야만 모인 후원금이 결제 됩니다. 막판에 후원을 취소하는 후원자들도 있는 점을 감안해 10% 이상 초과
+											달성을 목표로 하시는게 안전합니다. (목표 금액은 제작비, 선물 배송비, 창작자의 인건비, 예비 비용 등을
+											고려하시기 바랍니다.)<span style="color: #FF6F40;">5,000원 이상인
+												금액을 입력해주세요.</span>
+										</label> <br> <input type="number" name="goalAmount">원
+									</div>
+								</div>
+							</div>
+							<br>
+							
+							<p>펀딩 안내</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<p>환불 및 교환 정책</p>
+										<p>펀딩 마감 후의 환불 및 교환 요청은 창작자가 약속하는 아래 정책에 따릅니다. 이는 후원자의 불만 또는 분쟁 발생시 중요한 기준이 되니, 신중히 작성해 주세요.</p>
+										<strong><span style="color: #FF6F40;">[    ] 안의 예시 문구를 프로젝트에 적합한 내용으로 변경해주세요. (환불 및 교환 정책 작성 가이드 확인하기)</span></strong>
+										<ul style="margin-left: 20px;">
+											<li>'모든 프로젝트 공통' 내용은 필수로 적어주세요.</li>
+											<li>'배송 필요 선물' '현장수령 선물' '디지털 콘텐츠 선물' 내용들은 이번 프로젝트에 해당되는 사항만 골라 작성해 주세요.</li>
+											<li>후원자의 단순 변심, 제품의 파손 및 불량, 창작자의 예기치 못한 선물 실행 지연 등 다양한 상황을 고려하여 내용을 작성해 주세요.</li>
+										</ul>
+										<textarea rows="15" cols="130">
+모든 프로젝트 공통
+- 프로젝트 마감일 후에는 즉시 제작 및 실행에 착수하는 프로젝트 특성상 단순 변심에 의한 후원금 환불이 불가능합니다.
+- 예상 전달일로부터 [    ]일 이상 선물 전달이 이뤄지지 않을 경우, 환불을 원하시는 분들께는 [ 수수료를 제한 / 수수료를 포함한 ] 후원금을 환불해 드립니다.
+(플랫폼 수수료: 모금액의 5%, 부가세 별도 / 결제 수수료: 결제 성공액의 3%, 부가세 별도 )
+- 선물 전달을 위한 배송지 및 서베이 답변은 [   마감일 이후 날짜를 입력해주세요.(ex 20XX. XX. XX)   ]에 일괄 취합할 예정입니다.
+- 이후 배송지 변경이나 서베이 답변 변경을 원하실 때에는 '창작자에게 문의하기'로 개별 문의하셔야 합니다.
+
+배송이 필요한 선물
+- 파손 또는 불량품 수령 시 [   ]일 이내로 교환이 가능합니다.
+- 교환 및 AS 문의는 '창작자에게 문의하기'로 신청해 주세요.
+- 파손이나 불량품 교환시 발생하는 비용은 창작자가 부담합니다. 선물 확인을 위한 포장 훼손 외에 아이템의 가치가 훼손된 경우에는 교환 및 환불이 불가합니다.
+[ - 파손이나 불량의 예시 또는 기준이 있을 경우 추가해 주세요. ]
+- 후원자가 배송지를 잘못 기재하거나 창작자에게 사전 고지 없이 배송지를 수정하여 배송사고가 발생할 경우 
+창작자는 [  최대   번까지 재발송 해 드립니다. 배송비 부담은 (  창작자 / 후원자  )에게 있습니다   /   책임을 지지 않습니다  ].
+
+공연/행사 등 현장수령으로 이루어지는 선물
+- 행사 참가권은 타인에게 양도가 [  가능  /  불가능  ]합니다.
+- 현장에서 수령해야 하는 선물을 수령하지 못하신 경우 환불은 [  가능   /  불가능  ]하며, 선물 배송을 위한 추가 배송비를 별도 요청드릴 수 있습니다.
+
+디지털 콘텐츠로 이뤄진 선물
+- 전달된 파일에 심각한 결함이나 저작권상 문제가 있을 경우, 수수료 [  포함  /  제외  ]하여 환불 가능합니다.
+- 전달된 파일은 타인에게 양도가 [  가능  /  불가능  ]합니다.
+									</textarea>
+									</div>
+								</div>
+							</div>
+							<br>
+							
 						</div>
 					</div>
 				</div>
@@ -294,7 +349,7 @@
 				</div>
 			</div>
 		</div>
-		<div style="text-align: center;margin-bottom: 50px;">
+		<div style="text-align: center; margin-bottom: 50px;">
 			<input type="submit" class="button" value="검토 요청하기">
 		</div>
 	</form>

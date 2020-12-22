@@ -83,7 +83,7 @@
 									<li style="margin-bottom:10px;"><a href="<%=request.getContextPath() %>/category_page.jsp">카테고리별 프로젝트</a></li>
 								</ul>
 							</li>
-							<li><a href="<%=request.getContextPath() %>/projectManager/projectUpload.jsp" class="menu-style">프로젝트 올리기</a></li>
+							<li><a href="<%=request.getContextPath() %>/projectManager/projectUpload_before.jsp" class="menu-style">프로젝트 올리기</a></li>
 						</ul>
 					</nav>
 				</div>

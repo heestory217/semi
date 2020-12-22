@@ -7,27 +7,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/owl.carousel.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/barfiller.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/animate.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/top.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/css_jayeon.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/main_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/discover.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/myPageOption.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/memberRegister.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/login.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/assets/css/feeAndFundingPolicy.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/owl.carousel.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/barfiller.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/top.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/css_jayeon.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/main_footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/discover.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/myPageOption.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/memberRegister.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/login.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/feeAndFundingPolicy.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
 
 
-<script src="<%=request.getContextPath() %>/assets/js/jquery-3.5.1.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('.search-wrapper').hide();
@@ -50,7 +50,7 @@
 		<div class="search-wrapper">
 			<div class="container search-header">
 				<div class="search-icon">
-					<img src="<%=request.getContextPath() %>/assets/img/search.png">
+					<img src="<%=request.getContextPath() %>/img/search.png">
 				</div>
 				<div class="search-input">
 					<form action="" class="search-input-detail" method="">
@@ -62,7 +62,7 @@
 				<div class="close-button">
 					<div class="close-button-wrapper">
 						<div class="close-button">
-							<a href="#"><img src="<%=request.getContextPath() %>/assets/img/close.png" alt=""></a>
+							<a href="#"><img src="<%=request.getContextPath() %>/img/close.png" alt=""></a>
 						</div>
 					</div>
 				</div>
@@ -90,7 +90,7 @@
 				
 				<div class="logo-column">
 					<a href="<%=request.getContextPath() %>/mainArticle.jsp" class="f_logo"> 
-						<img src="<%=request.getContextPath() %>/assets/img/topLogo.png" alt="로고 이미지">
+						<img src="<%=request.getContextPath() %>/img/topLogo.png" alt="로고 이미지">
 					</a>
 				</div>
 				
@@ -99,7 +99,7 @@
 						<span class="search-icon fa fa-search"></span>
 						<a href="<%=request.getContextPath() %>/login.jsp" class="login">
 							<span>로그인 / 회원가입</span>
-								<img alt="유저 이미지" src="<%=request.getContextPath() %>/assets/img/user-account.png">
+								<img alt="유저 이미지" src="<%=request.getContextPath() %>/img/user-account.png">
 							<!-- <span>
 							</span> -->
 						</a>

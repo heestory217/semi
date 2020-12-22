@@ -8,7 +8,7 @@
 <div class="site">
 
 	<!-- header 위치 -->
-	<%-- <%@ include file="../inc/top.jsp"%> --%>
+	 <%-- <%@ include file="../inc/top.jsp"%>  --%>
 	
 	<div class="simpleForm">
 		<div class="loginTitle">

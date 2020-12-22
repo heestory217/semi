@@ -28,7 +28,7 @@ $(function(){
 
 
 	<!-- header 위치 -->
-<%--탑부분 무한로딩돼서 주석처리  <%@ include file="../inc/top.jsp"%> --%>
+ <%@ include file="../inc/top.jsp"%> 
 <div class="registerContainer">
 <div class="registerWrapper"> 
 	<div class="registerWrapperBody"> 

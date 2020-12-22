@@ -100,7 +100,7 @@
 <script src="assets/js/vendor/jquery.barfiller.js"></script>
 <script src="assets/js/vendor/loopcounter.js"></script>
 <script src="assets/js/vendor/slicknav.min.js"></script>
-<script src="assets/js/active.js"></script> -->
+<script src="assets/js/active.js"></script>
 
 
 </body>

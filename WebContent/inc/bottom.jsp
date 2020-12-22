@@ -47,13 +47,13 @@
 					<div class="inner">
 						<div class="media">
 							<a href="#"> <img
-								src="<%=request.getContextPath()%>/assets/img/icons.JPG.png"
+								src="<%=request.getContextPath()%>/img/icons.JPG.png"
 								class="d-flex mr-3" alt="펀딩고 소셜미디어로 바로가기">
 							</a>
 						</div>
 						<div class="media">
 							<a href="<%=request.getContextPath()%>/fg_contact.jsp"> <img
-								src="<%=request.getContextPath()%>/assets/img/requestbutton.png"
+								src="<%=request.getContextPath()%>/img/requestbutton.png"
 								class="d-flex mr-3" alt="문의하기">
 							</a>
 						</div>

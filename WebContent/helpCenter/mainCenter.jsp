@@ -11,42 +11,16 @@
 <title>Flat Pro || Buisness HTML template</title>
 
 <!-- Required CSS files -->
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/owl.carousel.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/barfiller.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/animate.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/slicknav.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/main.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/main_footer.css">
-</head>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/main.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/top.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/css_jayeon.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/main_footer.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/discover.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/myPageOption.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/memberRegister.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/login.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/barfiller.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/slicknav.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/top.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
@@ -65,7 +39,7 @@
 					<div class="logo-column">
 						<a href="<%=request.getContextPath()%>/mainArticle.jsp"
 							class="f_logo"> <img
-							src="<%=request.getContextPath()%>/assets/img/topLogo.png"
+							src="<%=request.getContextPath()%>/img/topLogo.png"
 							alt="로고 이미지">
 						</a>
 						<nav id="menu" class="d-lg-block right-nav-detail">
@@ -155,7 +129,7 @@
 							<p>&nbsp;</p>
 							<h3>제2조 용어의 정의</h3>
 							<p>① 이 기준에서 사용하는 용어의 뜻은 다음과 같습니다.</p>
-							<ol>
+							<ol style="margin-left: 20px;">
 								<li>‘공개검토’란 창작자의 프로젝트를 운영자가 검수·심사하여 승인 또는 반려하는 것을 말합니다.</li>
 								<li>‘승인’이란 프로젝트가 공개검토를 통과하여 모금을 진행할 수 있게 된 상태를 뜻합니다.</li>
 								<li>‘재검토’란 창작자가 수정하거나 보완한 프로젝트를 다시 공개검토하는 것을 말합니다.</li>
@@ -210,7 +184,7 @@
 							<h3>제6조 창작자 신뢰도</h3>
 							<p>① 프로젝트를 실제로 진행하는 개인 또는 사업자가 프로젝트를 작성하고 관리해야 하며 다음과 같이 인증 및
 								서류 제출을 완료해야 합니다.</p>
-							<ol>
+							<ol style="margin-left: 20px;">
 								<li>(개인인 경우) 만 19세 이상의 본인인증 및 신분증 사본 제출</li>
 								<li>(사업자인 경우) 대표자 또는 사업자에 속한 담당자의 본인인증 및 사업자등록증 제출</li>
 								<li>한국에서 개설된, 창작자 본인 명의의 입금 가능한 은행계좌 등록</li>
@@ -224,7 +198,7 @@
 								합니다.</p>
 							<p>④ 텀블벅 또는 타 크라우드펀딩 플랫폼에서 앞서 진행한 프로젝트가 있는 창작자는 다음과 같은 경우 새
 								프로젝트 진행이 제한됩니다. 본 항의 진행 제한은 개인·사업자가 아닌 계정 단위로 이루어집니다.</p>
-							<ol>
+							<ol style="margin-left: 20px;">
 								<li>펀딩이 성사된 첫 프로젝트가 아직 선물 전달을 완수하기 전인 경우 (단, 일부 후원자만 선물 수령
 									포기 등 부득이한 사유로 전달하지 못한 경우는 완수한 것으로 간주)</li>
 								<li>앞서 진행한 프로젝트의 선물 전달이 지연되고 있거나 해결되지 않은 분쟁이 있는 경우</li>
@@ -239,14 +213,14 @@
 							<p>&nbsp;</p>
 							<h3>제7조 선물 제공 불가 항목</h3>
 							<p>① 아래와 같은 선물은 텀블벅의 취지와 상이하여 제공을 제한합니다.</p>
-							<ol>
+							<ol style="margin-left: 20px;">
 								<li>시중에 판매·유통되었던 제품·콘텐츠 (국내·해외 무관, 이전 펀딩을 통해 제작이 완료된 재고 포함)
 								</li>
 								<li>수익성 항목 (현금, 주식, 지분, 복권, 사이버머니, 상품권 등)</li>
 								<li>추첨을 통해서만 선물을 받을 수 있는 자격</li>
 							</ol>
 							<p>② 아래와 같은 선물은 커뮤니티의 안전과 현행법 준수를 위해 제공을 제한합니다.</p>
-							<ol>
+							<ol style="margin-left: 20px;">
 								<li>성인 인증이 필요한 성인용 제품 또는 콘텐츠</li>
 								<li>무기류, 군복 및 군용장구, 경찰제복 및 장비, 라이터 등 위험 품목</li>
 							</ol>

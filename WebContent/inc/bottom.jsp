@@ -91,17 +91,6 @@
 	</div>
 </footer>
 
-<!-- <!--Required JS files-->
-<script src="assets/js/jquery-2.2.4.min.js"></script>
-<script src="assets/js/vendor/popper.min.js"></script>
-<script src="assets/js/vendor/bootstrap.min.js"></script>
-<script src="assets/js/vendor/owl.carousel.min.js"></script>
-<script src="assets/js/vendor/isotope.pkgd.min.js"></script>
-<script src="assets/js/vendor/jquery.barfiller.js"></script>
-<script src="assets/js/vendor/loopcounter.js"></script>
-<script src="assets/js/vendor/slicknav.min.js"></script>
-<script src="assets/js/active.js"></script>
-
 
 </body>
 

@@ -16,13 +16,48 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_footer.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/quick-website.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/projectUpload.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/jquery-ui.css">
 
+<!--Required JS files-->
+<script src="<%=request.getContextPath()%>/js/jquery-2.2.4.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/popper.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/owl.carousel.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/isotope.pkgd.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/jquery.barfiller.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/loopcounter.js"></script>
+<script src="<%=request.getContextPath()%>/js/vendor/slicknav.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/active.js"></script>
+
+<!-- 달력 -->
+<script src="<%=request.getContextPath()%>/js/jquery-3.5.1.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
+	
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
 	rel='stylesheet' type='text/css'>
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css'
 	rel='stylesheet' type='text/css'>
-
+<script type="text/javascript">
+$(function(){
+	//$('#startDay').datepicker();
+	
+	//옵션변경 (매개변수 : 객체형태로)
+	$('#startDay').datepicker({
+		dateFormat: 'yy-mm-dd',
+		changeYear : true,
+		dayNamesMin : ['일','월','화','수','목','금','토'],
+		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+	});
+	
+	$('button').click(function(){
+								  //.datepicker('메서드');
+		var curDate = $('#startDay').datepicker('getDate');
+		alert(curDate);
+	});
+	
+});
+</script>
 </head>
 <body>
 	<!-- 헤더시작 -->
@@ -197,7 +232,7 @@
 												자동으로 공개</strong>되니 신중하게 정해주세요. <br>설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실 수도 있습니다.
 										</p>
 										<!-- 달력넣기 -->
-										일
+										<p>공개일시 : <input type="text" id="startDay"></p>
 										<!-- 시간넣기 -->
 										에 펀딩을 시작합니다.
 									</div>
@@ -398,20 +433,6 @@
 
 	</div>
 	
-	<!--Required JS files-->
-	<script src="<%=request.getContextPath()%>/js/jquery-2.2.4.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/vendor/popper.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/vendor/bootstrap.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/js/vendor/owl.carousel.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/js/vendor/isotope.pkgd.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/js/vendor/jquery.barfiller.js"></script>
-	<script src="<%=request.getContextPath()%>/js/vendor/loopcounter.js"></script>
-	<script src="<%=request.getContextPath()%>/js/vendor/slicknav.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/active.js"></script>
-
 </body>
 </html>
 

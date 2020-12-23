@@ -7,6 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
+<!-- <script src="assets/js/jquery-2.2.4.min.js"></script> -->
+<script src="<%=request.getContextPath() %>/js/vendor/popper.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/vendor/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/vendor/owl.carousel.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/vendor/isotope.pkgd.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/vendor/jquery.barfiller.js"></script>
+<script src="<%=request.getContextPath() %>/js/vendor/loopcounter.js"></script>
+<script src="<%=request.getContextPath() %>/js/vendor/slicknav.min.js"></script>
+<script src="<%=request.getContextPath() %>/js/active.js"></script>
+
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/owl.carousel.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/barfiller.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/animate.css">
@@ -24,10 +35,10 @@
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
-<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'> 
+ 
 
 
-<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('.search-wrapper').hide();

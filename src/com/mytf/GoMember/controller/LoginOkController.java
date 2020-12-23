@@ -37,11 +37,13 @@ public class LoginOkController implements Controller{
 				session.setAttribute("name", gVo.getName());
 				//회원번호 저장
 				session.setAttribute("memberNo", gVo.getMemberNo());
+				//회원 이미지 저장
+				session.setAttribute("fileName", gVo.getFileName());
 				
 				//2)쿠키에 저장 X			
 				msg=gVo.getName()+"님이 로그인 하셨습니다.";
-				url="/mainArticle.jsp";
-//				url="/mainArticle.do";
+//				url="/mainArticle.jsp";
+				url="/mainArticle.do";
 			}
 			
 		} catch (SQLException e) {

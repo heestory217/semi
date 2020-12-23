@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .dropDown-myPage span {
     font-weight: bold;
     display: inline-block;
@@ -71,8 +72,9 @@ hr {
 .myPage-Profile {
    /*  width: 80%;
     margin-left: 150px; */
+    
 }
-
+.container.myPage-Profile {margin-bottom: 200px;}
 .myPageOption-bottom {padding-top: 20px;padding-bottom: 20px;}
 
 .myPageOption-bottom2 {
@@ -84,3 +86,5 @@ hr {
     padding-bottom: 20px; */
     line-height:65px;
 }
+
+

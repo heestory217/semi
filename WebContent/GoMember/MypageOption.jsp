@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
 <div class="preloader">
@@ -9,7 +11,7 @@
 
 
 	<!-- header 위치 -->
-	<%@ include file="inc/top.jsp"%>
+	<%@ include file="../inc/top.jsp"%>
 	
 
 	<div class="dropDown-myPage">
@@ -17,7 +19,7 @@
 			<div class="container myPageOption-container">
 				<span>내 페이지</span> 	
 				  <a href="#" class="myPage-closeBtn"> 
-				  	<img src="<%=request.getContextPath() %>/assets/img/closeIcon.png" width="15px" height="15px" alt="닫기 아이콘">
+				  	<img src="<c:url value='/img/closeIcon.png'/>" width="15px" height="15px" alt="닫기 아이콘" href="#">
 				  </a> 
 			 </div>
 		</div>
@@ -25,8 +27,15 @@
 		
 			<div class="myPageOption-middle">
 				<a href="#">
-					<img src="<%=request.getContextPath() %>/assets/img/user-account.png" width="50px" alt="마이페이지 아이콘">
-					<span>Nn(이름)</span>
+					<span> ${name}</span>
+					<c:if test="${!t_hasFileName}"> 
+						<img src="<c:url value='/img/user-account.png'/>" width="50px" alt="마이페이지 아이콘">
+					</c:if>						
+					<c:if test="${t_hasFileName}"> 
+						<img src="<c:url value='/GoMember_upload/${fileName}'/>" width="50px" alt="마이페이지 아이콘">
+					</c:if>	
+					
+								
 				</a>
 			</div>
 			<div class="myPageOption-bottom">
@@ -45,14 +54,14 @@
 			
 
 				<div class="myPageOption">
-					<a href="#">설정</a>
+					<a href="<c:url value='/GoMember/memberPage.do'/>">설정</a>
 				</div>
 		
 			</div>
 		
 			<div class="myPageOption-bottom2">
 				<div class="myPageOption">
-					<a href="#">로그아웃</a>
+					<a href="<c:url value='/login/logout.do'/>">로그아웃</a>
 				</div>
 			</div>
 			
@@ -65,4 +74,4 @@
 
 
 	<!-- footer위치 -->
-	<%@ include file="inc/bottom.jsp"%>
+	<%@ include file="../inc/bottom.jsp"%>

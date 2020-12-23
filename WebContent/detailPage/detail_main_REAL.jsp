@@ -676,360 +676,358 @@ aside{
 
 	<!-- middle  -->	 
 
-	 	 
-	<section>
-	
+	<!-- 내용시작 -->
+		<section>
 		
+			
+		<article class="sectionView">
+			<div class="storyPage" id="move1">
+			<div class="storyContainer">
+				<div class="storyDiv">
+				<!-- 창작자 스토리 불러오기 -->
+				<h1><창작자가 하고 싶은 말 / 스토리></h1><br>
+				<h1>예능 뽀시래기 팝니다</h1><br>
+				<img src="../img/story_content_example.gif" style="width: 84%; margin-left:42px;"><br>
+				<p>내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 </p>
+				</div>
+			</div>
+			</div>
+		</article>
+	
+	
+	
+	
 	<article class="sectionView">
-		<div class="storyPage" id="move1">
-		<div class="storyContainer">
-			<div class="storyDiv">
-			<!-- 창작자 스토리 불러오기 -->
-			<h1><창작자가 하고 싶은 말 / 스토리></h1><br>
-			<h1>예능 뽀시래기 팝니다</h1><br>
-			<img src="../img/story_content_example.gif" style="width: 84%; margin-left:42px;"><br>
-			<p>내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 </p>
+		<div class="commPage">
+		<div class="writerFlag" id="move2">
+					<div><img class="storyWriterImage" src="../img/storydivWriterImg.png" alt="창작자/후원자 사진"></div>
+						<div><p class="storyDivFlag"><b>후원자만 글을 쓸 수 있어요</b></p></div>
 			</div>
-		</div>
-		</div>
-	</article>
-
-
-
-
-<article class="sectionView">
-	<div class="commPage">
-	<div class="writerFlag" id="move2">
-				<div><img class="storyWriterImage" src="../img/storydivWriterImg.png" alt="창작자/후원자 사진"></div>
-					<div><p class="storyDivFlag"><b>후원자만 글을 쓸 수 있어요</b></p></div>
-		</div>
-				
-
-			
-			<div id="communityNav">
-				<nav>	
-			  	  	<button id="commBtnAll">모든 게시글</button>
-			  	  	<button id="commBtnUpdate">창작자 업데이트</button>						
-				</nav>
-			</div>
-
-	<div class="communityContainer">
-
-		<!-- 반복문 돌려서 -->
-		<%-- <% for int i=0; i<스토리게시글size나 length만큼 돌렸을때; i++ %> --%>
-
-		<!-- 창작자 로고/이름 끌어와서 보여주기 -->
-			<div style="padding-left:15px; padding-top: 15px;">
-				<div><img src="../img/writerUpdate.PNG" style="width:80px;"></div>
-				<div>
-					<img src="../img/authorLogo.png" style="width:37px; margin-left:0px;">
-					<a href=""><img src="../img/authorName.png" style="width:85px; margin-bottom:2px;"></a>
-					<img src="../img/writeMark.PNG" style="width:41px; margin-bottom: 9px; margin-left:-16px;">
-				</div>
-			</div>
-			
-						
-		<!--  게시글 "내용"끌어와서 보여주기 --> <%-- <%=스토리게시글no%> 로  가져오기? --%>
-			<div class="community_contents">  <%-- <%=스토리게시글no%> 로  가져오기? #communityContents에 넣기? --%>
-				<div class="comm_moreContents">
-					<h1><예뽀의 연극 일정></h1>
-					<h1><연극 '얼음' 공지사항 안내></h1><br>
-				
-			
-					<div>
-						<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						</p>
-					</div>			
-				
-				<div class="moreContents">
-				<p>내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
-				</p>
-				</div>
-				</div>
-				<button>더 보기</button>
-				
-			</div>
-		
-
-		<!--  댓글 끌어와서 보여주기 -->
-			<div id="community_comments">
-				<hr>
-					<div id="communityCommentImg"><img src="../img/communityComment.PNG" style="width:35px; margin-left:-13px; margin-top: 8px; margin-bottom:-14px;"></div>	
-						
-					<!-- 해당 게시글에 대한 코멘트 불러오기 -->	
-					<div class="moreComments"></div>
-						
-			</div>
-		</div>
-</div>
-	</article>
-
-
-	<article class="sectionView"> 
-		<div class="fundPage">
-		<div id="refundPolicy_contents" id="move3">
-		
-			<p><b>이 프로젝트의 환불 및 교환 정책</b></p>
-			<div><!-- 창작자 정책 -->sssssssssssssssssssssssssss</div>
-		
-		</div>
-
-		<div id="productInfo_contents">
-			<p><b>상품정보 고시</b></p>
-			<div><!-- 창작자 정책 -->sssssssssssssssssssssssssss</div>
-		
-		</div>
-	</div>
-	</article>
-		
-    
-     </section> <!-- detailPage_middle 중간부분 전체 디브 --> 
- 
- <aside>
- 
- 	<div class="asideView">
- 	
- 	
- 		<div class="asidePage1">
-		<div id="asideP1"><b>창작자 소개</b></div>
-		<div class="asideAboutWriter">
-				<!-- 창작자 로고/이름 끌어와서 보여주기 -->
-				<div>
-					<img src="../img/authorLogo.png" style="width:35px; margin-left:0px;">
-					<a href=""><img src="../img/authorName.png" style="width:83px; margin-bottom:2px;"></a>
-				</div>
-			<div id="writerIntroContents">
-				<p>프로고민러 랩은 소셜 벤처 ST.END LAB 청년연구소에서 청년들의 고민을 해결하기 위해 만든 '고민 문구' 브랜드입니다. 코칭, 심리학, 상담, 교육계의 전문가들과 함께 청년들이 겪는 문제들을 연구하고, 온라인으로는 유형 테스트 및 웹 / 앱 서비스 개발, 오프라인으로는 문구, 교구, 출판물, 워크숍 콘텐츠 개발 등을 통해 새로운 고민 문화를 만들고 있습니다.</p>
-			</div>
-			<hr>
-			<div id="asideAboutWriter2"><p style="color: #696969; font-size: 9px; letter-spacing: -0.4px;">진행한 프로젝트 <b>0</b> 
-
-										&nbsp;&nbsp;&nbsp;&nbsp;   밀어준 프로젝트 <b>0</b> </p>
-			</div>	
-			</div>
-		</div>
-
-
-
-        
-
-
-
-<div id="choose"><p><b>선물선택</b></p></div>	
-
-<div class="asidePage2">
-    <div class="asideContainer">
-
-         <div class="aside_col-md-6">
-                <div class="faq">
-                             
-                    <div class="single-item">
-                        <h4>1000원 +</h4>
-                         <div class="option">
-                        	상품을 선택하지 않고 밀어만 줍니다.
-                         </div>
-                        <div class="content">
-                           	예상 전달일 2021년 1월 19일 
-                           	<div class="addOption">
-                           		<label for="">추가후원금(선택)</label>
-                           		<form action="#" method="post" name="frmAdd">
-                           			<input type="text" name="" value="0">
-                           		
-                           		</form>
-                           			
-                           	
-                           	</div>	
-                           	
-                           	
-                        </div>
-                    </div>
-                   
-                    <div class="single-item">
-                        <h4>105,000원 +</h4>                           
-                            <div class="option">
-                           3. 하프보드 set_ 무료배송
-                            	<div class="option-title">
-                            		ㆍset 구성품 선택 (×1)<br>
-                            	</div>
- 								<div class="option-select">		                           
-	                            	ㆍ[본체 다리]길이 선택 (×1)<br>
-	                            	ㆍ[본체 다리]색상 선택 (×1)<br>
-                            	</div>
-                            </div>
-                        
-                        
-                        <div class="content">
-                         
-                        </div>
-                     </div>
-                    
-                    </div>
-                </div>
-            </div>
-        </div> <!-- 컨테이너 디브 -->
-    </div> <!-- faq 디브 -->
-
-
-
-<!--  	
-	
- 	<div class="aside2_gift_scroll">
-		<div>
-	
-				반복문 (선물-아이템 옵션)
-			<div class="aside2_gift1">
-				
-			   <div class="row">
-            <div class="col-md-6">
-                <div class="faq">
-                             
-                    <div class="single-item">
-                        <h4>1000원 +</h4>
-                         <div class="option">
-                        	상품을 선택하지 안고 밀어만 줍니다.
-                         </div>
-                        <div class="content">
-                           	예상 전달일 2021년 1월 19일 
-                           	<div class="addOption">
-                           		<label for="">추가후원금(선택)</label>
-                           		<form action="#" method="post" name="frmAdd">
-                           			<input type="text" name="" value="0">
-                           		
-                           		</form>
-                           			
-                           	
-                           	</div>	
-                           	
-                           	
-                        </div>
-                    </div>
-       
-                    </div>
-                </div>
-            </div>					
-            </div>
-
-
-
-			<div class="aside2_gift1">				
-			
-	        <div class="row">
-            <div class="col-md-6">
-                <div class="faq">
-                             
-                    <div class="single-item">
-                        <h4>1000원 +</h4>
-                         <div class="option">
-                        	상품을 선택하지 안고 밀어만 줍니다.
-                         </div>
-                        <div class="content">
-                           	예상 전달일 2021년 1월 19일 
-                           	<div class="addOption">
-                           		<label for="">추가후원금(선택)</label>
-                           		<form action="#" method="post" name="frmAdd">
-                           			<input type="text" name="" value="0">
-                           		
-                           		</form>
-                           			
-                           	
-                           	</div>	
-                           	
-                           	
-                        </div>
-                    </div>
-       
-                    </div>
-                </div>
-            </div>			
-            </div>
-
-
-
-
-			<div class=aside2_gift1>				
-			
-	        <div class="row">
-            <div class="col-md-6">
-                <div class="faq">
-                             
-                    <div class="single-item">
-                        <h4>105,000원 +</h4>
-                           3. 하프보드 set_ 무료배송
-                            
-                            <div class="option">
-                            	<div class="option-title">
-                            		ㆍset 구성품 선택 (×1)<br>
-                            	</div>
- 								<div class="option-select">		                           
-	                            	ㆍ[본체 다리]길이 선택 (×1)<br>
-	                            	ㆍ[본체 다리]색상 선택 (×1)<br>
-                            	</div>
-                            </div>
-                        
-                        
-                        <div class="content">
-                         
-                        </div>
-                     </div>
-       
-                    </div>
-                </div>
-            </div>			
-            </div>
-
-
-
-			<div class="aside2_gift1">				
-			
-	        <div class="row">
-            <div class="col-md-6">
-                <div class="faq">
-                             
-                    <div class="single-item">
-                        <h4>1000원 +</h4>
-                         <div class="option">
-                        	상품을 선택하지 안고 밀어만 줍니다.
-                         </div>
-                        <div class="content">
-                           	예상 전달일 2021년 1월 19일 
-                           	<div class="addOption">
-                           		<label for="">추가후원금(선택)</label>
-                           		<form action="#" method="post" name="frmAdd">
-                           			<input type="text" name="" value="0">
-                           		
-                           		</form>
-                           			
-                           	
-                           	</div>	
-                           	
-                           	
-                        </div>
-                    </div>
-       
-                    </div>
-                </div>
-            </div>			
-            </div>
-
-				</div>
-			
-	</div> -->
 					
-</div>
- 
- 
- </aside>
 	
+				
+				<div id="communityNav">
+					<nav>	
+				  	  	<button id="commBtnAll">모든 게시글</button>
+				  	  	<button id="commBtnUpdate">창작자 업데이트</button>						
+					</nav>
+				</div>
+	
+		<div class="communityContainer">
+	
+			<!-- 반복문 돌려서 -->
+			<%-- <% for int i=0; i<스토리게시글size나 length만큼 돌렸을때; i++ %> --%>
+	
+			<!-- 창작자 로고/이름 끌어와서 보여주기 -->
+				<div style="padding-left:15px; padding-top: 15px;">
+					<div><img src="../img/writerUpdate.PNG" style="width:80px;"></div>
+					<div>
+						<img src="../img/authorLogo.png" style="width:37px; margin-left:0px;">
+						<a href=""><img src="../img/authorName.png" style="width:85px; margin-bottom:2px;"></a>
+						<img src="../img/writeMark.PNG" style="width:41px; margin-bottom: 9px; margin-left:-16px;">
+					</div>
+				</div>
+				
+							
+			<!--  게시글 "내용"끌어와서 보여주기 --> <%-- <%=스토리게시글no%> 로  가져오기? --%>
+				<div class="community_contents">  <%-- <%=스토리게시글no%> 로  가져오기? #communityContents에 넣기? --%>
+					<div class="comm_moreContents">
+						<h1><예뽀의 연극 일정></h1>
+						<h1><연극 '얼음' 공지사항 안내></h1><br>
+					
+				
+						<div>
+							<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+							~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+							~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+							</p>
+						</div>			
+					
+					<div class="moreContents">
+					<p>내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 
+					</p>
+					</div>
+					</div>
+					<button>더 보기</button>
+					
+				</div>
+			
+	
+			<!--  댓글 끌어와서 보여주기 -->
+				<div id="community_comments">
+					<hr>
+						<div id="communityCommentImg"><img src="../img/communityComment.PNG" style="width:35px; margin-left:-13px; margin-top: 8px; margin-bottom:-14px;"></div>	
+							
+						<!-- 해당 게시글에 대한 코멘트 불러오기 -->	
+						<div class="moreComments"></div>
+							
+				</div>
+			</div>
+	</div>
+		</article>
+	
+	
+		<article class="sectionView"> 
+			<div class="fundPage">
+			<div id="refundPolicy_contents" id="move3">
+			
+				<p><b>이 프로젝트의 환불 및 교환 정책</b></p>
+				<div><!-- 창작자 정책 -->sssssssssssssssssssssssssss</div>
+			
+			</div>
+	
+			<div id="productInfo_contents">
+				<p><b>상품정보 고시</b></p>
+				<div><!-- 창작자 정책 -->sssssssssssssssssssssssssss</div>
+			
+			</div>
+		</div>
+		</article>
+			
+	    
+	     </section> <!-- detailPage_middle 중간부분 전체 디브 --> 
+	 <aside>
+	 
+	 	<div class="asideView">
+	 	
+	 	
+	 		<div class="asidePage1">
+			<div id="asideP1"><b>창작자 소개</b></div>
+			<div class="asideAboutWriter">
+					<!-- 창작자 로고/이름 끌어와서 보여주기 -->
+					<div>
+						<img src="../img/authorLogo.png" style="width:35px; margin-left:0px;">
+						<a href=""><img src="../img/authorName.png" style="width:83px; margin-bottom:2px;"></a>
+					</div>
+				<div id="writerIntroContents">
+					<p>프로고민러 랩은 소셜 벤처 ST.END LAB 청년연구소에서 청년들의 고민을 해결하기 위해 만든 '고민 문구' 브랜드입니다. 코칭, 심리학, 상담, 교육계의 전문가들과 함께 청년들이 겪는 문제들을 연구하고, 온라인으로는 유형 테스트 및 웹 / 앱 서비스 개발, 오프라인으로는 문구, 교구, 출판물, 워크숍 콘텐츠 개발 등을 통해 새로운 고민 문화를 만들고 있습니다.</p>
+				</div>
+				<hr>
+				<div id="asideAboutWriter2"><p style="color: #696969; font-size: 9px; letter-spacing: -0.4px;">진행한 프로젝트 <b>0</b> 
+	
+											&nbsp;&nbsp;&nbsp;&nbsp;   밀어준 프로젝트 <b>0</b> </p>
+				</div>	
+				</div>
+			</div>
+	
+	
+	
+	        
+	
+	
+	
+	<div id="choose"><p><b>선물선택</b></p></div>	
+	
+	<div class="asidePage2">
+	    <div class="asideContainer">
+	
+	         <div class="aside_col-md-6">
+	                <div class="faq">
+	                             
+	                    <div class="single-item">
+	                        <h4>1000원 +</h4>
+	                         <div class="option">
+	                        	상품을 선택하지 않고 밀어만 줍니다.
+	                         </div>
+	                        <div class="content">
+	                           	예상 전달일 2021년 1월 19일 
+	                           	<div class="addOption">
+	                           		<label for="">추가후원금(선택)</label>
+	                           		<form action="#" method="post" name="frmAdd">
+	                           			<input type="text" name="" value="0">
+	                           		
+	                           		</form>
+	                           			
+	                           	
+	                           	</div>	
+	                           	
+	                           	
+	                        </div>
+	                    </div>
+	                   
+	                    <div class="single-item">
+	                        <h4>105,000원 +</h4>                           
+	                            <div class="option">
+	                           3. 하프보드 set_ 무료배송
+	                            	<div class="option-title">
+	                            		ㆍset 구성품 선택 (×1)<br>
+	                            	</div>
+	 								<div class="option-select">		                           
+		                            	ㆍ[본체 다리]길이 선택 (×1)<br>
+		                            	ㆍ[본체 다리]색상 선택 (×1)<br>
+	                            	</div>
+	                            </div>
+	                        
+	                        
+	                        <div class="content">
+	                         
+	                        </div>
+	                     </div>
+	                    
+	                    </div>
+	                </div>
+	            </div>
+	        </div> <!-- 컨테이너 디브 -->
+	    </div> <!-- faq 디브 -->
+	
+	
+	
+	<!--  	
+		
+	 	<div class="aside2_gift_scroll">
+			<div>
+		
+					반복문 (선물-아이템 옵션)
+				<div class="aside2_gift1">
+					
+				   <div class="row">
+	            <div class="col-md-6">
+	                <div class="faq">
+	                             
+	                    <div class="single-item">
+	                        <h4>1000원 +</h4>
+	                         <div class="option">
+	                        	상품을 선택하지 안고 밀어만 줍니다.
+	                         </div>
+	                        <div class="content">
+	                           	예상 전달일 2021년 1월 19일 
+	                           	<div class="addOption">
+	                           		<label for="">추가후원금(선택)</label>
+	                           		<form action="#" method="post" name="frmAdd">
+	                           			<input type="text" name="" value="0">
+	                           		
+	                           		</form>
+	                           			
+	                           	
+	                           	</div>	
+	                           	
+	                           	
+	                        </div>
+	                    </div>
+	       
+	                    </div>
+	                </div>
+	            </div>					
+	            </div>
+	
+	
+	
+				<div class="aside2_gift1">				
+				
+		        <div class="row">
+	            <div class="col-md-6">
+	                <div class="faq">
+	                             
+	                    <div class="single-item">
+	                        <h4>1000원 +</h4>
+	                         <div class="option">
+	                        	상품을 선택하지 안고 밀어만 줍니다.
+	                         </div>
+	                        <div class="content">
+	                           	예상 전달일 2021년 1월 19일 
+	                           	<div class="addOption">
+	                           		<label for="">추가후원금(선택)</label>
+	                           		<form action="#" method="post" name="frmAdd">
+	                           			<input type="text" name="" value="0">
+	                           		
+	                           		</form>
+	                           			
+	                           	
+	                           	</div>	
+	                           	
+	                           	
+	                        </div>
+	                    </div>
+	       
+	                    </div>
+	                </div>
+	            </div>			
+	            </div>
+	
+	
+	
+	
+				<div class=aside2_gift1>				
+				
+		        <div class="row">
+	            <div class="col-md-6">
+	                <div class="faq">
+	                             
+	                    <div class="single-item">
+	                        <h4>105,000원 +</h4>
+	                           3. 하프보드 set_ 무료배송
+	                            
+	                            <div class="option">
+	                            	<div class="option-title">
+	                            		ㆍset 구성품 선택 (×1)<br>
+	                            	</div>
+	 								<div class="option-select">		                           
+		                            	ㆍ[본체 다리]길이 선택 (×1)<br>
+		                            	ㆍ[본체 다리]색상 선택 (×1)<br>
+	                            	</div>
+	                            </div>
+	                        
+	                        
+	                        <div class="content">
+	                         
+	                        </div>
+	                     </div>
+	       
+	                    </div>
+	                </div>
+	            </div>			
+	            </div>
+	
+	
+	
+				<div class="aside2_gift1">				
+				
+		        <div class="row">
+	            <div class="col-md-6">
+	                <div class="faq">
+	                             
+	                    <div class="single-item">
+	                        <h4>1000원 +</h4>
+	                         <div class="option">
+	                        	상품을 선택하지 안고 밀어만 줍니다.
+	                         </div>
+	                        <div class="content">
+	                           	예상 전달일 2021년 1월 19일 
+	                           	<div class="addOption">
+	                           		<label for="">추가후원금(선택)</label>
+	                           		<form action="#" method="post" name="frmAdd">
+	                           			<input type="text" name="" value="0">
+	                           		
+	                           		</form>
+	                           			
+	                           	
+	                           	</div>	
+	                           	
+	                           	
+	                        </div>
+	                    </div>
+	       
+	                    </div>
+	                </div>
+	            </div>			
+	            </div>
+	
+					</div>
+				
+		</div> -->
+						
+	</div>
+	 
+	 
+	 </aside>
 	
 	
 	 	 

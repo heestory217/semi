@@ -7,12 +7,9 @@
 <title>smartEditor test</title>
 
 <!-- SmartEditor를 사용하기 위해서 다음 js파일을 추가 (경로 확인) -->
-<script type="text/javascript"
-	src="<%=request.getContextPath() %>/SE2/js/HuskyEZCreator.js"
-	charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <!-- jQuery를 사용하기위해 jQuery라이브러리 추가 -->
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 
 <script type="text/javascript">
 var oEditors = [];

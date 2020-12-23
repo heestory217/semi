@@ -22,7 +22,7 @@
 	   String subject = request.getParameter("subject"); 
 	   String from = request.getParameter("from");
 	   String fromName = request.getParameter("name");
-	   String to = "yg5eun@gmail.com"; 
+	   String to = "fundingoinfoteam@gmail.com"; 
 	   
 	   StringBuffer body = new StringBuffer(); 
 	   body.append(content);
@@ -45,7 +45,7 @@
 	      Session mailSession = Session.getInstance(props,
 	           new javax.mail.Authenticator() {
 	            protected PasswordAuthentication getPasswordAuthentication() {
-	               return new PasswordAuthentication("yg5eun", "ijytjsdvuoydermz");
+	               return new PasswordAuthentication("fundingoinfoteam", "fuofklefkeqkcpds");
 	            }
 	           });
 	      
@@ -73,7 +73,7 @@
 	   }
 	  	   
 	   System.out.println(alert_msg);
-	   response.getWriter().println("<script>alert('sucess')</script>");
+	   response.getWriter().println("<script>alert('메일전송 성공!')</script>");
 	   /////////// 메일 보내기 끝  
    }
    

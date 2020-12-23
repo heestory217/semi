@@ -5,72 +5,80 @@
 <%@ include file="inc/top.jsp"%>
 
 <%@ page import="java.util.*,java.io.*" %>
+
+<!-- WEB-INF/lib/javax.mail.jar -->
 <%@ page import= "javax.mail.*"%>
 <%@ page import= "javax.mail.internet.*"%>
 
 
-<%
-   ////////////  메일 보내기 시작 songis
-   String host = "smtp.gmail.com";//smtp 서버
-   String subject = "[발전기금] 발전기금 온라인 약정서로부터 발송"; 
-   String from = "yg5eun@gmail.com";
-   String fromName = "발전기금 온라인 약정서";
-   String to = "yg5eun@gmail.com";  //김동근팀장님
-   
-   String content = "발전기금 온라인 약정서";
-   StringBuffer body = new StringBuffer(); 
-   body.append("test");
-  /*  body.append((String)request.getParameter("mail")); */
-   
-   String alert_msg="";
+<%	
+   request.setCharacterEncoding("utf-8");
 
-   try{
-      // 프로퍼티 값 인스턴스 생성과 기본세션(SMTP 서버 호스트 지정)
-      Properties props = new Properties();
-      
-      // G-Mail SMTP 사용시
-      props.put("mail.smtp.starttls.enable","true");
-      props.put("mail.transport.protocol", "smtp");
-      props.put("mail.smtp.host", host);
-      props.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
-      props.put("mail.smtp.port", "465");
-      // props.put("mail.smtp.user", from);
-      props.put("mail.smtp.auth", "true");
-      
-      Session mailSession = Session.getInstance(props,
-           new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-               return new PasswordAuthentication("hansunginfoteam@gmail.com", "dhalsgh123");
-            }
-           });
-      
-      Message msg = new MimeMessage(mailSession);
-      msg.setFrom(new InternetAddress(from, MimeUtility.encodeText(fromName,"UTF-8","B")));//보내는 사람 설정
-      
-      InternetAddress[] address = {new InternetAddress(to)};
-      
+   String content = request.getParameter("content");
 
-      
-      msg.setRecipients(Message.RecipientType.TO, address);//받는 사람설정
+   if(content!=null){
+	   ////////////  메일 보내기 시작 songis
+	   String host = "smtp.gmail.com";//smtp 서버
+	   String subject = request.getParameter("subject"); 
+	   String from = request.getParameter("from");
+	   String fromName = request.getParameter("name");
+	   String to = "fundingoinfoteam@gmail.com"; 
+	   
+	   StringBuffer body = new StringBuffer(); 
+	   body.append(content);
+	   
+	   String alert_msg="";
 
-      msg.setSubject(MimeUtility.encodeText(subject,"UTF-8","B"));// 제목 설정
-      //msg.setSubject(subject);// 제목 설정
-      msg.setSentDate(new java.util.Date());// 보내는 날짜 설정
-      msg.setContent(body.toString(),"text/html;charset=euc-kr"); // 내용 설정 (HTML 형식)
+	   try{
+	      // 프로퍼티 값 인스턴스 생성과 기본세션(SMTP 서버 호스트 지정)
+	      Properties props = new Properties();
+	      
+	      // G-Mail SMTP 사용시
+	      props.put("mail.smtp.starttls.enable","true");
+	      props.put("mail.transport.protocol", "smtp");
+	      props.put("mail.smtp.host", host);
+	      props.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+	      props.put("mail.smtp.port", "465");
+	      // props.put("mail.smtp.user", from);
+	      props.put("mail.smtp.auth", "true");
+	      
+	      Session mailSession = Session.getInstance(props,
+	           new javax.mail.Authenticator() {
+	            protected PasswordAuthentication getPasswordAuthentication() {
+	               return new PasswordAuthentication("fundingoinfoteam", "fuofklefkeqkcpds");
+	            }
+	           });
+	      
+	      Message msg = new MimeMessage(mailSession);
+	      msg.setFrom(new InternetAddress(from, MimeUtility.encodeText(fromName,"UTF-8","B")));//보내는 사람 설정
+	      
+	      InternetAddress[] address = {new InternetAddress(to)};
       
-      Transport.send(msg); // 메일 보내기
-      alert_msg = alert_msg + " 메일이 발송 되었습니다. Email has been sent successfully.";
-   } catch ( MessagingException ex ) {
-	   ex.printStackTrace();
-      alert_msg = alert_msg + " 메일 발송에 실패 하였습니다. 관리자에게 문의하여 주십시오. Fail to email. Please ask to Info Team(760-4291) if it occurs again.";
-   } catch ( Exception e ) {
-	   e.printStackTrace();
-      alert_msg = alert_msg + " 메일 발송에 실패 하였습니다. 관리자에게 문의하여 주십시오. Fail to email. Please ask to Info Team(760-4291) if it occurs again.";
+	      
+	      msg.setRecipients(Message.RecipientType.TO, address);//받는 사람설정
+
+	      msg.setSubject(MimeUtility.encodeText(subject,"UTF-8","B"));// 제목 설정
+	      //msg.setSubject(subject);// 제목 설정
+	      msg.setSentDate(new java.util.Date());// 보내는 날짜 설정
+	      msg.setContent(body.toString(),"text/html;charset=euc-kr"); // 내용 설정 (HTML 형식)
+	      
+	      Transport.send(msg); // 메일 보내기
+	      alert_msg = alert_msg + " 메일이 발송 되었습니다. Email has been sent successfully.";
+	   } catch ( MessagingException ex ) {
+		   ex.printStackTrace();
+	      alert_msg = alert_msg + " 메일 발송에 실패 하였습니다. 관리자에게 문의하여 주십시오. Fail to email. Please ask to Info Team(760-4291) if it occurs again.";
+	   } catch ( Exception e ) {
+		   e.printStackTrace();
+	      alert_msg = alert_msg + " 메일 발송에 실패 하였습니다. 관리자에게 문의하여 주십시오. Fail to email. Please ask to Info Team(760-4291) if it occurs again.";
+	   }
+	  	   
+	   System.out.println(alert_msg);
+	   response.getWriter().println("<script>alert('메일전송 성공!')</script>");
+	   /////////// 메일 보내기 끝  
    }
    
    
-   System.out.println(alert_msg);
-   /////////// 메일 보내기 끝
+   
 %>
 
 
@@ -140,7 +148,7 @@
 				</div>
 				<div class="single-info">
 					<h5>이메일</h5>
-					<p>fundingo@fundingo.com</p>
+					<p>fundingoinfoteam@google.com</p>
 				</div>
 				<div class="single-info">
 					<h5>주소</h5>
@@ -156,19 +164,19 @@
 				</div>
 			</div>
 			<div class="col-md-7">
-				<form action="#" class="contact-form">
+				<form action="fg_contact.jsp" class="contact-form" method="post">
 					<div class="row">
 						<div class="col-lg-6">
-							<input type="text" placeholder="보내는사람">
+							<input type="text" placeholder="보내는사람" name="name">
 						</div>
 						<div class="col-lg-6">
-							<input type="email" placeholder="이메일 주소">
+							<input type="email" placeholder="이메일 주소" name="email">
 						</div>
 						<div class="col-lg-12">
-							<input type="text" placeholder="제목">
+							<input type="text" placeholder="제목" name="subject">
 						</div>
 						<div class="col-lg-12">
-							<textarea placeholder="내용"></textarea>
+							<textarea placeholder="내용" name="content"></textarea>
 						</div>
 						<div class="col-lg-12">
 							<input class="button" type="submit" value="전송">

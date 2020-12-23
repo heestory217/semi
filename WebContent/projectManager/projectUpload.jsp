@@ -18,6 +18,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/projectUpload.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/jquery-ui.css">
 
+<!-- 에디터 -->
+<script type="text/javascript" src="<%=request.getContextPath()%>/ckeditor/ckeditor.js"></script>
+
 <!--Required JS files-->
 <script src="<%=request.getContextPath()%>/js/jquery-2.2.4.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/vendor/popper.min.js"></script>
@@ -32,32 +35,112 @@
 <!-- 달력 -->
 <script src="<%=request.getContextPath()%>/js/jquery-3.5.1.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
-	
+
+<!-- 시계 -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">	
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
 <!-- Spoca Han Sans 폰트 -->
-<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
-	rel='stylesheet' type='text/css'>
-<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css'
-	rel='stylesheet' type='text/css'>
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
+
+
 <script type="text/javascript">
+var oEditors = [];
+
 $(function(){
-	//$('#startDay').datepicker();
+	//에디터
 	
-	//옵션변경 (매개변수 : 객체형태로)
-	$('#startDay').datepicker({
+    
+	//달력 - 프로젝트 오픈일
+	$('#opendate').datepicker({
 		dateFormat: 'yy-mm-dd',
 		changeYear : true,
 		dayNamesMin : ['일','월','화','수','목','금','토'],
-		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		showOn: "button",
+        buttonImage: "<%=request.getContextPath()%>/icons/calendar.svg",
+        buttonImageOnly: true,
+        
+        onClose: function( selectedDate ) {    
+            // 시작일(fromDate) datepicker가 닫힐때
+            // 종료일(toDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
+            $("#duedate").datepicker( "option", "minDate", selectedDate );
+        },    
+        
+	    //날짜선택하면
+		onSelect: function(){
+	        var day1 = $("#opendate").datepicker('getDate').getDate();                 
+	        var month1 = $("#opendate").datepicker('getDate').getMonth() + 1;             
+	        var year1 = $("#opendate").datepicker('getDate').getFullYear();
+	        var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
+	        $('#page_output1').html(fullDate);
+	        $('#page_output2').html(fullDate);
+	    }
+
+	}).datepicker('setDate',new Date()).datepicker("option", "minDate", new Date());
+	
+	//달력 - 프로젝트 마감일
+	$('#duedate').datepicker({
+		dateFormat: 'yy-mm-dd',
+		changeYear : true,
+		dayNamesMin : ['일','월','화','수','목','금','토'],
+		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		showOn: "button",
+        buttonImage: "<%=request.getContextPath()%>/icons/calendar.svg",
+        buttonImageOnly: true,
+        
+        onClose: function( selectedDate ) {
+            // 종료일(toDate) datepicker가 닫힐때
+            // 시작일(fromDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 종료일로 지정 
+            $("#opendate").datepicker( "option", "maxDate", selectedDate );
+        },
+        
+	    //날짜선택하면
+		onSelect: function(){
+	        var day1 = $("#duedate").datepicker('getDate').getDate();                 
+	        var month1 = $("#duedate").datepicker('getDate').getMonth() + 1;             
+	        var year1 = $("#duedate").datepicker('getDate').getFullYear();
+	        var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
+	        $('#page_output_end').html(fullDate);
+	    }
+
+	}).datepicker("option", "maxDate", $("#opendate")+60); 
+	
+	//프로젝트 시간지정	
+	$('.timepicker').timepicker({
+	    timeFormat: 'HH:mm p',
+	    interval: 60,
+	    defaultTime: '24',
+	    startTime: '00:00',
+	    dynamic: false,
+	    dropdown: true,
+	    scrollbar: true
 	});
 	
-	$('button').click(function(){
-								  //.datepicker('메서드');
-		var curDate = $('#startDay').datepicker('getDate');
-		alert(curDate);
-	});
 	
-});
+});//readyend
+
+//스마트에디터 유효성 검사
+function submitContents() {
+        var elClickedObj = $("#form");
+        oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+        var ir1 = $("#ir1").val();
+
+        if( ir1 == ""  || ir1 == null || ir1 == '&nbsp;' || ir1 == '<p>&nbsp;</p>')  {
+             alert("내용을 입력하세요.");
+             oEditors.getById["ir1"].exec("FOCUS"); //포커싱
+             return;
+        }
+
+        try {
+            elClickedObj.submit();
+        } catch(e) {}
+}
+
 </script>
+
+
 </head>
 <body>
 	<!-- 헤더시작 -->
@@ -94,7 +177,7 @@ $(function(){
 <body>
 	<!-- 타이틀 시작 -->
 	<div class="announce_title">
-		<h3 class="animated infinite bounce delay-2s">눈길을 사로잡는 제목</h3>
+		<h3 class="animated infinite bounce delay-2s" >어서오세요, 창작자님!</h3>
 	</div>
 	<!-- 타이틀 끝 -->
 
@@ -133,7 +216,7 @@ $(function(){
 										<label for="projectName">프로젝트 제목</label><br>
 											<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
 											만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-											<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22">
+											<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22" onchange="title_change(this)">
 									</div>
 									<br>
 									<div>
@@ -231,33 +314,35 @@ $(function(){
 											<strong>심사 승인 후</strong>, 설정하신 일시에 <strong>프로젝트가
 												자동으로 공개</strong>되니 신중하게 정해주세요. <br>설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실 수도 있습니다.
 										</p>
-										<!-- 달력넣기 -->
-										<p>공개일시 : <input type="text" id="startDay"></p>
-										<!-- 시간넣기 -->
-										에 펀딩을 시작합니다.
+										<p>
+											<!-- 달력넣기 -->
+											공개일시 : 
+											<input type="text" id="opendate">
+											<span style="margin-right: 10px;"></span>
+											<!-- 시간넣기 -->
+											<input type="text" class="timepicker" id="opentime">
+										</p>
 									</div>
+									
+									<br>
+									
 									<div>
 										<!-- 프로젝트 마감일시 -->
 										<!-- 공개일시를 먼저 선택해야 사용가능함 disable false -->
 										<label for="duedate">프로젝트 마감일시</label>
+										<p>마감일시 : <input type="text" id="duedate"></p>
 										<p>
 											<!-- 위에서 설정한 걸로 넣기 날짜 -->
 											<strong>마감일을 정할 때 주의할 점</strong><br> 프로젝트는 <span
-												style="color: #FF6F40;">0000년 00월 00일</span>로 부터 최대 60일 동안
+												style="color: #FF6F40;" id="page_output1"></span>로 부터 최대 60일 동안
 											진행하실 수 있고 마감일 자정에 종료됩니다. <br>이미 선물을 만드셨다면, 선물 실행일 중에 마감일보다 이른 날짜가
 											있지 않은지 꼭 확인해주세요.
 										</p>
-										<strong><p>
-												0000년 00월 00일 로부터
-												<!-- 위 아래 버튼 -->
-												일 뒤인
-												<!-- 달력 -->
-												에 펀딩을 마감합니다.
-											</p> </strong>
-										<!-- 달력넣기 -->
-										일
-										<!-- 시간넣기 -->
-										에 펀딩을 시작합니다.
+										<strong>
+											<p>
+												<span style="color: #FF6F40;" id="page_output_end"></span>에 펀딩을 마감합니다.
+											</p> 
+										</strong>
 									</div>
 								</div>
 							</div>
@@ -267,7 +352,7 @@ $(function(){
 							<p>프로젝트 주요 일정</p>
 							<div class="projectBox">
 								<div>
-										<p>프로젝트 공개일 : <span style="color: #FF6F40;font-weight: bold;">2020년 12월 22일</span></p>
+										<p>프로젝트 공개일 : <span style="color: #FF6F40;font-weight: bold;" id="page_output2"></span></p>
 								</div>
 							</div>
 							<br>
@@ -347,7 +432,17 @@ $(function(){
 					<div id="collapse-2-3" class="collapse"
 						aria-labelledby="heading-2-3" data-parent="#accordion-2">
 						<div class="card-body">
-							<p>Api자리</p>
+							<p>프로젝트에 대한 이야기를 들려주세요.</p>
+							<div>
+								
+								<!-- 에디터 -->
+								<textarea id="p_content" name="content" style="width: 100%;"></textarea>
+								<script type="text/javascript">
+								 CKEDITOR.replace('p_content', {height: 500});
+								</script>
+								<!-- 에디터 -->
+								
+							</div>
 						</div>
 					</div>
 				</div>
@@ -393,15 +488,6 @@ $(function(){
 										<input type="radio" name="bank" value="business">사업자(개인사업자 포함)
 									</div>
 									<br>
-									<div>
-										<label for="birth">예금주 생년월일</label> 
-										<input type="text" name="birth" maxlength="6">
-									</div>
-										
-									<div>
-										<label for="bankOwner">예금주명</label> 
-										<input type="text" name="bankOwner" maxlength="6">
-									</div>
 									
 									<div>
 										<label for="bankName">은행명</label> 
@@ -412,6 +498,17 @@ $(function(){
 										<label for="bankName">계좌 번호</label>
 										<input type="text" name="bankName" maxlength="16">
 									</div>
+									
+									<div>
+										<label for="bankOwner">예금주명</label> 
+										<input type="text" name="bankOwner" maxlength="6">
+									</div>
+										
+									<div>
+										<label for="birth">예금주 생년월일</label> 
+										<input type="text" name="birth" maxlength="6">
+									</div>
+									
 								</div>
 							</div>
 						

@@ -1,15 +1,88 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<!-- header 위치 -->
+<%@ include file="inc/top.jsp"%>
+
+<%@ page import="java.util.*,java.io.*" %>
+<%@ page import= "javax.mail.*"%>
+<%@ page import= "javax.mail.internet.*"%>
 
 
-	<!-- header 위치 -->
-	<%@ include file="inc/top.jsp"%>
+<%
+   ////////////  메일 보내기 시작 songis
+   String host = "smtp.gmail.com";//smtp 서버
+   String subject = "[발전기금] 발전기금 온라인 약정서로부터 발송"; 
+   String from = "yg5eun@gmail.com";
+   String fromName = "발전기금 온라인 약정서";
+   String to = "yg5eun@gmail.com";  //김동근팀장님
+   
+   String content = "발전기금 온라인 약정서";
+   StringBuffer body = new StringBuffer(); 
+   body.append("test");
+  /*  body.append((String)request.getParameter("mail")); */
+   
+   String alert_msg="";
 
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=de5c22ba5fabd256158cb202c3fbe747"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=LIBRARY"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
-	<script>
+   try{
+      // 프로퍼티 값 인스턴스 생성과 기본세션(SMTP 서버 호스트 지정)
+      Properties props = new Properties();
+      
+      // G-Mail SMTP 사용시
+      props.put("mail.smtp.starttls.enable","true");
+      props.put("mail.transport.protocol", "smtp");
+      props.put("mail.smtp.host", host);
+      props.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+      props.put("mail.smtp.port", "465");
+      // props.put("mail.smtp.user", from);
+      props.put("mail.smtp.auth", "true");
+      
+      Session mailSession = Session.getInstance(props,
+           new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+               return new PasswordAuthentication("hansunginfoteam@gmail.com", "dhalsgh123");
+            }
+           });
+      
+      Message msg = new MimeMessage(mailSession);
+      msg.setFrom(new InternetAddress(from, MimeUtility.encodeText(fromName,"UTF-8","B")));//보내는 사람 설정
+      
+      InternetAddress[] address = {new InternetAddress(to)};
+      
+
+      
+      msg.setRecipients(Message.RecipientType.TO, address);//받는 사람설정
+
+      msg.setSubject(MimeUtility.encodeText(subject,"UTF-8","B"));// 제목 설정
+      //msg.setSubject(subject);// 제목 설정
+      msg.setSentDate(new java.util.Date());// 보내는 날짜 설정
+      msg.setContent(body.toString(),"text/html;charset=euc-kr"); // 내용 설정 (HTML 형식)
+      
+      Transport.send(msg); // 메일 보내기
+      alert_msg = alert_msg + " 메일이 발송 되었습니다. Email has been sent successfully.";
+   } catch ( MessagingException ex ) {
+	   ex.printStackTrace();
+      alert_msg = alert_msg + " 메일 발송에 실패 하였습니다. 관리자에게 문의하여 주십시오. Fail to email. Please ask to Info Team(760-4291) if it occurs again.";
+   } catch ( Exception e ) {
+	   e.printStackTrace();
+      alert_msg = alert_msg + " 메일 발송에 실패 하였습니다. 관리자에게 문의하여 주십시오. Fail to email. Please ask to Info Team(760-4291) if it occurs again.";
+   }
+   
+   
+   System.out.println(alert_msg);
+   /////////// 메일 보내기 끝
+%>
+
+
+
+
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=de5c22ba5fabd256158cb202c3fbe747"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=LIBRARY"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+<script>
 		$(document).ready(function() {
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapCenter = new kakao.maps.LatLng(37.49890258909643, 127.0319105269556), // 지도의 중심좌표
@@ -49,66 +122,65 @@
 	</script>
 
 
-	<div class="page-title sp"
-		style="background-image: 
+<div class="page-title sp"
+	style="background-image: 
 	url(<%=request.getContextPath()%>/img/contact-bg.jpg)">
-		<div class="container text-center">
-			<h2>펀딩고에 문의하기</h2>
-			<p style="color: #000;">이메일로 문의를 남겨주세요. 영업일 기준 2일 내에 답변 드리겠습니다.</p>
-		</div>
+	<div class="container text-center">
+		<h2>펀딩고에 문의하기</h2>
+		<p style="color: #000;">이메일로 문의를 남겨주세요. 영업일 기준 2일 내에 답변 드리겠습니다.</p>
 	</div>
-	<div class="contact-area sp">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5 contact-info">
-					<div class="single-info">
-						<h5>대표전화</h5>
-						<p>02-8282-9999</p>
-					</div>
-					<div class="single-info">
-						<h5>이메일</h5>
-						<p>fundingo@fundingo.com</p>
-					</div>
-					<div class="single-info">
-						<h5>주소</h5>
-						<p>서울시 펀딩구 고로 100, 펀딩캐슬 펜트하우스</p>
-					</div>
-					<div class="single-info">
-						<h5>소셜미디어</h5>
-						<p>
-							<a href="#" class="fa fa-facebook"></a> <a href="#"
-								class="fa fa-twitter"></a> <a href="#" class="fa fa-linkedin"></a>
-							<a href="#" class="fa fa-pinterest"></a>
-						</p>
-					</div>
+</div>
+<div class="contact-area sp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 contact-info">
+				<div class="single-info">
+					<h5>대표전화</h5>
+					<p>02-8282-9999</p>
 				</div>
-				<div class="col-md-7">
-					<form action="#" class="contact-form">
-						<div class="row">
-							<div class="col-lg-6">
-								<input type="text" placeholder="보내는사람">
-							</div>
-							<div class="col-lg-6">
-								<input type="email" placeholder="이메일 주소">
-							</div>
-							<div class="col-lg-12">
-								<input type="text" placeholder="제목">
-							</div>
-							<div class="col-lg-12">
-								<textarea placeholder="내용"></textarea>
-							</div>
-							<div class="col-lg-12">
-								<input class="button" type="submit" value="전송">
-							</div>
+				<div class="single-info">
+					<h5>이메일</h5>
+					<p>fundingo@fundingo.com</p>
+				</div>
+				<div class="single-info">
+					<h5>주소</h5>
+					<p>서울시 펀딩구 고로 100, 펀딩캐슬 펜트하우스</p>
+				</div>
+				<div class="single-info">
+					<h5>소셜미디어</h5>
+					<p>
+						<a href="#" class="fa fa-facebook"></a> <a href="#"
+							class="fa fa-twitter"></a> <a href="#" class="fa fa-linkedin"></a>
+						<a href="#" class="fa fa-pinterest"></a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<form action="#" class="contact-form">
+					<div class="row">
+						<div class="col-lg-6">
+							<input type="text" placeholder="보내는사람">
 						</div>
-					</form>
-				</div>
+						<div class="col-lg-6">
+							<input type="email" placeholder="이메일 주소">
+						</div>
+						<div class="col-lg-12">
+							<input type="text" placeholder="제목">
+						</div>
+						<div class="col-lg-12">
+							<textarea placeholder="내용"></textarea>
+						</div>
+						<div class="col-lg-12">
+							<input class="button" type="submit" value="전송">
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-	<div id="map" style="width: 100%; height: 500px;"></div>
-
 </div>
+<div id="map" style="width: 100%; height: 400px;"></div>
+
 
 <!-- footer위치 -->
 <%@ include file="inc/bottom.jsp"%>

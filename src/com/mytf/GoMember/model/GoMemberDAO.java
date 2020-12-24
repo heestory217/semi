@@ -134,7 +134,6 @@ public class GoMemberDAO {
 					String pwd=rs.getString("pwd");
 					String hp=rs.getString("hp");
 					String memberIntro=rs.getString("memberIntro");
-					String payMethod=rs.getString("payMethod");
 					String address=rs.getString("address");
 					Timestamp joindate= rs.getTimestamp("joindate");
 					Timestamp outdate= rs.getTimestamp("outdate");
@@ -142,7 +141,7 @@ public class GoMemberDAO {
 					String fileName=rs.getString("fileName");
 					long fileSize=rs.getLong("fileSize");
 					String originalFileName=rs.getString("originalFileName");
-					gVo= new GoMemberVO(memberNo, name, email, pwd, hp, memberIntro, payMethod, address, joindate, outdate, sellerFlag, fileName, fileSize, originalFileName);
+					gVo= new GoMemberVO(memberNo, name, email, pwd, hp, memberIntro, address, joindate, outdate, sellerFlag, fileName, fileSize, originalFileName);
 				
 				}				
 				//5

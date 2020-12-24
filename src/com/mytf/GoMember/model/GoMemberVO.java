@@ -10,7 +10,7 @@ public class GoMemberVO {
 	private String pwd;  	//VARCHAR2(255) NOT NULL, -- 비밀번호,
 	private String hp;		//VARCHAR2(80) unique NULL, -- 휴대폰번호,
 	private String memberIntro; //VARCHAR2(4000) NULL, -- 소개,
-	private String payMethod;   //VARCHAR2(255) check(payMethod in ('card','bank')) NULL, -- 결제수단,
+	//private String payMethod;   //VARCHAR2(255) check(payMethod in ('card','bank')) NULL, -- 결제수단,
 	private String address; 	//VARCHAR2(300) NULL, -- 주소,
 	private Timestamp joindate; //DATE DEFAULT SYSDATE, -- 가입일,
 	private Timestamp outdate;  //DATE NULL, -- 탈퇴여부, (기본으로 비어있음 => 탈퇴 시 insert할때 sysdate로)
@@ -26,7 +26,7 @@ public class GoMemberVO {
 	}
 
 	public GoMemberVO(int memberNo, String name, String email, String pwd, String hp, String memberIntro,
-			String payMethod, String address, Timestamp joindate, Timestamp outdate, String sellerFlag, String fileName,
+			 String address, Timestamp joindate, Timestamp outdate, String sellerFlag, String fileName,
 			long fileSize, String originalFileName) {
 		super();
 		this.memberNo = memberNo;
@@ -35,7 +35,6 @@ public class GoMemberVO {
 		this.pwd = pwd;
 		this.hp = hp;
 		this.memberIntro = memberIntro;
-		this.payMethod = payMethod;
 		this.address = address;
 		this.joindate = joindate;
 		this.outdate = outdate;
@@ -93,14 +92,7 @@ public class GoMemberVO {
 		this.memberIntro = memberIntro;
 	}
 
-	public String getPayMethod() {
-		return payMethod;
-	}
-
-	public void setPayMethod(String payMethod) {
-		this.payMethod = payMethod;
-	}
-
+	
 	public String getAddress() {
 		return address;
 	}
@@ -160,7 +152,7 @@ public class GoMemberVO {
 	@Override
 	public String toString() {
 		return "GoMemberVO [memberNo=" + memberNo + ", name=" + name + ", email=" + email + ", pwd=" + pwd + ", hp="
-				+ hp + ", memberIntro=" + memberIntro + ", payMethod=" + payMethod + ", address=" + address
+				+ hp + ", memberIntro=" + memberIntro + ", payMethod=" + ", address=" + address
 				+ ", joindate=" + joindate + ", outdate=" + outdate + ", sellerFlag=" + sellerFlag + ", fileName="
 				+ fileName + ", fileSize=" + fileSize + ", originalFileName=" + originalFileName + "]";
 	}

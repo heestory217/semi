@@ -135,6 +135,7 @@ div.btDiv>button{
 }
 
 
+
 .container.MyPageContainer {
     border: none;
 }
@@ -226,7 +227,16 @@ div.paymentTooltip {
     font-weight: bold;
 }
 
-.paymentContents {color: #80808099;letter-spacing: 1.2;}
+
+.paymentContents {
+    text-align: left;
+    padding-left: 150px;
+    color: #80808099;letter-spacing: 1.2;
+    font-size: 17px;
+
+    
+}
+
 
 div.pamentTooltip {
     border: 1px solid;
@@ -242,15 +252,13 @@ div.pamentTooltip {
 .MyAddress>div.myContents {
     border: 1px solid #80808075;
     border-radius: 4px;
-    padding: 30 10;
+    padding: 30 110;
 }
 
 .myTitle {
     margin-bottom: 25px;
 }
-
-.myTitle {}
-
+.paymentContents {text-align: left;padding: 70 400px;}
 button#btPayMethod {
     margin-bottom: 40px;
     /* border: 1px solid gray; */
@@ -258,7 +266,4 @@ button#btPayMethod {
 
 .pamentTooltip {
     border: 1px solid gray;
-}
-.paymentContents {
-    font-size: 17px;
 }

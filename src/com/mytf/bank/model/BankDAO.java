@@ -24,20 +24,23 @@ public class BankDAO {
 			con=pool.getConnection();
 			
 			//3.
-			String sql="select* from bank where memberNo=?";
+			String sql="select * from bank where memberNo=?";
 			ps=con.prepareStatement(sql);
 			ps.setInt(1, memberNo);
 			//4.
+			
 			BankVO bVo=null;
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				bVo.setBankNo(rs.getInt("bankNo"));
-				bVo.setBusinessFlag(rs.getString("businessFlag"));
-				bVo.setBankName(rs.getString("bankName"));
-				bVo.setAccountNum(rs.getString("accountNum"));
-				bVo.setOwnerName(rs.getString("ownerName"));
-				bVo.setOwnerBirth(rs.getString("ownerBierth"));
-				bVo.setMemberNo(rs.getInt("memberNo"));
+				int bankNo=rs.getInt("bankNo");
+				String businessFlag=rs.getString("businessFlag");
+				String bankName=rs.getString("bankName");
+				String accountNum=rs.getString("accountNum");
+				String ownerName=rs.getString("ownerName");
+				String ownerBirth=rs.getString("ownerBirth");
+				memberNo=rs.getInt("memberNo");
+				
+				bVo=new BankVO(bankNo, businessFlag, bankName, accountNum, ownerName, ownerBirth, memberNo);
 			}
 			System.out.println("계좌조회결과="+bVo+"매개변수="+memberNo);
 			return bVo;

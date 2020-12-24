@@ -18,7 +18,7 @@
 	http://docs.cksource.com/CKFinder_2.x/Developers_Guide/Java/Configuration/baseURL_and_baseDir
 	-->
 	<baseDir>D:\Heejeong_java\lecture\workspace_list\semi_ws\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SemiProject\fileUpload</baseDir>
-	<baseURL>/SemiProject/fileUpload/</baseURL>
+	<baseURL>/SemiProject/fileUpload</baseURL>
 	<licenseKey></licenseKey>
 	<licenseName></licenseName>
 	<!--

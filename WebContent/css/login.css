@@ -1,7 +1,7 @@
 @charset "UTF-8";
-input#email,input#password {
+/*  input.emailInput,input.passwordInput {
     width: 100%;
-}
+}  */
 .simpleForm {
     margin: 0;
     padding: 0;

@@ -4,7 +4,8 @@ import java.util.Date;
 
 public class Utility {
 	public static final String TEST_DIR
-	="D:\\lecture\\workspace_list\\jsp_ws\\mystudy\\WebContent\\pds_upload";
+	//="D:\\lecture\\workspace_list\\jsp_ws\\mystudy\\WebContent\\pds_upload";
+	="H:\\lecture\\Project\\semi\\WebContent\\GoMember_upload";
 	
 	public static final String UPLOAD_DIR="pds_upload";
 	

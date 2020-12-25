@@ -87,18 +87,22 @@
 	                        	</c:if>
 	                    	</div>                     
 	                    </div>           
-                
-                <div class="btDiv">
+	                
+	                <div class="btDiv">
+	                	<button id="btMypageEdit" name="btMypageEdit" value="내 정보 변경" onclick="location.href='<c:url value="/GoMember/memberEdit.do"/>'">내 정보 변경</button>
+	                </div>
+                <!-- <div class="btDiv">
                 	<button id="btMypageEdit" value="프로필 변경">프로필 변경</button>
-                </div>
+                </div> -->
+                
                 <div class="TooltipExplain">
-                	<div calss="ProfileTooltip">
+                	<div class="ProfileTooltip">
 	              		<p><b>어떤 정보가 프로필에 공개되나요?</b></p>
 	              		<p>프로필 사진과 이름, 사용자 이름, 소개글, 웹사이트 
 		              	및 회원님과 관련된 프로젝트 등이 프로필 페이지에 
 		              	공개됩니다.</p>             	
 	                </div>
-	                <div calss="ProfileTooltip">
+	                <div class="ProfileTooltip">
 		              	<p><b>이메일과 연락처는 어디에 쓰이나요?</b></p>
 		              	<p>이메일과 연락처로 프로젝트, 후원 및 결제관련 
 		              	알림을 드립니다.</p>             	
@@ -123,10 +127,11 @@
                     </div>
                </div>
                     
-                    <div class="btDiv">
+                   <!-- <div class="btDiv">
                     	<button id="btAddress" value="배송지 추가/변경">배송지 추가/변경</button>
-	                </div>
-	                <div calss="Tooltip">
+	              		</div> -->
+	                
+	                <div class="deleveryTooltip">
 	                	<p><b>배송지를 삭제하면 예약된 후원의 배송지 정보도 삭제되나요?</b></p>
 	             	    <p>현재 후원하신 프로젝트에 등록된 배송지가 삭제되거나 변경되진 않습니다.</p>             	
 	                </div>
@@ -153,10 +158,10 @@
                       
                       </div>
                   </div>
-                  <div class="btDiv">
+                 <!--  <div class="btDiv">
              	  	<button id="btPayMethod" value="결제수단 추가/변경">결제수단 추가/변경</button>
-                  </div>
-                  <div calss="paymentTooltip">
+                  </div> -->
+                  <div class="paymentTooltip">
              		<p><b>결제수단을 삭제하면 예약된 후원의 결제수단 정보도 삭제되나요?</b></p>
              		<p>현재 후원하신 프로젝트에 등록된 결제수단이 삭제되거나 변경되진 않습니다.</p>             	
                   </div>

@@ -1,0 +1,412 @@
+
+
+.sectionAndAside{
+	width:2000px;
+	height:1300px;
+	background-color:#F6F5F5;
+}
+
+/*****************************
+	*aside css code*
+ ***************************** */
+.asideSection{
+	width: 29%;
+	height:100%;
+	float:left;
+	background-color:#F6F5F5;
+}
+.asidePage1{
+	width:100%;
+	background-color: #fff;
+	border-round: 0.3px;
+	margin-top:10px;
+}
+#asideP1{
+	font-size:11px;
+	color: black;
+	font-weight: bold;
+	padding-top: 15px;
+	padding-left: 15px;	
+}
+.asideAboutWriter{
+	padding-top:20px;
+	padding-left:15px;	
+	padding-right:15px;	
+}
+.asideAboutWriter > #writerIntroContents{
+	font-size: 11px; 
+	line-height: 2em; 
+	letter-spacing: -0.8px; 
+	padding-top:20px;
+	padding-left:12px;
+	padding-right:12px;
+	padding-bottom:10px;
+}
+#asideAboutWriter2 {
+	padding-bottom: 0.5em;
+	padding-top:0.1em;
+}
+#choose > p{
+	font-weight: bold;
+	font-size: 12px;
+	padding-left:5px;
+	padding-top:15px;
+	padding-bottom:0;
+}
+
+
+/* 스크롤디브 ?!?! */
+/* .aside2_gift_scroll{
+ 	overflow: scroll;
+ 	height: 100%;
+	width: 100%;
+	background-color: #F6F5F5;
+	margin-top:10px;
+	margin-bottom: 60px;
+} */
+
+
+
+
+
+
+
+
+
+
+/*****************************
+	*detail_navTab부분 css code*
+ ***************************** */
+.detailSection{
+	float:left;
+	background-color: #F6F5F5;
+}
+#detailContainer {
+	width: 515px;
+	margin-left: 230px;
+	text-align: left;
+}
+
+
+.detailTab {
+	list-style: none;
+	margin:0;
+	padding: 0;
+	overflow: hidden;
+}
+/* Float the list items side by side */
+.detailTab li {
+	float: left;
+	padding-top: -10px;
+}
+/* Style the links inside the list items */
+.detailTab li a {
+	display: inline-block;
+	color: gray;
+	text-align: left;
+	text-decoration: none;
+	padding: 14px 16px;
+	font-size: 12px;
+	transition: 0.3s;
+	lettering-space: 0.3px;
+	font-weight: bold;
+}
+
+.detailTab li a:hover {
+	color: black;
+	font-weight: bold;
+}
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	background-color: #F6F5F5;
+	padding: 6px 12px;
+	color: #black;
+}
+
+ul.detailTab li.current {
+	background-color: #F6F5F5;
+	color: #222;
+}
+
+.tabcontent.current {
+	display: block;
+}
+
+/*****************************
+	*스토리부분 css code*
+ ***************************** */
+#storyPage {
+	background-color: #fff;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.storyDiv {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	color: black;
+	margin-bottom: 10px;
+}
+
+/*****************************
+	*커뮤니티 css code*
+ ***************************** */
+#commPage {
+	background-color: #F6F5F5;
+	width: 100%;
+	margin-top: 10px;
+	padding: 0, 15px;
+}
+
+.writerFlag {
+	float: left;
+	background-color: #fff;
+	width: 100%;
+	height: 50px;
+	border-radius: 0.3em;
+	margin-top:10px;
+}
+
+.storyWriterImage {
+	width: 10px;
+	padding-left: 20px;
+	padding-top: 3px;
+	float: left;
+}
+
+.storyDivFlag {
+	float: left;
+	font-size: 13px;
+	color: gray;
+	margin-left: 10px;
+	margin-top: -12px;
+}
+
+/*****************************
+	*community_nav css code*
+ ***************************** */
+#communityNav {
+	width: 100%;
+	height: 80px;
+	background-color: #F6F5F5;
+}
+
+#communityNav button {
+	background-color: #F6F5F5;
+	padding: 5px;
+	border-radius: 0.3em;
+	color: gray;
+	border: none;
+	outline: 0;
+	font-weight: bold;
+	font-size: 11px;
+	letter-spacing: -1.3px;
+	cursor: pointer;
+	padding-left: 5px;
+	margin-top: 10px;
+}
+
+#communityNav button:hover {
+	color: black;
+}
+
+
+.communityContainer {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+}
+
+.community_contents {
+	margin-top: 30px;
+	padding: 15px, 15px;
+}
+
+.comm_moreContents {
+	padding-left: 21px;
+	padding-right: 15px;
+	color:black;
+	margin-top: 50px;
+}
+
+#community_comments {
+	background-color: #fff;
+	width: 95%;
+	height: 100%;
+	margin-left: 10px;
+	padding: 5px;
+	padding-bottom: 15px;
+}
+
+#community_comments hr {
+	border: 0.1px solid #E8E8E8;
+	margin: 0.5px;
+}
+
+/*****************************
+	*커뮤니티 css code*
+ ***************************** */
+#commPage {
+	background-color: #F6F5F5;
+	width: 100%;
+	margin-top: 10px;
+	padding: 0, 15px;
+}
+
+.writerFlag {
+	float: left;
+	background-color: #fff;
+	width: 100%;
+	height: 50px;
+	border-radius: 0.3em;
+}
+
+.storyWriterImage {
+	width: 55px;
+	padding-left: 20px;
+	padding-top: 10px;
+	float: left;
+}
+
+.storyDivFlag {
+	padding-top: 12.5px;
+	float: left;
+	font-size: 13px;
+	color: gray;
+	margin-left: 10px;
+}
+
+#refundPolicy_contents {
+	background-color: #fff;
+	width: 100%;
+	margin-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 25px;
+	color: gray;
+}
+
+#refundPolicy_contents p {
+	font-size: 11px;
+	letter-spacing: -0.1em;
+	text-alignment: left;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 25px;
+	color: gray;
+	font-weight: bold;
+}
+
+#refundPolicy_contents div {
+	font-size: 11px;
+	letter-spacing: -0.1em;
+	text-alignment: left;
+	padding-left: 25px;
+	padding-right: 25px;
+	color: gray;
+}
+
+/*****************************
+			*상품고시부분 아티클_nav css code*
+		 ***************************** */
+#productInfo_contents {
+	background-color: #fff;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 25px;
+	padding-bottom: 15px;
+	color: gray;
+}
+
+#productInfo_contents p {
+	font-size: 11px;
+	letter-spacing: -0.1em;
+	text-alignment: left;
+	padding-left: 25px;
+	padding-right: 25px;
+	color: gray;
+	font-weight: bold;
+}
+
+#productInfo_contents div {
+	font-size: 11px;
+	letter-spacing: -0.1em;
+	text-alignment: left;
+	padding-left: 25px;
+	padding-right: 25px;
+	color: gray;
+}
+
+
+/*****************************
+	*detail_commTab_final 부분 아티클_nav css code*
+***************************** */
+
+
+
+body{
+	margin-top: 100px;
+	font-family: 'Trebuchet MS', serif;
+	line-height: 1.6
+}
+.subcontainer{
+	width: 500px;
+	margin: 0 auto;
+}
+
+
+
+ul.commTab{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.commTab li{
+	display: inline-block;
+	color: gray;
+	text-align: left;
+	text-decoration: none;
+	margin-top:25px;
+	padding: 5px 9px;
+	font-size: 12px;
+	transition: 0.3s;
+	lettering-space: 0.3px;
+	font-weight: bold;
+}
+ul.commTab li:hover {
+	color: black;
+	font-weight: bold;
+	background-color: #DCDCDC;
+	cursor: pointer;
+	
+}
+ul.commTab li.current{
+	background-color: #DCDCDC;
+	color: #222;
+	font-weight: bold;
+}
+
+.tab-content{
+	display: none;
+	background: #fff;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+	margin-right:10px;
+}
+.comm_moreContents{
+    margin-top: 20px;
+	padding-bottom: 20px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-top:20px;
+	margin-top: 20px;
+}

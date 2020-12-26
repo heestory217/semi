@@ -22,6 +22,7 @@ public class ProjectUploadOkController implements Controller {
 		String ctNo = request.getParameter("ctNo");
 		
 		//디버깅
+		System.out.println("memberNo="+memberNo);
 		System.out.println("파라미터 projectName="+projectName);
 		System.out.println("파라미터 projectDetail="+projectDetail);
 		System.out.println("파라미터 ctNo="+ctNo);
@@ -31,6 +32,9 @@ public class ProjectUploadOkController implements Controller {
 		if(memberNo==0) {
 			msg="로그인 후 이용할 수 있습니다.";
 			url="/login/login.do";
+		} 
+		
+		/*
 		}else if(projectName==null || projectName.isEmpty()) {
 			msg="프로젝트 제목을 입력하세요.";
 			url="/projectManager/projectUpload.do";
@@ -38,6 +42,7 @@ public class ProjectUploadOkController implements Controller {
 			msg="프로젝트 요약을 입력하세요.";
 			url="/projectManager/projectUpload.do";
 		}
+		*/
 		
 		//2 폼태그 pjUploadFrm - 프로젝트 기본정보insert
 		ProjectService service = new ProjectService();
@@ -51,8 +56,10 @@ public class ProjectUploadOkController implements Controller {
 		try {
 			int cnt =service.insertProject(vo);
 			if(cnt>0) {
-				msg="프로젝트 기본 정보를 저장하였습니다.";
-				url="/projectManager/projectUpload.do";
+				String projectNo=service.selectProjectNo(vo);
+				System.out.println("현재 저장한 프로젝트 : "+projectNo);
+				msg="프로젝트 기본 정보가 저장되었습니다.";
+				url="/projectManager/projectBasicUpate.do?projectNo="+projectNo;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -62,7 +69,7 @@ public class ProjectUploadOkController implements Controller {
 		request.setAttribute("msg", msg);
 		request.setAttribute("url", url);
 
-		return "common/message.jsp";
+		return "/common/message.jsp";
 	}
 
 	@Override

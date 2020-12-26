@@ -43,14 +43,15 @@ public class MemberEditController implements Controller{
 		}
 		String fileInfo=Utility.getFileInfo(gVo.getOriginalFileName(), gVo.getFileSize());
 		String displayFileName=Utility.displayFile(gVo.getFileName());
-		
+		String oldFileName=gVo.getFileName();
+		if(oldFileName==null) oldFileName="";
 		
 		//3
 		request.setAttribute("gVo", gVo);
 		request.setAttribute("bVo", bVo);
 		request.setAttribute("fileInfo", fileInfo);
 		request.setAttribute("displayFileName", displayFileName);
-		
+		request.setAttribute("oldFileName", oldFileName);
 		//4
 		return "/GoMember/memberEdit.jsp";
 	}
@@ -60,10 +61,6 @@ public class MemberEditController implements Controller{
 
 		return false;
 	}
-	
-	
-	
-	
 	
 	
 }

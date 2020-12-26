@@ -145,13 +145,46 @@ public class GoMemberDAO {
 				
 				}				
 				//5
-				 System.out.println("회원조회결과="+gVo+"매개변수="+email);
+				 System.out.println("회원조회결과 gVo="+gVo+"매개변수 email="+email);
 				 return gVo;
 				} finally {
 					pool.dbClose(rs, ps, con);
 				}
 
 			}
+			
+			
+			public int updateGoMember(GoMemberVO gVo) throws SQLException {
+				Connection con=null;
+				PreparedStatement ps=null;
+			
+				try {
+				//1,2
+					con=pool.getConnection();
+				//3
+					String sql="update Gomember\r\n" + 
+							"set pwd=?,hp=?,memberIntro=?,address=? ," + 
+							"fileName=?,fileSize=?,originalFileName=? " + 
+							"where email=?";
+					ps=con.prepareStatement(sql);
+					ps.setString(1,gVo.getPwd());
+					ps.setString(2,gVo.getHp());
+					ps.setString(3,gVo.getMemberIntro());
+					ps.setString(4,gVo.getAddress());
+					ps.setString(5,gVo.getFileName());
+					ps.setLong(6,gVo.getFileSize());
+					ps.setString(7,gVo.getOriginalFileName());
+					ps.setString(8,gVo.getEmail());
+					
+				//4
+					int cnt=ps.executeUpdate();
+					System.out.println("회원 업데이트 결과 cnt="+cnt+"매개변수 gVO="+gVo);
+					return cnt;
+				} finally {
+					pool.dbClose(ps, con);
+				}
+			}
+			
 
 			
 }

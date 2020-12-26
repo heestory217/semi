@@ -152,7 +152,7 @@ public class GoMemberVO {
 	@Override
 	public String toString() {
 		return "GoMemberVO [memberNo=" + memberNo + ", name=" + name + ", email=" + email + ", pwd=" + pwd + ", hp="
-				+ hp + ", memberIntro=" + memberIntro + ", payMethod=" + ", address=" + address
+				+ hp + ", memberIntro=" + memberIntro + ", address=" + address
 				+ ", joindate=" + joindate + ", outdate=" + outdate + ", sellerFlag=" + sellerFlag + ", fileName="
 				+ fileName + ", fileSize=" + fileSize + ", originalFileName=" + originalFileName + "]";
 	}

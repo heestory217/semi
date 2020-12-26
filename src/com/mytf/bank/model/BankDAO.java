@@ -42,14 +42,66 @@ public class BankDAO {
 				
 				bVo=new BankVO(bankNo, businessFlag, bankName, accountNum, ownerName, ownerBirth, memberNo);
 			}
-			System.out.println("계좌조회결과="+bVo+"매개변수="+memberNo);
+			System.out.println("계좌조회결과="+bVo+",매개변수 memberNo="+memberNo);
 			return bVo;
 		} finally {
 			pool.dbClose(rs, ps, con);
 		}
-		
-				
 	}
-	
 
+		public int insertBank(BankVO bVo) throws SQLException {
+			Connection con=null;
+			PreparedStatement ps=null;
+			
+			try {
+				//1,2
+				con=pool.getConnection();
+				//3
+				String sql="insert into bank(bankNo, businessFlag,bankName, accountNum, ownerName, ownerBirth, MemberNo)\r\n" + 
+						"values(bankNo_seq.nextval,?,?,?,?,?,?)";
+				ps=con.prepareStatement(sql);
+				ps.setString(1, bVo.getBusinessFlag());
+				ps.setString(2, bVo.getBankName());
+				ps.setString(3, bVo.getAccountNum());
+				ps.setString(4, bVo.getOwnerName());
+				ps.setString(5, bVo.getOwnerBirth());
+				ps.setInt(6, bVo.getMemberNo());
+				//4
+				int cnt=ps.executeUpdate();
+				System.out.println("계좌정보 입력 결과 cnt="+cnt+", 매개변수bVo"+bVo);
+				return cnt;
+				
+			} finally {
+				pool.dbClose(ps, con);
+			}
+		}
+
+		public int updateBank(BankVO bVo) throws SQLException {
+			Connection con=null;
+			PreparedStatement ps=null;
+			
+			try {
+				//1,2
+				con=pool.getConnection();
+				//3
+				String sql="update bank \r\n" + 
+						"set businessFlag=?,bankName=?, accountNum=?, ownerName=?, ownerBirth=?  \r\n" + 
+						"where memberNo=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1, bVo.getBusinessFlag());
+				ps.setString(2, bVo.getBankName());
+				ps.setString(3, bVo.getAccountNum());
+				ps.setString(4, bVo.getOwnerName());
+				ps.setString(5, bVo.getOwnerBirth());
+				ps.setInt(6, bVo.getMemberNo());
+				
+				//4
+				int cnt=ps.executeUpdate();
+				System.out.println("계좌 업데이트 결과 cnt="+cnt+", 매개변수="+bVo);
+				
+				return cnt;
+			} finally {
+				pool.dbClose(ps, con);
+			}
+		}
 }

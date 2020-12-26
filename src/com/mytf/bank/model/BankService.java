@@ -13,6 +13,13 @@ public class BankService {
 		return bDao.selectByMemberNo(memberNo);
 		
 	}
+	public int insertBank(BankVO bVo) throws SQLException {
+		return bDao.insertBank(bVo);
+	}
+	
+	public int updateBank(BankVO bVo) throws SQLException {
+		return bDao.updateBank(bVo);
+	}
 	
 	
 

@@ -150,6 +150,14 @@
 	                   			<p>결제수단을 추가해주세요</p>
 	                       	</c:if>
 	                       	<c:if test="${!empty bVo.bankNo}">
+	                       		<c:if test="${!empty bVo.businessFlag}">
+	                       			<c:if test="${bVo.businessFlag eq 'N'}">
+	                       			 <div class="Ainfo"><b>[개인]</b></div>
+	                       			</c:if>
+	                       			<c:if test="${bVo.businessFlag eq 'B'}">
+	                       			 <div class="Ainfo"><b>[사업자]</b></div>
+	                       			</c:if>
+	                       		</c:if>                       		
 	                       		<div class="Ainfo"><b>은행명:</b> ${bVo.bankName}</div>
 	                       		<div class="Ainfo"><b>계좌번호:</b> ${bVo.accountNum}</div>
 	                       		<div class="Ainfo"><b>예금주명:</b> ${bVo.ownerName}</div>

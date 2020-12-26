@@ -6,6 +6,27 @@
 <link rel="stylesheet" href=" <c:url value='/css/memberEdit.css'/>">	<!-- header 위치 -->
  <%@ include file="../inc/top.jsp"%> 
  
+<script type="text/javascript">
+	$(function(){
+			
+		$('form[name=frmMemberEdit]').submit(function(){
+			if($('#pwdOrigin').val()!= ${gVo.pwd}){
+				alert('기존 비밀번호를 확인해주세요')
+				 event.preventDefault();				
+				$('#pwdOrigin').focus();
+			}else if($('#pwd').val()!=$('#pwdCk').val() ){
+				alert('신규 비밀번호가 일치하지 않습니다.')
+				 event.preventDefault();
+				$('#pwd').focus();
+			}
+			
+		});
+	});
+
+</script>
+ 
+ 
+ 
  <div class="tabs-area spb MyPage">
  
   <div class="myPageTitle">
@@ -36,9 +57,9 @@
         </ul>
          <hr>
          <!-- form시작 회원번호랑 원본파일이름 히든-->
-        <form name="frmMemberEdit" method="post" action="<c:url value='/GoMember/memberEdit_ok.jsp'/>" enctype="multipart/form-data">
-	        <input type="hidden" name="MemverNo" value="${memberNo}">
-	        <input type="hidden" name="fileName" value="${fileName}">
+        <form name="frmMemberEdit" method="post" action="<c:url value='/GoMember/memberEdit_ok.do'/>" enctype="multipart/form-data">
+	        <input type="hidden" name="memberNo" value="${memberNo}">
+	        <input type="hidden" name="oldfileName" value="${oldfileName}">
 	                
 	        <div class="tab-content MyProfileTab" id="pills-tabContent">
 	            <div class="tab-pane fade show active Mycontent" id="profile" role="tabpanel">
@@ -89,9 +110,12 @@
 		                        	<label for="pwd"> <b>비밀번호</b></label>
 		                        </div>	
 		                        <div class="myContents"> 		                        	
-			                       <span class="pw1">사용중인 비밀번호:</span> <input type="password" id="pwdOrigin" name="pwdOrigin"><br>
-			                       <span class="pw2">변경할 비밀번호:</span> <input type="password" id="pwd" name="pwd" ><br>
-			                       <span class="pw3">변경할 비밀번호 확인:</span> <input type="password" id="pwdCk" name="pwdCk"><br>
+			                       <span class="pw1">사용중인 비밀번호:</span> 
+			                       <input type="password" id="pwdOrigin" name="pwdOrigin"><br>
+			                       <span class="pw2">변경할 비밀번호:</span> 
+			                       <input type="password" id="pwd" name="pwd" ><br>
+			                       <span class="pw3">변경할 비밀번호 확인:</span> 
+			                       <input type="password" id="pwdCk" name="pwdCk"><br>
 		                        </div>
 	                        </div>
 	    					<div class="MyPagePart">
@@ -102,12 +126,14 @@
 		                        	</label>
 		                        </div>
 		                        <div class="myContents">
-		               				<c:if test="${empty gVo.hp}">	
-			                        	<input type="text" id="hp" name="hp" value="등록된 연락처가 없습니다.">	
-			                       	</c:if>
-	               					<c:if test="${!empty gVo.hp}">	
+	               					<%-- <c:if test="${!empty gVo.hp}"> --%>	
 		               					<input type="text" id="hp" name="hp" value="${gVo.hp}">
-		                        	</c:if>
+		                        	<%-- </c:if> --%>
+		                        	<c:if test="${empty gVo.hp}">	
+			                        	<!-- <input type="text" id="hp" name="hp" value=""> -->
+			                        	등록된 연락처가 없습니다.	
+			                       	</c:if>
+		                        	
 		                        </div>	
 	                        </div>
 	                        
@@ -121,12 +147,12 @@
 		                    	</div>
 		                    	
 		                    	<div class="myContents">
-		                    		<textarea name="introduce" id="introduce" rows="8" cols="80">
+		                    		<textarea name="memberIntro" id="introduce" rows="8" cols="80">
+		                    			<%-- <c:if test="${!empty gVo.memberIntro}"> --%>
+			                    			${gVo.memberIntro}
+			                    		<%-- </c:if> --%>
 		                    			<c:if test="${empty gVo.memberIntro}">
 			                    			등록된 소개가 없습니다.
-			                    		</c:if>
-		                    			<c:if test="${!empty gVo.memberIntro}">
-			                    			${gVo.memberIntro}
 			                    		</c:if>
 		                    			
 		                    		</textarea>
@@ -167,12 +193,11 @@
 	                    <div class="myContents">
 	                    <!--<input type="text" name="taker" value=""> 받는 사람 
 		                    <input type="text" name="hp" value="" > 받는 사람 연락처 -->
-		                    <c:if test="${!empty gVo.address}">
+		                  <%--   <c:if test="${!empty gVo.address}"> --%>
 		                    	<input type="text" name="address" value="${gVo.address}"> 
-		                    
-		                    </c:if>
+		                   <%-- </c:if> --%>
 		                    <c:if test="${empty gVo.address}">
-		                    	<input type="text" name="address" value="등록된 배송지가 없습니다.">
+		                    	등록된 배송지가 없습니다.
 		                    </c:if>
 	              		 </div>
 	               
@@ -207,15 +232,19 @@
 			                  	 등록된 결제 수단이 없습니다. 결제수단을 추가해주세요
 			                  </c:if>
 			                 <c:if test="${!empty bVo.bankNo}">
-				                  <input type="hidden" name="bankNo" value="${bVo.bankNo}"> 	                      
-				                  <input type="hidden" name="businessFlag" value="${bVo.businessFlag}"> 	                      
+				                  <input type="hidden" name="bankNo" value="${bVo.bankNo}"> 	
+				                  <input type="radio" name="businessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if>>개인
+				                  <input type="radio" name="businessFlag" value="B"<c:if test="${bVo.businessFlag eq'Y'}">checked</c:if>>사업자<br>
+				                 <%--  <input type="hidden" name="businessFlag" value="${bVo.businessFlag}"> --%> 	                      
+							      
 							      <span class="Bword"> 은행:</span>     
 							      <input type="text" name="bankName" value="${bVo.bankName}"><br>	                      
 						          <span class="Bword">계좌번호:</span>    
 						          <input type="text" name="accountNum" value="${bVo.accountNum}"><br>                     
 						          <span class="Bword">예금주명:</span>    
 						          <input type="text" name="ownerName" value="${bVo.ownerName}"><br>
-						          <span class="Bword">예금주 생년월일:</span><input type="text" name="ownerBirth" value="${bVo.ownerBirth}"><br>
+						          <span class="Bword">예금주 생년월일:</span>
+						          <input type="text" name="ownerBirth" value="${bVo.ownerBirth}"><br>
 			                  </c:if>
 	                      </div>
 	                  </div>
@@ -231,7 +260,7 @@
 	             </div>
 	             
 	  			    <div class="btDiv">
-	                	<button id="btMypageEditOk" name="btMypageEditOk" value="내 정보 변경 확인" onclick="location.href='<c:url value="/GoMember/memberEdit.do"/>'">내 정보 변경</button>
+	                	<button id="btMypageEditOk" name="btMypageEditOk" value="내 정보 변경 확인">내 정보 변경</button>
 	                </div>
 	   
 	   

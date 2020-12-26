@@ -35,8 +35,25 @@
 					 event.preventDefault();
 					$('#ownerBirth').focus();
 				}
-				
-			}
+			}else if($('#accountNum').val().length<1){
+				if($('input[name=businessFlag]:radio:checked').length>1){
+					alert('계좌번호가 존재하지 않습니다.');
+					 event.preventDefault();
+					 $('#accountNum').focus();
+				}else if($('#bankName').val().length>1){
+					alert('계좌번호가 존재하지 않습니다.');
+					 event.preventDefault();
+					$('#accountNum').focus();
+				}else if($('#ownerName').val().length>1){
+					alert('계좌번호가 존재하지 않습니다.')
+					 event.preventDefault();
+					$('#accountNum').focus();
+				}else if($('#ownerBirth').val().length>1){
+					alert('계좌번호가 존재하지 않습니다.')
+					 event.preventDefault();
+					$('#accountNum').focus();
+				}
+			}//if
 			
 			
 			

@@ -44,6 +44,12 @@ public class LoginOkController implements Controller{
 				msg=gVo.getName()+"님이 로그인 하셨습니다.";
 //				url="/mainArticle.jsp";
 				url="/mainArticle.do";
+			}else if(result==GoMemberService.PW_DISAGREE){
+				msg="비밀번호가 일치하지 않습니다.";
+				url="/login/login.do";
+			}else if(result==GoMemberService.EMAIL_NONE){
+				msg="존재하지 않는 이메일입니다.";
+				url="/login/login.do";
 			}
 			
 		} catch (SQLException e) {

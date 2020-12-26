@@ -143,3 +143,7 @@ header >.top_container{
 .login > img{
 	width:34px;
 }
+/* 자연 로그인이미지 수정 */
+.login > img {
+    border-radius: 30px;
+}

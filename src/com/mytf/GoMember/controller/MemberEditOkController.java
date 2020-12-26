@@ -123,10 +123,7 @@ public class MemberEditOkController implements Controller{
 						msg="회원정보 수정성공, 계좌정보 수정실패!";
 						url="/GoMember/memberEdit.do";
 					}
-					
 				}
-				
-				
 			}
 			
 		} catch (SQLException e) {

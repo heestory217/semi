@@ -86,7 +86,7 @@
 	                        	  <br>
 	                        	  <span class="sphasFile"><b>첨부된 파일</b></span>
 		                        	  <c:if test="${!empty gVo.fileName}">
-		                        	  	<span class="spFileInfo">${displyFileName} ${fileInfo}</span>
+		                        	  	<span class="spFileInfo">${fileInfo}</span>
 		                        	  	<br>
 		                        	  	<span class="spfileWarning">첨부파일을 업로드하는 경우 기존파일은 삭제됩니다.</span>
 		                        	  </c:if>

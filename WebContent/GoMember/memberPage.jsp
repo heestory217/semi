@@ -135,8 +135,6 @@
 	                	<p><b>배송지를 삭제하면 예약된 후원의 배송지 정보도 삭제되나요?</b></p>
 	             	    <p>현재 후원하신 프로젝트에 등록된 배송지가 삭제되거나 변경되진 않습니다.</p>             	
 	                </div>
-                    
-                    
                 
             </div> 
             <div class="tab-pane fade Mycontent" id="payMethod" role="tabpanel">

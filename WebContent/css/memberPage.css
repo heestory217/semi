@@ -291,5 +291,29 @@ button#btPayMethod {
 }
 
 
+/* 20201226추가 */
+.myContents {}
 
+.MyAddress>div.myContents {
+    margin-bottom: 56px;
+    text-align: left;
+    padding: 36px;
+}
+
+.myContents {}
+
+.paymentContents {
+    margin-bottom: 70px;
+    text-align: left;
+    padding: 51px;
+}
+
+.paymentTooltip {
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.paymentTooltip>p {margin-bottom: 0;}
+
+.deleveryTooltip {border-color: black;}
 

@@ -143,10 +143,10 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 						<c:if test="${!empty email}">
 							<a href="<c:url value='/GoMember/MypageOption.do'/>" class="login">
 								<span>${name} 님</span>
-								<c:if test="${!t_hasFileName}">
+								<c:if test="${t_hasFileName}">
 									<img alt="유저 이미지" src="<c:url value='/img/user-account.png'/>">
 								</c:if>
-								<c:if test="${t_hasFileName}">
+								<c:if test="${!t_hasFileName}">
 	<!--된건지 확인해야함 -->			<img alt="유저 이미지" src="<c:url value='/GoMember_upload/${fileName}'/>">
 								</c:if>								
 							</a>							

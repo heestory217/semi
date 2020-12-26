@@ -51,7 +51,7 @@ public class Utility {
 	public static String displayFile(String fileName) {
 		String result="";
 		if(fileName!=null && !fileName.isEmpty()) {
-			result="<img src='../images/file.gif' alt='file이미지'>";
+			result="<img src='../img/file.gif' alt='file이미지'>";
 		}
 		
 		return result;
@@ -63,7 +63,7 @@ public class Utility {
 		fSize = Math.round(fSize*10)/10f;
 		
 		if(originName!=null && !originName.isEmpty()) {
-			result="<img src='../images/file.gif' alt='file이미지'>";
+			/* result="<img src='../img/file.gif' alt='file이미지'>"; */
 			result+=originName+" (" + fSize +" KB)";
 		}
 		

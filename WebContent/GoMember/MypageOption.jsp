@@ -18,7 +18,7 @@
 		<div class="myPageOption-top">
 			<div class="container myPageOption-container">
 				<span>내 페이지</span> 	
-				  <a href="#" class="myPage-closeBtn"> 
+				  <a href='<c:url value='/mainArticle.do'></c:url>' class="myPage-closeBtn"> 
 				  	<img src="<c:url value='/img/closeIcon.png'/>" width="15px" height="15px" alt="닫기 아이콘" href="#">
 				  </a> 
 			 </div>
@@ -28,10 +28,10 @@
 			<div class="myPageOption-middle">
 				<a href="#">
 					<span> ${name}</span>
-					<c:if test="${!t_hasFileName}"> 
+					<c:if test="${t_hasFileName}"> 
 						<img src="<c:url value='/img/user-account.png'/>" width="50px" alt="마이페이지 아이콘">
 					</c:if>						
-					<c:if test="${t_hasFileName}"> 
+					<c:if test="${!t_hasFileName}"> 
 						<img src="<c:url value='/GoMember_upload/${fileName}'/>" width="50px" alt="마이페이지 아이콘">
 					</c:if>	
 					
@@ -68,10 +68,7 @@
 	  </div> <!-- 마이프로필 디브 -->
 	</div> <!-- myPage div -->
 	
-	
-	
 </div>
-
 
 	<!-- footer위치 -->
 	<%@ include file="../inc/bottom.jsp"%>

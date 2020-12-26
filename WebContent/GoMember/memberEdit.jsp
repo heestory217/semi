@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -9,52 +10,65 @@
 <script type="text/javascript">
 	$(function(){
 			
-		$('form[name=frmMemberEdit]').submit(function(){
-			if($('#pwdOrigin').val()!= ${gVo.pwd}){
-				alert('기존 비밀번호를 확인해주세요')
+		$('form[name=frmMemberEdit]').submit(function(){			
+			if($('#pwdOrigin').val()!=${gVo.pwd}){
+				 alert('기존 비밀번호를 확인해주세요');
 				 event.preventDefault();				
 				$('#pwdOrigin').focus();
 			}else if($('#pwd').val()!=$('#pwdCk').val() ){
-				alert('신규 비밀번호가 일치하지 않습니다.')
+				 alert('신규 비밀번호가 일치하지 않습니다.');
 				 event.preventDefault();
 				$('#pwd').focus();
+			}else if(($('#address1').val().length>0)||($('#address2').val().length>0)||($('#address3').val().length>0)) {
+				if ($('#address1').val().length<1) {
+					alert('배송지를 등록하려면 받을사람을 입력해야합니다.');
+					event.preventDefault();
+					$('#address1').focus();
+				}else if ($('#address2').val().length<1) {
+					alert('배송지를 등록하려면 받을사람의 연락처를 입력해야합니다.');
+					event.preventDefault();
+					$('#address2').focus();
+				}else if ($('#address3').val().length<1) {
+					alert('배송지를 등록하려면 배송주소를 입력해야합니다.');
+					event.preventDefault();
+					$('#address3').focus();
+				}
 			}else if($('#accountNum').val().length>0){
 				if($('input[name=businessFlag]:radio:checked').length<1){
-					alert('개인/사업자 구분을 선택해주세요')
-					 event.preventDefault();
-				}else if($('#bankName').val().length<1){
-					alert('은행명을 입력해주세요')
-					 event.preventDefault();
-					$('#bankName').focus();
-				}else if($('#ownerName').val().length<1){
-					alert('예금주명을 입력해주세요')
-					 event.preventDefault();
-					$('#ownerName').focus();
-				}else if($('#ownerBirth').val().length<1){
-					alert('생년월일을 입력해주세요')
-					 event.preventDefault();
-					$('#ownerBirth').focus();
-				}
-			}else if($('#accountNum').val().length<1){
-				if($('input[name=businessFlag]:radio:checked').length>1){
-					alert('계좌번호가 존재하지 않습니다.');
-					 event.preventDefault();
-					 $('#accountNum').focus();
-				}else if($('#bankName').val().length>1){
-					alert('계좌번호가 존재하지 않습니다.');
-					 event.preventDefault();
-					$('#accountNum').focus();
-				}else if($('#ownerName').val().length>1){
-					alert('계좌번호가 존재하지 않습니다.')
-					 event.preventDefault();
-					$('#accountNum').focus();
-				}else if($('#ownerBirth').val().length>1){
-					alert('계좌번호가 존재하지 않습니다.')
-					 event.preventDefault();
-					$('#accountNum').focus();
-				}
-			}//if
-			
+					if($('#bankName').val().length<1){
+						alert('은행명을 입력해주세요');
+						event.preventDefault();
+						$('#bankName').focus();
+					}else if($('#ownerName').val().length<1){
+						alert('예금주명을 입력해주세요');
+						 event.preventDefault();
+						$('#ownerName').focus();
+					}else if($('#ownerBirth').val().length<1){
+						alert('생년월일을 입력해주세요');
+						 event.preventDefault();
+						$('#ownerBirth').focus();
+					}
+				}else if($('#accountNum').val().length<1){
+					if($('input[name=businessFlag]:radio:checked').length>0){
+						alert('계좌번호가 존재하지 않습니다.');
+						 event.preventDefault();
+						 $('#accountNum').focus();
+					}else if($('#bankName').val().length>0){
+						alert('계좌번호가 존재하지 않습니다.');
+						 event.preventDefault();
+						$('#accountNum').focus();
+					}else if($('#ownerName').val().length>0){
+						alert('계좌번호가 존재하지 않습니다.');
+						 event.preventDefault();
+						$('#accountNum').focus();
+					}else if($('#ownerBirth').val().length>0){
+						alert('계좌번호가 존재하지 않습니다.');
+						event.preventDefault();
+						$('#accountNum').focus();
+					}
+			 }else{
+				$('form[name=frmMemberEdit]').submit();
+			 }//if
 
 		});
 	});
@@ -171,7 +185,7 @@
 		                    	</div>
 		                    	
 		                    	<div class="myContents">
-		                    		<textarea name="memberIntro" id="introduce" rows="8" cols="80" placeholder="소개글을 작성해주세요">${gVo.memberIntro}<%-- <c:if test="${empty gVo.memberIntro}">등록된 소개가 없습니다.</c:if> --%>
+		                    		<textarea name="memberIntro" id="introduce" rows="3" cols="60" placeholder="소개글을 작성해주세요">${gVo.memberIntro}<%-- <c:if test="${empty gVo.memberIntro}">등록된 소개가 없습니다.</c:if> --%>
 		                    		</textarea>
 		                    			<%-- <c:if test="${!empty gVo.memberIntro}"> --%>
 			                    		<%-- </c:if> --%>
@@ -209,11 +223,21 @@
 	                        	<b>등록된 배송지 </b>
 	                   		</label>
 	                    </div>
+	                    
+	                     <c:if test="${!empty gVo.address}">
+                       		<%-- <c:set var="addressArr" value="${fn:split(${gVo.address},'|')}"></c:set> --%>
+                       		<c:set var="address" value="${gVo.address}"/>
+                       		<c:set var="addressR" value="${fn:split(address,'|')}" />
+	                       	<%-- 	<span class=delivery1>받는사람:</span> <c:out value='${address2[0]}'/><br>
+	                       		<span class=delivery1>받는사람 연락처:</span> <c:out value='${address2[1]}'/><br>
+	                       		<span class=delivery1>배송주소:</span> <c:out value='${address2[2]}'/><br> --%>
+                       	</c:if>
+	                   
 	                   
 	                    <div class="myContents">
-		                     <span class="addressD">받는사람:</span> <input type="text" name="taker" value=""placeholder="수취인을 입력하세요"><br> 
-			                 <span class="addressD">받는사람 연락처:</span> <input type="text" name="hp" value="" placeholder="수취인 연락처를 입력하세요"><br>
-			                 <span class="addressD">배송주소:</span><input type="text" name="address" value="${gVo.address}" placeholder="배송주소를 입력하세요"> 
+		                     <span class="delivery1">받는사람:</span> <input type="text" name="address1" id="address1" value="${addressR[0]}"placeholder="수취인을 입력하세요"><br> 
+			                 <span class="delivery2">받는사람 연락처:</span> <input type="text" name="address2" id="address2" value="${addressR[1]}"placeholder="수취인 연락처를 입력하세요"><br>
+			                 <span class="delivery3">배송주소:</span><input type="text" name="address3" id="address3" value="${addressR[2]}"placeholder="배송주소를 입력하세요"> 
 	              		 </div>
 	               
 	                 <!--    

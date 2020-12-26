@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -120,9 +122,12 @@
                    			<p>배송지를 추가해주세요.</p>
                        	</c:if>
                        	<c:if test="${!empty gVo.address}">
-                       	
-                       	
-                       		${gVo.address}
+                       		<%-- <c:set var="addressArr" value="${fn:split(${gVo.address},'|')}"></c:set> --%>
+                       		<c:set var="address" value="${gVo.address}"/>
+                       		<c:set var="address2" value="${fn:split(address,'|')}" />
+	                       		<span class=delivery1>받는사람:</span> <c:out value='${address2[0]}'/><br>
+	                       		<span class=delivery2>받는사람 연락처:</span> <c:out value='${address2[1]}'/><br>
+	                       		<span class=delivery3>배송주소:</span> <c:out value='${address2[2]}'/><br>
                        	</c:if>
                     </div>
                </div>
@@ -160,6 +165,8 @@
 	                       		<div class="Ainfo"><b>계좌번호:</b> ${bVo.accountNum}</div>
 	                       		<div class="Ainfo"><b>예금주명:</b> ${bVo.ownerName}</div>
 	                       		<div class="Ainfo"><b>예금주 생년월일:</b>${bVo.ownerBirth}</div>
+	                       		
+	                       		
 	                       	</c:if>
                       
                       </div>

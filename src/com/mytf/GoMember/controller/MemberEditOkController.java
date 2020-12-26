@@ -61,7 +61,11 @@ public class MemberEditOkController implements Controller{
 		
 		String hp=mr.getParameter("hp");
 		String memberIntro=mr.getParameter("memberIntro");
-		String address=mr.getParameter("address");
+		String address1=mr.getParameter("address1");
+		String address2=mr.getParameter("address2");
+		String address3=mr.getParameter("address3");
+		String address=address1+"|"+address2+"|"+address3;
+		
 		
 		String bankNo=null;		
 		if(mr.getParameter("bankNo")!=null&&!mr.getParameter("bankNo").isEmpty()) {
@@ -106,8 +110,6 @@ public class MemberEditOkController implements Controller{
 			bVo.setMemberNo(Integer.parseInt(memberNo));
 		}
 	
-		
-		
 			//은행계좌 유무로 에딧에서 유효성체크하고, 
 			//에딧 오케이에서 계좌값이 있으면 insert/update로 구분! 
 			int cnt1=gService.updateGoMember(gVo);
@@ -122,7 +124,6 @@ public class MemberEditOkController implements Controller{
 						System.out.println("기존파일 삭제여부"+bool);
 					}
 				}
-				
 				//회원정보고 정상적으로 업뎃된 경우에만 계좌처리 진행
 				if(accountNum!=null&&!accountNum.isEmpty()) {				
 					if(bankNo==null||bankNo.isEmpty()) {
@@ -130,7 +131,6 @@ public class MemberEditOkController implements Controller{
 					}else {
 						cnt2=bService.updateBank(bVo);
 					}
-					
 					if(cnt2>0) {
 						msg="회원정보, 계좌정보 수정성공!";
 						url="/GoMember/memberPage.do";
@@ -139,11 +139,9 @@ public class MemberEditOkController implements Controller{
 						url="/GoMember/memberEdit.do";
 					}
 				}
-				
 				msg="회원정보 수정성공!";
 				url="/GoMember/memberPage.do";
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}catch (IOException e) {

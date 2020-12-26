@@ -28,10 +28,10 @@ public class ProjectUploadOkController implements Controller {
 		System.out.println("파라미터 ctNo="+ctNo);
 		
 		//유효성 검사
-		String msg="프로젝트 기본정보를 입력하세요.", url="/projectManager/projectUpload.do";
 		if(memberNo==0) {
-			msg="로그인 후 이용할 수 있습니다.";
-			url="/login/login.do";
+			request.setAttribute("msg", "로그인 후 이용할 수 있습니다.");
+			request.setAttribute("url", "/login/login.do");
+			return "/common/message";
 		} 
 		
 		/*
@@ -53,28 +53,25 @@ public class ProjectUploadOkController implements Controller {
 		vo.setProjectDetail(projectDetail);
 		vo.setCtNo(Integer.parseInt(ctNo));
 		
+		String projectNo=null;
 		try {
 			int cnt =service.insertProject(vo);
 			if(cnt>0) {
-				String projectNo=service.selectProjectNo(vo);
+				projectNo=service.selectProjectNo(vo);
 				System.out.println("현재 저장한 프로젝트 : "+projectNo);
-				msg="프로젝트 기본 정보가 저장되었습니다.";
-				url="/projectManager/projectBasicUpate.do?projectNo="+projectNo;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		//결과저장
-		request.setAttribute("msg", msg);
-		request.setAttribute("url", url);
-
-		return "/common/message.jsp";
+		request.setAttribute("projectNo", projectNo);
+		return "/projectManager/projectBasicUpate.do?projectNo="+projectNo;
 	}
 
 	@Override
 	public boolean isRedirect() {
-		return false;
+		return true;
 	}
 
 }

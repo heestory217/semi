@@ -133,20 +133,20 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 				<!-- 자연	로그인처리 -->	
 						
 						<%-- <c:if test="${t_isLogin}"> --%>
-						<c:if test="${empty email}">
+						<c:if test="${empty t_email}">
 							<a href="<c:url value='/login/login.do'/>" class="login">
 								<span>로그인 / 회원가입</span>
 								<img alt="유저 이미지" src="<c:url value='/img/user-account.png'/>">
 							</a>
 						</c:if>
 						<%-- <c:if test="${!t_isLogin}"> --%>				
-						<c:if test="${!empty email}">
+						<c:if test="${!empty t_email}">
 							<a href="<c:url value='/GoMember/MypageOption.do'/>" class="login">
 								<span>${name} 님</span>
-								<c:if test="${t_hasFileName}">
+								<c:if test="${empty t_fileName}">
 									<img alt="유저 이미지" src="<c:url value='/img/user-account.png'/>">
 								</c:if>
-								<c:if test="${!t_hasFileName}">
+								<c:if test="${!empty t_FileName}">
 	<!--된건지 확인해야함 -->			<img alt="유저 이미지" src="<c:url value='/GoMember_upload/${fileName}'/>">
 								</c:if>								
 							</a>							

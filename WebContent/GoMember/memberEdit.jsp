@@ -18,7 +18,29 @@
 				alert('신규 비밀번호가 일치하지 않습니다.')
 				 event.preventDefault();
 				$('#pwd').focus();
+			}else if($('#accountNum').val().length>0){
+				if($('input[name=businessFlag]:radio:checked').length<1){
+					alert('개인/사업자 구분을 선택해주세요')
+					 event.preventDefault();
+				}else if($('#bankName').val().length<1){
+					alert('은행명을 입력해주세요')
+					 event.preventDefault();
+					$('#bankName').focus();
+				}else if($('#ownerName').val().length<1){
+					alert('예금주명을 입력해주세요')
+					 event.preventDefault();
+					$('#ownerName').focus();
+				}else if($('#ownerBirth').val().length<1){
+					alert('생년월일을 입력해주세요')
+					 event.preventDefault();
+					$('#ownerBirth').focus();
+				}
+				
 			}
+			
+			
+			
+			
 			
 		});
 	});
@@ -233,18 +255,18 @@
 			                  </c:if>
 			                 <c:if test="${!empty bVo.bankNo}">
 				                  <input type="hidden" name="bankNo" value="${bVo.bankNo}"> 	
-				                  <input type="radio" name="businessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if>>개인
-				                  <input type="radio" name="businessFlag" value="B"<c:if test="${bVo.businessFlag eq'Y'}">checked</c:if>>사업자<br>
+				                  <input type="radio" name="businessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if>><span class="ckBFlag">개인 </span>
+				                  <input type="radio" name="businessFlag" value="B"<c:if test="${bVo.businessFlag eq'Y'}">checked</c:if>><span class="ckBFlag">사업자</span><br>
 				                 <%--  <input type="hidden" name="businessFlag" value="${bVo.businessFlag}"> --%> 	                      
 							      
 							      <span class="Bword"> 은행:</span>     
-							      <input type="text" name="bankName" value="${bVo.bankName}"><br>	                      
+							      <input type="text" name="bankName" id="bankName" value="${bVo.bankName}"><br>	                      
 						          <span class="Bword">계좌번호:</span>    
-						          <input type="text" name="accountNum" value="${bVo.accountNum}"><br>                     
+						          <input type="text" name="accountNum" id="accountNum" value="${bVo.accountNum}"><br>                     
 						          <span class="Bword">예금주명:</span>    
-						          <input type="text" name="ownerName" value="${bVo.ownerName}"><br>
+						          <input type="text" name="ownerName" id="ownerName" value="${bVo.ownerName}"><br>
 						          <span class="Bword">예금주 생년월일:</span>
-						          <input type="text" name="ownerBirth" value="${bVo.ownerBirth}"><br>
+						          <input type="text" name="ownerBirth" id="ownerBirth" value="${bVo.ownerBirth}"><br>
 			                  </c:if>
 	                      </div>
 	                  </div>

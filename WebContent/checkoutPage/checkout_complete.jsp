@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>결제 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
 

@@ -119,9 +119,22 @@ $(function(){
 	//22자 제목 안내
 	$('#projectName').keyup(function(){
 		if($('#projectName').val().length==22){
-			$('#title_length').text('22자 이내의 제목만 입력가능합니다.');
+			$('#title_length').text('※최대 22자 이내의 제목만 입력가능합니다. (현재 글자수 : 22자)');
 		}else{
 			$('#title_length').text('');
+		}
+	});
+	
+	//유효성 검사
+	$('form[name=pjUploadFrm]').submit(function(){
+		if($('#projectName').val().length<1){
+			alert('프로젝트 제목을 입력하세요.');
+			event.preventDefault();
+			$('#projectName').focus();
+		}else if($('#projectDetail').val().length<1){
+			alert('프로젝트 요약을 입력하세요.');
+			event.preventDefault();
+			$('#projectDetail').focus();
 		}
 	});
 	
@@ -162,25 +175,25 @@ $(function(){
 	</header>
 	<!-- 헤더끝 -->
 <body>
-	<!-- 타이틀 시작 -->
-	<div class="announce_title">
-		<h3 class="animated infinite bounce delay-2s" >어서오세요, 창작자님!</h3>
-	</div>
-	<!-- 타이틀 끝 -->
-
-	<!-- 확인사항 배너 -->
-	<div class="announce_b" style="margin-bottom: 5px;">
-		<p><a href="<c:url value='/helpCenter/mainCenter.do'/>">공개검토 요청 전에 어떤 것을 확인해야 할까요?</a></p>
-	</div>
-	<div class="announce_g" style="margin-bottom: 20px;">
-		<p>
-			<img alt="notice" src="<c:url value='/icons/alert-circle.svg'/>">&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
-		</p>
-	</div>
-	<!-- 확인사항 배너 끝-->
-
-
-		<div class="container">
+		<!-- 타이틀 시작 -->
+		<div class="announce_title">
+			<h3 class="animated infinite bounce delay-2s" >어서오세요, 창작자님!</h3>
+		</div>
+		<!-- 타이틀 끝 -->
+	
+		<!-- 확인사항 배너 -->
+		<div class="announce_b" style="margin-bottom: 5px;">
+			<p><a href="<c:url value='/helpCenter/mainCenter.do'/>">공개검토 요청 전에 어떤 것을 확인해야 할까요?</a></p>
+		</div>
+		<div class="announce_g" style="margin-bottom: 20px;">
+			<p>
+				<img alt="notice" src="<c:url value='/icons/alert-circle.svg'/>">&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
+			</p>
+		</div>
+		<!-- 확인사항 배너 끝-->
+	
+	
+	<div class="container">
 			<!-- 테스트 -->
 			<div id="accordion-2" class="accordion accordion-spaced">
 
@@ -204,21 +217,21 @@ $(function(){
 											<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
 												<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
 												만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="22">
+												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="22" value="${projectName}">
 												<br><span style="color: #FF6F40;" id="title_length"></span>
 										</div>
 										<br>
 										<div>
 											<label for="projectDetail"><span style="color: #FF6F40;">*</span>프로젝트 요약</label> <br> 
 											<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
-											<textarea rows="3" cols="130" name="projectDetail"
+											<textarea rows="3" cols="130" name="projectDetail" id="projectDetail"
 												placeholder="프로젝트 요약을 입력해주세요"></textarea>
 										</div>
 										<br>
 										<div>
 											<label for="ctNo"><span style="color: #FF6F40;">*</span>프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
 												않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
-											<select name="ctno">
+											<select name="ctNo">
 												<option value="1">제품디자인</option>
 												<option value="2">문구도서</option>
 												<option value="3">문화예술</option>
@@ -416,19 +429,12 @@ $(function(){
 									<div>
 									<textarea rows="5" cols="130" name="giftInfo">
 품명 및 모델명
-
 재질
-
 구성품 
-
 크기 
-
 동일모델의 출시년월
-
 제조자(수입자)
-
 제조국
-
 품질보증기준
 									</textarea>
 									</div>

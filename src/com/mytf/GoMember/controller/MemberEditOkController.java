@@ -61,15 +61,23 @@ public class MemberEditOkController implements Controller{
 		
 		String hp=mr.getParameter("hp");
 		String memberIntro=mr.getParameter("memberIntro");
-		String address=mr.getParameter("address");
+		String address1=mr.getParameter("address1");
+		String address2=mr.getParameter("address2");
+		String address3=mr.getParameter("address3");
+		String address=address1+"|"+address2+"|"+address3;
 		
-		String bankNo=mr.getParameter("bankNo");
+		
+		String bankNo=null;		
+		if(mr.getParameter("bankNo")!=null&&!mr.getParameter("bankNo").isEmpty()) {
+			 bankNo=mr.getParameter("bankNo");
+		}
 		String businessFlag=mr.getParameter("businessFlag");
 		String bankName=mr.getParameter("bankName");
 		String accountNum=mr.getParameter("accountNum");
 		String ownerName=mr.getParameter("ownerName");
 		String ownerBirth=mr.getParameter("ownerBirth");
 		
+		System.out.println(businessFlag);
 		//2 회원정보는 업뎃, 은행정보는 인서트/혹은 업뎃
 		GoMemberVO gVo= new GoMemberVO();
 		gVo.setMemberNo(Integer.parseInt(memberNo));
@@ -83,16 +91,25 @@ public class MemberEditOkController implements Controller{
 		gVo.setFileSize(fileSize);
 		gVo.setOriginalFileName(originalFileName);
 		
+		//은행번호가 있으면 셋팅한다.
 		BankVO bVo=new BankVO();
-		bVo.setBankNo(Integer.parseInt(bankNo));
-		bVo.setBusinessFlag(businessFlag);
-		bVo.setBankName(bankName);
-		bVo.setAccountNum(accountNum);
-		bVo.setOwnerName(ownerName);
-		bVo.setOwnerBirth(ownerBirth);
-		bVo.setMemberNo(Integer.parseInt(memberNo));
-		
-		
+		if(accountNum!=null&&!accountNum.isEmpty()) {
+			if(mr.getParameter("bankNo")!=null&&!mr.getParameter("bankNo").isEmpty()) {
+			  bVo.setBankNo(Integer.parseInt(bankNo)); 
+			  }
+			 
+			/*
+			  if(bankNo!=null&&!bankNo.isEmpty()) {
+			  bVo.setBankNo(Integer.parseInt(bankNo)); }
+			 */
+			bVo.setBusinessFlag(businessFlag);
+			bVo.setBankName(bankName);
+			bVo.setAccountNum(accountNum);
+			bVo.setOwnerName(ownerName);
+			bVo.setOwnerBirth(ownerBirth);
+			bVo.setMemberNo(Integer.parseInt(memberNo));
+		}
+	
 			//은행계좌 유무로 에딧에서 유효성체크하고, 
 			//에딧 오케이에서 계좌값이 있으면 insert/update로 구분! 
 			int cnt1=gService.updateGoMember(gVo);
@@ -104,10 +121,9 @@ public class MemberEditOkController implements Controller{
 					File oldFile= new File(saveDir, oldfileName);
 					if(oldFile.exists()) {
 						boolean bool=oldFile.delete();
-						System.out.println("기존파일 삭제여부"+bool+""+businessFlag);
+						System.out.println("기존파일 삭제여부"+bool);
 					}
 				}
-				
 				//회원정보고 정상적으로 업뎃된 경우에만 계좌처리 진행
 				if(accountNum!=null&&!accountNum.isEmpty()) {				
 					if(bankNo==null||bankNo.isEmpty()) {
@@ -115,17 +131,17 @@ public class MemberEditOkController implements Controller{
 					}else {
 						cnt2=bService.updateBank(bVo);
 					}
-					
 					if(cnt2>0) {
-						msg="회원정보 수정성공!";
+						msg="회원정보, 계좌정보 수정성공!";
 						url="/GoMember/memberPage.do";
 					}else {//??트랜잭션해야하나 고민
 						msg="회원정보 수정성공, 계좌정보 수정실패!";
 						url="/GoMember/memberEdit.do";
 					}
 				}
+				msg="회원정보 수정성공!";
+				url="/GoMember/memberPage.do";
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}catch (IOException e) {

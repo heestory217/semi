@@ -1,27 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <link rel="stylesheet" href=" <c:url value='/css/memberEdit.css'/>">	<!-- header 위치 -->
+ <%@ include file="../login/login_check.jsp" %>
  <%@ include file="../inc/top.jsp"%> 
  
 <script type="text/javascript">
-	$(function(){
-			
-		$('form[name=frmMemberEdit]').submit(function(){
-			if($('#pwdOrigin').val()!= ${gVo.pwd}){
-				alert('기존 비밀번호를 확인해주세요')
-				 event.preventDefault();				
-				$('#pwdOrigin').focus();
-			}else if($('#pwd').val()!=$('#pwdCk').val() ){
-				alert('신규 비밀번호가 일치하지 않습니다.')
-				 event.preventDefault();
-				$('#pwd').focus();
-			}
-			
-		});
-	});
+$(function(){
+    $('form[name=frmMemberEdit]').submit(function(){      
+       var realPwd = ${gVo.pwd};
+	       if($('#pwdOrigin').val()!=realPwd){
+	           alert('기존 비밀번호를 확인해주세요');
+	           event.preventDefault();            
+	          $('#pwdOrigin').focus();
+	       }else if($('#pwd').val()!=$('#pwdCk').val() ){
+	           alert('신규 비밀번호가 일치하지 않습니다.');
+	           event.preventDefault();
+	          $('#pwd').focus();
+	       }else{
+	       
+	       
+	        if(($('#address1').val().length>0)||($('#address2').val().length>0)||($('#address3').val().length>0)) {
+	          if ($('#address1').val().length<1) {
+	             alert('배송지를 등록하려면 받을사람을 입력해야합니다.');
+	             event.preventDefault();
+	             $('#address1').focus();
+	          }else if ($('#address2').val().length<1) {
+	             alert('배송지를 등록하려면 받을사람의 연락처를 입력해야합니다.');
+	             event.preventDefault();
+	             $('#address2').focus();
+	          }else if ($('#address3').val().length<1) {
+	             alert('배송지를 등록하려면 배송주소를 입력해야합니다.');
+	             event.preventDefault();
+	             $('#address3').focus();
+	          }
+	      	 }else if($('#accountNum').val().length>0){
+	             if($('#bankName').val().length<1){
+	                alert('은행명을 입력해주세요');
+	                event.preventDefault();
+	                $('#bankName').focus();
+	             }else if($('#ownerName').val().length<1){
+	                alert('예금주명을 입력해주세요');
+	                 event.preventDefault();
+	                $('#ownerName').focus();
+	             }else if($('#ownerBirth').val().length<1){
+	                alert('생년월일을 입력해주세요');
+	                 event.preventDefault();
+	                $('#ownerBirth').focus();
+	             }
+	         } else{
+	           if($('#bankName').val().length>0){
+	              alert('계좌번호가 존재하지 않습니다.');
+	               event.preventDefault();
+	              $('#accountNum').focus();
+	           }else if($('#ownerName').val().length>0){
+	              alert('계좌번호가 존재하지 않습니다.');
+	               event.preventDefault();
+	              $('#accountNum').focus();
+	           }else if($('#ownerBirth').val().length>0){
+	              alert('계좌번호가 존재하지 않습니다.');
+	              event.preventDefault();
+	              $('#accountNum').focus();
+        	  }//내부
+           }
+       }//외부
+    });
+ });
+	
 
 </script>
  
@@ -72,26 +120,15 @@
 	                    	
 	                    	<div class="myContents">  
 	                         <span class="imgUp"><label for="upfile"><b>이미지업로드</b></label></span>&nbsp; 
-	                         
-	                         	<!-- <div class="form-group form_file">
-								  <input class="form-control form_point_color01" type="text" title="첨부된 파일명" readonly style="width:250px">
-								  <span class="file_load">
-								    <input type="file" id="find_file01">
-								    <label class="btn-default" for="find_file01">찾아보기</label>
-								  </span>
-								</div>
-								 -->	                         
-	                         
 	                        	  <input type="file" id="upfile" name="upfile">
 	                        	  <br>
 	                        	  <span class="sphasFile"><b>첨부된 파일</b></span>
-		                        	  <c:if test="${!empty gVo.fileName}">
-		                        	  	<span class="spFileInfo">${fileInfo}</span>
-		                        	  	<br>
-		                        	  	<span class="spfileWarning">첨부파일을 업로드하는 경우 기존파일은 삭제됩니다.</span>
-		                        	  </c:if>
-	                        	  
-	                        	<%-- <img src="<c:url value='/img/user-account.png'/>" alt="회원이미지"> --%>
+	                        	  <c:if test="${!empty gVo.fileName}">
+	                        	  	<span class="spFileInfo">${fileInfo}</span>
+	                        	  	<br>
+	                        	  	<span class="spfileWarning">첨부파일을 업로드하는 경우 기존파일은 삭제됩니다.</span>
+	                        	  </c:if>
+                        	  
 	                    	</div>
 	                    </div>
 	                    <div class="MyPagePart">
@@ -126,18 +163,16 @@
 		                        	</label>
 		                        </div>
 		                        <div class="myContents">
-	               					<%-- <c:if test="${!empty gVo.hp}"> --%>	
+	               					<c:if test="${!empty gVo.hp}">
 		               					<input type="text" id="hp" name="hp" value="${gVo.hp}">
-		                        	<%-- </c:if> --%>
+		                        	</c:if> 
 		                        	<c:if test="${empty gVo.hp}">	
-			                        	<!-- <input type="text" id="hp" name="hp" value=""> -->
-			                        	등록된 연락처가 없습니다.	
+			                        	<input type="text" id="hp" name="hp" placeholder="등록된 연락처가 없습니다." value="">
 			                       	</c:if>
 		                        	
 		                        </div>	
 	                        </div>
-	                        
-	                                    
+          
 		                    <div class="MyPagePart">
 		         <!-- 소개 변경가능 -->	           
 		                    	<div class="myTitle">
@@ -147,15 +182,9 @@
 		                    	</div>
 		                    	
 		                    	<div class="myContents">
-		                    		<textarea name="memberIntro" id="introduce" rows="8" cols="80">
+		                    		<textarea name="memberIntro" id="introduce" rows="3" cols="60" placeholder="소개글을 작성해주세요">${gVo.memberIntro}</textarea>
 		                    			<%-- <c:if test="${!empty gVo.memberIntro}"> --%>
-			                    			${gVo.memberIntro}
 			                    		<%-- </c:if> --%>
-		                    			<c:if test="${empty gVo.memberIntro}">
-			                    			등록된 소개가 없습니다.
-			                    		</c:if>
-		                    			
-		                    		</textarea>
 		                    	</div>                     
 		                    </div>           
 	                
@@ -189,16 +218,21 @@
 	                        	<b>등록된 배송지 </b>
 	                   		</label>
 	                    </div>
+	                    
+	                     <c:if test="${!empty gVo.address}">
+                       		<%-- <c:set var="addressArr" value="${fn:split(${gVo.address},'|')}"></c:set> --%>
+                       		<c:set var="address" value="${gVo.address}"/>
+                       		<c:set var="addressR" value="${fn:split(address,'|')}" />
+	                       	<%-- 	<span class=delivery1>받는사람:</span> <c:out value='${address2[0]}'/><br>
+	                       		<span class=delivery1>받는사람 연락처:</span> <c:out value='${address2[1]}'/><br>
+	                       		<span class=delivery1>배송주소:</span> <c:out value='${address2[2]}'/><br> --%>
+                       	</c:if>
+	                   
 	                   
 	                    <div class="myContents">
-	                    <!--<input type="text" name="taker" value=""> 받는 사람 
-		                    <input type="text" name="hp" value="" > 받는 사람 연락처 -->
-		                  <%--   <c:if test="${!empty gVo.address}"> --%>
-		                    	<input type="text" name="address" value="${gVo.address}"> 
-		                   <%-- </c:if> --%>
-		                    <c:if test="${empty gVo.address}">
-		                    	등록된 배송지가 없습니다.
-		                    </c:if>
+		                     <span class="delivery1">받는사람:</span> <input type="text" name="address1" id="address1" value="${addressR[0]}"placeholder="수취인을 입력하세요"><br> 
+			                 <span class="delivery2">받는사람 연락처:</span> <input type="text" name="address2" id="address2" value="${addressR[1]}"placeholder="수취인 연락처를 입력하세요"><br>
+			                 <span class="delivery3">배송주소:</span><input type="text" name="address3" id="address3" value="${addressR[2]}"placeholder="배송주소를 입력하세요"> 
 	              		 </div>
 	               
 	                 <!--    
@@ -231,21 +265,22 @@
 	                      	  <c:if test="${empty bVo.bankNo} ">
 			                  	 등록된 결제 수단이 없습니다. 결제수단을 추가해주세요
 			                  </c:if>
-			                 <c:if test="${!empty bVo.bankNo}">
-				                  <input type="hidden" name="bankNo" value="${bVo.bankNo}"> 	
-				                  <input type="radio" name="businessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if>>개인
-				                  <input type="radio" name="businessFlag" value="B"<c:if test="${bVo.businessFlag eq'Y'}">checked</c:if>>사업자<br>
-				                 <%--  <input type="hidden" name="businessFlag" value="${bVo.businessFlag}"> --%> 	                      
-							      
-							      <span class="Bword"> 은행:</span>     
-							      <input type="text" name="bankName" value="${bVo.bankName}"><br>	                      
-						          <span class="Bword">계좌번호:</span>    
-						          <input type="text" name="accountNum" value="${bVo.accountNum}"><br>                     
-						          <span class="Bword">예금주명:</span>    
-						          <input type="text" name="ownerName" value="${bVo.ownerName}"><br>
-						          <span class="Bword">예금주 생년월일:</span>
-						          <input type="text" name="ownerBirth" value="${bVo.ownerBirth}"><br>
-			                  </c:if>
+		                 <%-- <c:if test="${!empty bVo.bankNo}"> --%>
+			                  <input type="hidden" name="bankNo" value="${bVo.bankNo}"> 	
+			                  <input type="radio" name="businessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if><c:if test="${empty bVo.businessFlag}">checked</c:if>>
+			                  <span class="ckBFlag">개인 </span>
+			                  <input type="radio" name="businessFlag" value="B"<c:if test="${bVo.businessFlag eq'B'}">checked</c:if>>
+			                  <span class="ckBFlag">사업자</span><br>
+						      
+						      <span class="Bword"> 은행:</span>     
+						      <input type="text" name="bankName" id="bankName" value="${bVo.bankName}" placeholder="은행명을 입력하세요"><br>	                      
+					          <span class="Bword">계좌번호:</span>    
+					          <input type="text" name="accountNum" id="accountNum" value="${bVo.accountNum}" placeholder="계좌번호를 입력하세요"><br>                     
+					          <span class="Bword">예금주명:</span>    
+					          <input type="text" name="ownerName" id="ownerName" value="${bVo.ownerName}" placeholder="예금주명을 입력하세요"><br>
+					          <span class="Bword">예금주 생년월일:</span>
+					          <input type="text" name="ownerBirth" id="ownerBirth" value="${bVo.ownerBirth}" placeholder="예금주 생년월일 입력하세요"><br>
+		                  <%-- </c:if> --%>
 	                      </div>
 	                  </div>
 	                  

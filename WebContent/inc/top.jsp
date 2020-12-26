@@ -65,7 +65,7 @@
 </head>
 <!-- 자연 로그인 확인처리-->
 <%
-boolean t_isLogin=false;
+/* boolean t_isLogin=false;
 String t_email=(String)session.getAttribute("email");
 if(t_email!=null&&!t_email.isEmpty()){
 	t_isLogin=true;//로그인이면 true session에 email/name/memberNo 있음 
@@ -75,7 +75,7 @@ String t_fileName=(String)session.getAttribute("fileName");
 boolean t_hasFileName=false;
 if(t_fileName!=null&&!t_fileName.isEmpty()){
 	t_hasFileName=true;
-}
+} */
 %>
 <!-- 자연 -->
 <body>
@@ -143,10 +143,10 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 						<c:if test="${!empty email}">
 							<a href="<c:url value='/GoMember/MypageOption.do'/>" class="login">
 								<span>${name} 님</span>
-								<c:if test="${t_hasFileName}">
+								<c:if test="${empty fileName}">
 									<img alt="유저 이미지" src="<c:url value='/img/user-account.png'/>">
 								</c:if>
-								<c:if test="${!t_hasFileName}">
+								<c:if test="${!empty fileName}">
 	<!--된건지 확인해야함 -->			<img alt="유저 이미지" src="<c:url value='/GoMember_upload/${fileName}'/>">
 								</c:if>								
 							</a>							

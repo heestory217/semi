@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+
+
+
+/*****************************
+	*section css code*
+ ***************************** */
+.header{
+	position: relative;
+	background-color:#fff;
+	width: 100%;
+}
+.container{
+	posiion: absolute;
+	width: 1200px;
+	top:2%;
+	left: 25%;
+	margin: -50px, 0, 0, -50px;	
+}
+.detailPageTop{
+	text-align: center;
+	line-height: 1.0em;        
+}
+.detailPageTop img{
+	width: 70px
+}
+.author_logo{
+	width:30px;
+}
+
+
+.projectMainDetail{
+	height: 100%;
+	background-color: #fff;
+}
+
+.detailPageTop{
+	text-align: center;
+	margin-top: 10px;
+	line-height: 0.9em;        
+}
+.detailPageTop img{
+	width: 70px
+}
+.author_logo{
+	width: 10px;
+	height:30px;
+}
+
+
+.projectMainDetail{
+	height: 100%;
+	background-color: #fff;
+}
+
+/*****************************
+	*프로젝트 이미지 css code*
+ ***************************** */
+
+#projImage{
+	width: 43%;
+	margin-left: 170px;
+	margin-top: 50px;
+	
+}
+
+/*****************************
+	*프로젝트 요약 (달성률, 후원자 등) css code*
+ ***************************** */
+.projectMainDetail2{
+	float:right;
+	margin-right: 140px;
+	margin-top: 42px;
+}
+
+.projectMainDetail2_1 #word{	
+	font-weight: bold;
+	font-size: 26px;
+	line-height: 1.5px;
+}
+.projectMainDetail2_1 div{	
+	font-size: 13px;
+	line-height: 2.8em;
+}
+.projectMainDetail2_1 span{	
+	font-size: 12px;
+	line-height: 3em;
+}
+
+#div_box{
+	border:0.3px solid #DCDCDC; 
+	width: 265px; 
+	height: 80px; 
+	margin-top: 20px;
+	margin-bottom: 8px;
+	margin-right: 25px;
+	background-color: #F8F8FF;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	padding-left: 9px;
+	padding-right: 9px;
+	color: black;
+	font-size: 10px;
+	line-height:1.6em	
+
+}
+#div_box p{
+	color: black;
+	font-size: 10px;
+	margin-bottom:5px;	
+}
+
+/*****************************
+	*밀어주기버튼, 좋아요, 공유 버튼 css code*
+ ***************************** */
+
+#btn_projectPush{
+	color: #fff; 
+	background:#FF6347; 
+	border:none; 
+	font-size:13px; 
+	border-radius:0.2em; 
+	padding-right:37px;
+	padding-left:37px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    outline:none;
+    cursor: pointer;    
+}
+#btn_projectPush:hover {          
+   	color: #fff;              	  
+    background-color: #EB4646;   
+    outline:none;
+    cursor: pointer;
+
+ }
+#images2{
+	float:left;
+	border:0.3px solid, gray;
+	background-color:#fff;
+	outline:none;
+	padding-right:-29px;
+	margin-top:20px;
+    cursor: pointer;
+	margin-left:0;
+}
+#images3{
+	float:left;
+	border:none;
+	background-color:#fff;
+	outline:none;
+	padding-left:-10px;
+    cursor: pointer;
+
+}
+/*****************************
+	*몸통부분 section & adie 틀 css code*
+ ***************************** */
+
+.asideView{
+	background-color:#F6F5F5;
+	width: 280px;
+	float:left;
+	margin-left:0;
+	margin-top: 10px;
+}
+
+
+/*****************************
+	*aside css code*
+ ***************************** */
+
+#aside1_writerIntro{
+	float: right;
+	width:22%;
+
+}
+.aside1_writerIntro_1{
+	width:100%;
+	height:100%;
+	background-color: #fff;
+	padding-top:20px;
+	margin-right:120px;	
+	margin-top:15px;
+	padding:25px;	
+	float: right;
+}
+.aside1_writerIntro_2{
+	width:100%;
+	height:100%;
+	background-color: #fff;
+	float: right;
+}
+

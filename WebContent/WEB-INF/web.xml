@@ -13,18 +13,18 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	<servlet>
-		<servlet-name>dispatcherServlet</servlet-name>
-		<servlet-class>com.controller.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>configFile</param-name>
-			<param-value>/config/CommandPro.properties</param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>dispatcherServlet</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
+  <servlet>
+  	<servlet-name>dispatcherServlet</servlet-name>
+  	<servlet-class>com.controller.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>configFile</param-name>
+  		<param-value>/config/CommandPro.properties</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>dispatcherServlet</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
 	
 	<!-- CKFINDER START -->
 	<servlet>

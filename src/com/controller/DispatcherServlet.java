@@ -100,7 +100,7 @@ public class DispatcherServlet extends HttpServlet {
 		
 		//명령어(/tips/book.do)에 해당하는 명령어 처리 클래스(BookController2) 구하기
 		String command = props.getProperty(uri);	//BookController2
-		System.out.println("명력어 처리 클래스="+command);
+		System.out.println("명령어 처리 클래스="+command);
 		
 		try {
 			//해당 문자열을 클래스로 만든다.

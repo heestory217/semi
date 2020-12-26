@@ -116,14 +116,14 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 									<li style="margin-bottom:10px;"><a href="<%=request.getContextPath() %>/category_page.jsp">카테고리별 프로젝트</a></li>
 								</ul>
 							</li>
-							<li><a href="<%=request.getContextPath() %>/projectManager/projectUpload_before.jsp" class="menu-style">프로젝트 올리기</a></li>
+							<li><a href='<c:url value='/projectManager/projectUpload_before.do'></c:url>' class="menu-style">프로젝트 올리기</a></li>
 						</ul>
 					</nav>
 				</div>
 				
 				<div class="logo-column">
-					<a href="<%=request.getContextPath() %>/mainArticle.jsp" class="f_logo"> 
-						<img src="<%=request.getContextPath() %>/img/topLogo.png" alt="로고 이미지">
+					<a href="<c:url value='/mainArticle.do'/>" class="f_logo"> 
+						<img src="<c:url value='/img/topLogo.png'/>" alt="로고 이미지">
 					</a>
 				</div>
 				

@@ -11,6 +11,7 @@ public class ProjectUploadController implements Controller{
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		String projectNo=request.getParameter("projectNo");
 		
 		//세션정보 뿌려주기
 		HttpSession session=request.getSession();
@@ -20,8 +21,9 @@ public class ProjectUploadController implements Controller{
 		//결과저장
 		request.setAttribute("name", name);
 		request.setAttribute("email", email);
+		request.setAttribute("projectNo", projectNo);
 		
-		return "/projectManager/projectUpload.jsp";
+		return "/projectManager/projectUpload.jsp?projectNo="+projectNo;
 		
 	}
 

@@ -210,6 +210,7 @@ $(function(){
 					
 						<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
 						<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post">
+								<input type="text" name="projectNo" value="${param.projectNo}"/>
 								<p>프로젝트개요</p>
 								<div class="projectBox">
 									<div>
@@ -217,7 +218,7 @@ $(function(){
 											<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
 												<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
 												만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="22" value="${projectName}">
+												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="22" value="${vo.projectName}">
 												<br><span style="color: #FF6F40;" id="title_length"></span>
 										</div>
 										<br>

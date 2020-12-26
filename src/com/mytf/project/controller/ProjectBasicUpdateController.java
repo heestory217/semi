@@ -17,6 +17,7 @@ public class ProjectBasicUpdateController implements Controller {
 		//1
 		String projectNo = request.getParameter("projectNo");
 		System.out.println("projectNo="+projectNo);
+		
 		if(projectNo==null || projectNo.isEmpty()) {
 			request.setAttribute("msg", "잘못된 url입니다.");
 			request.setAttribute("url", "/projectManager/projectUpload.do");
@@ -33,7 +34,7 @@ public class ProjectBasicUpdateController implements Controller {
 		}
 		
 		request.setAttribute("vo", vo);
-		return "/projectManager/projectUpload.do?projectNo"+projectNo;
+		return "/projectManager/projectUpload.do?projectNo="+projectNo;
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,33 +10,33 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/top.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/quick-website.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/projectUpload.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/jquery-ui.css">
+<link rel="stylesheet" href="<c:url value='/css/owl.carousel.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/animate.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/main.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/top.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/main_footer.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/quick-website.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/projectUpload.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/jquery-ui.css'/>">
 
 <!-- 에디터 -->
-<script type="text/javascript" src="<%=request.getContextPath()%>/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<c:url value='/ckeditor/ckeditor.js'/>"></script>
 
 <!--Required JS files-->
-<script src="<%=request.getContextPath()%>/js/jquery-2.2.4.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/popper.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/bootstrap.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/owl.carousel.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/isotope.pkgd.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/jquery.barfiller.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/loopcounter.js"></script>
-<script src="<%=request.getContextPath()%>/js/vendor/slicknav.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/active.js"></script>
+<script src="<c:url value='/js/jquery-2.2.4.min.js'/>"></script>
+<script src="<c:url value='/js/vendor/popper.min.js'/>"></script>
+<script src="<c:url value='/js/vendor/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/js/vendor/owl.carousel.min.js'/>"></script>
+<script src="<c:url value='/js/vendor/isotope.pkgd.min.js'/>"></script>
+<script src="<c:url value='/js/vendor/jquery.barfiller.js'/>"></script>
+<script src="<c:url value='/js/vendor/loopcounter.js'/>"></script>
+<script src="<c:url value='/js/vendor/slicknav.min.js'/>"></script>
+<script src="<c:url value='/js/active.js'/>"></script>
 
 <!-- 달력 -->
-<script src="<%=request.getContextPath()%>/js/jquery-3.5.1.min.js"></script>
-<script src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
+<script src="<c:url value='/js/jquery-3.5.1.min.js'/>"></script>
+<script src="<c:url value='/js/jquery-ui.js'/>"></script>
 
 <!-- 시계 -->
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">	
@@ -49,9 +51,6 @@
 var oEditors = [];
 
 $(function(){
-	//에디터
-	
-    
 	//달력 - 프로젝트 오픈일
 	$('#opendate').datepicker({
 		dateFormat: 'yy-mm-dd',
@@ -59,7 +58,7 @@ $(function(){
 		dayNamesMin : ['일','월','화','수','목','금','토'],
 		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		showOn: "button",
-        buttonImage: "<%=request.getContextPath()%>/icons/calendar.svg",
+        buttonImage: "<c:url value='/icons/calendar.svg'/>",
         buttonImageOnly: true,
         
         onClose: function( selectedDate ) {    
@@ -86,7 +85,7 @@ $(function(){
 		dayNamesMin : ['일','월','화','수','목','금','토'],
 		monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		showOn: "button",
-        buttonImage: "<%=request.getContextPath()%>/icons/calendar.svg",
+        buttonImage: "<c:url value='/icons/calendar.svg'/>",
         buttonImageOnly: true,
         
         onClose: function( selectedDate ) {
@@ -116,8 +115,6 @@ $(function(){
 	    dropdown: true,
 	    scrollbar: true
 	});
-	
-	
 });//readyend
 
 </script>
@@ -132,14 +129,14 @@ $(function(){
 				<div class="nav-column left-nav">
 					<nav id="menu" class="d-lg-block"
 						style="float: left; padding-left: 50px;">
-						<a href="#" class="menu-style">< 내 프로젝트</a>
+						<a href="<c:url value='/GoMember/MypageOption.do'/>" class="menu-style">< 내 프로젝트</a>
 					</nav>
 				</div>
 
 				<div class="logo-column">
-					<a href="<%=request.getContextPath()%>/mainArticle.jsp"
+					<a href="<c:url value='/mainArticle.do'/>"
 						class="f_logo"> <img
-						src="<%=request.getContextPath()%>/img/topLogo.png"
+						src="<c:url value='/img/topLogo.png'/>"
 						alt="로고 이미지">
 					</a>
 				</div>
@@ -147,7 +144,7 @@ $(function(){
 				<div class="nav-column">
 					<nav id="menu" class="d-lg-block right-nav-detail"
 						style="padding-right: 70px;">
-						<a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp"
+						<a href="<c:url value='/helpCenter/mainCenter.do'/>"
 							class="login"> <span>헬프센터</span>
 						</a>
 					</nav>
@@ -165,11 +162,11 @@ $(function(){
 
 	<!-- 확인사항 배너 -->
 	<div class="announce_b" style="margin-bottom: 5px;">
-		<p><a href="<%=request.getContextPath() %>/helpCenter/mainCenter.jsp">공개검토 요청 전에 어떤 것을 확인해야 할까요?</a></p>
+		<p><a href="<c:url value='/helpCenter/mainCenter.do'/>">공개검토 요청 전에 어떤 것을 확인해야 할까요?</a></p>
 	</div>
 	<div class="announce_g" style="margin-bottom: 20px;">
 		<p>
-			<img alt="notice" src="../icons/alert-circle.svg">&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
+			<img alt="notice" src="<c:url value='/icons/alert-circle.svg'/>">&nbsp;&nbsp;프로젝트를 개설하려면 네 개의 섹션을 완성해야 합니다.
 		</p>
 	</div>
 	<!-- 확인사항 배너 끝-->
@@ -179,19 +176,19 @@ $(function(){
 			<!-- 테스트 -->
 			<div id="accordion-2" class="accordion accordion-spaced">
 
-				<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
-				<form action="" name="pjUploadFrm" method="post">
-
-					<!-- Accordion card 1 -->
-					<div class="card">
-						<div class="card-header py-4" id="heading-2-1"
-							data-toggle="collapse" role="button" data-target="#collapse-2-1"
-							aria-expanded="false" aria-controls="collapse-2-1">
-							<h6 class="mb-0">1. 프로젝트 개요</h6>
-						</div>
-						<div id="collapse-2-1" class="collapse"
-							aria-labelledby="heading-2-1" data-parent="#accordion-2">
-							<div class="card-body">
+			<!-- Accordion card 1 -->
+			<div class="card">
+				<div class="card-header py-4" id="heading-2-1"
+					data-toggle="collapse" role="button" data-target="#collapse-2-1"
+					aria-expanded="false" aria-controls="collapse-2-1">
+					<h6 class="mb-0">1. 프로젝트 개요</h6>
+				</div>
+				<div id="collapse-2-1" class="collapse"
+					aria-labelledby="heading-2-1" data-parent="#accordion-2">
+					<div class="card-body">
+					
+						<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
+						<form action="" name="pjUploadFrm" method="post">
 								<p>프로젝트개요</p>
 								<div class="projectBox">
 									<div>
@@ -221,7 +218,7 @@ $(function(){
 											</select>
 										</div>
 									</div>
-								</div>
+								</div><!-- projectBox -->
 							
 							<div style="text-align: center; margin: 20px 0;">
 								<input type="submit" class="button" value="저장하기">
@@ -230,51 +227,45 @@ $(function(){
 				<!-- 프로젝트 기본등록 폼 입력 끝-->
 				</form>
 							
-							<br>
+				<br>
+							
 				<!--창작자 정보 폼 입력 시작 : 회원 테이블 insert-->
 				<form action="" name="CreaterFrm" method="post">
-							<p>창작자 정보</p>
-							<div class="projectBox">
+						<p>창작자 정보</p>
+						<div class="projectBox">
+							<div>
+							
 								<div>
-									<div>
-										<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의
-										사진을 올려주세요. <br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
-										형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <br><input
-											type="file" name="fileName">
-									</div>
-
-									<br>
-
-									<div>
-										<label for="name">창작자 이름</label> <br> <input type="text"
-											name="name" disabled="disabled" value="회원이름"
-											style="width: 20%;">
-									</div>
-
-									<br>
-
-									<div>
-										<label for="memberIntro">창작자 소개</label> <br>
-										<textarea rows="3" cols="130" name="memberIntro"
-											placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
-									</div>
-									
+									<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의
+									사진을 올려주세요. <br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
+									형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <br><input
+										type="file" name="fileName">
 								</div>
+								<br>
+								<div>
+									<label for="name">창작자 이름</label> <br> <input type="text"
+										name="name" disabled="disabled" value="회원이름"
+										style="width: 20%;">
+								</div>
+								<br>
+								<div>
+									<label for="memberIntro">창작자 소개</label> <br>
+									<textarea rows="3" cols="130" name="memberIntro"
+										placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
+								</div>
+								
 							</div>
-																
-							<div style="text-align: center; margin: 20px 0;">
-								<input type="submit" class="button" value="저장하기">
-							</div>
+						</div><!-- projectBox -->
+															
+						<div style="text-align: center; margin: 20px 0;">
+							<input type="submit" class="button" value="저장하기">
+						</div>
 
 				<!--창작자 정보 폼 입력 끝-->
 				</form>
-						</div>
-					</div>
-				</div>
-
-				<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
-				<form action="" name="pjUpdateFrm" method="post">
-				
+			</div>
+		</div>
+	</div>
 				<!-- Accordion card 2 -->
 				<div class="card">
 					<div class="card-header py-4" id="heading-2-2"
@@ -285,6 +276,10 @@ $(function(){
 					<div id="collapse-2-2" class="collapse"
 						aria-labelledby="heading-2-2" data-parent="#accordion-2">
 						<div class="card-body">
+					
+						<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
+						<form action="" name="pjUpdateFrm" method="post">
+				
 							<p>펀딩 목표 설정</p>
 							<div class="projectBox">
 								<div>
@@ -295,7 +290,7 @@ $(function(){
 											달성을 목표로 하시는게 안전합니다. <br>(목표 금액은 제작비, 선물 배송비, 창작자의 인건비, 예비 비용 등을
 											고려하시기 바랍니다.)<br><span style="color: #FF6F40;">5,000원 이상인
 												금액을 입력해주세요.</span>
-										</p> <br> <input type="text" name="goalAmount" style="width:200px;"">원
+										</p> <br> <input type="text" name="goalAmount" style="width:200px;">원
 									</div>
 								</div>
 							</div>
@@ -334,11 +329,7 @@ $(function(){
 											진행하실 수 있고 마감일 자정에 종료됩니다. <br>이미 선물을 만드셨다면, 선물 실행일 중에 마감일보다 이른 날짜가
 											있지 않은지 꼭 확인해주세요.
 										</p>
-										<strong>
-											<p>
-												<span style="color: #FF6F40;" id="page_output_end"></span>에 펀딩을 마감합니다.
-											</p> 
-										</strong>
+										<p><strong> <span style="color: #FF6F40;" id="page_output_end"></span>에 펀딩을 마감합니다. </strong></p> 
 									</div>
 								</div>
 							</div>
@@ -438,129 +429,130 @@ $(function(){
 							<div style="text-align: center; margin: 20px 0;">
 								<input type="submit" class="button" value="저장하기">
 							</div>
-							<!--프로젝트 업데이트폼 입력 끝-->
-							</form>
-							
-						</div>
+					<!--프로젝트 업데이트폼 입력 끝-->
+					</form>
+					
 					</div>
 				</div>
+			</div>
 				
 				
 				<!--선물 정보 폼 입력 시작 : gift 테이블 insert (+item table)-->
 				<form action="" name="GiftFrm" method="post">
-				
-				<!-- Accordion card 3 -->
-				<div class="card">
-					<div class="card-header py-4" id="heading-2-3"
-						data-toggle="collapse" role="button" data-target="#collapse-2-3"
-						aria-expanded="false" aria-controls="collapse-2-3">
-						<h6 class="mb-0">3. 선물 구성</h6>
-					</div>
-					<div id="collapse-2-3" class="collapse"
-						aria-labelledby="heading-2-3" data-parent="#accordion-2">
-						<div class="card-body">
-							<div>
-								<p>선물</p>
-							</div>
+					<fieldset>
+					<!-- Accordion card 3 -->
+					<div class="card">
+						<div class="card-header py-4" id="heading-2-3"
+							data-toggle="collapse" role="button" data-target="#collapse-2-3"
+							aria-expanded="false" aria-controls="collapse-2-3">
+							<h6 class="mb-0">3. 선물 구성</h6>
 						</div>
-													
-						<div style="text-align: center; margin: 20px 0;">
-							<input type="submit" class="button" value="저장하기">
-						</div>
-
-						<!--선물 정보 폼 입력 끝-->
-					</div>
-				</div>
-				
-				
-				<!--계좌 정보 폼 입력 시작 : bank 테이블 insert-->
-				<form action="" name="BankFrm" method="post">
-				<!-- Accordion card 4 -->
-				<div class="card">
-					<div class="card-header py-4" id="heading-2-4"
-						data-toggle="collapse" role="button" data-target="#collapse-2-4"
-						aria-expanded="false" aria-controls="collapse-2-3">
-						<h6 class="mb-0">4. 계좌 설정</h6>
-					</div>
-					<div id="collapse-2-4" class="collapse"
-						aria-labelledby="heading-2-4" data-parent="#accordion-2">
-						<div class="card-body">
-						
-							<p>이메일</p>
-							<div class="projectBox">
+						<div id="collapse-2-3" class="collapse"
+							aria-labelledby="heading-2-3" data-parent="#accordion-2">
+							<div class="card-body">
 								<div>
-									<div>
-										<label for="email">이메일 주소</label>
-										<input type="text" name="email">
-									</div>
-									
+									<p>선물</p>
 								</div>
 							</div>
-								<br>
-							<p>본인 인증</p>
-							<div class="projectBox">
-								<div>
-									<div>
-										<label for="hp">휴대폰 번호</label>
-										<input type="text" name="hp">
-									</div>
-									
-								</div>
-							</div>
-								<br>
-							<p>입금 계좌</p>
-							<div class="projectBox">
-								<div>
-									<div>
-										<input type="radio" name="bank" value="private"><span style="margin-right: 30px;">개인</span>
-										<input type="radio" name="bank" value="business">사업자(개인사업자 포함)
-									</div>
-									<br>
-									
-									<div>
-										<label for="bankName">은행명</label> 
-										<input type="text" name="bankName" maxlength="6">
-									</div>
-										
-									<div>
-										<label for="bankName">계좌 번호</label>
-										<input type="text" name="bankName" maxlength="16">
-									</div>
-									
-									<div>
-										<label for="bankOwner">예금주명</label> 
-										<input type="text" name="bankOwner" maxlength="6">
-									</div>
-										
-									<div>
-										<label for="birth">예금주 생년월일</label> 
-										<input type="text" name="birth" maxlength="6">
-									</div>
-									
-								</div>
-							</div>
-						
+														
 							<div style="text-align: center; margin: 20px 0;">
 								<input type="submit" class="button" value="저장하기">
 							</div>
-		
-							<!--계좌 정보 폼 입력 끝-->
-							</form>
+	
+							<!--선물 정보 폼 입력 끝-->
 						</div>
 					</div>
-				</div>
-			</div>
+					</fieldset>
+				</form>
+				
+				
+				<!--계좌 정보 폼 입력 시작 : bank 테이블 insert-->
+			<form action="" name="BankFrm" method="post">
+				<fieldset>
+					<!-- Accordion card 4 -->
+					<div class="card">
+						<div class="card-header py-4" id="heading-2-4"
+							data-toggle="collapse" role="button" data-target="#collapse-2-4"
+							aria-expanded="false" aria-controls="collapse-2-3">
+							<h6 class="mb-0">4. 계좌 설정</h6>
+						</div>
+						<div id="collapse-2-4" class="collapse"
+							aria-labelledby="heading-2-4" data-parent="#accordion-2">
+							<div class="card-body">
+							
+								<p>이메일</p>
+								<div class="projectBox">
+									<div>
+										<div>
+											<label for="email">이메일 주소</label>
+											<input type="text" name="email">
+										</div>
+										
+									</div>
+								</div>
+									<br>
+								<p>본인 인증</p>
+								<div class="projectBox">
+									<div>
+										<div>
+											<label for="hp">휴대폰 번호</label>
+											<input type="text" name="hp">
+										</div>
+										
+									</div>
+								</div>
+									<br>
+								<p>입금 계좌</p>
+								<div class="projectBox">
+									<div>
+										<div>
+											<input type="radio" name="bank" value="private"><span style="margin-right: 30px;">개인</span>
+											<input type="radio" name="bank" value="business">사업자(개인사업자 포함)
+										</div>
+										<br>
+										
+										<div>
+											<label for="bankName">은행명</label> 
+											<input type="text" name="bankName" maxlength="6">
+										</div>
+											
+										<div>
+											<label for="bankName">계좌 번호</label>
+											<input type="text" name="bankName" maxlength="16">
+										</div>
+										
+										<div>
+											<label for="bankOwner">예금주명</label> 
+											<input type="text" name="bankOwner" maxlength="6">
+										</div>
+											
+										<div>
+											<label for="birth">예금주 생년월일</label> 
+											<input type="text" name="birth" maxlength="6">
+										</div>
+										
+									</div>
+								</div>
+							
+								<div style="text-align: center; margin: 20px 0;">
+									<input type="submit" class="button" value="저장하기">
+								</div>
+			
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<!--계좌 정보 폼 입력 끝-->
+			</form>
 		</div>
-		<div style="text-align: center; margin-bottom: 50px;">
-		</div>
+		<div style="text-align: center; margin-bottom: 50px;"></div>
 	<!-- 내용 끝 -->
 
+	</div><!-- container -->
 
 	<footer>
 		<%@ include file="../inc/bottom.jsp"%>
 	</footer>
-
-	</div>
 	
 </body>
 </html>

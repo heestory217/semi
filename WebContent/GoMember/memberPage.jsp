@@ -6,7 +6,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <link rel="stylesheet" href=" <c:url value='/css/memberPage.css'/>">	<!-- header 위치 -->
- <%@ include file="../inc/top.jsp"%> 
+<%@ include file="../login/login_check.jsp" %>
+<%@ include file="../inc/top.jsp"%> 
  
  <div class="tabs-area spb MyPage">
  

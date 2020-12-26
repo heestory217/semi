@@ -5,73 +5,71 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <link rel="stylesheet" href=" <c:url value='/css/memberEdit.css'/>">	<!-- header 위치 -->
+ <%@ include file="../login/login_check.jsp" %>
  <%@ include file="../inc/top.jsp"%> 
  
 <script type="text/javascript">
-	$(function(){
-			
-		$('form[name=frmMemberEdit]').submit(function(){			
-			if($('#pwdOrigin').val()!=${gVo.pwd}){
-				 alert('기존 비밀번호를 확인해주세요');
-				 event.preventDefault();				
-				$('#pwdOrigin').focus();
-			}else if($('#pwd').val()!=$('#pwdCk').val() ){
-				 alert('신규 비밀번호가 일치하지 않습니다.');
-				 event.preventDefault();
-				$('#pwd').focus();
-			}else if(($('#address1').val().length>0)||($('#address2').val().length>0)||($('#address3').val().length>0)) {
-				if ($('#address1').val().length<1) {
-					alert('배송지를 등록하려면 받을사람을 입력해야합니다.');
-					event.preventDefault();
-					$('#address1').focus();
-				}else if ($('#address2').val().length<1) {
-					alert('배송지를 등록하려면 받을사람의 연락처를 입력해야합니다.');
-					event.preventDefault();
-					$('#address2').focus();
-				}else if ($('#address3').val().length<1) {
-					alert('배송지를 등록하려면 배송주소를 입력해야합니다.');
-					event.preventDefault();
-					$('#address3').focus();
-				}
-			}else if($('#accountNum').val().length>0){
-				if($('input[name=businessFlag]:radio:checked').length<1){
-					if($('#bankName').val().length<1){
-						alert('은행명을 입력해주세요');
-						event.preventDefault();
-						$('#bankName').focus();
-					}else if($('#ownerName').val().length<1){
-						alert('예금주명을 입력해주세요');
-						 event.preventDefault();
-						$('#ownerName').focus();
-					}else if($('#ownerBirth').val().length<1){
-						alert('생년월일을 입력해주세요');
-						 event.preventDefault();
-						$('#ownerBirth').focus();
-					}
-				}else if($('#accountNum').val().length<1){
-					if($('input[name=businessFlag]:radio:checked').length>0){
-						alert('계좌번호가 존재하지 않습니다.');
-						 event.preventDefault();
-						 $('#accountNum').focus();
-					}else if($('#bankName').val().length>0){
-						alert('계좌번호가 존재하지 않습니다.');
-						 event.preventDefault();
-						$('#accountNum').focus();
-					}else if($('#ownerName').val().length>0){
-						alert('계좌번호가 존재하지 않습니다.');
-						 event.preventDefault();
-						$('#accountNum').focus();
-					}else if($('#ownerBirth').val().length>0){
-						alert('계좌번호가 존재하지 않습니다.');
-						event.preventDefault();
-						$('#accountNum').focus();
-					}
-			 }else{
-				$('form[name=frmMemberEdit]').submit();
-			 }//if
-
-		});
-	});
+$(function(){
+    $('form[name=frmMemberEdit]').submit(function(){      
+       var realPwd = ${gVo.pwd};
+	       if($('#pwdOrigin').val()!=realPwd){
+	           alert('기존 비밀번호를 확인해주세요');
+	           event.preventDefault();            
+	          $('#pwdOrigin').focus();
+	       }else if($('#pwd').val()!=$('#pwdCk').val() ){
+	           alert('신규 비밀번호가 일치하지 않습니다.');
+	           event.preventDefault();
+	          $('#pwd').focus();
+	       }else{
+	       
+	       
+	        if(($('#address1').val().length>0)||($('#address2').val().length>0)||($('#address3').val().length>0)) {
+	          if ($('#address1').val().length<1) {
+	             alert('배송지를 등록하려면 받을사람을 입력해야합니다.');
+	             event.preventDefault();
+	             $('#address1').focus();
+	          }else if ($('#address2').val().length<1) {
+	             alert('배송지를 등록하려면 받을사람의 연락처를 입력해야합니다.');
+	             event.preventDefault();
+	             $('#address2').focus();
+	          }else if ($('#address3').val().length<1) {
+	             alert('배송지를 등록하려면 배송주소를 입력해야합니다.');
+	             event.preventDefault();
+	             $('#address3').focus();
+	          }
+	      	 }else if($('#accountNum').val().length>0){
+	             if($('#bankName').val().length<1){
+	                alert('은행명을 입력해주세요');
+	                event.preventDefault();
+	                $('#bankName').focus();
+	             }else if($('#ownerName').val().length<1){
+	                alert('예금주명을 입력해주세요');
+	                 event.preventDefault();
+	                $('#ownerName').focus();
+	             }else if($('#ownerBirth').val().length<1){
+	                alert('생년월일을 입력해주세요');
+	                 event.preventDefault();
+	                $('#ownerBirth').focus();
+	             }
+	         } else{
+	           if($('#bankName').val().length>0){
+	              alert('계좌번호가 존재하지 않습니다.');
+	               event.preventDefault();
+	              $('#accountNum').focus();
+	           }else if($('#ownerName').val().length>0){
+	              alert('계좌번호가 존재하지 않습니다.');
+	               event.preventDefault();
+	              $('#accountNum').focus();
+	           }else if($('#ownerBirth').val().length>0){
+	              alert('계좌번호가 존재하지 않습니다.');
+	              event.preventDefault();
+	              $('#accountNum').focus();
+        	  }//내부
+           }
+       }//외부
+    });
+ });
+	
 
 </script>
  
@@ -174,8 +172,7 @@
 		                        	
 		                        </div>	
 	                        </div>
-	                        
-	                                    
+          
 		                    <div class="MyPagePart">
 		         <!-- 소개 변경가능 -->	           
 		                    	<div class="myTitle">
@@ -185,11 +182,9 @@
 		                    	</div>
 		                    	
 		                    	<div class="myContents">
-		                    		<textarea name="memberIntro" id="introduce" rows="3" cols="60" placeholder="소개글을 작성해주세요">${gVo.memberIntro}<%-- <c:if test="${empty gVo.memberIntro}">등록된 소개가 없습니다.</c:if> --%>
-		                    		</textarea>
+		                    		<textarea name="memberIntro" id="introduce" rows="3" cols="60" placeholder="소개글을 작성해주세요">${gVo.memberIntro}</textarea>
 		                    			<%-- <c:if test="${!empty gVo.memberIntro}"> --%>
 			                    		<%-- </c:if> --%>
-		                    		
 		                    	</div>                     
 		                    </div>           
 	                

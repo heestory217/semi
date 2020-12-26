@@ -11,6 +11,7 @@
 
 
 	<!-- header 위치 -->
+	<%@ include file="../login/login_check.jsp" %>
 	<%@ include file="../inc/top.jsp"%>
 	
 

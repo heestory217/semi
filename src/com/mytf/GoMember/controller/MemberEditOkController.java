@@ -39,11 +39,14 @@ public class MemberEditOkController implements Controller{
 		String email=(String)session.getAttribute("email");
 		
 		String msg="회원정보 수정 실패!", url="/GoMember/memberEdit.do";
+		
 		//1
 		try {
 		MultipartRequest mr= new MultipartRequest(request, saveDir, maxSize, "utf-8", new DefaultFileRenamePolicy());
 		System.out.println("파일업로드 완료!");
 		String fileName=mr.getFilesystemName("upfile");
+		/* session.setAttribute("fileName", fileName); */
+		
 		String originalFileName="";
 		long fileSize=0;
 		if(fileName!=null&&!fileName.isEmpty()) {
@@ -120,6 +123,7 @@ public class MemberEditOkController implements Controller{
 				if(fileName!=null&&!fileName.isEmpty()) {
 					File oldFile= new File(saveDir, oldfileName);
 					if(oldFile.exists()) {
+						session.setAttribute("fileName", fileName);//old파일 존재하면 세션에 파일네임셋팅 새로하기
 						boolean bool=oldFile.delete();
 						System.out.println("기존파일 삭제여부"+bool);
 					}

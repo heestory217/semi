@@ -134,10 +134,8 @@ $(function(){
 				</div>
 
 				<div class="logo-column">
-					<a href="<c:url value='/mainArticle.do'/>"
-						class="f_logo"> <img
-						src="<c:url value='/img/topLogo.png'/>"
-						alt="로고 이미지">
+					<a href="<c:url value='/mainArticle.do'/>" class="f_logo"> 
+					<img src="<c:url value='/img/topLogo.png'/>" alt="로고 이미지">
 					</a>
 				</div>
 
@@ -188,7 +186,7 @@ $(function(){
 					<div class="card-body">
 					
 						<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
-						<form action="" name="pjUploadFrm" method="post">
+						<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post">
 								<p>프로젝트개요</p>
 								<div class="projectBox">
 									<div>
@@ -196,7 +194,7 @@ $(function(){
 											<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
 												<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
 												만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-												<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22" onchange="title_change(this)">
+												<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22">
 										</div>
 										<br>
 										<div>
@@ -209,7 +207,7 @@ $(function(){
 										<div>
 											<label for="ctNo"><span style="color: #FF6F40;">*</span>프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
 												않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
-											<select name="category">
+											<select name="ctno">
 												<option value="1">제품디자인</option>
 												<option value="2">문구도서</option>
 												<option value="3">문화예술</option>
@@ -244,7 +242,7 @@ $(function(){
 								<br>
 								<div>
 									<label for="name">창작자 이름</label> <br> <input type="text"
-										name="name" disabled="disabled" value="회원이름"
+										name="name" disabled="disabled" value="${name }"
 										style="width: 20%;">
 								</div>
 								<br>
@@ -485,13 +483,13 @@ $(function(){
 									<div>
 										<div>
 											<label for="email">이메일 주소</label>
-											<input type="text" name="email">
+											<input type="text" name="email" value="${email}">
 										</div>
 										
 									</div>
 								</div>
 									<br>
-								<p>본인 인증</p>
+<!-- 								<p>본인 인증</p>
 								<div class="projectBox">
 									<div>
 										<div>
@@ -500,7 +498,7 @@ $(function(){
 										</div>
 										
 									</div>
-								</div>
+								</div> -->
 									<br>
 								<p>입금 계좌</p>
 								<div class="projectBox">

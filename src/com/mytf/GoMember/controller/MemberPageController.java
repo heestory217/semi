@@ -34,7 +34,7 @@ public class MemberPageController implements Controller{
 		BankVO bVo=null;
 		try {
 			gVo=gService.selectByEmail(email);
-			bVo=bService.selectByMemberNo(1);
+			bVo=bService.selectByMemberNo(memberNo);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

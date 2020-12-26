@@ -13,9 +13,10 @@ public class ProjUpBeforeController implements Controller {
 		//로그인 정보 세션에서 받아오기 (이메일)
 		HttpSession session=request.getSession();
 		String email=(String)session.getAttribute("email");
+		System.out.println("현재 로그인 email="+email);
 		
 		//로그인 정보가 없으면, 로그인창으로 보내기
-		if(email==null ||email.isEmpty()) {
+		if(email==null || email.isEmpty()) {
 			return "/login/login.do";
 		}
 		

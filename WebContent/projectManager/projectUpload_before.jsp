@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../inc/top.jsp"%>
 
 <!-- 프로젝트 등록 전 확인 페이지 -->
@@ -17,7 +18,7 @@
 		</ul>
 	</div>
 	<hr>
-	<form action="/projectManager/projectUpload.do" method="post" name="publicFrm">
+	<form action="<c:url value='/projectManager/projectUpload.do'/>" method="post" name="publicFrm">
 		<ul style="list-style: none";>
 			<li>
 				<div>

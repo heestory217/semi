@@ -8,9 +8,13 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	
+	//파일 업로드
 	config.filebrowserBrowseUrl = "../ckfinder/ckfinder.html";
     config.filebrowserFlashBrowseUrl = "../ckfinder/ckfinder.html?type=Flash";
     config.filebrowserUploadUrl = "../ckfinder/core/connector/java/connctor.java?command=QuickUpload&type=Files";
     config.filebrowserImageUploadUrl = "../ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Images";
     config.filebrowserFlashUploadUrl = "../ckfinder/core/connector/java/connector.java?command=QuickUpload&type=Flash";
+	
+	//에디터에 안내글 추가
+	config.extraPlugins='onchange,confighelper';
 };

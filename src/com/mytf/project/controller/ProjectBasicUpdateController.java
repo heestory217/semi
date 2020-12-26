@@ -34,7 +34,7 @@ public class ProjectBasicUpdateController implements Controller {
 		}
 		
 		request.setAttribute("vo", vo);
-		return "/projectManager/projectUpload.do?projectNo="+projectNo;
+		return "/projectManager/projectUpload.do?projectNo"+projectNo;
 	}
 
 	@Override

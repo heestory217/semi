@@ -25,26 +25,26 @@
 		<servlet-name>dispatcherServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-
+	
 	<!-- CKFINDER START -->
 	<servlet>
-		<servlet-name>ConnectorServlet</servlet-name>
-		<servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
-		<init-param>
-			<param-name>XMLConfig</param-name>
-			<param-value>/WEB-INF/config.xml</param-value>
-		</init-param>
-		<init-param>
-			<param-name>debug</param-name>
-			<param-value>false</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
+	  <servlet-name>ConnectorServlet</servlet-name>
+	  <servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+	  <init-param>
+	      <param-name>XMLConfig</param-name>
+	      <param-value>/WEB-INF/config.xml</param-value>
+	  </init-param>
+	  <init-param>
+	      <param-name>debug</param-name>
+	      <param-value>false</param-value>
+	  </init-param>
+	  <load-on-startup>1</load-on-startup>
 	</servlet>
-
+	  
 	<servlet-mapping>
-		<servlet-name>ConnectorServlet</servlet-name>
-		<url-pattern>/ckfinder/core/connector/java/connector.java</url-pattern>
-	</servlet-mapping>
+	  <servlet-name>ConnectorServlet</servlet-name>
+	  <url-pattern>/ckfinder/core/connector/java/connector.java</url-pattern>
+	</servlet-mapping>  
 	<!-- CKFINDER END -->
 
 </web-app>

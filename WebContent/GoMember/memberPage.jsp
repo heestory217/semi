@@ -31,10 +31,8 @@
                     <span>결제수단</span>
                 </a>
             </li>
-            
         </ul>
          <hr>
-         
          
         <div class="tab-content MyProfileTab" id="pills-tabContent">
             <div class="tab-pane fade show active Mycontent" id="profile" role="tabpanel">
@@ -122,6 +120,8 @@
                    			<p>배송지를 추가해주세요.</p>
                        	</c:if>
                        	<c:if test="${!empty gVo.address}">
+                       	
+                       	
                        		${gVo.address}
                        	</c:if>
                     </div>

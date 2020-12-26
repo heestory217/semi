@@ -28,10 +28,10 @@
 			<div class="myPageOption-middle">
 				<a href="#">
 					<span> ${name}</span>
-					<c:if test="${t_hasFileName}"> 
+					<c:if test="${empty fileName}"> 
 						<img src="<c:url value='/img/user-account.png'/>" width="50px" alt="마이페이지 아이콘">
 					</c:if>						
-					<c:if test="${!t_hasFileName}"> 
+					<c:if test="${!empty fileName}"> 
 						<img src="<c:url value='/GoMember_upload/${fileName}'/>" width="50px" alt="마이페이지 아이콘">
 					</c:if>	
 					

@@ -63,13 +63,17 @@ public class MemberEditOkController implements Controller{
 		String memberIntro=mr.getParameter("memberIntro");
 		String address=mr.getParameter("address");
 		
-		String bankNo=mr.getParameter("bankNo");
+		String bankNo=null;		
+		if(mr.getParameter("bankNo")!=null&&!mr.getParameter("bankNo").isEmpty()) {
+			 bankNo=mr.getParameter("bankNo");
+		}
 		String businessFlag=mr.getParameter("businessFlag");
 		String bankName=mr.getParameter("bankName");
 		String accountNum=mr.getParameter("accountNum");
 		String ownerName=mr.getParameter("ownerName");
 		String ownerBirth=mr.getParameter("ownerBirth");
 		
+		System.out.println(businessFlag);
 		//2 회원정보는 업뎃, 은행정보는 인서트/혹은 업뎃
 		GoMemberVO gVo= new GoMemberVO();
 		gVo.setMemberNo(Integer.parseInt(memberNo));
@@ -83,14 +87,25 @@ public class MemberEditOkController implements Controller{
 		gVo.setFileSize(fileSize);
 		gVo.setOriginalFileName(originalFileName);
 		
+		//은행번호가 있으면 셋팅한다.
 		BankVO bVo=new BankVO();
-		bVo.setBankNo(Integer.parseInt(bankNo));
-		bVo.setBusinessFlag(businessFlag);
-		bVo.setBankName(bankName);
-		bVo.setAccountNum(accountNum);
-		bVo.setOwnerName(ownerName);
-		bVo.setOwnerBirth(ownerBirth);
-		bVo.setMemberNo(Integer.parseInt(memberNo));
+		if(accountNum!=null&&!accountNum.isEmpty()) {
+			if(mr.getParameter("bankNo")!=null&&!mr.getParameter("bankNo").isEmpty()) {
+			  bVo.setBankNo(Integer.parseInt(bankNo)); 
+			  }
+			 
+			/*
+			  if(bankNo!=null&&!bankNo.isEmpty()) {
+			  bVo.setBankNo(Integer.parseInt(bankNo)); }
+			 */
+			bVo.setBusinessFlag(businessFlag);
+			bVo.setBankName(bankName);
+			bVo.setAccountNum(accountNum);
+			bVo.setOwnerName(ownerName);
+			bVo.setOwnerBirth(ownerBirth);
+			bVo.setMemberNo(Integer.parseInt(memberNo));
+		}
+	
 		
 		
 			//은행계좌 유무로 에딧에서 유효성체크하고, 
@@ -104,7 +119,7 @@ public class MemberEditOkController implements Controller{
 					File oldFile= new File(saveDir, oldfileName);
 					if(oldFile.exists()) {
 						boolean bool=oldFile.delete();
-						System.out.println("기존파일 삭제여부"+bool+""+businessFlag);
+						System.out.println("기존파일 삭제여부"+bool);
 					}
 				}
 				
@@ -117,13 +132,16 @@ public class MemberEditOkController implements Controller{
 					}
 					
 					if(cnt2>0) {
-						msg="회원정보 수정성공!";
+						msg="회원정보, 계좌정보 수정성공!";
 						url="/GoMember/memberPage.do";
 					}else {//??트랜잭션해야하나 고민
 						msg="회원정보 수정성공, 계좌정보 수정실패!";
 						url="/GoMember/memberEdit.do";
 					}
 				}
+				
+				msg="회원정보 수정성공!";
+				url="/GoMember/memberPage.do";
 			}
 			
 		} catch (SQLException e) {

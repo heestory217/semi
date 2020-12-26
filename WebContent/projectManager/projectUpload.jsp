@@ -104,7 +104,7 @@ $(function(){
 	    }
 
 	}).datepicker("option", "maxDate", $("#opendate")+60); 
-	
+
 	//프로젝트 시간지정	
 	$('.timepicker').timepicker({
 	    timeFormat: 'HH:mm p',
@@ -115,6 +115,16 @@ $(function(){
 	    dropdown: true,
 	    scrollbar: true
 	});
+	
+	//22자 제목 안내
+	$('#projectName').keyup(function(){
+		if($('#projectName').val().length==22){
+			$('#title_length').text('22자 이내의 제목만 입력가능합니다.');
+		}else{
+			$('#title_length').text('');
+		}
+	});
+	
 });//readyend
 
 </script>
@@ -194,7 +204,8 @@ $(function(){
 											<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
 												<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
 												만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-												<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22">
+												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="22">
+												<br><span style="color: #FF6F40;" id="title_length"></span>
 										</div>
 										<br>
 										<div>

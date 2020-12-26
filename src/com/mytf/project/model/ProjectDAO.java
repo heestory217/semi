@@ -40,4 +40,32 @@ public class ProjectDAO {
 			pool.dbClose(ps, con);
 		}
 	}
+	
+	public int updateProject(ProjectVO vo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+			//1, 2
+			con=pool.getConnection();
+			
+			//3.ps
+			String sql="insert into project(projectno, projectname, projectdetail,ctno,memberno)\r\n" + 
+					"values('PJ00'||projectNo_seq.nextval,?,?,?,?)";
+			ps=con.prepareStatement(sql);
+			
+			ps.setString(1, vo.getProjectName());
+			ps.setString(1, vo.getProjectDetail());
+			ps.setInt(2, vo.getCtNo());
+			ps.setInt(2, vo.getMemberNo());
+			
+			//4. exec
+			int cnt=ps.executeUpdate();
+			System.out.println("프로젝트 업데이트 결과 cnt="+cnt+", 매개변수 vo="+vo);
+			
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
 }

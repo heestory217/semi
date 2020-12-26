@@ -14,7 +14,7 @@ public class ProjectUploadOkController implements Controller {
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		//세션정보 가져오기
 		HttpSession session=request.getSession();
-		String memberNo=(String)session.getAttribute("memberNo");
+		int memberNo=(int)session.getAttribute("memberNo");
 		
 		//파라미터
 		String projectName = request.getParameter("projectName");
@@ -28,7 +28,7 @@ public class ProjectUploadOkController implements Controller {
 		
 		//유효성 검사
 		String msg="프로젝트 기본정보를 입력하세요.", url="/projectManager/projectUpload.do";
-		if(memberNo==null || memberNo.isEmpty()) {
+		if(memberNo==0) {
 			msg="로그인 후 이용할 수 있습니다.";
 			url="/login/login.do";
 		}else if(projectName==null || projectName.isEmpty()) {
@@ -43,7 +43,7 @@ public class ProjectUploadOkController implements Controller {
 		ProjectService service = new ProjectService();
 		
 		ProjectVO vo = new ProjectVO();
-		vo.setMemberNo(Integer.parseInt(memberNo));
+		vo.setMemberNo(memberNo);
 		vo.setProjectName(projectName);
 		vo.setProjectDetail(projectDetail);
 		vo.setCtNo(Integer.parseInt(ctNo));

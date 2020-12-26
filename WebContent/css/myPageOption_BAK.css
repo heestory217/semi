@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+
+.dropDown-myPage span {
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+hr {
+    color: gray;
+}
+
+.myPage-Profile a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #808080;
+}
+
+.myPageOption>a {
+    text-decoration: none;
+    color: #5a5959;
+}
+.myPageOption-top span {
+    DISPLAY: inline-block;
+    WIDTH: 90%;
+    TEXT-ALIGN: CENTER;
+    FONT-WEIGHT: bold;
+    COLOR: #504d4d;
+}
+
+.myPageOption-top {
+    /* PADDING-TOP: 4PX;
+    PADDING-BOTTOM: 5PX; */
+}
+
+.myPageOption-top {
+/*     BORDER-BOTTOM-STYLE: ridge;
+    BORDER-BOTTOM-COLOR: #80808017; */
+    box-shadow:rgba(10, 10, 10, 0.1) 0px 1px 2px 0px;
+    height:65px;
+}
+.myPageOption-container{
+	margin:0 auto;
+	padding:0;
+}
+.myPage-closeBtn{
+	float:right;
+	padding:26px 15px 0 0;
+}
+
+.myPageOption {
+    /* PADDING: 5PX; */
+    FONT-WEIGHT: 900;
+    FONT-SIZE: 1.3REM;
+    margin-bottom:24px;
+}
+.myPageOption-middle img {border-radius: 50%;}
+
+.myPageOption-bottom {
+    border-bottom: 1px solid rgb(239, 239, 239);
+    border-top: 1px solid rgb(239, 239, 239);
+    /* width: 70%; */
+}
+
+.myPageOption-middle {
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.myPage-Profile {
+   /*  width: 80%;
+    margin-left: 150px; */
+    
+}
+.container.myPage-Profile {margin-bottom: 200px;}
+.myPageOption-bottom {padding-top: 20px;padding-bottom: 20px;}
+
+.myPageOption-bottom2 {
+    padding-top: 20px;
+}
+
+.myPageOption-top span {
+  /*   padding-top: 10px;
+    padding-bottom: 20px; */
+    line-height:65px;
+}
+
+

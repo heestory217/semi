@@ -75,7 +75,6 @@ $(function(){
 	        var year1 = $("#opendate").datepicker('getDate').getFullYear();
 	        var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
 	        $('#page_output1').html(fullDate);
-	        $('#page_output2').html(fullDate);
 	    }
 
 	}).datepicker('setDate',new Date()).datepicker("option", "minDate", new Date());
@@ -120,23 +119,6 @@ $(function(){
 	
 	
 });//readyend
-
-//스마트에디터 유효성 검사
-function submitContents() {
-        var elClickedObj = $("#form");
-        oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
-        var ir1 = $("#ir1").val();
-
-        if( ir1 == ""  || ir1 == null || ir1 == '&nbsp;' || ir1 == '<p>&nbsp;</p>')  {
-             alert("내용을 입력하세요.");
-             oEditors.getById["ir1"].exec("FOCUS"); //포커싱
-             return;
-        }
-
-        try {
-            elClickedObj.submit();
-        } catch(e) {}
-}
 
 </script>
 
@@ -183,7 +165,7 @@ function submitContents() {
 
 	<!-- 확인사항 배너 -->
 	<div class="announce_b" style="margin-bottom: 5px;">
-		<p>공개검토 요청 전에 어떤 것을 확인해야 할까요?</p>
+		<p><a href="<%=request.getContextPath() %>/helpCenter/mainCenter.jsp">공개검토 요청 전에 어떤 것을 확인해야 할까요?</a></p>
 	</div>
 	<div class="announce_g" style="margin-bottom: 20px;">
 		<p>
@@ -192,61 +174,65 @@ function submitContents() {
 	</div>
 	<!-- 확인사항 배너 끝-->
 
-	<!-- 폼 입력 시작 -->
-	<form action="" name="projectUploadFrm" method="post">
 
 		<div class="container">
 			<!-- 테스트 -->
 			<div id="accordion-2" class="accordion accordion-spaced">
 
-				<!-- Accordion card 1 -->
-				<div class="card">
-					<div class="card-header py-4" id="heading-2-1"
-						data-toggle="collapse" role="button" data-target="#collapse-2-1"
-						aria-expanded="false" aria-controls="collapse-2-1">
-						<h6 class="mb-0">1. 프로젝트 개요</h6>
-					</div>
-					<div id="collapse-2-1" class="collapse"
-						aria-labelledby="heading-2-1" data-parent="#accordion-2">
-						<div class="card-body">
-							<p>프로젝트개요</p>
-							<div class="projectBox">
-								<div>
+				<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
+				<form action="" name="pjUploadFrm" method="post">
+
+					<!-- Accordion card 1 -->
+					<div class="card">
+						<div class="card-header py-4" id="heading-2-1"
+							data-toggle="collapse" role="button" data-target="#collapse-2-1"
+							aria-expanded="false" aria-controls="collapse-2-1">
+							<h6 class="mb-0">1. 프로젝트 개요</h6>
+						</div>
+						<div id="collapse-2-1" class="collapse"
+							aria-labelledby="heading-2-1" data-parent="#accordion-2">
+							<div class="card-body">
+								<p>프로젝트개요</p>
+								<div class="projectBox">
 									<div>
-										<label for="projectName">프로젝트 제목</label><br>
-											<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
-											만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-											<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22" onchange="title_change(this)">
-									</div>
-									<br>
-									<div>
-										<label for="fileName">프로젝트 대표이미지</label> <br> <input
-											type="file" name="fileName">
-									</div>
-									<br>
-									<div>
-										<label for="projectDetail">프로젝트 요약</label> <br> 
-										<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
-										<textarea rows="3" cols="130" name="projectDetail"
-											placeholder="프로젝트 요약을 입력해주세요"></textarea>
-									</div>
-									<br>
-									<div>
-										<label for="ctNo">프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
-											않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
-										<select name="category">
-											<option value="1">제품디자인</option>
-											<option value="2">문구도서</option>
-											<option value="3">문화예술</option>
-											<option value="4">푸드</option>
-											<option value="5">패션</option>
-										</select>
+										<div>
+											<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
+												<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
+												만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
+												<input type="text" name="projectName" placeholder="제목을 입력하세요" maxlength="22" onchange="title_change(this)">
+										</div>
+										<br>
+										<div>
+											<label for="projectDetail"><span style="color: #FF6F40;">*</span>프로젝트 요약</label> <br> 
+											<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
+											<textarea rows="3" cols="130" name="projectDetail"
+												placeholder="프로젝트 요약을 입력해주세요"></textarea>
+										</div>
+										<br>
+										<div>
+											<label for="ctNo"><span style="color: #FF6F40;">*</span>프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
+												않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
+											<select name="category">
+												<option value="1">제품디자인</option>
+												<option value="2">문구도서</option>
+												<option value="3">문화예술</option>
+												<option value="4">푸드</option>
+												<option value="5">패션</option>
+											</select>
+										</div>
 									</div>
 								</div>
+							
+							<div style="text-align: center; margin: 20px 0;">
+								<input type="submit" class="button" value="저장하기">
 							</div>
-
+							
+				<!-- 프로젝트 기본등록 폼 입력 끝-->
+				</form>
+							
 							<br>
-
+				<!--창작자 정보 폼 입력 시작 : 회원 테이블 insert-->
+				<form action="" name="CreaterFrm" method="post">
 							<p>창작자 정보</p>
 							<div class="projectBox">
 								<div>
@@ -272,19 +258,29 @@ function submitContents() {
 										<textarea rows="3" cols="130" name="memberIntro"
 											placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
 									</div>
+									
 								</div>
 							</div>
-							<!-- box -->
+																
+							<div style="text-align: center; margin: 20px 0;">
+								<input type="submit" class="button" value="저장하기">
+							</div>
+
+				<!--창작자 정보 폼 입력 끝-->
+				</form>
 						</div>
 					</div>
 				</div>
 
+				<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
+				<form action="" name="pjUpdateFrm" method="post">
+				
 				<!-- Accordion card 2 -->
 				<div class="card">
 					<div class="card-header py-4" id="heading-2-2"
 						data-toggle="collapse" role="button" data-target="#collapse-2-2"
 						aria-expanded="false" aria-controls="collapse-2-2">
-						<h6 class="mb-0">2. 펀딩 및 선물 구성</h6>
+						<h6 class="mb-0">2. 펀딩구성 및 스토리텔링</h6>
 					</div>
 					<div id="collapse-2-2" class="collapse"
 						aria-labelledby="heading-2-2" data-parent="#accordion-2">
@@ -349,21 +345,25 @@ function submitContents() {
 							
 							<br>
 							
-							<p>프로젝트 주요 일정</p>
+							<p>프로젝트 대표이미지</p>
 							<div class="projectBox">
 								<div>
-										<p>프로젝트 공개일 : <span style="color: #FF6F40;font-weight: bold;" id="page_output2"></span></p>
+									<input type="file" name="fileName">
 								</div>
 							</div>
 							<br>
 							
-							<p>선물 구성</p>
+							<p>프로젝트 스토리텔링</p>
 							<div class="projectBox">
 								<div>
+									<p>프로젝트에 대한 이야기를 들려주세요.</p>
 									<div>
-									
-									<p>선물</p>
-									
+										<!-- 에디터 -->
+											<textarea name="content" id="p_content" style="width: 100%;"></textarea>
+											<script type="text/javascript">
+											 CKEDITOR.replace('p_content', {height: 500});
+											</script>
+										<!-- 에디터 -->
 									</div>
 								</div>
 							</div>
@@ -413,40 +413,68 @@ function submitContents() {
 							<p>상품 정보 고시</p>
 							<div class="projectBox">
 								<div>
-									<div></div>
+									<div>
+									<textarea rows="5" cols="130" name="giftInfo">
+품명 및 모델명
+
+재질
+
+구성품 
+
+크기 
+
+동일모델의 출시년월
+
+제조자(수입자)
+
+제조국
+
+품질보증기준
+									</textarea>
+									</div>
 								</div>
 							</div>
 							
+							<div style="text-align: center; margin: 20px 0;">
+								<input type="submit" class="button" value="저장하기">
+							</div>
+							<!--프로젝트 업데이트폼 입력 끝-->
+							</form>
 							
 						</div>
 					</div>
 				</div>
-
+				
+				
+				<!--선물 정보 폼 입력 시작 : gift 테이블 insert (+item table)-->
+				<form action="" name="GiftFrm" method="post">
+				
 				<!-- Accordion card 3 -->
 				<div class="card">
 					<div class="card-header py-4" id="heading-2-3"
 						data-toggle="collapse" role="button" data-target="#collapse-2-3"
 						aria-expanded="false" aria-controls="collapse-2-3">
-						<h6 class="mb-0">3. 스토리텔링</h6>
+						<h6 class="mb-0">3. 선물 구성</h6>
 					</div>
 					<div id="collapse-2-3" class="collapse"
 						aria-labelledby="heading-2-3" data-parent="#accordion-2">
 						<div class="card-body">
-							<p>프로젝트에 대한 이야기를 들려주세요.</p>
 							<div>
-								
-								<!-- 에디터 -->
-								<textarea id="p_content" name="content" style="width: 100%;"></textarea>
-								<script type="text/javascript">
-								 CKEDITOR.replace('p_content', {height: 500});
-								</script>
-								<!-- 에디터 -->
-								
+								<p>선물</p>
 							</div>
 						</div>
+													
+						<div style="text-align: center; margin: 20px 0;">
+							<input type="submit" class="button" value="저장하기">
+						</div>
+
+						<!--선물 정보 폼 입력 끝-->
 					</div>
 				</div>
-
+				
+				
+				<!--계좌 정보 폼 입력 시작 : bank 테이블 insert-->
+				<form action="" name="BankFrm" method="post">
 				<!-- Accordion card 4 -->
 				<div class="card">
 					<div class="card-header py-4" id="heading-2-4"
@@ -512,16 +540,20 @@ function submitContents() {
 								</div>
 							</div>
 						
+							<div style="text-align: center; margin: 20px 0;">
+								<input type="submit" class="button" value="저장하기">
+							</div>
+		
+							<!--계좌 정보 폼 입력 끝-->
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div style="text-align: center; margin-bottom: 50px;">
-			<input type="submit" class="button" value="검토 요청하기">
 		</div>
-	</form>
-	<!-- 테스트 -->
+	<!-- 내용 끝 -->
 
 
 	<footer>

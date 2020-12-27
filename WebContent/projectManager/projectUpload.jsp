@@ -51,6 +51,7 @@
 <script type="text/javascript">
 var oEditors = [];
 var itemNum = 0;
+var pjStory = CKEDITOR.instances.projectStory.getData();
 
 $(function(){
 	//달력 - 프로젝트 오픈일
@@ -163,6 +164,29 @@ $(function(){
 		var curDate = $('#deliveryDay').datepicker('getDate');
 		/* alert(curDate); */
 	});
+	
+	//--------------------------------------------------------------------
+	
+	//계좌
+	$('form[name=BankFrm]').submit(function(){
+	     if($('#bankName').val().length<1){
+            alert('은행명을 입력해주세요');
+            event.preventDefault();
+            $('#bankName').focus();
+         }else if($('#ownerName').val().length<1){
+            alert('예금주명을 입력해주세요');
+             event.preventDefault();
+            $('#ownerName').focus();
+         }else if($('#ownerBirth').val().length<1){
+            alert('생년월일을 입력해주세요');
+             event.preventDefault();
+            $('#ownerBirth').focus();
+         }else if($('#accountNum').val().length<1){
+       	  alert('계좌번호를 입력해주세요');
+             event.preventDefault();
+            $('#accountNum').focus();
+         }	
+	});	
 
 });//readyend
 
@@ -278,7 +302,7 @@ $(function(){
 					
 						<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
 						<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post">
-								<input type="text" name="projectNo" value="${param.projectNo}"/>
+								<input type="hidden" name="projectNo" value="${param.projectNo}"/>
 								<p>프로젝트개요</p>
 								<div class="projectBox">
 									<div>
@@ -327,7 +351,7 @@ $(function(){
 							
 								<div>
 									<label for="name">창작자 이름</label> <br> 
-									<p style="width: 20%;font-weight: bold">${name }</p>
+									<p>${name }</p>
 								</div>
 								<div>
 									<p style="color: #FF6F40;">※회원정보 수정페이지에서 프로필 이미지등록 및 창작자님의 이력과 간단한 소개를 써 주세요.</p> 
@@ -381,7 +405,7 @@ $(function(){
 								<div>
 									<!-- 프로젝트 공개일시 -->
 									<div>
-										<label for="goalAmount">프로젝트 공개일시</label>
+										<label for="opendate">프로젝트 공개일시</label>
 										<p>
 											<strong>심사 승인 후</strong>, 설정하신 일시에 <strong>프로젝트가
 												자동으로 공개</strong>되니 신중하게 정해주세요. <br>설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실 수도 있습니다.
@@ -389,10 +413,10 @@ $(function(){
 										<p>
 											<!-- 달력넣기 -->
 											공개일시 : 
-											<input type="text" id="opendate">
+											<input type="text" id="opendate" name="opendate">
 											<span style="margin-right: 10px;"></span>
 											<!-- 시간넣기 -->
-											<input type="text" class="timepicker" id="opentime">
+											<input type="text" class="timepicker" id="opentime" name="opentime">
 										</p>
 									</div>
 									
@@ -402,10 +426,10 @@ $(function(){
 										<!-- 프로젝트 마감일시 -->
 										<!-- 공개일시를 먼저 선택해야 사용가능함 disable false -->
 										<label for="duedate">프로젝트 마감일시</label>
-										<p>마감일시 : <input type="text" id="duedate"></p>
+										<p>마감일시 : <input type="text" id="duedate" name="duedate"></p>
 										<p>
 											<!-- 위에서 설정한 걸로 넣기 날짜 -->
-											<strong>마감일을 정할 때 주의할 점</strong><br> 프로젝트는 <span
+											<strong>※마감일을 정할 때 주의할 점</strong><br> 프로젝트는 <span
 												style="color: #FF6F40;" id="page_output1"></span>로 부터 최대 60일 동안
 											진행하실 수 있고 마감일 자정에 종료됩니다. <br>이미 선물을 만드셨다면, 선물 실행일 중에 마감일보다 이른 날짜가
 											있지 않은지 꼭 확인해주세요.
@@ -431,9 +455,9 @@ $(function(){
 									<p>프로젝트에 대한 이야기를 들려주세요.</p>
 									<div>
 										<!-- 에디터 -->
-											<textarea name="content" id="p_content" style="width: 100%;"></textarea>
+											<textarea name="projectStory" id="projectStory" style="width: 100%;"></textarea>
 											<script type="text/javascript">
-											 CKEDITOR.replace('p_content', {height: 500});
+											 CKEDITOR.replace('projectStory', {height: 500} );
 											</script>
 										<!-- 에디터 -->
 									</div>
@@ -661,7 +685,9 @@ $(function(){
 				
 				
 				<!--계좌 정보 폼 입력 시작 : bank 테이블 insert-->
-			<form action="" name="BankFrm" method="post">
+			<form action="<c:url value='/projectManager/projectPaymentEdit_ok.do'/>" name="BankFrm" method="post">
+				<input type="hidden" name="projectNo" value="${param.projectNo}"/>
+				<input type="hidden" name="bankNo" value="${bVo.bankNo}"> 
 				<fieldset>
 					<!-- Accordion card 4 -->
 					<div class="card">
@@ -673,8 +699,7 @@ $(function(){
 						<div id="collapse-2-4" class="collapse"
 							aria-labelledby="heading-2-4" data-parent="#accordion-2">
 							<div class="card-body">
-							
-								<p>이메일</p>
+<!-- 							<p>이메일</p>
 								<div class="projectBox">
 									<div>
 										<div>
@@ -685,7 +710,7 @@ $(function(){
 									</div>
 								</div>
 									<br>
-<!-- 								<p>본인 인증</p>
+								<p>본인 인증</p>
 								<div class="projectBox">
 									<div>
 										<div>
@@ -695,15 +720,14 @@ $(function(){
 										
 									</div>
 								</div> -->
-									<br>
 								<p>입금 계좌</p>
 								<div class="projectBox">
 									<div>
 										<div>
 											<label for="private" style="cursor:pointer;">
-											<input type="radio" name="bank" id="private" value="private"/>개인</label>
+											<input type="radio" name="businessFlag" id="private" value="private"/>개인</label>
 											<label for="business" style="cursor:pointer;width: 250px;">
-											<input type="radio" name="bank" id="business" value="business"/>사업자(개인사업자 포함)</label>
+											<input type="radio" name="businessFlag" id="business" value="business"/>사업자(개인사업자 포함)</label>
 										</div>
 										<br>
 										
@@ -714,17 +738,17 @@ $(function(){
 											
 										<div>
 											<label for="bankName">계좌 번호</label>
-											<input type="text" name="bankName" maxlength="16">
+											<input type="text" name="accountNum" maxlength="16">
 										</div>
 										
 										<div>
 											<label for="bankOwner">예금주명</label> 
-											<input type="text" name="bankOwner" maxlength="6">
+											<input type="text" name="ownerName" maxlength="6">
 										</div>
 											
 										<div>
 											<label for="birth">예금주 생년월일</label> 
-											<input type="text" name="birth" maxlength="6">
+											<input type="text" name="ownerBirth" maxlength="6">
 										</div>
 										
 									</div>

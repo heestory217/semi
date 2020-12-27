@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.controller.Controller;
+import com.mytf.bank.model.BankService;
+import com.mytf.bank.model.BankVO;
 import com.mytf.project.model.ProjectService;
 import com.mytf.project.model.ProjectVO;
 
@@ -21,13 +23,23 @@ public class ProjectUploadController implements Controller{
 		HttpSession session=request.getSession();
 		String name=(String)session.getAttribute("name");
 		String email=(String)session.getAttribute("email");
+		int memberNo=(int)session.getAttribute("memberNo");
 		
 		//프로젝트번호 넘겨받고 출력하기
 		ProjectService service = new ProjectService();
 		ProjectVO vo = null;
+		
+		//계좌정보 넘겨받고 출력하기
+		BankVO bVo=null;
+		BankService bService =new BankService();
+		
 		try {
+			//프로젝트
 			vo=service.selectByProjNo(projectNo);
 			System.out.println("\n현재 vo :"+vo);
+			//계좌
+			bVo=bService.selectByMemberNo(memberNo);
+			System.out.println("\n현재 bVo:"+bVo);
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -36,6 +48,7 @@ public class ProjectUploadController implements Controller{
 		request.setAttribute("name", name);
 		request.setAttribute("email", email);
 		request.setAttribute("vo", vo);
+		request.setAttribute("bVo", bVo);
 		
 		return "/projectManager/projectUpload.jsp";
 	}

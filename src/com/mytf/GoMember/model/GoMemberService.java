@@ -35,5 +35,9 @@ public class GoMemberService {
 	public int updateGoMember(GoMemberVO gVo) throws SQLException {
 		return gDao.updateGoMember(gVo);
 	}
+	
+	public int updateGoMemberProfile(GoMemberVO gVo) throws SQLException {
+		return gDao.updateGoMemberProfile(gVo);
+	}
 		
 }

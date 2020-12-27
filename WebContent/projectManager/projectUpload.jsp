@@ -320,17 +320,18 @@ $(function(){
 							
 				<br>
 							
-				<!--창작자 정보 폼 입력 시작 : 회원 테이블 insert-->
-				<form action="" name="CreaterFrm" method="post">
-						<p>창작자 정보</p>
+				<!--창작자 정보 폼 입력 시작 : 회원 테이블 insert | 파일업로드-->
+				<form action="<c:url value='/GoMember/memberProfileEdit_ok.do'/>" name="CreaterFrm" method="post" enctype="multipart/form-data" autocomplete="off">
+	        			<input type="hidden" name="projectNo" value="${param.projectNo}">
+        		<p>창작자 정보</p>
 						<div class="projectBox">
 							<div>
 							
 								<div>
-									<label for="fileName">프로필 이미지</label> <br> 창작자님 개인이나 팀의
+									<label for="upfile">프로필 이미지</label> <br> 창작자님 개인이나 팀의
 									사진을 올려주세요. <br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
 									형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <br><input
-										type="file" name="fileName">
+										type="file" id="upfile" name="upfile">
 								</div>
 								<br>
 								<div>

@@ -15,7 +15,7 @@ import com.mytf.common.Utility;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class MemberProfileEditOkController implements Controller{
+public class MemberProfileEditOKController implements Controller{
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -34,7 +34,7 @@ public class MemberProfileEditOkController implements Controller{
 			if(oldFileName==null) oldFileName="";
 			
 			String saveDir=request.getServletContext().getRealPath(Utility.UPLOAD_DIR);
-			saveDir=Utility.HEE_DIR;
+			saveDir=Utility.TEST_DIR;
 			int maxSize=10*1024*1024;
 
 			//1

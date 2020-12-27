@@ -184,34 +184,5 @@ public class GoMemberDAO {
 			pool.dbClose(ps, con);
 		}
 	}
-	
-	//희정 - 창작자 프로필, 소개 업데이트
-	public int updateGoMemberProfile(GoMemberVO gVo) throws SQLException {
-		Connection con=null;
-		PreparedStatement ps=null;
-		
-		try {
-			//1,2
-			con=pool.getConnection();
-			//3
-			String sql="update Gomember\r\n" + 
-					"set memberIntro=? fileName=?,fileSize=?,originalFileName=? " + 
-					"where email=?";
-			ps=con.prepareStatement(sql);
-			ps.setString(1,gVo.getMemberIntro());
-			ps.setString(2,gVo.getFileName());
-			ps.setLong(3,gVo.getFileSize());
-			ps.setString(4,gVo.getOriginalFileName());
-			ps.setString(5,gVo.getEmail());
-			
-			//4
-			int cnt=ps.executeUpdate();
-			System.out.println("프로필, 소개 업데이트 결과 cnt="+cnt+"매개변수 gVO="+gVo);
-			return cnt;
-		} finally {
-			pool.dbClose(ps, con);
-		}
-	}
-
 
 }

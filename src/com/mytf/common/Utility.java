@@ -6,7 +6,7 @@ public class Utility {
 	public static final String TEST_DIR
 	//="D:\\lecture\\workspace_list\\jsp_ws\\mystudy\\WebContent\\pds_upload";
 	//="H:\\lecture\\Project\\semi\\WebContent\\GoMember_upload";//자연
-	="D:\\\\Heejeong_java\\\\lecture\\\\workspace_list\\\\semi_ws\\\\SemiProject\\\\WebContent\\\\GoMember_upload"; // -희정
+	="D:\\Heejeong_java\\lecture\\workspace_list\\semi_ws\\SemiProject\\WebContent\\GoMember_upload"; // -희정
 	
 	public static final String UPLOAD_DIR="GoMember_upload";
 	

@@ -340,7 +340,7 @@ $(function(){
 						</div><!-- projectBox -->
 															
 						<div style="text-align: center; margin: 20px 0;">
-							<a href="/GoMember/memberEdit.do"><p class="button-2">창작자(회원)정보 수정하러 가기</p></a>
+							<a href="<c:url value='/GoMember/memberEdit.do'/>"><p class="button-2">창작자(회원)정보 수정하러 가기</p></a>
 						</div>
 
 				<!--창작자 정보 끝-->
@@ -594,8 +594,7 @@ $(function(){
 											<p>
 												구성된 선물에 대해 추가적으로 알리고 싶은 내용을적어주세요.
 											</p>
-											<textarea rows="1" cols="130" name="memberIntro"
-												placeholder="예) 배송비 포함, 얼리버드, <선물 세트 A> 등" style="padding:8px;"></textarea>
+											<textarea rows="1" cols="130" name="memberIntro" placeholder="예) 배송비 포함, 얼리버드, <선물 세트 A> 등" style="padding:8px;"></textarea>
 										</div>
 										<hr>
 										<div>

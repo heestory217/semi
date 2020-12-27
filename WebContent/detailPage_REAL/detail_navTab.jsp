@@ -1,3 +1,5 @@
+
+<%@page import="com.mytf.post.model.postVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -61,6 +63,7 @@
 			<%@ include file="detail_commTab_final.jsp"%>
 
 
+
 		</div>
 
 
@@ -115,6 +118,7 @@
 		</div>
 
 	</div>
+	
 
 	<script>
 		$(function() {

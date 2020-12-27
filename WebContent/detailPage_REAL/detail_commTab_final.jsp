@@ -1,3 +1,4 @@
+<%@page import="com.mytf.post.model.postVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
  <link rel="stylesheet" href="../css/detail_commTab.css">
@@ -39,8 +40,9 @@
 
 
 						<!--  게시글 "내용"끌어와서 보여주기 -->
-<%-- 						<%=스토리게시글no%> 로 가져오기?
- --%>						<div class="community_contents">
+<%-- 						<%=스토리게시글no%> 로 가져오기?--%>				
+				
+					<div class="community_contents">
 <%-- 						<%=스토리게시글no%> 로 가져오기? #communityContents에 넣기?			
  --%>				<div class="comm_moreContents">
 								<h1>
@@ -137,7 +139,7 @@
 </div>
 </div>
 	
-
+<button id="writePostBtn" onclick="location.href='<%=request.getContextPath()%>/post/write_all.do'">글쓰기</button>
 
 
 <script>

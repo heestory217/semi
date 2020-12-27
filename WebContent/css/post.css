@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+
+#boardBtn_All{
+	width: 150px;
+	height:190px;
+	background-color: #191970;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	padding: 20px, 20px;
+	border-radius:1em; 
+	outline:none;
+	margin-left: 480px;
+	margin-top: 50px;
+}
+
+#boardBtn_Update{
+	width: 150px;
+	height:190px;
+	background-color: #191970;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	padding: 20px, 20px;
+	border-radius:1em; 
+	outline:none;
+	margin-left: 50px;
+}
+
+#writeAllDivForm{
+	width: 1200px;
+	height:850px;
+	margin: 30px, 50px;
+}
+#contentsTextarea{
+	witdh: 80%;
+	height: 100%;
+	margin: 30px, 50px;
+}
+#writeFinBtn{
+	width: 80px;
+	height: 40px;
+	background-color: #191970;
+	color: #fff;
+	font-weight: bold;
+	outline:none;
+	border-radius: 0.5em;
+	font-size: 11px;
+	padding: 10px, 25px; 
+	margin-left: 270px
+}
+
+#toListBtn{
+	width: 80px;
+	height: 40px;
+	background-color: #191970;
+	color: #fff;
+	font-weight: bold;
+	outline:none;
+	border-radius: 0.3em;
+	font-size: 11px;
+	padding: 10px, 25px; 
+	
+}

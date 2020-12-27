@@ -116,7 +116,7 @@ public class ProjectDAO {
 			
 			return vo;
 		}finally {
-			pool.dbClose(ps, con);
+			pool.dbClose(rs, ps, con);
 		}
 	}
 	
@@ -149,7 +149,10 @@ public class ProjectDAO {
 			
 			return projectNo;
 		}finally {
-			pool.dbClose(ps, con);
+			pool.dbClose(rs, ps, con);
 		}
 	}
+	
+	
+	
 }

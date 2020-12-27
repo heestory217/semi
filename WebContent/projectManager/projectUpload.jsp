@@ -140,6 +140,13 @@ $(function(){
 		}
 	});
 	
+	//카테고리 선택
+ 	$('#ctNo' option).each(function(){
+		if($(this).val()=="${vo.ctNo}"){
+			$(this).prop("selected","selected"); // attr적용안될경우 prop으로 
+		}
+	});
+
 	//-----------------------------------가은-------------------------------
 	//선물구성 - 선물 전달일 선택
 	$('#deliveryDay').datepicker(
@@ -287,13 +294,13 @@ $(function(){
 											<label for="projectDetail"><span style="color: #FF6F40;">*</span>프로젝트 요약</label> <br> 
 											<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
 											<textarea rows="3" cols="130" name="projectDetail" id="projectDetail"
-												placeholder="프로젝트 요약을 입력해주세요"></textarea>
+												placeholder="프로젝트 요약을 입력해주세요" value="${vo.projectDetail}"></textarea>
 										</div>
 										<br>
 										<div>
 											<label for="ctNo"><span style="color: #FF6F40;">*</span>프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
 												않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
-											<select name="ctNo">
+											<select name="ctNo" id="ctNo">
 												<option value="1">제품디자인</option>
 												<option value="2">문구도서</option>
 												<option value="3">문화예술</option>

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+div#payMethodEdit {
+    width: 600px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 101px;
+    margin-bottom: 109px;
+    padding: 40px 30px;
+}
+
+form[name=frmPayMent] {
+    text-align: center;
+}
+
+input#eOwnerBirth {
+    text-align: center;
+    margin-left: 3px;
+}
+
+input#eOwnerName {
+    margin-left: 44px;
+    text-align: center;
+}
+
+input#eAccountNum {
+    text-align: center;
+    margin-left: 44px;
+}
+
+input#eBankName {
+    text-align: center;
+    margin-left: 68px;
+}
+
+span.ckBFlag {
+    margin-right: 0px;
+}
+
+label {}
+
+.paymentContents>label:first-of-type {
+}
+
+input[type="radio"] {
+    margin-left: 33px;
+}
+
+.btPEdit {
+    /* display: inline-block; */
+}
+
+button#btPayDel {
+    display: inline-block;
+    float: left;
+    /* display: inline-block; */
+    /* float: left; */
+    margin-left: 18px;
+    margin-top: 30px;
+    width: 120px;
+    height: 35px;
+    background: #4698ff;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+}
+
+button#btPayEdit {
+    display: inline-block;
+    float: left;
+    margin-left: 137px;
+    margin-top: 30px;
+    width: 120px;
+    height: 35px;
+    background: #4698ff;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+}
+
+.paymentTooltipTx {
+    clear: both;
+}
+
+.paymentTooltipTx {border: 1px solid gray;border-radius: 4px;margin-top: 103px;padding: 25px;}
+
+p {}
+
+.paymentTooltipTx>p {
+    margin: 0;
+}
+
+button#btPayEdit {}
+
+button#btPayDel {}
+
+input[name=eBankNo]+label {
+    margin-right: 96px;
+}
+
+
+.payTitle>h4 {
+    margin-bottom: 36px;
+    padding: 10;
+    color: gray;
+}

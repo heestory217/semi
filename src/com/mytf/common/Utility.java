@@ -56,7 +56,8 @@ public class Utility {
 		
 		return result;
 	}
-	
+
+	/* 자연사용 */	
 	public static String getFileInfo(String originName,long fileSize) {
 		String result="";
 		float fSize=fileSize/1024f;

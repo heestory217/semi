@@ -316,3 +316,9 @@ button#btPayMethod {
 
 .deleveryTooltip {border-color: black;}
 
+.paymentContents {}.paymentContents {}
+
+/*12_27 결제수단 색상 그레이로 변경   */
+.paymentContents>.ainfo {
+    color: gray;
+}

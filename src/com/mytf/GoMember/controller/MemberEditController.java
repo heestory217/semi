@@ -17,11 +17,11 @@ import com.mytf.common.Utility;
 
 public class MemberEditController implements Controller{
 	private GoMemberService gService;
-	private BankService bService;
+	
 	
 	public MemberEditController() {
 		gService= new GoMemberService();
-		bService= new BankService();
+		
 	}
 
 	@Override
@@ -29,26 +29,24 @@ public class MemberEditController implements Controller{
 		//1
 		HttpSession session=request.getSession();
 		String email=(String)session.getAttribute("email");
-		int memberNo=(int)session.getAttribute("memberNo");
-		
 		
 		//2
 		GoMemberVO gVo=null;
-		BankVO bVo=null;
+		
 		try {
 			gVo=gService.selectByEmail(email);
-			bVo=bService.selectByMemberNo(memberNo);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		String fileInfo=Utility.getFileInfo(gVo.getOriginalFileName(), gVo.getFileSize());
-		String displayFileName=Utility.displayFile(gVo.getFileName());
+	    String displayFileName=Utility.displayFile(gVo.getFileName());
+		
 		String oldFileName=gVo.getFileName();
 		if(oldFileName==null) oldFileName="";
 		
 		//3
 		request.setAttribute("gVo", gVo);
-		request.setAttribute("bVo", bVo);
 		request.setAttribute("fileInfo", fileInfo);
 		request.setAttribute("displayFileName", displayFileName);
 		request.setAttribute("oldFileName", oldFileName);

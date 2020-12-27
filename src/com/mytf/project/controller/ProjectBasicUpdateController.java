@@ -33,7 +33,7 @@ public class ProjectBasicUpdateController implements Controller {
 			e.printStackTrace();
 		}
 		
-		return "/projectManager/projectUpload";
+		return "";
 	}
 
 	@Override

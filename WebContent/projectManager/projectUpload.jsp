@@ -704,8 +704,10 @@ $(function(){
 								<div class="projectBox">
 									<div>
 										<div>
-											<input type="radio" name="bank" value="private"><span style="margin-right: 30px;">개인</span>
-											<input type="radio" name="bank" value="business">사업자(개인사업자 포함)
+											<label for="private" style="cursor:pointer;">
+											<input type="radio" name="bank" id="private" value="private"/>개인</label>
+											<label for="business" style="cursor:pointer;width: 250px;">
+											<input type="radio" name="bank" id="business" value="business"/>사업자(개인사업자 포함)</label>
 										</div>
 										<br>
 										

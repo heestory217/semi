@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+ul.nav tabs-nav MyPageNav {
+    width: 30%;
+}
+
+ul.MyPageNav {
+    width: 60%;
+}
+
+
+div.myTitle {
+    font-size: 20px;
+}
+
+ul.mypageNav {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.profilePic img {
+    width: 90px;
+    margin: 19px 0;
+}
+
+div.profilePic {
+    border-bottom: 1px solid #80808045;
+}
+
+.profilePic {
+    padding: 10px 0;
+    margin: 10px;
+}
+
+.MyPagePart {
+    border-bottom: 1px solid #8080808f;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.tabs-area.spb.MyPage {
+    margin: 40px;
+}
+
+.myPageTitle h2 {
+    padding: 18px;
+    margin-left: 15%;
+}
+
+.container.MyPageContainer {
+    margin: 0 auto;
+}
+
+a.MyPagelink{
+    background: white;
+    color: #827f7f;
+}
+
+.myPagelink {
+    color: #827f7f;
+}
+
+a.MyPagelink {
+    color: #827f7f;
+}
+
+li.nav-item.MyPageItem {
+    margin: 0;
+    padding: 0;
+    width: 10%;
+}
+
+
+ul.MyPageNav {
+    padding-bottom: 0;
+}
+
+a.nav-link MyPagelink {
+    background: white;
+    border-bottom: white;
+}
+
+a.nav-link MyPagelink {
+    padding-bottom: 10px;
+}
+
+.MyPage .tabs-nav li a.active {
+    color: black;
+}
+
+
+.myContents {
+    font-size: 16px;
+    color: gray;
+    margin: 10px 0;
+}
+
+div.btDiv>button{
+    width: 25%;
+    height: 5%;
+    text-align: center;
+    font-weight: bold;
+    background: #4698ff;
+    color: white;
+    border: 0;
+    border-radius: 9px;
+}
+
+
+
+.profile {
+    width: 100%;
+}
+
+
+.profilePic {
+    width: 100%;
+}
+
+.MyPagePart {
+    width: 100%;
+}
+
+.profilePic {
+    width: 100%;
+    border-bottom: 1px solid;
+}
+
+
+.TooltipExplain {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 30px 20px;
+    margin: 150px,0;
+}
+
+
+
+.container.MyPageContainer {
+    border: none;
+}
+
+div.MyProfileTab {
+    border: none;
+}
+
+.container.MyPageContainer {
+    margin: 0 50px;
+}
+
+.myPageTitle>h2 {
+    margin: 0 80px;
+    padding-bottom: 40px;
+    color: #615d5d85;
+    letter-spacing: 5;
+}
+
+.btDiv {
+    width: 100%;
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.TooltipExplain {
+    display: inline-block;
+    float: left;
+}
+
+.profilePic {
+    width: 100%;
+}
+
+div.ProfileTooltip p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+div#pills-tabContent {
+    border: none;
+}
+
+.btDiv {
+    text-align: center;
+}
+
+.TooltipExplain {
+    width: 100%;
+    margin-top: 50px;
+}
+
+div.ProfileTooltip {
+    margin-bottom: 1px;
+    padding-bottom: 10px;
+}
+
+.ProfileTooltip>p {
+    margin-bottom: 1px;
+}
+
+ul.MyPageNav {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.MyPageItem>a {
+    padding: 0px;
+}
+
+.MyPagelink span {padding: 0;}
+div.TooltipExplain {margin-bottom: 150px;}
+
+.MyPagePart {
+    border-bottom: 1px solid #80808045;
+}
+
+.paymentContents {
+    text-align: center;
+    border: 1px solid #80808045;
+    border-radius: 4px;
+    padding: 100 50;
+}
+
+div.paymentTooltip {
+    border: 1px solid gray;
+}
+.myTitle {
+    margin-bottom: 20;
+    font-weight: bold;
+}
+
+
+.paymentContents .myContents {
+    text-align: left;
+    padding-left: 150px;
+    color: #80808099;letter-spacing: 1.2;
+    font-size: 17px;
+
+    
+}
+
+
+div.paymentTooltip {
+    border: 1px solid;
+}
+
+.btDiv+div {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 30px 15px;
+    margin-top: 44px;
+}
+
+.MyAddress>div.myContents {
+    border: 1px solid #80808075;
+    border-radius: 4px;
+    padding: 30 110;
+}
+
+.myTitle {
+    margin-bottom: 25px;
+}
+.paymentContents {text-align: left;padding: 70 400px;}
+button#btPayMethod {
+    margin-bottom: 40px;
+    /* border: 1px solid gray; */
+}
+
+.paymentTooltip {
+    border: 1px solid gray;
+}
+
+.MyAddress>div.myContents {
+    padding: 30px 400px;
+    color: #9E9E9E;
+}
+
+.myContents>p {margin-bottom: 0;}
+
+.paymentContents>p {
+    margin-bottom: 0;
+}
+
+.deleveryTooltip {
+    border: 1px solid #8080805c;
+    border-radius: 4px;
+    padding: 50px 40px;
+    text-align: left;
+}
+
+.deleveryTooltip>p {
+    margin-bottom: 0;
+}
+
+
+/* 20201226추가 */
+.myContents {}
+
+.MyAddress>div.myContents {
+    margin-bottom: 56px;
+    text-align: left;
+    padding: 36px;
+}
+
+.myContents {}
+
+.paymentContents {
+    margin-bottom: 70px;
+    text-align: left;
+    padding: 51px;
+}
+
+.paymentTooltip {
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.paymentTooltip>p {margin-bottom: 0;}
+
+.deleveryTooltip {border-color: black;}
+

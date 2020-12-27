@@ -3,13 +3,11 @@ package com.controller;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.Character.Subset;
 import java.util.Properties;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -100,7 +98,7 @@ public class DispatcherServlet extends HttpServlet {
 		
 		//명령어(/tips/book.do)에 해당하는 명령어 처리 클래스(BookController2) 구하기
 		String command = props.getProperty(uri);	//BookController2
-		System.out.println("명력어 처리 클래스="+command);
+		System.out.println("명령어 처리 클래스="+command);
 		
 		try {
 			//해당 문자열을 클래스로 만든다.

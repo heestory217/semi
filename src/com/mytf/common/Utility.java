@@ -4,9 +4,10 @@ import java.util.Date;
 
 public class Utility {
 	public static final String TEST_DIR
-	="D:\\lecture\\workspace_list\\jsp_ws\\mystudy\\WebContent\\pds_upload";
+	//="D:\\lecture\\workspace_list\\jsp_ws\\mystudy\\WebContent\\pds_upload";
+	="H:\\lecture\\Project\\semi\\WebContent\\GoMember_upload";//자연
 	
-	public static final String UPLOAD_DIR="pds_upload";
+	public static final String UPLOAD_DIR="GoMember_upload";
 	
 	public static String displayRe(int step) {
 		//답변글인 경우 단계별로 이미지 보여주기
@@ -50,7 +51,7 @@ public class Utility {
 	public static String displayFile(String fileName) {
 		String result="";
 		if(fileName!=null && !fileName.isEmpty()) {
-			result="<img src='../images/file.gif' alt='file이미지'>";
+			result="<img src='../img/file.gif' alt='file이미지'>";
 		}
 		
 		return result;
@@ -62,7 +63,7 @@ public class Utility {
 		fSize = Math.round(fSize*10)/10f;
 		
 		if(originName!=null && !originName.isEmpty()) {
-			result="<img src='../images/file.gif' alt='file이미지'>";
+			/* result="<img src='../img/file.gif' alt='file이미지'>"; */
 			result+=originName+" (" + fSize +" KB)";
 		}
 		

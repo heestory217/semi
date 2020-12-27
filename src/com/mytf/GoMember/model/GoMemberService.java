@@ -32,5 +32,8 @@ public class GoMemberService {
 		return gDao.selectByEmail(email);
 	}
 	
+	public int updateGoMember(GoMemberVO gVo) throws SQLException {
+		return gDao.updateGoMember(gVo);
+	}
 		
 }

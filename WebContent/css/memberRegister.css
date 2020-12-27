@@ -1,24 +1,11 @@
 @charset "UTF-8";
 *{ font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
 
-/* .registerWrapper {
-    margin-top: 150px;
-    margin-bottom: 150px;
-}
-.registerWrapper {
-    border: 2px ridge #80808059;
-    border-radius: 1%;
-    width: 400px;
-}
- */
+
 .registerWrapperBody h3 {
     color: gray;
 }
 
-/* .registerWrapper {
-    padding: 25px 0px;
-}
- */
 .registerWrapper {
     /* border: none; */
     box-shadow: rgb(239,239,239)0px 1px 2px 1px;
@@ -40,11 +27,11 @@ form#frmRegister {
 
 .registerInputDiv {margin-bottom: 20px;word-break: break-all;display: block;}
 
-body {
+/* body {
     line-height: 1.7em;
     color: rgba(0, 0, 0, 0.87);
 }
-
+ */
 label.registerInputLabel {
     color: rgb(117, 117, 117);
     cursor: default;
@@ -72,6 +59,10 @@ label.registerInputLabel {
     margin-bottom: 5px;
     outline: none;
 }
+/* input#userName, #email, #emailConfirm, #passwordConfirm {
+    width: 95%;
+} */
+
 .registerInputText {
     border: 1px solid rgb(228,228,228);
     border-radius: 4px;
@@ -167,13 +158,13 @@ input#ckbAgree {
     display: inline-block;
     padding-left: 1.85714em;
     font-size: 1em;
+    width: 80%;
 }
 
 input#ckbAgree {
     display: inline;
 }
 
-.registerInputDiv label:last-child {width: 80%;}
 
 p.agreeP {
     width: 90%;
@@ -185,26 +176,18 @@ input#ckbAgree {
 }
 
 
-/* 추가수정 */
-/* .registerWrapper {
-    width: 400px;
-} */
+/* 
 .registerInputDiv input {
     width: 90%;
 }
 
-
+ */
 /* 비밀번호 창 가로크기 안맞아서 뺌 (#password) 
 근데 왜 적용이 안되죠.. - 희정 */
-input#userName, #email, #emailConfirm, #passwordConfirm {
-    width: 95%;
-}
+
 
 /* 추추가 */
 
-/* .registerWrapper {
-    width: 60%;
-} */
 
 input#ckbAgree {
     vertical-align: -webkit-baseline-middle;

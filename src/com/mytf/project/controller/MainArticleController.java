@@ -9,7 +9,7 @@ public class MainArticleController implements Controller {
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		return null;
+		return "/mainArticle.jsp";
 	}
 
 	@Override

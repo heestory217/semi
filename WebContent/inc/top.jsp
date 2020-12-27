@@ -1,9 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+	
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -17,6 +23,8 @@
 <script src="<%=request.getContextPath() %>/js/vendor/loopcounter.js"></script>
 <script src="<%=request.getContextPath() %>/js/vendor/slicknav.min.js"></script>
 <script src="<%=request.getContextPath() %>/js/active.js"></script>
+
+
 
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/owl.carousel.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/barfiller.css">
@@ -55,7 +63,21 @@
 	});
 </script>
 </head>
-
+<!-- 자연 로그인 확인처리-->
+<%
+/* boolean t_isLogin=false;
+String t_email=(String)session.getAttribute("email");
+if(t_email!=null&&!t_email.isEmpty()){
+	t_isLogin=true;//로그인이면 true session에 email/name/memberNo 있음 
+}
+//로그인 후 이미지 보여줘야함
+String t_fileName=(String)session.getAttribute("fileName");
+boolean t_hasFileName=false;
+if(t_fileName!=null&&!t_fileName.isEmpty()){
+	t_hasFileName=true;
+} */
+%>
+<!-- 자연 -->
 <body>
 	<header class="header-wrap">
 		<div class="search-wrapper">
@@ -94,24 +116,42 @@
 									<li style="margin-bottom:10px;"><a href="<%=request.getContextPath() %>/category_page.jsp">카테고리별 프로젝트</a></li>
 								</ul>
 							</li>
-							<li><a href="<%=request.getContextPath() %>/projectManager/projectUpload_before.jsp" class="menu-style">프로젝트 올리기</a></li>
+							<li><a href='<c:url value='/projectManager/projectUpload_before.do'></c:url>' class="menu-style">프로젝트 올리기</a></li>
 						</ul>
 					</nav>
 				</div>
 				
 				<div class="logo-column">
-					<a href="<%=request.getContextPath() %>/mainArticle.jsp" class="f_logo"> 
-						<img src="<%=request.getContextPath() %>/img/topLogo.png" alt="로고 이미지">
+					<a href="<c:url value='/mainArticle.do'/>" class="f_logo"> 
+						<img src="<c:url value='/img/topLogo.png'/>" alt="로고 이미지">
 					</a>
 				</div>
 				
 				<div class="nav-column right-nav">
 					<nav id="menu" class="d-lg-block right-nav-detail">
 						<span class="search-icon fa fa-search"></span>
-						<a href="<%=request.getContextPath() %>/login/login.jsp" class="login">
-							<span>로그인 / 회원가입</span>
-							<img alt="유저 이미지" src="<%=request.getContextPath() %>/img/user-account.png">
-						</a>
+				<!-- 자연	로그인처리 -->	
+						
+						<%-- <c:if test="${t_isLogin}"> --%>
+						<c:if test="${empty email}">
+							<a href="<c:url value='/login/login.do'/>" class="login">
+								<span>로그인 / 회원가입</span>
+								<img alt="유저 이미지" src="<c:url value='/img/user-account.png'/>">
+							</a>
+						</c:if>
+						<%-- <c:if test="${!t_isLogin}"> --%>				
+						<c:if test="${!empty email}">
+							<a href="<c:url value='/GoMember/MypageOption.do'/>" class="login">
+								<span>${name} 님</span>
+								<c:if test="${empty fileName}">
+									<img alt="유저 이미지" src="<c:url value='/img/user-account.png'/>">
+								</c:if>
+								<c:if test="${!empty fileName}">
+	<!--된건지 확인해야함 -->			<img alt="유저 이미지" src="<c:url value='/GoMember_upload/${fileName}'/>">
+								</c:if>								
+							</a>							
+						</c:if>
+				<!-- 자연	 -->
 					</nav>
 				</div>
 			</div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../inc/top.jsp"%>
 
 <!-- 프로젝트 등록 전 확인 페이지 -->
@@ -13,11 +14,11 @@
 		아래 사항들을 확인한 후 프로젝트를 올려 주세요.
 		<hr>
 		<ul style="list-style: none";>
-			<li><a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp" target="_blank" rel="noopener norefferrer">프로젝트 공개검토 기준</a></li>
+			<li><a href="<c:url value='/helpCenter/mainCenter.do'/>" target="_blank" rel="noopener norefferrer">프로젝트 공개검토 기준</a></li>
 		</ul>
 	</div>
 	<hr>
-	<form action="projectUpload.jsp" method="post" name="publicFrm">
+	<form action="<c:url value='/projectManager/projectUpload.do'/>" method="post" name="publicFrm">
 		<ul style="list-style: none";>
 			<li>
 				<div>

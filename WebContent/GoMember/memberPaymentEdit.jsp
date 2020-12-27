@@ -33,7 +33,10 @@ $(function(){
 			});	
 	
 	 $('#btPayDel').click(function(){
-		 if(!confirm('계좌정보를 삭제하시겠습니까?') ){
+		 if($('#dAccount').val().length==0){
+			 alert('조회된 계좌가 없습니다.');
+             event.preventDefault();
+		 }else if(!confirm('계좌정보를 삭제하시겠습니까?') ){
 			event.preventDefault();
 			}
 	 });
@@ -60,14 +63,14 @@ $(function(){
           
               <div class="paymentContents">
               	 
-	            <form action="<c:url value='/GoMember/memberPaymentEdit_ok.do'/>" method="post" name="frmPayMent"> 
+	          	  <form action="<c:url value='/GoMember/memberPaymentEdit_ok.do'></c:url>" method="post" name="frmPayMent"> 
 	                  <input type="hidden" name="eBankNo" value="${bVo.bankNo}"> 	
 	                
-		              <label for="eBusinessFlag">구분</label>
-		              <input type="radio" name="eBusinessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if><c:if test="${empty bVo.businessFlag}">checked</c:if>>
-		              <span class="ckBFlag">개인 </span>
-		              <input type="radio" name="eBusinessFlag" value="B"<c:if test="${bVo.businessFlag eq'B'}">checked</c:if>>
-		              <span class="ckBFlag">사업자</span><br>
+		              <label for="eBusinessFlag">구분:</label>
+		              <input type="radio" name="eBusinessFlag" id="private" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if><c:if test="${empty bVo.businessFlag}">checked</c:if>>
+		              <span class="ckBFlag"><label for="private" style="cursor:pointer">개인 </label></span>
+		              <input type="radio" name="eBusinessFlag" id="business" value="B"<c:if test="${bVo.businessFlag eq'B'}">checked</c:if>>
+		              <span class="ckBFlag"><label for="business" style="cursor:pointer">사업자</label></span><br>
 		     
 				      <span class="Bword"> <label for="eBankName">은행:</label></span>     
 				      <input type="text" class="Binfo" name="eBankName" id="eBankName" value="${bVo.bankName}" placeholder="은행명을 입력하세요"><br>	                      
@@ -78,19 +81,27 @@ $(function(){
 			          <span class="Bword"><label for="eOwnerBirth">예금주 생년월일:</label></span>
 			          <input type="text" class="Binfo" name="eOwnerBirth" id="eOwnerBirth" value="${bVo.ownerBirth}" placeholder="예금주 생년월일 입력하세요"><br>
 		            
-			   </div>
-			</div>
+			
 			            
-	            <div class="btPEdit">
-	       	  	<button id="btPayEdit" value="결제수단 추가/변경">결제수단 추가/변경</button>
-	            </div> 
-             </form>
-             
+		            <div class="btPEdit">
+		       	  	<button id="btPayEdit" value="결제수단 추가/변경">결제수단 추가/변경</button>
+		            </div> 
+	             </form>
+                </div>
+			</div>
+			
+			
 	            <div class="btPDel">
-	       	  	<button id="btPayDel" value="결제수단 삭제" onclick="location.href='<c:url value="/GoMember/memberPaymentDel_ok.do"/>'">결제수단 삭제</button>
-	            </div> 
+		            <form action="<c:url value='/GoMember/memberPaymentDel_ok.do'></c:url>" method="post" name="frmDelAccount">
+				 	 	<input type="hidden" name="dAccount" id="dAccount" value="${bVo.accountNum}">	
+				 	 		            
+		           	 	<button id="btPayDel" value="결제수단 삭제">결제수단 삭제</button>
+		           	 
+		            </form>
+	            </div>
+	       	  	 
          	 
-           <div class="paymentTooltipTx">
+           <div class="paymentTooltipTx">           
       		<p><b>결제수단을 삭제하면 예약된 후원의 결제수단 정보도 삭제되나요?</b></p>
       		<p>현재 후원하신 프로젝트에 등록된 결제수단이 삭제되거나 변경되진 않습니다.</p>             	
            </div>

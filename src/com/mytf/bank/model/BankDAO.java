@@ -206,7 +206,7 @@ public class BankDAO {
 		}
 		
 	//계좌삭제
-	public int deleteAccount(String accountNum) throws SQLException {
+	public int deleteAccount(String accountNum, int memberNo) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		
@@ -215,12 +215,13 @@ public class BankDAO {
 			con=pool.getConnection();
 			
 			//3
-			String sql="delete from bank where memberNo=? ";
+			String sql="delete from bank where accountNum=? and memberNo=? ";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, accountNum);
+			ps.setInt(2, memberNo);
 			//4
 			int cnt=ps.executeUpdate();
-			System.out.println("계좌삭제 결과cnt="+cnt+", 매개변수 accountNum="+accountNum);
+			System.out.println("계좌삭제 결과cnt="+cnt+", 매개변수 accountNum="+accountNum+",memberNo="+memberNo);
 			return cnt;
 		} finally {
 			pool.dbClose(ps, con);

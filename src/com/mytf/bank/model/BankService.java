@@ -43,8 +43,8 @@ public class BankService {
 	
 	
 	//계좌삭제
-	public int deleteAccount(String accountNum) throws SQLException {
-		return bDao.deleteAccount(accountNum);
+	public int deleteAccount(String accountNum, int memberNo) throws SQLException {
+		return bDao.deleteAccount(accountNum, memberNo);
 	}
 		
 		

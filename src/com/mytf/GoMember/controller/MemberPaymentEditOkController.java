@@ -56,10 +56,12 @@ public class MemberPaymentEditOkController implements Controller {
 			//result2에서 그 계좌가 내 계좌과 아니라면 되돌아가라 
 			result1=bService.accountCheck(accountNum);
 			if(result1==BankService.NOT_USABLE_ACC) {
+				
 				result2=bService.isMine(accountNum, memberNo);
 				if(result2==BankService.NOT_MYACCOUNT) {
-					msg="중복되는 계좌번호가 있습니다.";
-					url="/GoMember/memberPaymentEdit.do";
+					
+					request.setAttribute("msg", "중복되는 계좌번호가 있습니다.");
+					request.setAttribute("url", "/GoMember/memberPaymentEdit.do");
 					return "/common/message.jsp";
 				}
 			}

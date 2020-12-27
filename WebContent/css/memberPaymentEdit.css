@@ -105,3 +105,6 @@ input[name=eBankNo]+label {
     padding: 10;
     color: gray;
 }
+.payTitle>h4 {
+    border-bottom: 1px solid gray;
+}

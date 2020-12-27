@@ -46,7 +46,7 @@
             </div> 
             
              <div class="btPDel">
-       	  	<button id="btPayDel" value="결제수단 삭제">결제수단 삭제</button>
+       	  	<button id="btPayDel" value="결제수단 삭제" onclick="#">결제수단 삭제</button>
             </div> 
   
             

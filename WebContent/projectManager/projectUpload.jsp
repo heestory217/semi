@@ -320,41 +320,30 @@ $(function(){
 							
 				<br>
 							
-				<!--창작자 정보 폼 입력 시작 : 회원 테이블 insert | 파일업로드-->
-				<form action="<c:url value='/GoMember/memberProfileEdit_ok.do'/>" name="CreaterFrm" method="post" enctype="multipart/form-data" autocomplete="off">
-	        			<input type="hidden" name="projectNo" value="${param.projectNo}">
+				<!--창작자 정보 수정 (회원 수정 페이지로 이동): /GoMember/memberEdit.do-->
         		<p>창작자 정보</p>
 						<div class="projectBox">
 							<div>
 							
 								<div>
-									<label for="upfile">프로필 이미지</label> <br> 창작자님 개인이나 팀의
-									사진을 올려주세요. <br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다. <br> 파일
-									형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요. <br><input
-										type="file" id="upfile" name="upfile">
+									<label for="name">창작자 이름</label> <br> 
+									<p style="width: 20%;font-weight: bold">${name }</p>
 								</div>
-								<br>
 								<div>
-									<label for="name">창작자 이름</label> <br> <input type="text"
-										name="name" disabled="disabled" value="${name }"
-										style="width: 20%;">
-								</div>
-								<br>
-								<div>
-									<label for="memberIntro">창작자 소개</label> <br>
-									<textarea rows="3" cols="130" name="memberIntro"
-										placeholder="창작자님의 이력과 간단한 소개를 써 주세요."></textarea>
+									<p style="color: #FF6F40;">※회원정보 수정페이지에서 프로필 이미지등록 및 창작자님의 이력과 간단한 소개를 써 주세요.</p> 
+									<p style="font-size: 0.9em">프로필 이미지는 창작자님 개인이나 팀의 사진을 올려주세요.
+									<br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다.
+									<br>파일 형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</p> 
 								</div>
 								
 							</div>
 						</div><!-- projectBox -->
 															
 						<div style="text-align: center; margin: 20px 0;">
-							<input type="submit" class="button" value="저장하기">
+							<a href="/GoMember/memberEdit.do"><p class="button-2">창작자(회원)정보 수정하러 가기</p></a>
 						</div>
 
-				<!--창작자 정보 폼 입력 끝-->
-				</form>
+				<!--창작자 정보 끝-->
 			</div>
 		</div>
 	</div>

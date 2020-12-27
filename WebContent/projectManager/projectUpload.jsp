@@ -120,8 +120,8 @@ $(function(){
 	
 	//22자 제목 안내
 	$('#projectName').keyup(function(){
-		if($('#projectName').val().length==22){
-			$('#title_length').text('※최대 22자 이내의 제목만 입력가능합니다. (현재 글자수 : 22자)');
+		if($('#projectName').val().length==50){
+			$('#title_length').text('※최대 50자 이내의 제목만 입력가능합니다. (현재 글자수 : 50자)');
 		}else{
 			$('#title_length').text('');
 		}
@@ -141,7 +141,7 @@ $(function(){
 	});
 	
 	//카테고리 선택
- 	$('#ctNo' option).each(function(){
+ 	$('#ctNo').children().each(function(){
 		if($(this).val()=="${vo.ctNo}"){
 			$(this).prop("selected","selected"); // attr적용안될경우 prop으로 
 		}
@@ -286,7 +286,7 @@ $(function(){
 											<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
 												<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
 												만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="22" value="${vo.projectName}">
+												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="50" value="${vo.projectName}">
 												<br><span style="color: #FF6F40;" id="title_length"></span>
 										</div>
 										<br>
@@ -294,7 +294,7 @@ $(function(){
 											<label for="projectDetail"><span style="color: #FF6F40;">*</span>프로젝트 요약</label> <br> 
 											<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
 											<textarea rows="3" cols="130" name="projectDetail" id="projectDetail"
-												placeholder="프로젝트 요약을 입력해주세요" value="${vo.projectDetail}"></textarea>
+												placeholder="프로젝트 요약을 입력해주세요">${vo.projectDetail}</textarea>
 										</div>
 										<br>
 										<div>

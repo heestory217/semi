@@ -82,7 +82,7 @@
 								<img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="project-image">
 								<div class="hover-content">
 									<div>
-										<a href="#" class="button">프로젝트 보러가기</a>
+										<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
 									</div>
 								</div>
 							</div>
@@ -120,7 +120,7 @@
 								<img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="project-image">
 								<div class="hover-content">
 									<div>
-										<a href="<c:url value='/detail_total.jsp?projectNo=${dto.projectNo}'/>" class="button">프로젝트 보러가기</a>
+										<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
 									</div>
 								</div>
 							</div>

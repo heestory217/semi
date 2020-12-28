@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.mytf.db.ConnectionPoolMgr2;
 
@@ -479,5 +480,68 @@ public class ProjectDAO {
 			pool.dbClose(rs, ps, con);
 		}
 	}
+	/*(자연) memberNo로 프로젝트 검색*/
+	public List<ProjectVO> selectByMemberNo(int memberNo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
 
+		List<ProjectVO> list = new ArrayList<ProjectVO>();
+		ProjectVO vo = null;
+		try {
+			//1, 2
+			con=pool.getConnection();
+
+			//3.ps
+			StringBuffer sql = new StringBuffer()
+					.append(" SELECT  \n ")
+					.append(" PROJECTNO, PROJECTNAME, PROJECTDETAIL,  \n ")
+					.append(" FILENAME, FILESIZE, ORIGINALFILENAME,  \n ")
+					.append(" CTNO, MEMBERNO, GOALAMOUNT,  \n ")
+					.append(" OPENDATE, DUEDATE, PROJECTPOLICY,  \n ")
+					.append(" GIFTINFO, PROJECTSTORY, READCOUNT,  \n ")
+					.append(" REGDATE \n ")
+					.append(" FROM PROJECT \n ")
+					.append(" where memberNo=? ");
+
+			ps=con.prepareStatement(sql.toString());
+			ps.setInt(1, memberNo);
+	
+			//4. exec
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				String projectNo2 =rs.getString("projectNo");
+				String projectName=rs.getString("projectName");
+				String projectDetail=rs.getString("projectDetail");
+				String fileName=rs.getString("fileName");
+				long fileSize=rs.getLong("fileSize");
+				String originalFileName=rs.getString("originalFileName");
+				int ctNo=rs.getInt("ctNo");
+				 	memberNo=rs.getInt("memberNo");
+				int goalAmount=rs.getInt("goalAmount");
+				Timestamp opendate=rs.getTimestamp("opendate");
+				Timestamp duedate=rs.getTimestamp("duedate");
+				String projectPolicy=rs.getString("projectPolicy");
+				String giftInfo=rs.getString("giftInfo");
+				String projectStory=rs.getString("projectStory");
+				int readCount=rs.getInt("readCount");
+				Timestamp regdate=rs.getTimestamp("regdate");
+
+				vo = new ProjectVO(projectNo2, projectName, projectDetail, fileName, fileSize, 
+						originalFileName, ctNo, memberNo, goalAmount, opendate, duedate, 
+						projectPolicy, giftInfo, projectStory, readCount);
+
+				list.add(vo);
+			}
+			System.out.println("프로젝트 조회 결과 vo="+vo);
+			return list;
+
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
+
+	
+	
+	
 }

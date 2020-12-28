@@ -45,7 +45,7 @@
 				</div>
 			
 				<div  class="myPageOption"> 
-					<a href="#">내가만든 프로젝트</a> 
+					<a href="<c:url value='/GoMember/myProject.do'/>">내가만든 프로젝트</a> 
 				</div>
 
 				<div class="myPageOption">

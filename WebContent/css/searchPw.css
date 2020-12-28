@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.searchPWContainer {
+    margin: 0 auto;
+}
+
+.searchPWBorder {
+    border: 1px solid gray;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 300px;
+    margin-bottom: 300px;
+    border-radius: 4px;
+    padding: 40px 61px;
+}
+
+legend.searchPWTitle {
+    margin-bottom: 32px;
+}
+
+label.myEmailLB {
+    font-weight: bold;
+}
+
+button[name="btSchPW"] {
+    background-color: #4698ff;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    width: 95px;
+}
+
+legend.searchPWTitle {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 16px;
+}
+
+.informP {
+    text-align: center;
+    margin-top: 19px;
+    color: red;
+}

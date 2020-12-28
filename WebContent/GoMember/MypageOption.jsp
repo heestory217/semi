@@ -43,16 +43,18 @@
 				<div class="myPageOption">
 					<a href="#">커뮤니티</a>
 				</div>
-				
-				<div class="myPageOption">
-					<a href="#">후원현황</a>
-				</div>
-	
 			
 				<div  class="myPageOption"> 
 					<a href="#">내가만든 프로젝트</a> 
 				</div>
-			
+
+				<div class="myPageOption">
+					<a href="#">후원현황</a>
+				</div>
+
+				<div class="myPageOption">
+					<a href="<c:url vlaue='/GoMember/memberOut.do'/>">회원탈퇴</a>
+				</div>			
 
 				<div class="myPageOption">
 					<a href="<c:url value='/GoMember/memberPage.do'/>">설정</a>
@@ -65,6 +67,7 @@
 					<a href="<c:url value='/login/logout.do'/>">로그아웃</a>
 				</div>
 			</div>
+			
 			
 	  </div> <!-- 마이프로필 디브 -->
 	</div> <!-- myPage div -->

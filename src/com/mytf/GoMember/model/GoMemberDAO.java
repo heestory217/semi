@@ -185,4 +185,27 @@ public class GoMemberDAO {
 		}
 	}
 
+	public int updateNewPW(GoMemberVO gVo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+		//1,2
+			con=pool.getConnection();
+		//3
+			String sql="update Gomember set pwd=? where email=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, gVo.getPwd());
+			ps.setString(2, gVo.getEmail());
+		//4	
+			int cnt=ps.executeUpdate();
+			
+			System.out.println("비밀번호 변경결과 cnt="+cnt+", 매개변수 email="+gVo.getEmail()+", pwd="+gVo.getPwd());
+			return cnt;
+		} finally {
+			pool.dbClose(ps, con);
+		}
+		
+	}
+	
 }

@@ -10,7 +10,7 @@
 		<div class="loginTitle">
 			<h2>로그인</h2>
 		</div>	
-		<div class="loginForm">
+		<div class="loginForm" style="width: 340px">
 			<form name="frmLogin" method="post" action="<c:url value='/login/login_ok.do'/>">
 				<input type="email" id="email"  class="emailInput" 
 					placeholder="이메일 주소 입력" name="email" value="">
@@ -25,7 +25,7 @@
 			</form>
 			
 			<div class="searchPW">
-				<a href="#">혹시 비밀번호를 잊으셨나요? </a>
+				<a href="<c:url value='/login/searchPw.do'></c:url>">혹시 비밀번호를 잊으셨나요?</a>
 			</div>
 		</div>
 	</div>

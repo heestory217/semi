@@ -9,7 +9,6 @@
     <div class="container">
         <div class="row">
             <ul class="isotope-menu">
-                <!-- <li data-filter=".*" class="active">모두보기</li> -->
                 <li data-filter=".category1">제품디자인</li>
                 <li data-filter=".category2">문구도서</li>
                 <li data-filter=".category3">문화예술</li>

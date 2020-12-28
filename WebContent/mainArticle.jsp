@@ -79,7 +79,7 @@
 					<div class="single-portfolio col-md-4">
 						<div class="inner">
 							<div class="portfolio-img">
-								<img src="<c:url value='/img/projectImage_1.JPG'/>" alt="project-image">
+								<img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="project-image">
 								<div class="hover-content">
 									<div>
 										<a href="#" class="button">프로젝트 보러가기</a>
@@ -117,7 +117,7 @@
 					<div class="single-portfolio col-md-4">
 						<div class="inner">
 							<div class="portfolio-img">
-								<img src="<c:url value='/img/projectImage_1.JPG'/>" alt="project-image">
+								<img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="project-image">
 								<div class="hover-content">
 									<div>
 										<a href="<c:url value='/detail_total.jsp?projectNo=${dto.projectNo}'/>" class="button">프로젝트 보러가기</a>

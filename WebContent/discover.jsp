@@ -35,7 +35,7 @@
             <div class="single-portfolio col-md-4">
                <div class="inner">
                   <div class="portfolio-img">
-                     <img src="<c:url value='/img/projectImage_1.JPG'/>"
+                     <img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>"
                         alt="project-image">
                      <div class="hover-content">
                         <div>

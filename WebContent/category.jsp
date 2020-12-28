@@ -10,16 +10,16 @@
         <div class="row">
             <ul class="isotope-menu">
                 <!-- <li data-filter=".*" class="active">모두보기</li> -->
-                <li data-filter=".${param.ctname eq '제품디자인' }">제품디자인</li>
-                <li data-filter=".${param.ctname eq '문구도서' }">문구도서</li>
-                <li data-filter=".${param.ctname eq '문화예술' }">문화예술</li>
-                <li data-filter=".${param.ctname eq '푸드' }">푸드</li>
-                <li data-filter=".${param.ctname eq '패션' }">패션</li>
+                <li data-filter=".category1">제품디자인</li>
+                <li data-filter=".category2">문구도서</li>
+                <li data-filter=".category3">문화예술</li>
+                <li data-filter=".category2">푸드</li>
+                <li data-filter=".category2">패션</li>
             </ul>
         </div>
         <div class="row portfolio-isotope">
          <c:forEach var="dto" items="${projList_category}">
-            <div class="single-portfolio col-md-4 ${ctname }">
+            <div class="single-portfolio col-md-4 category${dto.ctno }">
                 <div class="inner">
                     <div class="portfolio-img">
                         <img src="<%=request.getContextPath()%>/img/projectImage_1.JPG" alt="portfolio-image">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="project-content">
                         <a href="#"><h5>${dto.projectName }</h5></a>
-                        <span>${ctname }</span>
+                        <span>${ctname}</span>
                     </div>
                 </div>
             </div>

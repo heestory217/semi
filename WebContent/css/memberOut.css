@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.MemOutContainer {
+    margin: 0 auto;
+    width: 550;
+}
+
+.MemOutinner {
+    /* margin: 0 auto; */
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 80 50;
+}
+
+form {}
+
+.MemOutContainer {
+    margin-bottom: 80px;
+}
+
+.MemOutinner {
+    padding: 40px 41px;
+}
+
+.MemOutinner input#submit {
+    background: #4698ff;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    width: 78px;
+    display: inline-block;
+    margin-left: 96px;
+    margin-top: 11px;
+}
+
+.MemOutinner input[type="reset"] {
+    background: #4698ff;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    width: 78px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+input#submit {}
+
+.MemOutinner input#pwCheck {display: inline-block;text-align: center;width: 200;margin: 10px 60px;margin-left: 78px;}
+
+label.memOutLB {
+    font-size: 15;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    margin-left: 47px;
+    /* border-top: 1px solid gray; */
+}
+
+input#submit {}
+
+.outTooltip {
+    color: red;
+    margin-top: 50;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    text-align: center;
+    padding: 9px;
+}
+
+.outTitle {
+    font-size: xx-large;
+    color: gray;
+    border-bottom: 1px solid #9E9E9E;
+    padding: 10;
+}
+
+
+form[name=frmOut] {margin-top: 93px;}

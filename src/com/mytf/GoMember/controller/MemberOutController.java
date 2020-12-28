@@ -26,7 +26,6 @@ public class MemberOutController implements Controller{
 
 	@Override
 	public boolean isRedirect() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

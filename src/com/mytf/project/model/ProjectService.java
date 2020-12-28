@@ -2,6 +2,7 @@ package com.mytf.project.model;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectService {
 	private ProjectDAO pDao;
@@ -52,6 +53,11 @@ public class ProjectService {
 
 	public ArrayList<ProjectVO> selectByProjCategory(String ctno) throws SQLException {
 		return pDao.selectByProjCategory(ctno);
+	}
+	
+	//자연
+	public List<ProjectVO> selectByMemberNo(int memberNo) throws SQLException {
+		return pDao.selectByMemberNo(memberNo);	
 	}
 
 }

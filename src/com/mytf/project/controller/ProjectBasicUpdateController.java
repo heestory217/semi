@@ -33,13 +33,12 @@ public class ProjectBasicUpdateController implements Controller {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("vo", vo);
-		return "/projectManager/projectUpload.do?projectNo"+projectNo;
+		return "";
 	}
 
 	@Override
 	public boolean isRedirect() {
-		return true;
+		return false;
 	}
 
 }

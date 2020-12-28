@@ -64,9 +64,7 @@ public class ProjectUploadOkController implements Controller {
 			e.printStackTrace();
 		}
 		
-		//결과저장
-		request.setAttribute("projectNo", projectNo);
-		return "/projectManager/projectBasicUpate.do?projectNo="+projectNo;
+		return "/projectManager/projectUpload.do?projectNo="+projectNo;
 	}
 
 	@Override

@@ -172,9 +172,9 @@
                       
                       </div>
                   </div>
-                 <!--  <div class="btDiv">
-             	  	<button id="btPayMethod" value="결제수단 추가/변경">결제수단 추가/변경</button>
-                  </div> -->
+                   <div class="btDiv">
+             	  	<button id="btPayMethod" value="결제수단 추가/변경" onclick="location.href='<c:url value="/GoMember/memberPaymentEdit.do"/>'">결제수단 추가/변경</button>
+                  </div> 
                   <div class="paymentTooltip">
              		<p><b>결제수단을 삭제하면 예약된 후원의 결제수단 정보도 삭제되나요?</b></p>
              		<p>현재 후원하신 프로젝트에 등록된 결제수단이 삭제되거나 변경되진 않습니다.</p>             	

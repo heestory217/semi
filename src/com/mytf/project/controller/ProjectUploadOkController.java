@@ -22,15 +22,9 @@ public class ProjectUploadOkController implements Controller {
 		//세션정보 가져오기
 		HttpSession session=request.getSession();
 		int memberNo=(int)session.getAttribute("memberNo");
+		System.out.println("현재 memberNo : "+memberNo);
 		
-		String projectNo = request.getParameter("projectNo");
-		System.out.println("Ok 현재 projectNo : "+projectNo);
-
-		//파라미터
-		String projectName = request.getParameter("projectName");
-		String projectDetail = request.getParameter("projectDetail");
-		String ctNo = request.getParameter("ctNo");
-		
+		String projectNo = null;
 		try {
 			//파일 업로드 처리
 			String saveDir=request.getServletContext().getRealPath(Utility.THUMBNAIL_UPLOAD_DIR);
@@ -50,15 +44,21 @@ public class ProjectUploadOkController implements Controller {
 				fileSize=(mr.getFile("upfile")).length();
 			}
 
+			//파라미터
+			projectNo = mr.getParameter("projectNo");
+			String projectName = mr.getParameter("projectName");
+			String projectDetail = mr.getParameter("projectDetail");
+			String ctNo = mr.getParameter("ctNo");
 			String oldfileName=mr.getParameter("oldfileName");
 			
+			System.out.println("Ok 현재 projectNo : "+projectNo);
 			
 			//2 폼태그 pjUploadFrm - 프로젝트 개요 update
 			ProjectService service = new ProjectService();
 			
 			ProjectVO vo = new ProjectVO();
 			vo.setCtNo(Integer.parseInt(ctNo));
-			vo.setFileName(oldfileName);
+			vo.setFileName(fileName);
 			vo.setFileSize(fileSize);
 			vo.setOriginalFileName(originalFileName);
 			vo.setProjectDetail(projectDetail);
@@ -66,15 +66,6 @@ public class ProjectUploadOkController implements Controller {
 			vo.setProjectNo(projectNo);
 			vo.setMemberNo(memberNo);
 			
-			/*
-			String giftInfo="", projectStory="";
-			int goalAmount=0, readCount=0;
-			
-			vo.setGiftInfo(giftInfo);
-			vo.setProjectStory(projectStory);
-			vo.setGoalAmount(goalAmount);
-			vo.setReadCount(readCount);*/
-
 			//개요 update
 			int cnt=service.updateProjectBasic(vo);
 

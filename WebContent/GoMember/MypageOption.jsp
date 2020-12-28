@@ -53,7 +53,7 @@
 				</div>
 
 				<div class="myPageOption">
-					<a href="<c:url vlaue='/GoMember/memberOut.do'/>">회원탈퇴</a>
+					<a href="<c:url value='/GoMember/memberOut.do'/>">회원탈퇴</a>
 				</div>			
 
 				<div class="myPageOption">

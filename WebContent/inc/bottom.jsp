@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <footer>
@@ -10,11 +11,11 @@
 				<div class="col-md-6 col-lg-3 footer_widget">
 					<div class="inner">
 						<ul>
-							<li><a href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">공지사항</a></li>
+							<li><a href="<c:url value='/helpCenter/mainCenter.do'/>">공지사항</a></li>
 							<li><a
 								href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">창작자
 									가이드</a></li>
-							<li><a href="<%=request.getContextPath()%>/feeAndFundingPolicy.jsp">수수료 정책</a></li>
+							<li><a href="<c:url value='/feeAndFundingPolicy.do'/>">수수료 정책</a></li>
 						</ul>
 					</div>
 				</div>
@@ -24,9 +25,9 @@
 					<div class="inner">
 						<ul>
 							<li><a
-								href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">이용약관</a></li>
+								href="<c:url value='/helpCenter/mainCenter.do'/>">이용약관</a></li>
 							<li><a
-								href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">개인정보
+								href="<c:url value='/helpCenter/mainCenter.do'/>">개인정보
 									처리방침</a></li>
 							<li><a href="<%=request.getContextPath()%>/fg_contact.jsp">고객센터</a></li>
 						</ul>
@@ -47,13 +48,13 @@
 					<div class="inner">
 						<div class="media">
 							<a href="#"> <img
-								src="<%=request.getContextPath()%>/img/icons.JPG.png"
+								src="<c:url value='/img/icons.JPG.png'/>"
 								class="d-flex mr-3" alt="펀딩고 소셜미디어로 바로가기">
 							</a>
 						</div>
 						<div class="media">
 							<a href="<%=request.getContextPath()%>/fg_contact.jsp"> <img
-								src="<%=request.getContextPath()%>/img/requestbutton.png"
+								src="<c:url value='/img/requestbutton.png'/>"
 								class="d-flex mr-3" alt="문의하기">
 							</a>
 						</div>
@@ -81,7 +82,7 @@
 					</ul>
 					<address>
 						<em>&copy; Copyright</em> <a
-							href="<%=request.getContextPath()%>/mainArticle.jsp">fundingo.co.kr</a>
+							href="<c:url value='/mainArticle.do'/>">fundingo.co.kr</a>
 						<span>All Rights Reserved</span>
 					</address>
 				</div>

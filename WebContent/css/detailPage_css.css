@@ -137,11 +137,11 @@
  }
 #images2{
 	float:left;
-	border:none;
+	border:0.3px solid, gray;
 	background-color:#fff;
 	outline:none;
 	padding-right:-29px;
-	margin-top:15px;
+	margin-top:20px;
     cursor: pointer;
 	margin-left:0;
 }

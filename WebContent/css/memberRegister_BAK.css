@@ -1,30 +1,16 @@
 @charset "UTF-8";
 *{ font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
 
-.registerContainer{
-	padding: 60px 0;
-}
-
-.registerWrapper {
-    border: 2px ridge #80808059;
-    border-radius: 1%;
-    width: 400px;
-}
 
 .registerWrapperBody h3 {
     color: gray;
-    margin-bottom:30px;
 }
 
-.registerWrapper {
-    padding: 25px 0px;
-}
 
 .registerWrapper {
-    border: none;
+    /* border: none; */
     box-shadow: rgb(239,239,239)0px 1px 2px 1px;
-    width: 330px;
-    margin: 0 auto;
+    /* width: 318px; */
     padding: 40px 35px;
     border: 1px solid rgb(228,228,228);
     border-radius: 5px;
@@ -42,11 +28,11 @@ form#frmRegister {
 
 .registerInputDiv {margin-bottom: 20px;word-break: break-all;display: block;}
 
-body {
+/* body {
     line-height: 1.7em;
     color: rgba(0, 0, 0, 0.87);
 }
-
+ */
 label.registerInputLabel {
     color: rgb(117, 117, 117);
     cursor: default;
@@ -74,6 +60,10 @@ label.registerInputLabel {
     margin-bottom: 5px;
     outline: none;
 }
+/* input#userName, #email, #emailConfirm, #passwordConfirm {
+    width: 95%;
+} */
+
 .registerInputText {
     border: 1px solid rgb(228,228,228);
     border-radius: 4px;
@@ -142,8 +132,8 @@ button.btRegister {
 p.agreeP {
     border-top: 1px solid rgb(239,239,239);
     border-bottom: 1px solid rgb(239,239,239);
-    /* margin: 10px 0px 20px;
-    padding: 20px 10px; */
+    margin: 10px 0px 20px;
+    padding: 20px 10px;
     word-break: keep-all;
     font-size: 1.1em;
     color: rgb(117,117,117);
@@ -169,20 +159,44 @@ input#ckbAgree {
     display: inline-block;
     padding-left: 1.85714em;
     font-size: 1em;
+    width: 80%;
 }
 
 input#ckbAgree {
     display: inline;
 }
 
-.registerInputDiv label:last-child {width: 80%;}
 
 p.agreeP {
-    /* width: 90%; */
-    padding:20px 0;
+    width: 90%;
 }
 
 input#ckbAgree {
     width: 5%;
     vertical-align: bottom;
+}
+
+
+/* 
+.registerInputDiv input {
+    width: 90%;
+}
+
+ */
+/* 비밀번호 창 가로크기 안맞아서 뺌 (#password) 
+근데 왜 적용이 안되죠.. - 희정 */
+
+
+/* 추추가 */
+
+
+input#ckbAgree {
+    vertical-align: -webkit-baseline-middle;
+}
+
+.registerWrapper {
+    width: 568px;
+    position: relative;
+    left: 35.5%;
+    margin: 50 0;
 }

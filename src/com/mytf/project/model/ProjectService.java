@@ -12,4 +12,16 @@ public class ProjectService {
 	public int insertProject(ProjectVO vo) throws SQLException{
 		return pDao.insertProject(vo);
 	}
+	
+	public ProjectVO selectByProjNo(String projectNo) throws SQLException {
+		return pDao.selectByProjNo(projectNo);
+	}
+	/*
+	public int updateProject(ProjectVO vo) throws SQLException {
+		return pDao.updateProject(vo);
+	}
+	*/
+	public String selectProjectNo(ProjectVO vo) throws SQLException {
+		return pDao.selectProjectNo(vo);
+	}
 }

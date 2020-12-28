@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@charset "UTF-8";
 
 ul.nav tabs-nav MyPageNav {
     width: 30%;
@@ -8,6 +7,7 @@ ul.nav tabs-nav MyPageNav {
 ul.MyPageNav {
     width: 60%;
 }
+
 
 div.myTitle {
     font-size: 20px;
@@ -269,7 +269,7 @@ button#btPayMethod {
 }
 
 .MyAddress>div.myContents {
-    padding: 30px 80px;
+    padding: 30px 400px;
     color: #9E9E9E;
 }
 
@@ -290,188 +290,30 @@ button#btPayMethod {
     margin-bottom: 0;
 }
 
-.myContents input[name="address"] {
-    width: 900px;
+
+/* 20201226추가 */
+.myContents {}
+
+.MyAddress>div.myContents {
+    margin-bottom: 56px;
+    text-align: left;
+    padding: 36px;
 }
 
-.MyAddress>.myContents {
-    margin-bottom: 60px;
-}
+.myContents {}
 
-.payment>.paymentContents {margin-bottom: 60px;padding-left: 150px;}
-
-
-.paymentTooltip {
-    padding: 30 50;
-}
-
-
-
-.paymentTooltip>p {
-    margin-bottom: 0;
+.paymentContents {
+    margin-bottom: 70px;
+    text-align: left;
+    padding: 51px;
 }
 
 .paymentTooltip {
-    border-color: lightgrey;
+    padding: 30px;
     border-radius: 4px;
-    
-    input#pwdOrigin, #pwd, #pwdCk {}
-
-input#pwdOrigin {
-    margin-left: 25px;
-    margin-bottom: 5px;
 }
 
-input#pwd {
-    margin-bottom: 5px;
-    margin-left: 40px;
-}
+.paymentTooltip>p {margin-bottom: 0;}
 
-input#pwdCk {
-    margin-left: 7px;
-}
+.deleveryTooltip {border-color: black;}
 
-input#hp {
-    text-align: center;
-}
-
-input#upfile {
-    margin-left: 25px;
-}
-
-input#upfile {}
-
-input#upfile {}
-
-input[name="bankName"] {
-    margin-left: 80px;
-    margin-bottom: 5px;
-}
-
-input[name="accountNum"] {
-    margin-left: 54px;
-    margin-bottom: 5px;
-}
-
-input[name="ownerName"] {
-    margin-left: 54px;
-    margin-bottom: 5px;
-}
-
-input[name="ownerBirth"] {
-    margin-left: 16px;
-    margin-bottom: 5px;
-}
-
-span.Bword {
-    font-weight: bold;
-}
-.MyPagePart {}
-
-span.spfileWarning {
-    color: red;
-    margin-top: 10px;
-    padding-left: px;
-}
-
-span.spFileInfo {
-    margin-left: 15px;
-}
-
-.MyPagePart input#pwdOrigin {
-    margin-left: 20px;
-    margin-bottom: 5px;
-}
-
-.MypagePart input#pwd {
-    margin-left: 33px;
-    margin-bottom: 5px;
-}
-
-.MypagePart input#hp {
-    text-align: center;
-}
-
-.paymentContents>input[value="B"] {margin-right: 5;/* padding-right: 5; */word-break: 22px;}
-
-input#upfile {
-    padding-left: 10px;
-    color: darkgray;
-}
-
-.myContents input#pwdOrigin {
-    margin-left: 20px;
-    margin-bottom: 5px;
-}
-
-span.pw1 {}
-
-.myContents input#pwd {
-    margin-left: 34px;
-    margin-bottom: 7px;
-}
-
-.myContents input#hp {
-    text-align: center;
-}
-
-.myContents input#address1 {
-    margin-left: 47px;
-    margin-bottom: 5px;
-}
-
-.myContents input#address2 {
-    margin-left: -1px;
-    margin-bottom: 5px;
-}
-
-.myContents 
-input#address3 {
-    margin-left: 50px;
-}
-
-div#pills-tabContent {}
-
-div.TooltipExplain {
-    margin-bottom: 22px;
-}
-
-span.ckBFlag {
-    /* margin-right: 5px; */
-    margin-bottom: 19px;
-    margin-left: 5px;
-}
-
-.paymentContents input[name="businessFlag"] {
-    margin-left: 40px;
-}
-
-.painput#bankName {}
-
-.paymentContents input#bankName {
-    margin-left: 71px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.paymentContents input#accountNum {
-    margin-left: 45px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-.paymentContents input#ownerName {
-    margin-left: 45px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.paymentContents input#ownerBirth {
-    margin-left: 3px;
-    text-align: center;
-}
-
-.paymentContents input[name="businessFlag"] {}
-
-div.paymentContents>input[value='N'] {
-    margin-left: 120px;
-}

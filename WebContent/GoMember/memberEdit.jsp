@@ -4,73 +4,43 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<link rel="stylesheet" href=" <c:url value='/css/memberEdit.css'/>">	<!-- header 위치 -->
+<link rel="stylesheet" href=" <c:url value='/css/memberEdit.css'/>">	
+
+<!-- header 위치 -->
  <%@ include file="../login/login_check.jsp" %>
  <%@ include file="../inc/top.jsp"%> 
  
 <script type="text/javascript">
-$(function(){
-    $('form[name=frmMemberEdit]').submit(function(){      
-       var realPwd = ${gVo.pwd};
-	       if($('#pwdOrigin').val()!=realPwd){
-	           alert('기존 비밀번호를 확인해주세요');
-	           event.preventDefault();            
-	          $('#pwdOrigin').focus();
-	       }else if($('#pwd').val()!=$('#pwdCk').val() ){
-	           alert('신규 비밀번호가 일치하지 않습니다.');
-	           event.preventDefault();
-	          $('#pwd').focus();
-	       }else{
-	       
-	       
-	        if(($('#address1').val().length>0)||($('#address2').val().length>0)||($('#address3').val().length>0)) {
-	          if ($('#address1').val().length<1) {
-	             alert('배송지를 등록하려면 받을사람을 입력해야합니다.');
-	             event.preventDefault();
-	             $('#address1').focus();
-	          }else if ($('#address2').val().length<1) {
-	             alert('배송지를 등록하려면 받을사람의 연락처를 입력해야합니다.');
-	             event.preventDefault();
-	             $('#address2').focus();
-	          }else if ($('#address3').val().length<1) {
-	             alert('배송지를 등록하려면 배송주소를 입력해야합니다.');
-	             event.preventDefault();
-	             $('#address3').focus();
-	          }
-	      	 }else if($('#accountNum').val().length>0){
-	             if($('#bankName').val().length<1){
-	                alert('은행명을 입력해주세요');
-	                event.preventDefault();
-	                $('#bankName').focus();
-	             }else if($('#ownerName').val().length<1){
-	                alert('예금주명을 입력해주세요');
-	                 event.preventDefault();
-	                $('#ownerName').focus();
-	             }else if($('#ownerBirth').val().length<1){
-	                alert('생년월일을 입력해주세요');
-	                 event.preventDefault();
-	                $('#ownerBirth').focus();
-	             }
-	         } else{
-	           if($('#bankName').val().length>0){
-	              alert('계좌번호가 존재하지 않습니다.');
-	               event.preventDefault();
-	              $('#accountNum').focus();
-	           }else if($('#ownerName').val().length>0){
-	              alert('계좌번호가 존재하지 않습니다.');
-	               event.preventDefault();
-	              $('#accountNum').focus();
-	           }else if($('#ownerBirth').val().length>0){
-	              alert('계좌번호가 존재하지 않습니다.');
-	              event.preventDefault();
-	              $('#accountNum').focus();
-        	  }//내부
-           }
-       }//외부
-    });
- });
-	
-
+	var realPwd = ${gVo.pwd};
+	$(function(){
+		$('form[name=frmMemberEdit]').submit(function(){
+			if($('#pwdOrigin').val()!=realPwd){
+				alert('기존 비밀번호를 확인해주세요');
+	            event.preventDefault();            
+	            $('#pwdOrigin').focus();
+			}else{
+				if($('#pwd').val()!=$('#pwdCk').val()){
+					alert('신규 비밀번호가 일치하지 않습니다.');
+		           	event.preventDefault();
+		          	$('#pwd').focus();
+				}else if(($('#address1').val().length>0)||($('#address2').val().length>0)||($('#address3').val().length>0)){
+					if ($('#address1').val().length<1) {
+			             alert('배송지를 등록하려면 받을사람을 입력해야합니다.');
+			             event.preventDefault();
+			             $('#address1').focus();
+			          }else if ($('#address2').val().length<1) {
+			             alert('배송지를 등록하려면 받을사람의 연락처를 입력해야합니다.');
+			             event.preventDefault();
+			             $('#address2').focus();
+			          }else if ($('#address3').val().length<1) {
+			             alert('배송지를 등록하려면 배송주소를 입력해야합니다.');
+			             event.preventDefault();
+			             $('#address3').focus();
+			          }
+				}
+			}//비밀번호가 맞았을 때 
+		});
+	});
 </script>
  
  
@@ -95,17 +65,17 @@ $(function(){
                     <span>배송지</span>
                 </a>
             </li>
-            <li class="nav-item MyPageItem">
+          <!--   <li class="nav-item MyPageItem">
                 <a class="nav-link MyPagelink" id="pills-profile-tab" data-toggle="pill" href="#payMethod">
                 
                     <span>결제수단</span>
                 </a>
-            </li>
+            </li> -->
            
         </ul>
          <hr>
          <!-- form시작 회원번호랑 원본파일이름 히든-->
-        <form name="frmMemberEdit" method="post" action="<c:url value='/GoMember/memberEdit_ok.do'/>" enctype="multipart/form-data">
+        <form name="frmMemberEdit" method="post" action="<c:url value='/GoMember/memberEdit_ok.do'/>" enctype="multipart/form-data" autocomplete="off">
 	        <input type="hidden" name="memberNo" value="${memberNo}">
 	        <input type="hidden" name="oldfileName" value="${oldfileName}">
 	                
@@ -163,12 +133,12 @@ $(function(){
 		                        	</label>
 		                        </div>
 		                        <div class="myContents">
-	               					<c:if test="${!empty gVo.hp}">
-		               					<input type="text" id="hp" name="hp" value="${gVo.hp}">
-		                        	</c:if> 
-		                        	<c:if test="${empty gVo.hp}">	
-			                        	<input type="text" id="hp" name="hp" placeholder="등록된 연락처가 없습니다." value="">
-			                       	</c:if>
+	               					<%-- <c:if test="${!empty gVo.hp}"> --%>
+		               					<input type="text" id="hp" name="hp" value="${gVo.hp}" placeholder="등록된 연락처가 없습니다.">
+		                        	<%-- </c:if>  --%>
+		                        	<%-- <c:if test="${empty gVo.hp}">	 --%>
+			                        <%--  	<input type="text" id="hp" name="hp" placeholder="등록된 연락처가 없습니다." value="">
+			                       	</c:if> --%>
 		                        	
 		                        </div>	
 	                        </div>
@@ -219,20 +189,15 @@ $(function(){
 	                   		</label>
 	                    </div>
 	                    
-	                     <c:if test="${!empty gVo.address}">
-                       		<%-- <c:set var="addressArr" value="${fn:split(${gVo.address},'|')}"></c:set> --%>
+	                 <%--     <c:if test="${!empty gVo.address}"> --%>
                        		<c:set var="address" value="${gVo.address}"/>
                        		<c:set var="addressR" value="${fn:split(address,'|')}" />
-	                       	<%-- 	<span class=delivery1>받는사람:</span> <c:out value='${address2[0]}'/><br>
-	                       		<span class=delivery1>받는사람 연락처:</span> <c:out value='${address2[1]}'/><br>
-	                       		<span class=delivery1>배송주소:</span> <c:out value='${address2[2]}'/><br> --%>
-                       	</c:if>
-	                   
-	                   
+	                 <%--     </c:if> --%>
+  
 	                    <div class="myContents">
-		                     <span class="delivery1">받는사람:</span> <input type="text" name="address1" id="address1" value="${addressR[0]}"placeholder="수취인을 입력하세요"><br> 
-			                 <span class="delivery2">받는사람 연락처:</span> <input type="text" name="address2" id="address2" value="${addressR[1]}"placeholder="수취인 연락처를 입력하세요"><br>
-			                 <span class="delivery3">배송주소:</span><input type="text" name="address3" id="address3" value="${addressR[2]}"placeholder="배송주소를 입력하세요"> 
+		                     <span class="delivery1">받는사람:</span> <input type="text" name="address1" class=address id="address1" value="${addressR[0]}" placeholder="수취인을 입력하세요"><br> 
+			                 <span class="delivery2">받는사람 연락처:</span> <input type="text" name="address2" class=address id="address2" value="${addressR[1]}" placeholder="수취인 연락처를 입력하세요"><br>
+			                 <span class="delivery3">배송주소:</span><input type="text" name="address3" class=address id="address3" value="${addressR[2]}" placeholder="배송주소를 입력하세요"> 
 	              		 </div>
 	               
 	                 <!--    
@@ -251,7 +216,7 @@ $(function(){
 	           
 	              
 	             
-	            <div class="tab-pane fade Mycontent" id="payMethod" role="tabpanel">
+	          <%--   <div class="tab-pane fade Mycontent" id="payMethod" role="tabpanel">
 	                  <div class="payment">
 	        <!-- 결제숮단 변경가능 -->	     
 					        
@@ -265,7 +230,7 @@ $(function(){
 	                      	  <c:if test="${empty bVo.bankNo} ">
 			                  	 등록된 결제 수단이 없습니다. 결제수단을 추가해주세요
 			                  </c:if>
-		                 <%-- <c:if test="${!empty bVo.bankNo}"> --%>
+		                 <c:if test="${!empty bVo.bankNo}">
 			                  <input type="hidden" name="bankNo" value="${bVo.bankNo}"> 	
 			                  <input type="radio" name="businessFlag" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if><c:if test="${empty bVo.businessFlag}">checked</c:if>>
 			                  <span class="ckBFlag">개인 </span>
@@ -280,7 +245,7 @@ $(function(){
 					          <input type="text" name="ownerName" id="ownerName" value="${bVo.ownerName}" placeholder="예금주명을 입력하세요"><br>
 					          <span class="Bword">예금주 생년월일:</span>
 					          <input type="text" name="ownerBirth" id="ownerBirth" value="${bVo.ownerBirth}" placeholder="예금주 생년월일 입력하세요"><br>
-		                  <%-- </c:if> --%>
+		                  </c:if>
 	                      </div>
 	                  </div>
 	                  
@@ -292,15 +257,11 @@ $(function(){
 	             		<p><b>결제수단을 삭제하면 예약된 후원의 결제수단 정보도 삭제되나요?</b></p>
 	             		<p>현재 후원하신 프로젝트에 등록된 결제수단이 삭제되거나 변경되진 않습니다.</p>             	
 	                  </div>
-	             </div>
-	             
+	             </div> --%>
+	           
 	  			    <div class="btDiv">
 	                	<button id="btMypageEditOk" name="btMypageEditOk" value="내 정보 변경 확인">내 정보 변경</button>
 	                </div>
-	   
-	   
-	   
-	          
 	       </div>
        </form>
    </div>
@@ -316,5 +277,7 @@ $(function(){
 <script src="<%=request.getContextPath()%>/js/vendor/loopcounter.js"></script>
 <script src="<%=request.getContextPath()%>/js/vendor/slicknav.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/active.js"></script>
-</body>
-</html>
+
+
+<!-- footer위치 -->
+<%@ include file="../inc/bottom.jsp"%>

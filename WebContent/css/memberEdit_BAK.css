@@ -9,6 +9,7 @@ ul.MyPageNav {
     width: 60%;
 }
 
+
 div.myTitle {
     font-size: 20px;
 }
@@ -394,84 +395,4 @@ span.spFileInfo {
 
 .paymentContents>input[value="B"] {margin-right: 5;/* padding-right: 5; */word-break: 22px;}
 
-input#upfile {
-    padding-left: 10px;
-    color: darkgray;
-}
 
-.myContents input#pwdOrigin {
-    margin-left: 20px;
-    margin-bottom: 5px;
-}
-
-span.pw1 {}
-
-.myContents input#pwd {
-    margin-left: 34px;
-    margin-bottom: 7px;
-}
-
-.myContents input#hp {
-    text-align: center;
-}
-
-.myContents input#address1 {
-    margin-left: 47px;
-    margin-bottom: 5px;
-}
-
-.myContents input#address2 {
-    margin-left: -1px;
-    margin-bottom: 5px;
-}
-
-.myContents 
-input#address3 {
-    margin-left: 50px;
-}
-
-div#pills-tabContent {}
-
-div.TooltipExplain {
-    margin-bottom: 22px;
-}
-
-span.ckBFlag {
-    /* margin-right: 5px; */
-    margin-bottom: 19px;
-    margin-left: 5px;
-}
-
-.paymentContents input[name="businessFlag"] {
-    margin-left: 40px;
-}
-
-.painput#bankName {}
-
-.paymentContents input#bankName {
-    margin-left: 71px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.paymentContents input#accountNum {
-    margin-left: 45px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-.paymentContents input#ownerName {
-    margin-left: 45px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.paymentContents input#ownerBirth {
-    margin-left: 3px;
-    text-align: center;
-}
-
-.paymentContents input[name="businessFlag"] {}
-
-div.paymentContents>input[value='N'] {
-    margin-left: 120px;
-}

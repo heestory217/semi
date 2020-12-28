@@ -1,5 +1,3 @@
-
-<%@page import="com.mytf.post.model.postVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -35,9 +33,8 @@
 							<h1>예능 뽀시래기 팝니다</h1>
 							<br> <img src="../img/story_content_example.gif"
 								style="width: 84%; margin-left: 42px;"><br>
-								<div>
-							내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-								내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용</div>
+							<p>내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+								내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용</p>
 						</div>
 					</div>
 				</div>
@@ -61,7 +58,6 @@
 
 
 			<%@ include file="detail_commTab_final.jsp"%>
-
 
 
 		</div>
@@ -118,7 +114,6 @@
 		</div>
 
 	</div>
-	
 
 	<script>
 		$(function() {

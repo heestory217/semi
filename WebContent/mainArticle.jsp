@@ -19,7 +19,7 @@
 								<h2>코로나 시대 필수품!</h2>
 								<p>나와 당신을 지키는 가림막, 그 이상의 가림막</p>
 								<div class="slide-btn">
-									<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 구경하기</a>
+									<a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 구경하기</a>
 								</div>
 							</div>
 						</div>
@@ -37,7 +37,7 @@
 								<h2 style="color: white;">좋아하는 게임의 OST를 만듭니다</h2>
 								<p style="color: white;">콘솔 게임 감성으로 작화까지 하는 덕후들이 있다?</p>
 								<div class="slide-btn">
-									<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 구경하기</a>
+									<a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 구경하기</a>
 								</div>
 							</div>
 						</div>
@@ -56,7 +56,7 @@
 								<h2 style="color: white;">선인장으로 빚은 가치백</h2>
 								<p style="color: #244E02;">친환경 비건 소재 가방</p>
 								<div class="slide-btn">
-									<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 구경하기</a>
+									<a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 구경하기</a>
 								</div>
 							</div>
 						</div>
@@ -82,12 +82,12 @@
 								<img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="project-image">
 								<div class="hover-content">
 									<div>
-										<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
+										<a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
 									</div>
 								</div>
 							</div>
 							<div class="project-content">
-								<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>"><h5> ${dto.projectName }</h5></a>
+								<a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>"><h5> ${dto.projectName }</h5></a>
 								<div class="goal-percent">
 									<span>78</span>%달성
 								</div>
@@ -120,12 +120,12 @@
 								<img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="project-image">
 								<div class="hover-content">
 									<div>
-										<a href="<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
+										<a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
 									</div>
 								</div>
 							</div>
 							<div class="project-content">
-								<a href=""<c:url value='/detailPage_REAL/detail_total.jsp?projectNo=${dto.projectNo }'/>"><h5> ${dto.projectName }</h5></a>
+								<a href=""<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>"><h5> ${dto.projectName }</h5></a>
 								<div class="goal-percent">
 									<span>78</span>%달성
 								</div>

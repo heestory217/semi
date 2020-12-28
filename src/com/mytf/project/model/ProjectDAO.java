@@ -314,6 +314,10 @@ public class ProjectDAO {
 			case "all" : 
 				sql.append(" order by regdate desc");
 				break;
+				
+			case "popular" : 
+				sql.append(" order by readcount desc");
+				break;
 
 			case "new" :
 				sql.append(" where rownum <= 6 order by regdate desc");

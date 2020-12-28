@@ -116,12 +116,12 @@
 		                        <div class="myTitle">
 		                        	<label for="pwd"> <b>비밀번호</b></label>
 		                        </div>	
-		                        <div class="myContents"> 		                        	
-			                       <span class="pw1">사용중인 비밀번호:</span> 
+		                         <div class="myContents" style="border-bottom: 1px solid lightgray; margin-bottom: 10px; padding-bottom: 10px"> 		                        	
+			                       <span class="pw1"><label for="pwdOrigin"> 사용중인 비밀번호:</label> </span> 
 			                       <input type="password" id="pwdOrigin" name="pwdOrigin"><br>
-			                       <span class="pw2">변경할 비밀번호:</span> 
-			                       <input type="password" id="pwd" name="pwd" ><br>
-			                       <span class="pw3">변경할 비밀번호 확인:</span> 
+			                       <span class="pw2"><label for="pwd" style="margin-right:14px">변경할 비밀번호:</label></span> 
+			                       <input type="password" id="pwd" name="pwd"><br>
+			                       <span class="pw3"><label for="pwdCk" style="margin-right:20px">변경할 비밀번호 </label></span> 
 			                       <input type="password" id="pwdCk" name="pwdCk"><br>
 		                        </div>
 	                        </div>
@@ -195,9 +195,9 @@
 	                 <%--     </c:if> --%>
   
 	                    <div class="myContents">
-		                     <span class="delivery1">받는사람:</span> <input type="text" name="address1" class=address id="address1" value="${addressR[0]}" placeholder="수취인을 입력하세요"><br> 
-			                 <span class="delivery2">받는사람 연락처:</span> <input type="text" name="address2" class=address id="address2" value="${addressR[1]}" placeholder="수취인 연락처를 입력하세요"><br>
-			                 <span class="delivery3">배송주소:</span><input type="text" name="address3" class=address id="address3" value="${addressR[2]}" placeholder="배송주소를 입력하세요"> 
+		                     <span class="delivery1"><label for="address1">받는사람:&nbsp;</label></span> <input type="text" name="address1" class=address id="address1" value="${addressR[0]}" placeholder="수취인을 입력하세요"><br> 
+			                 <span class="delivery2"><label for="address2">받는사람:&nbsp;</label></span> <input type="text" name="address2" class=address id="address2" value="${addressR[1]}" placeholder="수취인 연락처를 입력하세요"><br>
+			                 <span class="delivery3"><label for="address3">배송주소:&nbsp;</label></span><input type="text" name="address3" class=address id="address3" value="${addressR[2]}" placeholder="배송주소를 입력하세요"> 
 	              		 </div>
 	               
 	                 <!--    

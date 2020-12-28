@@ -36,7 +36,7 @@
                      </div>
                   </div>
                   <div class="project-content">
-                     <a href="#"><h5>${vo.projectName }</h5></a>
+                     <a href="/detailPage_REAL/detail_total.do"><h5>${vo.projectName }</h5></a>
                      <div class="goal-percent">
                         <span>78</span>%달성
                      </div>

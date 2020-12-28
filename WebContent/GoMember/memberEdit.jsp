@@ -114,9 +114,9 @@
 	    					<div class="MyPagePart">
 	    		  <!-- 비밀번호 변경가능 -->			
 		                        <div class="myTitle">
-		                        	<div class="pwdDiv"> <b>비밀번호</b></label>
+		                        	<label for="pwd"> <b>비밀번호</b></label>
 		                        </div>	
-		                        <div class="myContents" style="border-bottom: 1px solid lightgray; margin-bottom: 10px; padding-bottom: 10px"> 		                        	
+		                         <div class="myContents" style="border-bottom: 1px solid lightgray; margin-bottom: 10px; padding-bottom: 10px"> 		                        	
 			                       <span class="pw1"><label for="pwdOrigin"> 사용중인 비밀번호:</label> </span> 
 			                       <input type="password" id="pwdOrigin" name="pwdOrigin"><br>
 			                       <span class="pw2"><label for="pwd" style="margin-right:14px">변경할 비밀번호:</label></span> 
@@ -134,7 +134,7 @@
 		                        </div>
 		                        <div class="myContents">
 	               					<%-- <c:if test="${!empty gVo.hp}"> --%>
-		               					<input type="text" id="hp" name="hp" value="${gVo.hp}" placeholder="등록된 연락처가 없습니다." style="text-align: center">
+		               					<input type="text" id="hp" name="hp" value="${gVo.hp}" placeholder="등록된 연락처가 없습니다.">
 		                        	<%-- </c:if>  --%>
 		                        	<%-- <c:if test="${empty gVo.hp}">	 --%>
 			                        <%--  	<input type="text" id="hp" name="hp" placeholder="등록된 연락처가 없습니다." value="">
@@ -161,7 +161,7 @@
 	               <!--  <div class="btDiv">
 	                	<button id="btMypageEdit" value="프로필 변경">프로필 변경</button>
 	                </div> -->
-	                </div> 
+	                
 	                <div class="TooltipExplain">
 	                	<div class="ProfileTooltip">
 		              		<p><b>어떤 정보가 프로필에 공개되나요?</b></p>
@@ -177,16 +177,16 @@
 		              </div>
 	    			</div>        
 	           </div>
-	            </div>
+	           
 	             <div class="tab-pane fade Mycontent" id="delevery" role="tabpanel">
 	                <div class="MyAddress">
 	                
 	         <!-- 배송지 변경가능 -->	       
 	                 
 	                    <div class="myTitle">
-	                     	<div class="delevery">
+	                     	<label for="delevery">
 	                        	<b>등록된 배송지 </b>
-	                   		</div>
+	                   		</label>
 	                    </div>
 	                    
 	                 <%--     <c:if test="${!empty gVo.address}"> --%>
@@ -206,15 +206,10 @@
 		                </div> -->
 		                
 		                
-		                 <div class="deleveryTooltip">
+		                <div class="deleveryTooltip">
 		                	<p><b>배송지를 삭제하면 예약된 후원의 배송지 정보도 삭제되나요?</b></p>
 		             	    <p>현재 후원하신 프로젝트에 등록된 배송지가 삭제되거나 변경되진 않습니다.</p>             	
-		                 </div> 
-	              
-		                  <div class="btDiv">
-	                			<button id="btMypageEditOk" name="btMypageEditOk" value="내 정보 변경 확인">내 정보 변경</button>
-	           		     </div>
-	           
+		                </div> 
 	                
 	            </div>
 	       	 </div>
@@ -264,8 +259,10 @@
 	                  </div>
 	             </div> --%>
 	           
-	  			  
-	      
+	  			    <div class="btDiv">
+	                	<button id="btMypageEditOk" name="btMypageEditOk" value="내 정보 변경 확인">내 정보 변경</button>
+	                </div>
+	       </div>
        </form>
    </div>
 </div>    

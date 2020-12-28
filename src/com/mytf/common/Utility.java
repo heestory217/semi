@@ -7,8 +7,15 @@ public class Utility {
 	//="D:\\lecture\\workspace_list\\jsp_ws\\mystudy\\WebContent\\pds_upload";
 	//="H:\\lecture\\Project\\semi\\WebContent\\GoMember_upload";//자연
 	="D:\\Heejeong_java\\lecture\\workspace_list\\semi_ws\\SemiProject\\WebContent\\GoMember_upload"; // -희정
+
+	//프로젝트 썸네일
+	public static final String THUMBNAIL_DIR
+	="D:\\Heejeong_java\\lecture\\workspace_list\\semi_ws\\SemiProject\\WebContent\\Project_Thumbnail"; // -희정
 	
 	public static final String UPLOAD_DIR="GoMember_upload";
+
+	//프로젝트 썸네일
+	public static final String THUMBNAIL_UPLOAD_DIR="Project_Thumbnail";
 	
 	public static String displayRe(int step) {
 		//답변글인 경우 단계별로 이미지 보여주기

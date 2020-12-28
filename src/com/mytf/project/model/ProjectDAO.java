@@ -418,7 +418,7 @@ public class ProjectDAO {
 	}
 
 	/*카테고리별프로젝트*/
-	public ArrayList<ProjectVO> selectByProjCategory(String ctname) throws SQLException {
+	public ArrayList<ProjectVO> selectByProjCategory(String ctno) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -431,13 +431,19 @@ public class ProjectDAO {
 
 			//3.ps
 			StringBuffer sql = new StringBuffer()
-					.append(" select p.*, c.* \n ")
-					.append(" from PROJECT p, category c \n ")
-					.append(" where p.CTNO=c.CTNO \n ")
-					.append(" and ctname = '?' ");
+			.append(" SELECT  \n ")
+			.append(" PROJECTNO, PROJECTNAME, PROJECTDETAIL,  \n ")
+			.append(" FILENAME, FILESIZE, ORIGINALFILENAME,  \n ")
+			.append(" p.CTNO, MEMBERNO, GOALAMOUNT,  \n ")
+			.append(" OPENDATE, DUEDATE, PROJECTPOLICY,  \n ")
+			.append(" GIFTINFO, PROJECTSTORY, READCOUNT,  \n ")
+			.append(" REGDATE,CTNAME \n ")
+			.append(" FROM PROJECT p,category c \n ")
+			.append(" where p.ctno = c.ctno \n ")
+			.append(" and p.ctno = ? ");
 
 			ps=con.prepareStatement(sql.toString());
-			ps.setString(1, ctname);
+			ps.setString(1, ctno);
 
 			//4. exec
 			rs=ps.executeQuery();
@@ -457,20 +463,20 @@ public class ProjectDAO {
 				String giftInfo=rs.getString("giftInfo");
 				String projectStory=rs.getString("projectStory");
 				int readCount=rs.getInt("readCount");
+				String ctName=rs.getString("ctName");
 
 				vo = new ProjectVO(projectNo2, projectName, projectDetail, fileName, fileSize, 
 						originalFileName, ctNo, memberNo, goalAmount, opendate, duedate, 
-						projectPolicy, giftInfo, projectStory, readCount);
+						projectPolicy, giftInfo, projectStory, readCount, ctName);
 
 				list.add(vo);
 			}
-
 
 			System.out.println("프로젝트 조회 결과 vo="+vo);
 
 			return list;
 		}finally {
-			pool.dbClose(ps, con);
+			pool.dbClose(rs, ps, con);
 		}
 	}
 

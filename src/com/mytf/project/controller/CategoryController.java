@@ -23,10 +23,10 @@ public class CategoryController implements Controller {
 		ProjectService service = new ProjectService();
 		ArrayList<ProjectVO> list = null;
 		
-		String ctname = request.getParameter("ctname");
+		String ctno = request.getParameter("ctno");
 		
 		try {
-			list = service.selectByProjCategory(ctname);
+			list = service.selectByProjCategory(ctno);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}

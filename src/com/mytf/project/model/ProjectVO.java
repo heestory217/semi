@@ -18,6 +18,7 @@ public class ProjectVO {
 	private String giftInfo;
 	private String projectStory;
 	private int readCount;
+	private String ctName;
 	
 	public ProjectVO() {
 		super();
@@ -42,6 +43,28 @@ public class ProjectVO {
 		this.giftInfo = giftInfo;
 		this.projectStory = projectStory;
 		this.readCount = readCount;
+	}
+
+	public ProjectVO(String projectNo, String projectName, String projectDetail, String fileName, long fileSize,
+			String originalFileName, int ctNo, int memberNo, int goalAmount, Timestamp opendate, Timestamp duedate,
+			String projectPolicy, String giftInfo, String projectStory, int readCount, String ctName) {
+		super();
+		this.projectNo = projectNo;
+		this.projectName = projectName;
+		this.projectDetail = projectDetail;
+		this.fileName = fileName;
+		this.fileSize = fileSize;
+		this.originalFileName = originalFileName;
+		this.ctNo = ctNo;
+		this.memberNo = memberNo;
+		this.goalAmount = goalAmount;
+		this.opendate = opendate;
+		this.duedate = duedate;
+		this.projectPolicy = projectPolicy;
+		this.giftInfo = giftInfo;
+		this.projectStory = projectStory;
+		this.readCount = readCount;
+		this.ctName = ctName;
 	}
 
 	public String getProjectNo() {

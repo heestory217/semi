@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +13,15 @@
 
 <!-- Required CSS files -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/owl.carousel.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/barfiller.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/animate.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/slicknav.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/main_footer.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/top.css">
+<link rel="stylesheet" href="<c:url value='/css/owl.carousel.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/barfiller.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/animate.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/font-awesome.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/slicknav.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/main.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/main_footer.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/top.css'/>">
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
@@ -37,14 +38,14 @@
 			<div class="row">
 				<div class="nav-column left-nav" style="padding-left:30px;">
 					<div class="logo-column">
-						<a href="<%=request.getContextPath()%>/mainArticle.jsp"
+						<a href="<c:url value='/mainArticle.do'/>"
 							class="f_logo"> <img
-							src="<%=request.getContextPath()%>/img/topLogo.png"
+							src="<c:url value='/img/topLogo.png'/>"
 							alt="로고 이미지">
 						</a>
 						<nav id="menu" class="d-lg-block right-nav-detail">
 							<a
-								href="<%=request.getContextPath()%>/helpCenter/mainCenter.jsp">
+								href="<c:url value='/helpCenter/mainCenter.do'/>">
 								<span>헬프센터</span>
 							</a>
 						</nav>
@@ -52,7 +53,7 @@
 				</div>
 				<div class="nav-column" style="margin-left: 65%;">
 					<nav id="menu" class="d-lg-block right-nav-detail"> 
-						</span> <a href="<%=request.getContextPath()%>/fg_contact.jsp"
+						<a href="<c:url value='/fg_contact.do'/>"
 							class="login"> <span>1:1 문의하기</span>
 						</a>
 					</nav>
@@ -141,7 +142,7 @@
 							<h3>제3조 공개검토 절차</h3>
 							<p>
 								① 창작자는 ‘<a
-									href="<%=request.getContextPath()%>/projectManager/projectUpload.jsp">프로젝트
+									href="<c:url value='/projectManager/projectUpload.do'/>">프로젝트
 									올리기</a>’를 통해 직접 프로젝트 내용을 작성하고 필수 서류를 제출하여야 하며, 작성이 완료되었을 때 공개검토를
 								요청할 수 있습니다.
 							</p>
@@ -291,7 +292,7 @@
 							<h4>공지사항</h4>
 						</div>
 						<div class="content">
-							<p><a href="">펀딩고의 새로운 소식을 전달드립니다.<br>최신 공지사항을 보러가려면 클릭하세요!</a></p>
+							<p><a href="<c:url value='/coming_soon.do'/>">펀딩고의 새로운 소식을 전달드립니다.<br>최신 공지사항을 보러가려면 클릭하세요!</a></p>
 						</div>
 					</div>
 				</div>
@@ -321,7 +322,7 @@
 							<h4>수수료 정책</h4>
 						</div>
 						<div class="content">
-							<p><a href="<%=request.getContextPath()%>/feeAndFundingPolicy.jsp">펀딩고의 '이용 수수료' 그리고 '후원금 정산'에 대한 모든 정보를 알려드릴게요</a></p>
+							<p><a href="<c:url value='/feeAndFundingPolicy.do'/>">펀딩고의 '이용 수수료' 그리고 '후원금 정산'에 대한 모든 정보를 알려드릴게요</a></p>
 						</div>
 					</div>
 				</div>
@@ -443,22 +444,22 @@
 
 	<!--Required JS files-->
 	<script
-		src="<%=request.getContextPath()%>/assets/js/jquery-2.2.4.min.js"></script>
+		src="<c:url value='/js/jquery-2.2.4.min.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/popper.min.js"></script>
+		src="<c:url value='/js/vendor/popper.min.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/bootstrap.min.js"></script>
+		src="<c:url value='/js/vendor/bootstrap.min.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/owl.carousel.min.js"></script>
+		src="<c:url value='/js/vendor/owl.carousel.min.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/isotope.pkgd.min.js"></script>
+		src="<c:url value='/js/vendor/isotope.pkgd.min.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/jquery.barfiller.js"></script>
+		src="<c:url value='/js/vendor/jquery.barfiller.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/loopcounter.js"></script>
+		src="<c:url value='/js/vendor/loopcounter.js'/>"></script>
 	<script
-		src="<%=request.getContextPath()%>/assets/js/vendor/slicknav.min.js"></script>
-	<script src="<%=request.getContextPath()%>/assets/js/active.js"></script>
+		src="<c:url value='/js/vendor/slicknav.min.js'/>"></script>
+	<script src="<c:url value='/js/active.js'/>"></script>
 
 </body>
 

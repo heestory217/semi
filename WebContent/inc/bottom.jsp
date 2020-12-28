@@ -11,7 +11,7 @@
 				<div class="col-md-6 col-lg-3 footer_widget">
 					<div class="inner">
 						<ul>
-							<li><a href="<c:url value='/helpCenter/mainCenter.do'/>">공지사항</a></li>
+							<li><a href="<c:url value='/coming_soon.do'/>">공지사항</a></li>
 							<li><a
 								href="https://www.notion.so/105a1cf14fc2461c82a65c9bf8279ee5">창작자
 									가이드</a></li>
@@ -29,7 +29,7 @@
 							<li><a
 								href="<c:url value='/helpCenter/mainCenter.do'/>">개인정보
 									처리방침</a></li>
-							<li><a href="<%=request.getContextPath()%>/fg_contact.jsp">고객센터</a></li>
+							<li><a href="<c:url value='/fg_contact.do'/>">고객센터</a></li>
 						</ul>
 					</div>
 				</div>
@@ -53,7 +53,7 @@
 							</a>
 						</div>
 						<div class="media">
-							<a href="<%=request.getContextPath()%>/fg_contact.jsp"> <img
+							<a href="<c:url value='/fg_contact.do'/>"> <img
 								src="<c:url value='/img/requestbutton.png'/>"
 								class="d-flex mr-3" alt="문의하기">
 							</a>

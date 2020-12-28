@@ -294,7 +294,7 @@ $(function(){
 										<br>
 											<div>
 											<label for="file"><span style="color: #FF6F40;">*</span>프로젝트 대표이미지</label><br> 
-												<input type="file" name="upfile">
+												<input type="file" name="upfile" value="${oldfileName}">
 				                        <%-- 		<span><b>첨부된 파일</b></span>
 			                        	   		<c:if test="${!empty vo.fileName}">
 				                        	  		<span>${fileInfo}</span>

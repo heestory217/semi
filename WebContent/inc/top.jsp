@@ -60,6 +60,8 @@
 			$('.search-wrapper').hide();
 			$('.top_container').show();
 		});
+		
+		
 	});
 </script>
 </head>
@@ -86,9 +88,9 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 					<img src="<%=request.getContextPath() %>/img/search.png">
 				</div>
 				<div class="search-input">
-					<form action="" class="search-input-detail" method="">
-						<input type="search" action="" class="search-con"
-							placeholder="검색어를 입력해주세요." value="">
+					<form action="<c:url value='/search.do'/>" name="keyword" class="search-input-detail" method="post">
+						<input type="text" class="search-con" name="keyword"
+							placeholder="검색어를 입력해주세요." value="${param.keyword}">
 					    <input type="submit" class="search-ok" value="검색">
 					</form>
 				</div>
@@ -109,11 +111,11 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 						<ul>
 							<li class="has-child"><a class="menu-style">프로젝트 둘러보기</a>
 								<ul class="sub-menu">
-									<li><a href="<%=request.getContextPath() %>/discover.jsp">모든 프로젝트</a></li>
-									<li><a href="<%=request.getContextPath() %>/discover.jsp">인기 프로젝트</a></li>
-									<li><a href="<%=request.getContextPath() %>/discover.jsp">성공 임박 프로젝트</a></li>
-									<li><a href="<%=request.getContextPath() %>/discover.jsp">신규추천 프로젝트</a></li>
-									<li style="margin-bottom:10px;"><a href="<%=request.getContextPath() %>/category_page.jsp">카테고리별 프로젝트</a></li>
+									<li><a href="<c:url value='/discover.do?type=all'/>">모든 프로젝트</a></li>
+									<li><a href="<c:url value='/discover.do?type=popular'/>">인기 프로젝트</a></li>
+									<li><a href="<c:url value='/discover.do?type=success'/>">성공 임박 프로젝트</a></li>
+									<li><a href="<c:url value='/discover.do?type=new'/>">신규추천 프로젝트</a></li>
+									<li style="margin-bottom:10px;"><a href="<c:url value='/category.do'/>">카테고리별 프로젝트</a></li>
 								</ul>
 							</li>
 							<li><a href='<c:url value='/projectManager/projectUpload_before.do'></c:url>' class="menu-style">프로젝트 올리기</a></li>

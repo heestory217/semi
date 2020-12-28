@@ -10,31 +10,32 @@ import com.controller.Controller;
 import com.mytf.project.model.ProjectService;
 import com.mytf.project.model.ProjectVO;
 
-public class MainArticleController implements Controller {
+public class CategoryController implements Controller {
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		/*
-		 1. 메인 화면 보여주기(기존 mainArticle.jsp) - 조회
-		/mainArticle.do => MainArticleController => /mainArticle.jsp로 포워드 
+		 4. 카테고리 화면 보여주기(기존 category.jsp) - 조회
+		/category.do => CategoryController => /category.jsp로 포워드
 		 */
 		//1.요청파라미터 읽어오기
 		//2.비즈니스 로직처리-db작업
 		ProjectService service = new ProjectService();
 		ArrayList<ProjectVO> list = null;
-	
+		
+		String ctname = request.getParameter("ctname");
 		
 		try {
-			list = service.selectByProjMain();
-		}catch (SQLException e) {
+			list = service.selectByProjCategory(ctname);
+		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		
-		//3.request에 결과저장
-		request.setAttribute("foucs_list", list);
+		//3.request에 결과 저장
+		request.setAttribute("projList_category", list);
 		
 		//4.jsp로 포워드
-		return "/mainArticle.jsp";
+		return "/category.jsp";
 	}
 
 	@Override

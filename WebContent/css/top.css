@@ -128,9 +128,9 @@ header >.top_container{
 	color:rgb(117, 117, 117);
 }
 
-.top_container #menu .login{
+/* .top_container #menu .login{
 	margin-left:8px;
-}
+} */
 
 .login-nav{
 	float:right;

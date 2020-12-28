@@ -13,16 +13,8 @@
 <div>
    <div class="container">
       <div class="search-desc">
-         <span class="search-title">
-         <c:choose>
-            <c:when test="${param.type eq 'all'}">모든</c:when>
-            <c:when test="${param.type eq 'popular'}">인기</c:when>
-            <c:when test="${param.type eq 'success'}">성공임박</c:when>
-            <c:when test="${param.type eq 'new'}">신규추천</c:when>
-         </c:choose>
-         프로젝트</span>
-         <span class="search-qty">${fn:length(projList_type)}개</span>가
-         있습니다.
+         <span class="search-title">검색어 : ${param.keyword }</span>&nbsp;&nbsp;
+         <span class="search-qty">${fn:length(projList_search)}건</span>검색되었습니다.
       </div>
    </div>
 </div>
@@ -31,7 +23,7 @@
 <div class="portfolio-area">
    <div class="container" id="rowList">
       <div class="row" id="rowContent">
-         <c:forEach var="dto" items="${projList_type}">
+         <c:forEach var="dto" items="${projList_search}">
             <div class="single-portfolio col-md-4">
                <div class="inner">
                   <div class="portfolio-img">

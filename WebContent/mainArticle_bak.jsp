@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
-<!-- <div class="preloader">
-	<span class="preloader-spin"></span>
-</div>
-<div class="site"> -->
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 	<!-- header 위치 -->
 	<%@ include file="inc/top.jsp"%>
@@ -15,7 +9,7 @@
 	<!-- 메인이미지 슬라이드 시작 -->
 	<div class="hero-slider">
 		<div class="single-slide"
-			style="background-image: url(<%=request.getContextPath()%>/assets/img/mainTopBanner1.PNG)">
+			style="background-image: url(<c:url value='/img/mainTopBanner1.PNG' />)">
 			<div class="inner">
 				<div class="container">
 					<div class="row">
@@ -34,7 +28,7 @@
 			</div>
 		</div>
 		<div class="single-slide"
-			style="background-image: url(<%=request.getContextPath()%>/assets/img/mainTopBanner2.jpg)">
+			style="background-image: url(<c:url value='/img/mainTopBanner2.jpg'/>)">
 			<div class="inner">
 				<div class="container">
 					<div class="row justify-content-center">
@@ -52,7 +46,7 @@
 			</div>
 		</div>
 		<div class="single-slide"
-			style="background-image: url(<%=request.getContextPath()%>/assets/img/mainTopBanner3.PNG)">
+			style="background-image: url(<c:url value='/img/mainTopBanner3.PNG'/>)">
 			<div class="inner">
 				<div class="container">
 					<div class="row">
@@ -86,7 +80,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_1.JPG"
+								src="<c:url value='/img/projectImage_1.JPG'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -106,7 +100,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_2.jpeg"
+								src='<c:url value='/img/projectImage_2.jpeg'/>'
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -126,7 +120,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_3.jpg"
+								src='<c:url value='/img/projectImage_3.jpg'/>'
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -146,7 +140,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_4.jpg"
+								src='<c:url value='/img/projectImage_4.jpg'/>'
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -166,7 +160,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_5.jpg"
+								src='<c:url value='/img/projectImage_5.jpg' />'
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -186,7 +180,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_6.jpg"
+								src="<c:url value='/img/projectImage_6.jpg'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -224,7 +218,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_7.jpg"
+								src="<c:url value='/img/projectImage_7.jpg'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -244,7 +238,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_8.jpg"
+								src="<c:url value='/img/projectImage_8.jpg'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -264,7 +258,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_9.jpg"
+								src="<c:url value='/img/projectImage_9.jpg'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -287,7 +281,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_10.jpeg"
+								src="<c:url value='/img/projectImage_10.jpeg'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -307,7 +301,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_11.jpeg"
+								src="<c:url value='/img/projectImage_11.jpeg'/>"
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -327,7 +321,7 @@
 					<div class="inner">
 						<div class="portfolio-img">
 							<img
-								src="<%=request.getContextPath()%>/assets/img/projectImage_12.jpeg"
+								src='<c:url value='/img/projectImage_12.jpeg'></c:url>'
 								alt="project-image">
 							<div class="hover-content">
 								<div>
@@ -416,7 +410,7 @@
 <div class="project-start-banner">
 	<div class="banner-wrapper">
 		<div class="banner-background"
-			style="background-image:url(<%=request.getContextPath()%>/assets/img/projectstart-banner-background.png);"></div>
+			style="background-image:url(<c:url value='/img/projectstart-banner-background.png'/>);"></div>
 		<h2 class="banner-title">마음속 프로젝트 아이디어, 펀딩고에서 현실로</h2>
 		<p class="banner-desc">프로젝트를 위한 자금도 마련하고, 든든한 후원자 네트워크도 확보하세요.</p>
 	</div>

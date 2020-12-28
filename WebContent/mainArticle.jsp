@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 	<!-- header 위치 -->
 	<%@ include file="inc/top.jsp"%>
-
 
 	<!-- 메인이미지 슬라이드 시작 -->
 	<div class="hero-slider">
@@ -67,7 +67,6 @@
 	</div>
 	<!-- 메인이미지 슬라이드 끝 -->
 
-
 	<!-- 첫번 째 프로젝트 시작 부분 -->
 	<div class="portfolio-area sp" style="padding-bottom: 0;">
 		<div class="container">
@@ -76,126 +75,26 @@
 				<p>다른 사람들은 누구의 꿈에 후원했을까요?</p>
 			</div>
 			<div class="row">
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_1.JPG'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
+				<c:forEach var="dto" items="${foucs_list}" begin="0" end="5" step="1">
+					<div class="single-portfolio col-md-4">
+						<div class="inner">
+							<div class="portfolio-img">
+								<img src="<c:url value='/img/projectImage_1.JPG'/>" alt="project-image">
+								<div class="hover-content">
+									<div>
+										<a href="#" class="button">프로젝트 보러가기</a>
+									</div>
+								</div>
+							</div>
+							<div class="project-content">
+								<a href="#"><h5> ${dto.projectName }</h5></a>
+								<div class="goal-percent">
+									<span>78</span>%달성
 								</div>
 							</div>
 						</div>
-						<div class="project-content">
-							<a href="#"><h5>내 소중한 취향과 공간을 지켜주는 ‘세이프보드’ 가림막</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
 					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src='<c:url value='/img/projectImage_2.jpeg'/>'
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>일회용카메라 프로젝트: 내가 찍은 사람이 그린 사진</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src='<c:url value='/img/projectImage_3.jpg'/>'
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>반전 매력 을지로 가게들과 함께한 근사한 패브릭 제품들</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src='<c:url value='/img/projectImage_4.jpg'/>'
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>Souvenir de 남해! 추억에 물들여지는 당신의 공간</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src='<c:url value='/img/projectImage_5.jpg' />'
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>LP커버는 보이는게 더 예쁘잖아요. 두루주 원목 LP 액자</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_6.jpg'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>진리의 세상: 어디에나 있지만, 어디에도 없는 아트 오브제</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 			<div class="row">
 				<div class="col-12 text-center" data-margin="40px 0 0">
@@ -214,129 +113,26 @@
 				<p>창작자들의 꿈이 현실이 되는 시간, 얼마 남지 않았어요!</p>
 			</div>
 			<div class="row">
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_7.jpg'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
+				<c:forEach var="dto" items="${foucs_list}" begin="6" end="11" step="1">
+					<div class="single-portfolio col-md-4">
+						<div class="inner">
+							<div class="portfolio-img">
+								<img src="<c:url value='/img/projectImage_1.JPG'/>" alt="project-image">
+								<div class="hover-content">
+									<div>
+										<a href="#" class="button">프로젝트 보러가기</a>
+									</div>
+								</div>
+							</div>
+							<div class="project-content">
+								<a href="#"><h5> ${dto.projectName }</h5></a>
+								<div class="goal-percent">
+									<span>78</span>%달성
 								</div>
 							</div>
 						</div>
-						<div class="project-content">
-							<a href="#"><h5>개화기를 담은 점술 카드 "모던 레노먼드"</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
 					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_8.jpg'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>f o l d r i p. 종이 팝업 드리퍼</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_9.jpg'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>
-									새로운 파이를 굽자! 여성예술인 인터뷰집
-									<OVEN>
-								</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_10.jpeg'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>'이런 장르 처음이야!!' 졸업작품 단편영화 '배달'</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src="<c:url value='/img/projectImage_11.jpeg'/>"
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>당신에게 딱 맞는 MBTI 사고성향별 다이어리</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-portfolio col-md-4">
-					<div class="inner">
-						<div class="portfolio-img">
-							<img
-								src='<c:url value='/img/projectImage_12.jpeg'></c:url>'
-								alt="project-image">
-							<div class="hover-content">
-								<div>
-									<a href="#" class="button">프로젝트 보러가기</a>
-								</div>
-							</div>
-						</div>
-						<div class="project-content">
-							<a href="#"><h5>겨울용 괴담집: 크리피파스타</h5></a>
-							<div class="goal-percent">
-								<span>78</span>%달성
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 			<div class="row">
 				<div class="col-12 text-center" data-margin="40px 0 0">
@@ -406,6 +202,7 @@
 		</div>
 	</div>
 </div>
+
 <!-- 배너 -->
 <div class="project-start-banner">
 	<div class="banner-wrapper">

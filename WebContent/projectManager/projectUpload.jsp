@@ -40,8 +40,8 @@
 <script src="<c:url value='/js/jquery-ui.js'/>"></script>
 
 <!-- 시계 -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">	
-<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">	
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script> -->
 
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
@@ -51,8 +51,6 @@
 <script type="text/javascript">
 var oEditors = [];
 var itemNum = 0;
-var pjStory = CKEDITOR.instances.projectStory.getData();
-
 $(function(){
 	//달력 - 프로젝트 오픈일
 	$('#opendate').datepicker({
@@ -108,7 +106,7 @@ $(function(){
 
 	}).datepicker("option", "maxDate", $("#opendate")+60); 
 
-	//프로젝트 시간지정	
+/* 	//프로젝트 시간지정	
 	$('.timepicker').timepicker({
 	    timeFormat: 'HH:mm p',
 	    interval: 60,
@@ -118,8 +116,8 @@ $(function(){
 	    dropdown: true,
 	    scrollbar: true
 	});
-	
-	//22자 제목 안내
+	 */
+	//제목 길이 안내
 	$('#projectName').keyup(function(){
 		if($('#projectName').val().length==50){
 			$('#title_length').text('※최대 50자 이내의 제목만 입력가능합니다. (현재 글자수 : 50자)');
@@ -166,27 +164,6 @@ $(function(){
 	});
 	
 	//--------------------------------------------------------------------
-	
-	//계좌
-	$('form[name=BankFrm]').submit(function(){
-	     if($('#bankName').val().length<1){
-            alert('은행명을 입력해주세요');
-            event.preventDefault();
-            $('#bankName').focus();
-         }else if($('#ownerName').val().length<1){
-            alert('예금주명을 입력해주세요');
-             event.preventDefault();
-            $('#ownerName').focus();
-         }else if($('#ownerBirth').val().length<1){
-            alert('생년월일을 입력해주세요');
-             event.preventDefault();
-            $('#ownerBirth').focus();
-         }else if($('#accountNum').val().length<1){
-       	  alert('계좌번호를 입력해주세요');
-             event.preventDefault();
-            $('#accountNum').focus();
-         }	
-	});	
 
 });//readyend
 
@@ -301,8 +278,9 @@ $(function(){
 					<div class="card-body">
 					
 						<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
-						<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post">
-								<input type="hidden" name="projectNo" value="${param.projectNo}"/>
+						<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post" enctype="multipart/form-data"> 
+								<input type="text" name="projectNo" value="${projectNo}"/>
+								<input type="text" name="oldfileName" value="${oldfileName}">
 								<p>프로젝트개요</p>
 								<div class="projectBox">
 									<div>
@@ -313,6 +291,16 @@ $(function(){
 												<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="50" value="${vo.projectName}">
 												<br><span style="color: #FF6F40;" id="title_length"></span>
 										</div>
+										<br>
+											<div>
+											<label for="file"><span style="color: #FF6F40;">*</span>프로젝트 대표이미지</label><br> 
+												<input type="file" name="upfile">
+				                        <%-- 		<span><b>첨부된 파일</b></span>
+			                        	   		<c:if test="${!empty vo.fileName}">
+				                        	  		<span>${fileInfo}</span>
+			                        	  		</c:if> --%>
+											</div>
+										<br>
 										<br>
 										<div>
 											<label for="projectDetail"><span style="color: #FF6F40;">*</span>프로젝트 요약</label> <br> 
@@ -383,7 +371,7 @@ $(function(){
 						<div class="card-body">
 					
 						<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
-						<form action="" name="pjUpdateFrm" method="post">
+						<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUpdateFrm" method="post">
 				
 							<p>펀딩 목표 설정</p>
 							<div class="projectBox">
@@ -414,9 +402,9 @@ $(function(){
 											<!-- 달력넣기 -->
 											공개일시 : 
 											<input type="text" id="opendate" name="opendate">
-											<span style="margin-right: 10px;"></span>
-											<!-- 시간넣기 -->
-											<input type="text" class="timepicker" id="opentime" name="opentime">
+									<!-- 		<span style="margin-right: 10px;"></span>
+											시간넣기
+											<input type="text" class="timepicker" id="opentime" name="opentime"> -->
 										</p>
 									</div>
 									
@@ -439,14 +427,6 @@ $(function(){
 								</div>
 							</div>
 							
-							<br>
-							
-							<p>프로젝트 대표이미지</p>
-							<div class="projectBox">
-								<div>
-									<input type="file" name="fileName">
-								</div>
-							</div>
 							<br>
 							
 							<p>프로젝트 스토리텔링</p>

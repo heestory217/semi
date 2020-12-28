@@ -10,8 +10,6 @@
  <%@ include file="../inc/top.jsp"%> 
  
 <script type="text/javascript">
-
-
 $(function(){
 	$('form[name=frmPayMent]').submit(function(){
 	     if($('#eBankName').val().length<1){
@@ -30,9 +28,9 @@ $(function(){
         	  alert('계좌번호를 입력해주세요');
               event.preventDefault();
              $('#eAccountNum').focus();
-          }
-
-	});	
+          }	
+				
+			});	
 	
 	 $('#btPayDel').click(function(){
 		 if($('#dAccount').val().length==0){
@@ -42,9 +40,36 @@ $(function(){
 			event.preventDefault();
 			}
 	 });
-		 
-	
-});
+	 
+	   $('#eOwnerBirth').datepicker({
+		      dateFormat: 'yy-mm-dd',
+		      changeYear : true,
+		      dayNamesMin : ['일','월','화','수','목','금','토'],
+		      monthNames : ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		      showOn: "button",
+		        buttonImage: "<c:url value='/icons/calendar.svg'/>",
+		        buttonImageOnly: true,
+		        
+		       //날짜선택하면
+		      onSelect: function(){
+		           var day1 = $("#eOwnerBirth").datepicker('getDate').getDate();                 
+		           var month1 = $("#eOwnerBirth").datepicker('getDate').getMonth() + 1;             
+		           var year1 = $("#eOwnerBirth").datepicker('getDate').getFullYear();
+		           var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
+		           $('#page_BirthOut').html(fullDate);
+		       }
+
+		   })
+	 
+		/* $('.Binfo').each(function(idx,item){
+			if($(this).val().length<1){
+	            alert($(this).prev.text()+'을 입력하세요');
+	            $(this).focus();
+	            event.preventDefault();
+	            return false; //each탈출
+			}
+		}); */
+	});	
 
  </script>
  

@@ -404,7 +404,6 @@ input#upfile {
     margin-bottom: 5px;
 }
 
-span.pw1 {}
 
 .myContents input#pwd {
     margin-left: 34px;
@@ -470,8 +469,21 @@ span.ckBFlag {
     text-align: center;
 }
 
-.paymentContents input[name="businessFlag"] {}
 
 div.paymentContents>input[value='N'] {
     margin-left: 120px;
+}
+
+
+span.pw2>label {
+    width: 126px;
+}
+
+
+span.pw3>label {
+    margin-right: 20px;
+}
+
+input#hp {
+    text-align: center;
 }

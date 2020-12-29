@@ -35,8 +35,8 @@ public class postDAO {
 			 */
 			
 			  String
-			  sql="insert into post(postNo, projectNo, memberNo, name, pwd, title, email, postContent)"
-			  + " VALUES (postNo_seq.nextval, ?,?,?,?,?,?,?)";
+			  sql="insert into post(postNo, projectNo, memberNo, title, postContent)"
+			  + " VALUES (postNo_seq.nextval, ?,?,?,?)";
 			  
 			  
 			  
@@ -47,11 +47,8 @@ public class postDAO {
 				
 			ps.setString(1, vo.getProjectNo()); 
 			ps.setInt(2, vo.getMemberNo());	 
-			ps.setString(3, vo.getName());
-			ps.setString(4, vo.getPwd());
-			ps.setString(5, vo.getTitle());
-			ps.setString(6, vo.getEmail());
-			ps.setString(7, vo.getPostContent());
+			ps.setString(3, vo.getTitle());
+			ps.setString(4, vo.getPostContent());
 			
 			int cnt=ps.executeUpdate();
 			System.out.println("글쓰기 결과 cnt="+cnt+", 매개변수 vo="+vo);
@@ -101,14 +98,11 @@ public class postDAO {
 				int postNo=rs.getInt("postNo");
 				projectNo=rs.getString("projectNo");
 				int memberNo=rs.getInt("memberNo");
-				String name=rs.getString("name");
-				String pwd=rs.getString("pwd");
 				String title=rs.getString("title");
-				String email=rs.getString("email");
 				String postContent=rs.getString("postContent");
 				Timestamp postDate=rs.getTimestamp("postDate");
 			
-				postVO vo = new postVO(postNo, projectNo, memberNo, name, pwd, title, email, postContent,postDate);
+				postVO vo = new postVO(postNo, projectNo, memberNo, title, postContent,postDate);
 				list.add(vo);
 			
 			}
@@ -144,10 +138,7 @@ public class postDAO {
 				vo.setPostNo(rs.getInt("postNo")); 
 				vo.setProjectNo(rs.getString("projectNo")); 
 				vo.setMemberNo(rs.getInt("memberNo")); 
-				vo.setName(rs.getString("name"));
-				vo.setPwd(rs.getString("pwd"));
 				vo.setTitle(rs.getString("title"));
-				vo.setEmail(rs.getString("email"));
 				vo.setPostContent(rs.getString("postContent"));
 				vo.setPostDate(rs.getTimestamp("postDate"));
 		
@@ -169,19 +160,15 @@ public class postDAO {
 			
 			//3
 			String sql="update post" + 
-						" set name=?, pwd=?, title=?, email=?, postContent=?" +  //엔터값이 있을땐 맨앞에 한번 띄어쓰기 해주기
-						" where postNo=? and pwd=?";
+						" set title=?, postContent=?" +  //엔터값이 있을땐 맨앞에 한번 띄어쓰기 해주기
+						" where postNo=?";
 			
 			ps=con.prepareStatement(sql);
 
 			
-			ps.setString(1, vo.getName()); //물음표에 대한 세팅
-			ps.setString(2, vo.getPwd()); //물음표에 대한 세팅
-			ps.setString(3, vo.getTitle());
-			ps.setString(4, vo.getEmail());
-			ps.setString(5, vo.getPostContent());
-			ps.setInt(6, vo.getPostNo());
-			ps.setString(7, vo.getPwd());
+			ps.setString(1, vo.getTitle());
+			ps.setString(2, vo.getPostContent());
+			ps.setInt(3, vo.getPostNo());
 
 			//4
 			int cnt=ps.executeUpdate();
@@ -206,15 +193,13 @@ public class postDAO {
 			con=pool.getConnection();
 			
 			//3
-			String sql="delete from post where postNo=? and pwd=?";
+			String sql="delete from post where postNo=?";
 			ps=con.prepareStatement(sql);
 			ps.setInt(1, postNo);
-			ps.setString(2, pwd);
 			
 			//4
 			int cnt=ps.executeUpdate();
-			System.out.println("글 삭제 결과, cnt="+cnt+", 매개변수 postNo=" + postNo
-					+ ", pwd=" + pwd);
+			System.out.println("글 삭제 결과, cnt="+cnt+", 매개변수 postNo=" + postNo);
 			
 			return cnt;
 		}finally {
@@ -254,6 +239,41 @@ public class postDAO {
 				
 			}
 		}
+
+		public postVO selectByPostNo(int postNo) throws SQLException {
+			Connection con=null;
+			PreparedStatement ps=null;
+			ResultSet rs=null;
+			
+			postVO vo = new postVO();
+			try {
+				//1,2
+				con=pool.getConnection();
+				
+				//3
+				String sql="select * from post where postNo=?";
+				ps=con.prepareStatement(sql);
+				ps.setInt(1, postNo);
+				
+				//4
+				rs=ps.executeQuery();
+				if(rs.next()) {
+					
+					
+					vo.setPostNo(rs.getInt("postNo")); 
+					vo.setProjectNo(rs.getString("projectNo")); 
+					vo.setMemberNo(rs.getInt("memberNo")); 
+					vo.setTitle(rs.getString("title"));
+					vo.setPostContent(rs.getString("postContent"));
+					vo.setPostDate(rs.getTimestamp("postDate"));
+			
+				}
+				System.out.println("글 상세보기 결과 vo = "+vo + ",매개변수 postNo=" + postNo);
+				return vo;
+			}finally {
+				pool.dbClose(rs, ps, con);
+			}
+			}
 
 	
 }

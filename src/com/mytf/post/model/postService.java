@@ -35,5 +35,9 @@ public class postService {
 		 return postDao.deletePost(postNo, pwd);
 	 }
 
+	public postVO selectByPostNo(int postNo) throws SQLException {
+		return postDao.selectByPostNo(postNo);
+	}
+
 
 }

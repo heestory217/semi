@@ -1,4 +1,5 @@
 
+<%@page import="com.mytf.post.model.postVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -124,8 +125,10 @@ $(function(){
 
 <%
 
-String projectNo = request.getParameter("projectNo");
-String memberNo = request.getParameter("memberNo"); 
+/* String projectNo = request.getParameter("projectNo");
+ */
+ String memberNo = request.getParameter("memberNo"); 
+ String projectNo="PJ005"; 
 
 
 %>
@@ -139,6 +142,7 @@ String memberNo = request.getParameter("memberNo");
 						name="projectNo" value="<%=projectNo%>"/>
 				<input type="hidden" id="memberNo"
 						name="memberNo" value="<%=memberNo%>"/>
+
 				<div class="firstDiv">
 					<label for="title">제목: &nbsp;&nbsp;</label> <input type="text" id="title"
 						name="title" style="width: 80%;"/>
@@ -167,7 +171,7 @@ String memberNo = request.getParameter("memberNo");
 				</div>
 				<div class="center" style="text-align:center; margin-left: 275px; margin-top: 30px; margin-bottom: 50px;">
 					<input type="submit" id="writeFinBtn" value="등록" /> 
-					<input type="Button" id="toListBtn" value="글목록" onClick="location.href='/post/list_all.do'">
+					<input type="Button" id="toListBtn" value="글목록" onClick="location.href='/post/view_all.do'">
 				</div>
 			</fieldset>
 		</form>

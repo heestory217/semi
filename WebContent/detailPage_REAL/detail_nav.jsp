@@ -58,6 +58,18 @@
           }
         });
       } );
+      
+		$(function() {
+			$('ul.projectNave li').click(function() {
+				var activeTab = $(this).attr('data-tab');
+				$('ul.projectNave li').removeClass('current');
+				$('.tabcontent').removeClass('current');
+				$(this).addClass('current');
+				$('#' + activeTab).addClass('current');
+			})
+		});
+
+      
     </script>
 
 <div navSection>

@@ -18,16 +18,13 @@ public class postVO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public postVO(int postNo, String projectNo, int memberNo, String name, String pwd, String title, String email,  String postContent,
+	public postVO(int postNo, String projectNo, int memberNo, String title,  String postContent,
 			Timestamp postDate) {
 		super();
 		this.postNo = postNo;
 		this.projectNo = projectNo;
 		this.memberNo = memberNo;
-		this.name = name;
-		this.pwd = pwd;
 		this.title = title;
-		this.email = email;
 		this.postContent = postContent;
 		this.postDate = postDate;
 	}
@@ -49,29 +46,12 @@ public class postVO {
 	public void setMemberNo(int memberNo) {
 		this.memberNo = memberNo;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPwd() {
-		return pwd;
-	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
+
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	
 	public String getPostContent() {
@@ -88,8 +68,7 @@ public class postVO {
 	}
 	@Override
 	public String toString() {
-		return "postVO [postNo=" + postNo + ", projectNo=" + projectNo + ", memberNo=" + memberNo + ", name=" + name
-				+ ", pwd=" + pwd + ", title=" + title + ", email=" + email + ", postContent=" + postContent + ", postDate=" + postDate + "]";
+		return "postVO [postNo=" + postNo + ", projectNo=" + projectNo + ", memberNo=" + memberNo + ", title=" + title +  ", postContent=" + postContent + ", postDate=" + postDate + "]";
 	}
 	
 

@@ -1,3 +1,5 @@
+
+<%@page import="com.mytf.post.model.postVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,7 +25,7 @@
 		<div id="tab1" class="tabcontent current">
 			<div id="tabs-story">
 				<div id="storyPage">
-					<div class="storyContainer">
+					<div class="storyContainer" id="#sc">
 						<div class="storyDiv">
 							<!-- 창작자 스토리 불러오기 -->
 							<h1>
@@ -33,8 +35,9 @@
 							<h1>예능 뽀시래기 팝니다</h1>
 							<br> <img src="../img/story_content_example.gif"
 								style="width: 84%; margin-left: 42px;"><br>
-							<p>내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-								내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용</p>
+								<div>
+							내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+								내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용</div>
 						</div>
 					</div>
 				</div>
@@ -43,7 +46,7 @@
 
 		<div id="tab2" class="tabcontent">
 
-			<div class="writerFlag" id="move2">
+			<div class="writerFlag" id="#move2">
 				<div>
 					<img class="storyWriterImage" src="../img/storydivWriterImg.png"
 						alt="창작자/후원자 사진" style="width: 35px;">
@@ -60,6 +63,7 @@
 			<%@ include file="detail_commTab_final.jsp"%>
 
 
+
 		</div>
 
 
@@ -68,7 +72,7 @@
 		<div id="tab3" class="tabcontent">
 
 			<div id="fundPage">
-				<div id="refundPolicy_contents" id="move3">
+				<div id="refundPolicy_contents" id="#move3">
 
 					<p>
 						<b>이 프로젝트의 환불 및 교환 정책</b>
@@ -114,6 +118,7 @@
 		</div>
 
 	</div>
+	
 
 	<script>
 		$(function() {
@@ -123,7 +128,7 @@
 				$('.tabcontent').removeClass('current');
 				$(this).addClass('current');
 				$('#' + activeTab).addClass('current');
-			})
+			});
 		});
 
 		

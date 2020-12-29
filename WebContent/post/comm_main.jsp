@@ -107,7 +107,8 @@ $(function(){
 	<!-- 타이틀 끝 -->
 
 <button id="boardBtn_All" onclick="location.href='write_all.jsp'">일반게시물</button>
-<button id="boardBtn_Update" onclick="location.href='write_update.jsp'">창작자 업데이트</button>
+<button id="boardBtn_Update" onclick="location.href='write_update.jsp'">창작자 업데이트</button> 
+													<!-- 내가 쓴 글 ? %> -->
 
 
 <%-- <%@ include file="/login/login_check.jsp" %>

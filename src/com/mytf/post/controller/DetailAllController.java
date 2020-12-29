@@ -1,6 +1,7 @@
 package com.mytf.post.controller;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,22 +17,20 @@ public class DetailAllController implements Controller{
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		/*
 		 5. 상세보기 페이지 - detail.jsp
-		/board/detail.do => DetailController 
-		=> detail.jsp 로 포워드 
+		/post/detail_all.do => DetailAllController 
+		=> detail_all.jsp 로 포워드 
 		 */
 		
 		//1
 		//=> 
-
+		
 		String projectNo = request.getParameter("projectNo");
 		System.out.println("write_ok에서 넘어온 projectNo="+ projectNo);
-		
 		
 		  HttpSession session=request.getSession(); 
 		  int memberNo=(int)session.getAttribute("memberNo");
 		  String name=(String)session.getAttribute("name");
 		  String email=(String)session.getAttribute("email");
-		  String pwd=(String)session.getAttribute("pwd");
 		
 		System.out.println("write_ok에서 넘어온 memberNo="+ memberNo);
 
@@ -41,33 +40,25 @@ public class DetailAllController implements Controller{
 		 * postContent=postContent.replace("\r\n", "<br>"); }else{ postContent=""; }
 		 */
 		
-	
-		if(projectNo==null || projectNo.isEmpty()) {
-			request.setAttribute("msg", "잘못된 url입니다.");
-			request.setAttribute("url", "/post/write_all.do");
-			
-			return "/common/message.jsp";
-		}
 		
 		//2
 		postService service = new postService();
-		postVO vo=null;
+		List<postVO> list=null;
 		try {
-			vo=service.selectByNo(projectNo);
+			list=service.selectAll(projectNo);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		      
 		
 		//3
-		request.setAttribute("vo", vo);
+		request.setAttribute("list", list);
 		
 		//4
-		/*
-		 * return "/post/detail_all.jsp";
-		 */
-		/* return "/detailPage_REAL/detail_total.do"; */
-		return "/post/detail_all.jsp";
+	
+		 return "/post/detail_all.jsp"; 
+			
+	
 	}
 
 	@Override

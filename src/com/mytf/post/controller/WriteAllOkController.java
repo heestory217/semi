@@ -23,7 +23,6 @@ public class WriteAllOkController implements Controller{
 		  int memberNo=(int)session.getAttribute("memberNo");
 		  String name=(String)session.getAttribute("name");
 		  String email=(String)session.getAttribute("email");
-		  String pwd=(String)session.getAttribute("pwd");
 		 		  
 		  System.out.println("memberNo="+memberNo);
 		  
@@ -60,12 +59,12 @@ public class WriteAllOkController implements Controller{
 			return "/common/message.jsp"; 
 		}
 		
-		if(pwd==null || pwd.isEmpty()) { 
-			request.setAttribute("msg","비밀번호를 입력하세요."); 
-			request.setAttribute("url", "/post/write_all.do");
-			
-			return "/common/message.jsp"; 
-		}	
+		/*
+		 * if(pwd==null || pwd.isEmpty()) { request.setAttribute("msg","비밀번호를 입력하세요.");
+		 * request.setAttribute("url", "/post/write_all.do");
+		 * 
+		 * return "/common/message.jsp"; }
+		 */
 
 		if(email==null || email.isEmpty()) { 
 			request.setAttribute("msg","이메일를 입력하세요."); 
@@ -94,17 +93,16 @@ public class WriteAllOkController implements Controller{
 			
 			vo.setProjectNo(projectNo);
 			vo.setMemberNo(memberNo); 	 
-			
-			vo.setName(name);
-			vo.setPwd(pwd);
 			vo.setTitle(title);
-			vo.setEmail(email);
 			vo.setPostContent(postContent);
 			
 			
 
 			int cnt=service.insertPost(vo);
 			if(cnt>0) {
+				
+				vo=service.selectByNo(projectNo);
+				int postNo=vo.getPostNo();
 				msg="글 등록 성공";
 				url="/post/detail_all.do?projectNo="+projectNo+"&memberNo="+memberNo;
 			}

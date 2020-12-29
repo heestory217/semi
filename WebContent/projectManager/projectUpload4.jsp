@@ -40,17 +40,39 @@
 
 $(function(){
 	//유효성 검사
-	$('form[name=pjUploadFrm]').submit(function(){
-		if($('#projectName').val().length<1){
-			alert('프로젝트 제목을 입력하세요.');
+	$('form[name=BankFrm]').submit(function(){
+	     if($('#bankName').val().length<1){
+            alert('은행명을 입력해주세요');
+            event.preventDefault();
+            $('#bankName').focus();
+         }else if($('#accountNum').val().length<1){
+       		alert('계좌번호를 입력해주세요');
+             event.preventDefault();
+            $('#accountNum').focus();
+         }else if($('#ownerName').val().length<1){
+            alert('예금주명을 입력해주세요');
+             event.preventDefault();
+            $('#ownerName').focus();
+         }else if($('#ownerBirth').val().length<1){
+            alert('생년월일을 입력해주세요');
+             event.preventDefault();
+            $('#ownerBirth').focus();
+         }else if(!validate_num($('#accountNum').val())){
+			alert('계좌번호는 숫자만 입력가능합니다.');
+			$('#accountNum').focus();
 			event.preventDefault();
-			$('#projectName').focus();
-		}else if($('#projectDetail').val().length<1){
-			alert('프로젝트 요약을 입력하세요.');
+         }else if(!validate_num($('#ownerBirth').val())){
+			alert('생년월일은 숫자 6자리로 입력해주세요(예:950217)');
+			$('#ownerBirth').focus();
 			event.preventDefault();
-			$('#projectDetail').focus();
-		}
-	});
+		 }
+	});	
+     
+	function validate_num(num){
+		var pattern = new RegExp(/^[0-9]*$/g);
+		return pattern.test(num);
+	}
+	
 });//readyend
 	
 </script>
@@ -144,30 +166,35 @@ $(function(){
 								<div>
 									<div>
 										<label for="private" style="cursor:pointer;">
-										<input type="radio" name="businessFlag" id="private" value="private"/>개인</label>
+										<input type="radio" name="businessFlag" id="private" value="N"
+											<c:if test="${bVo.businessFlag eq'N'}">checked</c:if>
+											<c:if test="${empty bVo.businessFlag}">checked</c:if>/>개인</label>
 										<label for="business" style="cursor:pointer;width: 250px;">
-										<input type="radio" name="businessFlag" id="business" value="business"/>사업자(개인사업자 포함)</label>
+										<input type="radio" name="businessFlag" id="business" value="B"
+											<c:if test="${bVo.businessFlag eq'B'}">checked</c:if>/>사업자(개인사업자 포함)</label>
 									</div>
 									<br>
 									
+									<input type="hidden" name="bankNo" value="${bVo.bankNo}"> 
+									
 									<div>
 										<label for="bankName">은행명</label> 
-										<input type="text" name="bankName" maxlength="6">
+										<input type="text" name="bankName" id="bankName" maxlength="6" value="${bVo.bankName}" >
 									</div>
 										
 									<div>
-										<label for="bankName">계좌 번호</label>
-										<input type="text" name="accountNum" maxlength="16">
+										<label for="bankName">계좌번호</label>
+										<input type="text" name="accountNum" id="accountNum" maxlength="16" value="${bVo.accountNum}">
 									</div>
 									
 									<div>
 										<label for="bankOwner">예금주명</label> 
-										<input type="text" name="ownerName" maxlength="6">
+										<input type="text" name="ownerName" id="ownerName" maxlength="6" value="${bVo.ownerName}">
 									</div>
 										
 									<div>
 										<label for="birth">예금주 생년월일</label> 
-										<input type="text" name="ownerBirth" maxlength="6">
+										<input type="text" name="ownerBirth" id="ownerBirth" maxlength="6" value="${bVo.ownerBirth}">
 									</div>
 									
 								</div>

@@ -26,8 +26,8 @@ public class ProjectUpdateOkController implements Controller {
 		String giftInfo=request.getParameter("giftInfo");
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date1 = (Date) sdf.parse(opendate);
-		Date date2 = (Date) sdf.parse(duedate);
+		java.util.Date date1 = sdf.parse(opendate);
+		java.util.Date date2 = sdf.parse(duedate);
 	    Timestamp realOpendate = new Timestamp(date1.getTime());
 	    Timestamp realDuedate = new Timestamp(date2.getTime());
 	    
@@ -53,9 +53,6 @@ public class ProjectUpdateOkController implements Controller {
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		//3 결과저장
-		request.setAttribute("vo", vo);
 		
 		//4
 		return "/projectManager/projectUpload2.do?projectNo="+projectNo;

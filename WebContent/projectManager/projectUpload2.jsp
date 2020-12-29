@@ -192,118 +192,119 @@
 
 
 	<div class="container">
-			<!-- Accordion card 2 -->
-				<div><!-- 가로 지정 -->
-					<div class="card-body">
-						<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
-						<form action="<c:url value='/projectManager/projectUpload2_ok.do'/>"
-							name="pjUpdateFrm" method="post">
-							
-							<input type="text" name="projectNo" value="${projectNo}"/>
-							
-							<p style="color: #2d3666;font-size: 1.5em;">펀딩 목표 설정</p>
-							<div class="projectBox">
+		<!-- Accordion card 2 -->
+			<div><!-- 가로 지정 -->
+				<div class="card-body">
+					<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
+					<form action="<c:url value='/projectManager/projectUpload2_ok.do'/>"
+						name="pjUpdateFrm" method="post">
+						
+						<input type="text" name="projectNo" value="${projectNo}"/>
+						
+						<p style="color: #2d3666;font-size: 1.5em;">펀딩 목표 설정</p>
+						<div class="projectBox">
+							<div>
 								<div>
-									<div>
-										<label for="goalAmount">목표 금액</label>
-										<p>
-											이번 프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? <br>마감일 자정까지 목표 금액을
-											100% 이상 달성하셔야만 모인 후원금이 결제 됩니다. <br>막판에 후원을 취소하는 후원자들도 있는
-											점을 감안해 10% 이상 초과 달성을 목표로 하시는게 안전합니다. <br>(목표 금액은 제작비, 선물
-											배송비, 창작자의 인건비, 예비 비용 등을 고려하시기 바랍니다.)<br> <span
-												style="color: #FF6F40;">5,000원 이상인 금액을 입력해주세요.</span>
-										</p>
-										<br> <input type="text" name="goalAmount"
-											style="width: 200px;">원
-									</div>
+									<label for="goalAmount">목표 금액</label>
+									<p>
+										이번 프로젝트를 통해 모으고자 하는 펀딩 목표 금액이 얼마인가요? <br>마감일 자정까지 목표 금액을
+										100% 이상 달성하셔야만 모인 후원금이 결제 됩니다. <br>막판에 후원을 취소하는 후원자들도 있는
+										점을 감안해 10% 이상 초과 달성을 목표로 하시는게 안전합니다. <br>(목표 금액은 제작비, 선물
+										배송비, 창작자의 인건비, 예비 비용 등을 고려하시기 바랍니다.)<br> <span
+											style="color: #FF6F40;">5,000원 이상인 금액을 입력해주세요.</span>
+									</p>
+									<br> <input type="text" name="goalAmount"
+										style="width: 200px;" value="${vo.goalAmount }">원
 								</div>
 							</div>
-							<br>
-							<p style="color: #2d3666;font-size: 1.5em;">펀딩 기간 설정</p>
-							<div class="projectBox">
+						</div>
+						<br>
+						<p style="color: #2d3666;font-size: 1.5em;">펀딩 기간 설정</p>
+						<div class="projectBox">
+							<div>
+								<!-- 프로젝트 공개일시 -->
 								<div>
-									<!-- 프로젝트 공개일시 -->
-									<div>
-										<label for="opendate">프로젝트 공개일시</label>
-										<p>
-											<strong>심사 승인 후</strong>, 설정하신 일시에 <strong>프로젝트가
-												자동으로 공개</strong>되니 신중하게 정해주세요. <br>설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실
-											수도 있습니다.
-										</p>
-										<p>
-											<!-- 달력넣기 -->
-											공개일시 : <input type="text" id="opendate" name="opendate">
-											<!-- 		<span style="margin-right: 10px;"></span>
-											시간넣기
-											<input type="text" class="timepicker" id="opentime" name="opentime"> -->
-										</p>
-									</div>
+									<label for="opendate">프로젝트 공개일시</label>
+									<p>
+										<strong>심사 승인 후</strong>, 설정하신 일시에 <strong>프로젝트가
+											자동으로 공개</strong>되니 신중하게 정해주세요. <br>설정하신 공개일시와 관계없이 프로젝트를 직접 공개하실
+										수도 있습니다.
+									</p>
+									<p>
+										<!-- 달력넣기 -->
+										공개일시 : <input type="text" id="opendate" name="opendate" value="${vo.opendate }">
+										<!-- 		<span style="margin-right: 10px;"></span>
+										시간넣기
+										<input type="text" class="timepicker" id="opentime" name="opentime"> -->
+									</p>
+								</div>
 
-									<br>
+								<br>
 
-									<div>
-										<!-- 프로젝트 마감일시 -->
-										<!-- 공개일시를 먼저 선택해야 사용가능함 disable false -->
-										<label for="duedate">프로젝트 마감일시</label>
-										<p>
-											마감일시 : <input type="text" id="duedate" name="duedate">
-										</p>
-										<p>
-											<!-- 위에서 설정한 걸로 넣기 날짜 -->
-											<strong>※마감일을 정할 때 주의할 점</strong><br> 프로젝트는 <span
-												style="color: #FF6F40;" id="page_output1"></span>로 부터 최대 60일
-											동안 진행하실 수 있고 마감일 자정에 종료됩니다. <br>이미 선물을 만드셨다면, 선물 실행일 중에
-											마감일보다 이른 날짜가 있지 않은지 꼭 확인해주세요.
-										</p>
-										<p>
-											<strong> <span style="color: #FF6F40;"
-												id="page_output_end"></span>에 펀딩을 마감합니다.
-											</strong>
-										</p>
-									</div>
+								<div>
+									<!-- 프로젝트 마감일시 -->
+									<!-- 공개일시를 먼저 선택해야 사용가능함 disable false -->
+									<label for="duedate">프로젝트 마감일시</label>
+									<p>
+										마감일시 : <input type="text" id="duedate" name="duedate" value="${vo.duedate }">
+									</p>
+									<p>
+										<!-- 위에서 설정한 걸로 넣기 날짜 -->
+										<strong>※마감일을 정할 때 주의할 점</strong><br> 프로젝트는 <span
+											style="color: #FF6F40;" id="page_output1"></span>로 부터 최대 60일
+										동안 진행하실 수 있고 마감일 자정에 종료됩니다. <br>이미 선물을 만드셨다면, 선물 실행일 중에
+										마감일보다 이른 날짜가 있지 않은지 꼭 확인해주세요.
+									</p>
+									<p>
+										<strong> <span style="color: #FF6F40;"
+											id="page_output_end"></span>에 펀딩을 마감합니다.
+										</strong>
+									</p>
 								</div>
 							</div>
+						</div>
 
-							<br>
+						<br>
 
-							<p style="color: #2d3666;font-size: 1.5em;">프로젝트 스토리텔링</p>
-							<div class="projectBox">
+						<p style="color: #2d3666;font-size: 1.5em;">프로젝트 스토리텔링</p>
+						<div class="projectBox">
+							<div>
+								<p>프로젝트에 대한 이야기를 들려주세요.</p>
 								<div>
-									<p>프로젝트에 대한 이야기를 들려주세요.</p>
-									<div>
-										<!-- 에디터 -->
-										<textarea name="projectStory" id="projectStory"
-											style="width: 100%;"></textarea>
-										<script type="text/javascript">
-											CKEDITOR.replace('projectStory', {
-												height : 500
-											});
-										</script>
-										<!-- 에디터 -->
-									</div>
+									<!-- 에디터 -->
+									<textarea name="projectStory" id="projectStory"
+										style="width: 100%;">${vo.projectStory }</textarea>
+									<script type="text/javascript">
+										CKEDITOR.replace('projectStory', {
+											height : 500
+										});
+									</script>
+									<!-- 에디터 -->
 								</div>
 							</div>
-							<br>
+						</div>
+						<br>
 
-							<p style="color: #2d3666;font-size: 1.5em;">펀딩 안내</p>
-							<div class="projectBox">
+						<p style="color: #2d3666;font-size: 1.5em;">펀딩 안내</p>
+						<div class="projectBox">
+							<div>
 								<div>
-									<div>
-										<label for="projectPolicy">환불 및 교환 정책</label>
-										<p>
-											펀딩 마감 후의 환불 및 교환 요청은 창작자가 약속하는 아래 정책에 따릅니다. <br>이는 후원자의
-											불만 또는 분쟁 발생시 중요한 기준이 되니, 신중히 작성해 주세요.
-										</p>
-										<strong><span style="color: #FF6F40;">[ ] 안의
-												예시 문구를 프로젝트에 적합한 내용으로 변경해주세요.</span></strong>
-										<ul style="margin-left: 20px;">
-											<li>'모든 프로젝트 공통' 내용은 필수로 적어주세요.</li>
-											<li>'배송 필요 선물' '현장수령 선물' '디지털 콘텐츠 선물' 내용들은 이번 프로젝트에 해당되는
-												사항만 골라 작성해 주세요.</li>
-											<li>후원자의 단순 변심, 제품의 파손 및 불량, 창작자의 예기치 못한 선물 실행 지연 등 다양한
-												상황을 고려하여 내용을 작성해 주세요.</li>
-										</ul>
-										<textarea rows="15" cols="130" name="projectPolicy">
+									<label for="projectPolicy">환불 및 교환 정책</label>
+									<p>
+										펀딩 마감 후의 환불 및 교환 요청은 창작자가 약속하는 아래 정책에 따릅니다. <br>이는 후원자의
+										불만 또는 분쟁 발생시 중요한 기준이 되니, 신중히 작성해 주세요.
+									</p>
+									<strong><span style="color: #FF6F40;">[ ] 안의
+											예시 문구를 프로젝트에 적합한 내용으로 변경해주세요.</span></strong>
+									<ul style="margin-left: 20px;">
+										<li>'모든 프로젝트 공통' 내용은 필수로 적어주세요.</li>
+										<li>'배송 필요 선물' '현장수령 선물' '디지털 콘텐츠 선물' 내용들은 이번 프로젝트에 해당되는
+											사항만 골라 작성해 주세요.</li>
+										<li>후원자의 단순 변심, 제품의 파손 및 불량, 창작자의 예기치 못한 선물 실행 지연 등 다양한
+											상황을 고려하여 내용을 작성해 주세요.</li>
+									</ul>
+									<textarea rows="15" cols="130" name="projectPolicy">
+										<c:if test="${empty vo.projectPolicy}">
 모든 프로젝트 공통
 - 프로젝트 마감일 후에는 즉시 제작 및 실행에 착수하는 프로젝트 특성상 단순 변심에 의한 후원금 환불이 불가능합니다.
 - 예상 전달일로부터 [    ]일 이상 선물 전달이 이뤄지지 않을 경우, 환불을 원하시는 분들께는 [ 수수료를 제한 / 수수료를 포함한 ] 후원금을 환불해 드립니다.
@@ -326,17 +327,22 @@
 디지털 콘텐츠로 이뤄진 선물
 - 전달된 파일에 심각한 결함이나 저작권상 문제가 있을 경우, 수수료 [  포함  /  제외  ]하여 환불 가능합니다.
 - 전달된 파일은 타인에게 양도가 [  가능  /  불가능  ]합니다.
+											</c:if>
+										<c:if test="${!empty vo.projectPolicy }">
+											${vo.projectPolicy }
+										</c:if>
 									</textarea>
-									</div>
 								</div>
 							</div>
-							<br>
+						</div>
+						<br>
 
-							<p style="color: #2d3666;font-size: 1.5em;">상품 정보 고시</p>
-							<div class="projectBox">
+						<p style="color: #2d3666;font-size: 1.5em;">상품 정보 고시</p>
+						<div class="projectBox">
+							<div>
 								<div>
-									<div>
-										<textarea rows="5" cols="130" name="giftInfo">
+									<textarea rows="5" cols="130" name="giftInfo">
+										<c:if test="${empty vo.giftInfo }">
 품명 및 모델명
 재질
 구성품 
@@ -345,19 +351,24 @@
 제조자(수입자)
 제조국
 품질보증기준
+											</c:if>
+										<c:if test="${!empty vo.giftInfo }">
+											${vo.giftInfo }
+										</c:if>
 									</textarea>
-									</div>
 								</div>
 							</div>
+						</div>
 
-							<div style="text-align: center; margin: 20px 0;">
-								<input type="submit" class="button" value="저장하기">
-							</div>
-							
-						</form><!--프로젝트 업데이트폼 입력 끝-->
-					</div><!-- card -->
-				</div>
-			</div><!-- container -->
+						<div style="text-align: center; margin: 20px 0;">
+							<input type="submit" class="button" value="저장하기">
+							<a href="<c:url value='/projectManager/projectUpload3.do?projectNo=${projectNo }'/>"><p class="button-2">다음</p></a>
+						</div>
+						
+					</form><!--프로젝트 업데이트폼 입력 끝-->
+				</div><!-- card -->
+			</div>
+		</div><!-- container -->
 
 	<div style="text-align: center; margin-bottom: 50px;"></div>
 

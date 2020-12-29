@@ -21,9 +21,6 @@
 <link rel="stylesheet" href="<c:url value='/css/jquery-ui.css'/>">
 <link rel="stylesheet" href="<c:url value='/css/gift.css'/>">
 
-<!-- 에디터 -->
-<script type="text/javascript" src="<c:url value='/ckeditor/ckeditor.js'/>"></script>
-
 <!--Required JS files-->
 <script src="<c:url value='/js/jquery-2.2.4.min.js'/>"></script>
 <script src="<c:url value='/js/vendor/popper.min.js'/>"></script>
@@ -35,30 +32,13 @@
 <script src="<c:url value='/js/vendor/slicknav.min.js'/>"></script>
 <script src="<c:url value='/js/active.js'/>"></script>
 
-<!-- 달력 -->
-<script src="<c:url value='/js/jquery-3.5.1.min.js'/>"></script>
-<script src="<c:url value='/js/jquery-ui.js'/>"></script>
-
-<!-- 시계 -->
-<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">	
-<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script> -->
-
 <!-- Spoca Han Sans 폰트 -->
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
 
-
 <script type="text/javascript">
+
 $(function(){
-	//제목 길이 안내
-	$('#projectName').keyup(function(){
-		if($('#projectName').val().length==50){
-			$('#title_length').text('※최대 50자 이내의 제목만 입력가능합니다. (현재 글자수 : 50자)');
-		}else{
-			$('#title_length').text('');
-		}
-	});
-	
 	//유효성 검사
 	$('form[name=pjUploadFrm]').submit(function(){
 		if($('#projectName').val().length<1){
@@ -71,14 +51,8 @@ $(function(){
 			$('#projectDetail').focus();
 		}
 	});
-	
-	//카테고리 선택
- 	$('#ctNo').children().each(function(){
-		if($(this).val()=="${vo.ctNo}"){
-			$(this).prop("selected","selected"); // attr적용안될경우 prop으로 
-		}
-	});
 });//readyend
+	
 </script>
 
 </head>
@@ -115,7 +89,7 @@ $(function(){
 <body>
 		<!-- 타이틀 시작 -->
 		<div class="announce_title">
-			<h3 class="animated infinite bounce delay-2s" >어서오세요, 창작자님!</h3>
+			<h3 class="animated infinite bounce delay-2s" >4. 창작자 정보 및 계좌 설정</h3>
 		</div>
 		<!-- 타이틀 끝 -->
 	
@@ -132,67 +106,98 @@ $(function(){
 	
 	
 	<div class="container">
-		<!-- Accordion card 1 -->
-		<div><!-- 가로 지정 -->
-			<div class="card-body">
-				<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
-				<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post" enctype="multipart/form-data"> 
-					
-					<input type="text" name="projectNo" value="${projectNo}"/>
-					<input type="text" name="oldfileName" value="${oldfileName}">
-					
-					<p style="color: #2d3666;font-size: 1.5em;" >1. 프로젝트개요</p>
-					<div class="projectBox">
-						<div>
-							<div>
-								<label for="projectName"><span style="color: #FF6F40;">*</span>프로젝트 제목</label><br>
-									<p>프로젝트에 멋진 제목을 붙여주세요. <br>감정에 호소하는 제목보다는
-									만드시려는 창작물, 작품명, 혹은 프로젝트의 주제가 드러나게 써주시는 것이 좋습니다.  </p>
-									<input type="text" id="projectName" name="projectName" placeholder="제목을 입력하세요" maxlength="50" value="${vo.projectName}">
-									<br><span style="color: #FF6F40;" id="title_length"></span>
-							</div>
-							<br>
-								<div>
-								<label for="file"><span style="color: #FF6F40;">*</span>프로젝트 대표이미지</label><br> 
-									<input type="file" name="upfile" value="${oldfileName}">
-                        	   		<c:if test="${!empty vo.fileName}">
-	                        			<span><b>첨부된 파일 : </b></span>
-	                        	  		<span>${fileInfo}</span>
-                        	  		</c:if> 
-								</div>
-							<br>
-							<br>
-							<div>
-								<label for="projectDetail"><span style="color: #FF6F40;">*</span>프로젝트 요약</label> <br> 
-								<p>후원자 분들에게 본 프로젝트를 간략하게 소개해 봅시다.</p>
-								<textarea rows="3" cols="130" name="projectDetail" id="projectDetail"
-									placeholder="프로젝트 요약을 입력해주세요">${vo.projectDetail}</textarea>
-							</div>
-							<br>
-							<div>
-								<label for="ctNo"><span style="color: #FF6F40;">*</span>프로젝트 카테고리</label> <br> <p>프로젝트의 성격에 맞는 카테고리를 선택해 주세요. <br>(프로젝트 성격과 맞지
-									않는 카테고리를 선택하실 시 후원자가 해당 프로젝트를 찾기 어려워지기에 에디터에 의해 조정될 수 있습니다.)</p>
-								<select name="ctNo" id="ctNo">
-									<option value="1">제품디자인</option>
-									<option value="2">문구도서</option>
-									<option value="3">문화예술</option>
-									<option value="4">푸드</option>
-									<option value="5">패션</option>
-								</select>
-							</div>
-						</div>
-					</div><!-- projectBox -->
-				
-					<div style="text-align: center; margin: 20px 0;">
-						<input type="submit" class="button" value="저장하기">
-						<a href="<c:url value='/projectManager/projectUpload2.do?projectNo=${projectNo }'/>"><p class="button-2">다음</p></a>
-					</div>
+		<!-- Accordion card 4 -->
+			<div><!-- 가로 지정 -->
+				<div class="card-body">
+					<!--계좌 정보 폼 입력 시작 : bank 테이블 insert-->
+					<!--창작자 정보 수정 (회원 수정 페이지로 이동): /GoMember/memberEdit.do-->
+					<form action="" name="BankFrm" method="post">
+						
+						<input type="text" name="projectNo" value="${projectNo}"/>
 							
-				</form><!-- 프로젝트 기본등록 폼 입력 끝-->
-			</div>
-		</div><!-- card -->
-	</div><!-- container -->
-		
+							<p style="color: #2d3666;font-size: 1.5em;">이메일</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="email">이메일 주소</label>
+										<span id="email">${email}</span>
+									</div>
+								</div>
+							</div><!-- projectBox -->
+							
+<!--							<br>
+							
+ 							<p style="color: #2d3666;font-size: 1.5em;">본인 인증</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="hp">휴대폰 번호</label>
+										<input type="text" name="hp">
+									</div>
+								</div>
+							</div> projectBox -->
+							
+							<br>
+
+							<p style="color: #2d3666;font-size: 1.5em;">입금 계좌</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="private" style="cursor:pointer;">
+										<input type="radio" name="businessFlag" id="private" value="private"/>개인</label>
+										<label for="business" style="cursor:pointer;width: 250px;">
+										<input type="radio" name="businessFlag" id="business" value="business"/>사업자(개인사업자 포함)</label>
+									</div>
+									<br>
+									
+									<div>
+										<label for="bankName">은행명</label> 
+										<input type="text" name="bankName" maxlength="6">
+									</div>
+										
+									<div>
+										<label for="bankName">계좌 번호</label>
+										<input type="text" name="accountNum" maxlength="16">
+									</div>
+									
+									<div>
+										<label for="bankOwner">예금주명</label> 
+										<input type="text" name="ownerName" maxlength="6">
+									</div>
+										
+									<div>
+										<label for="birth">예금주 생년월일</label> 
+										<input type="text" name="ownerBirth" maxlength="6">
+									</div>
+									
+								</div>
+							</div><!-- projectBox -->
+							<br>
+							<p style="color: #2d3666;font-size: 1.5em;">창작자 정보</p>
+							<div class="projectBox">
+								<div>
+									<div>
+										<label for="name">창작자 이름</label> <br> 
+										<p>${name }</p>
+									</div>
+									<div>
+										<p style="color: #FF6F40;">※회원정보 수정페이지에서 프로필 이미지등록 및 창작자님의 이력과 간단한 소개를 써 주세요.</p> 
+										<p style="font-size: 0.9em">프로필 이미지는 창작자님 개인이나 팀의 사진을 올려주세요.
+										<br>얼굴이 나온 사진을 넣으면 프로젝트의 신뢰성 향상에 도움이 됩니다.
+										<br>파일 형식은 jpg, png 또는 gif로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</p> 
+									</div>
+								</div>
+							</div><!-- projectBox -->
+																
+							<!-- 검토버튼 -->
+							<div style="text-align: center; margin: 20px 0;">
+								<input type="submit" class="button" value="프로젝트 검토요청">
+							</div>
+							
+						</form><!-- 입력폼 끝 -->
+					</div>
+				</div><!-- card -->
+		</div><!-- container -->
 	<div style="text-align: center; margin-bottom: 50px;"></div>
 
 	<footer>
@@ -201,4 +206,3 @@ $(function(){
 	
 </body>
 </html>
-

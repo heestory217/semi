@@ -35,7 +35,7 @@
 			document.getElementById(id).textContent += seconds+'초 ';
 		}
 		
-		timer = setInterval(showRemaining, 1000);
+		timer = setInterval(showRemaining, 0);
 	}
 	
 	var dateObj = new Date();

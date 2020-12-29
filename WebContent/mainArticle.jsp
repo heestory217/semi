@@ -136,7 +136,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12 text-center" data-margin="40px 0 0">
-					<a href="<c:url value='/discover.do?type=popular'/>" class="button">성공 임박 프로젝트 더보기</a>
+					<a href="<c:url value='/discover.do?type=success'/>" class="button">성공 임박 프로젝트 더보기</a>
 				</div>
 			</div>
 		</div>

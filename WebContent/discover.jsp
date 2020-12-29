@@ -44,7 +44,7 @@
                      </div>
                   </div>
                   <div class="project-content">
-                     <a href="#"><h5>${dto.projectName }</h5></a>
+                     <a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>"><h5>${dto.projectName }</h5></a>
                      <div class="goal-percent">
                         <span>78</span>%달성
                      </div>

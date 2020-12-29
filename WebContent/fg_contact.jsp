@@ -36,7 +36,7 @@
 	      // G-Mail SMTP 사용시
 	      props.put("mail.smtp.starttls.enable","true");
 	      props.put("mail.transport.protocol", "smtp");
-	      props.put("mail.smtp.host", host);
+	      props.put("mail.smtp.host", "smtp.gmail.com");
 	      props.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
 	      props.put("mail.smtp.port", "465");
 	      // props.put("mail.smtp.user", from);

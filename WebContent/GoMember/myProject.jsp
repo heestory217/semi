@@ -27,16 +27,16 @@
             <div class="single-portfolio col-md-4">
                <div class="inner">
                   <div class="portfolio-img">
-                     <img src="<c:url value='/img/projectImage_1.JPG'/>"
+                     <img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>"
                         alt="project-image">
                      <div class="hover-content">
                         <div>
-                           <a href="#" class="button">프로젝트 보러가기</a>
+                           <a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
                         </div>
                      </div>
                   </div>
                   <div class="project-content">
-                     <a href="/detailPage_REAL/detail_total.do"><h5>${vo.projectName }</h5></a>
+                     <a href="/detailPage_REAL/detail_total.do"><h5>${dto.projectName }</h5></a>
                      <div class="goal-percent">
                         <span>78</span>%달성
                      </div>

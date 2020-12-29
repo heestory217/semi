@@ -9,19 +9,19 @@
     <div class="container">
         <div class="row">
             <ul class="isotope-menu">
-                <li data-filter=".category1">제품디자인</li>
-                <li data-filter=".category2">문구도서</li>
-                <li data-filter=".category3">문화예술</li>
-                <li data-filter=".category4">푸드</li>
-                <li data-filter=".category5">패션</li>
+                <li data-filter=".category1" style="font-weight:bold">제품디자인</li>
+                <li data-filter=".category2" style="font-weight:bold">문구도서</li>
+                <li data-filter=".category3" style="font-weight:bold">문화예술</li>
+                <li data-filter=".category4" style="font-weight:bold">푸드</li>
+                <li data-filter=".category5" style="font-weight:bold">패션</li>
             </ul>
         </div>
         <div class="row portfolio-isotope">
 	        <c:forEach var="dto" items="${projList_category}">
-	            <div class="single-portfolio col-md-4 category${ctno }">
+	            <div class="single-portfolio col-md-4 category${dto.ctNo }">
 	                <div class="inner">
 	                    <div class="portfolio-img">
-	                        <img src="<%=request.getContextPath()%>/img/projectImage_1.JPG" alt="portfolio-image">
+	                        <img src="<c:url value='/Project_Thumbnail/${dto.fileName }'/>" alt="portfolio-image">
 	                        <div class="hover-content">
 	                            <div>
 	                                <a href="<c:url value='/detailPage_REAL/detail_total.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
@@ -30,7 +30,7 @@
 	                    </div>
 	                    <div class="project-content">
 	                        <a href="#"><h5>${dto.projectName }</h5></a>
-	                        <span>${dto.ctName}</span>
+	                        <div>${dto.ctName}</div>
 	                    </div>
 	                </div>
 	            </div>

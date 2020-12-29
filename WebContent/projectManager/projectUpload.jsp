@@ -326,6 +326,9 @@ $(function(){
 							<div style="text-align: center; margin: 20px 0;">
 								<input type="submit" class="button" value="저장하기">
 							</div>
+							<div style="text-align: center; margin: 20px 0;">
+								<a href="<c:url value='/projectManager/projectUpload2.do?projectNo=${projectNo }'/>"><p class="button-2">다음</p></a>
+							</div>
 							
 				<!-- 프로젝트 기본등록 폼 입력 끝-->
 				</form>

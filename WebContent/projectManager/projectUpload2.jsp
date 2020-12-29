@@ -196,9 +196,11 @@
 				<div><!-- 가로 지정 -->
 					<div class="card-body">
 						<!--프로젝트 업데이트 폼 입력 시작 : 프로젝트 테이블 update-->
-						<form action="<c:url value='/projectManager/projectUpdate_ok.do'/>"
+						<form action="<c:url value='/projectManager/projectUpload2_ok.do'/>"
 							name="pjUpdateFrm" method="post">
-
+							
+							<input type="text" name="projectNo" value="${projectNo}"/>
+							
 							<p style="color: #2d3666;font-size: 1.5em;">펀딩 목표 설정</p>
 							<div class="projectBox">
 								<div>

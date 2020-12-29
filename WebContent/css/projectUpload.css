@@ -79,9 +79,9 @@
 }
 
 .projectBox label {
-	width: 150px;
+	width: 200px;
 	color:#2d3666;
-	font-size: 1.3em;
+	font-size: 1.2em;
 }
 
 .projectBox div input[type='radio'] {

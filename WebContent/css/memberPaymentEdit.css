@@ -108,3 +108,16 @@ input[name=eBankNo]+label {
 .payTitle>h4 {
     border-bottom: 1px solid gray;
 }
+input[name=eBankNo]+label {
+    margin-right: 39px;
+}
+
+label {}
+
+button#btPayEdit {
+    width: 130px;
+}
+
+button#btPayDel {
+    width: 130px;
+}

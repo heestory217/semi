@@ -62,7 +62,7 @@ $(function(){
 	          	  <form action="<c:url value='/GoMember/memberPaymentEdit_ok.do'></c:url>" method="post" name="frmPayMent"> 
 	                  <input type="hidden" name="eBankNo" value="${bVo.bankNo}"> 	
 	                
-		              <label for="eBusinessFlag">구분:</label>
+		              <label for="eBusinessFlag"  style="margin-right: 39px;">구분:</label>
 		              <input type="radio" name="eBusinessFlag" id="private" value="N"<c:if test="${bVo.businessFlag eq'N'}">checked</c:if><c:if test="${empty bVo.businessFlag}">checked</c:if>>
 		              <span class="ckBFlag"><label for="private" style="cursor:pointer">개인 </label></span>
 		              <input type="radio" name="eBusinessFlag" id="business" value="B"<c:if test="${bVo.businessFlag eq'B'}">checked</c:if>>
@@ -80,7 +80,7 @@ $(function(){
 			
 			            
 		            <div class="btPEdit">
-		       	  	<button id="btPayEdit" value="결제수단 추가/변경">결제수단 추가/변경</button>
+		       	  	<button id="btPayEdit" style="width: 130px" value="결제수단 추가/변경">결제수단 추가/변경</button>
 		            </div> 
 	             </form>
                 </div>
@@ -91,7 +91,7 @@ $(function(){
 		            <form action="<c:url value='/GoMember/memberPaymentDel_ok.do'></c:url>" method="post" name="frmDelAccount">
 				 	 	<input type="hidden" name="dAccount" id="dAccount" value="${bVo.accountNum}">	
 				 	 		            
-		           	 	<button id="btPayDel" value="결제수단 삭제">결제수단 삭제</button>
+		           	 	<button id="btPayDel" style="width: 130px" value="결제수단 삭제">결제수단 삭제</button>
 		           	 
 		            </form>
 	            </div>

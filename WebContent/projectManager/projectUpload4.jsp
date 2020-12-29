@@ -191,6 +191,7 @@ $(function(){
 																
 							<!-- 검토버튼 -->
 							<div style="text-align: center; margin: 20px 0;">
+								<a href="<c:url value='/projectManager/projectUpload3.do?projectNo=${projectNo }'/>"><p class="button-2">이전</p></a>
 								<input type="submit" class="button" value="프로젝트 검토요청">
 							</div>
 							

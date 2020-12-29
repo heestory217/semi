@@ -61,15 +61,7 @@ $(function(){
 	
 	//유효성 검사
 	$('form[name=pjUploadFrm]').submit(function(){
-		if($('#projectName').val().length<1){
-			alert('프로젝트 제목을 입력하세요.');
-			event.preventDefault();
-			$('#projectName').focus();
-		}else if($('#projectDetail').val().length<1){
-			alert('프로젝트 요약을 입력하세요.');
-			event.preventDefault();
-			$('#projectDetail').focus();
-		}
+		check();
 	});
 	
 	//카테고리 선택
@@ -79,6 +71,19 @@ $(function(){
 		}
 	});
 });//readyend
+
+function check(){
+	if($('#projectName').val().length<1){
+		alert('프로젝트 제목을 입력하세요.');
+		event.preventDefault();
+		$('#projectName').focus();
+	}else if($('#projectDetail').val().length<1){
+		alert('프로젝트 요약을 입력하세요.');
+		event.preventDefault();
+		$('#projectDetail').focus();
+	}
+}
+
 </script>
 
 </head>
@@ -141,7 +146,7 @@ $(function(){
 					<input type="text" name="projectNo" value="${projectNo}"/>
 					<input type="text" name="oldfileName" value="${oldfileName}">
 					
-					<p style="color: #2d3666;font-size: 1.5em;" >1. 프로젝트개요</p>
+					<p style="color: #2d3666;font-size: 1.5em;" >프로젝트개요</p>
 					<div class="projectBox">
 						<div>
 							<div>
@@ -185,7 +190,7 @@ $(function(){
 				
 					<div style="text-align: center; margin: 20px 0;">
 						<input type="submit" class="button" value="저장하기">
-						<a href="<c:url value='/projectManager/projectUpload2.do?projectNo=${projectNo }'/>"><p class="button-2">다음</p></a>
+						<a href="<c:url value='/projectManager/projectUpload2.do?projectNo=${projectNo }'/>" onclick="check();"><p class="button-2">다음</p></a>
 					</div>
 							
 				</form><!-- 프로젝트 기본등록 폼 입력 끝-->

@@ -25,6 +25,24 @@ public class ProjectUpdateOkController implements Controller {
 		String projectPolicy=request.getParameter("projectPolicy");
 		String giftInfo=request.getParameter("giftInfo");
 		
+		if(projectNo==null || projectNo.isEmpty()) {
+			request.setAttribute("msg", "프로젝트 정보가 없습니다.");
+			request.setAttribute("url", "/mainArticle.do");
+			return "/common/message.jsp";
+		} else if(goalAmount=="0" || goalAmount==null || goalAmount.isEmpty()) {
+			request.setAttribute("msg", "펀딩 목표금액을 입력해주세요.");
+			request.setAttribute("url", "/projectManager/projectUpload2.do?projectNo="+projectNo);
+			return "/common/message.jsp";
+		} else if(opendate==null || opendate.isEmpty() || duedate==null || duedate.isEmpty()) {
+			request.setAttribute("msg", "펀딩 기간은 공백으로 비워둘 수 없습니다.");
+			request.setAttribute("url", "/projectManager/projectUpload2.do?projectNo="+projectNo);
+			return "/common/message.jsp";
+		}else if(projectStory==null || projectStory.isEmpty()) {
+			request.setAttribute("msg", "프로젝트 스토리를 입력해주세요.");
+			request.setAttribute("url", "/projectManager/projectUpload2.do?projectNo="+projectNo);
+			return "/common/message.jsp";
+		}
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date1 = sdf.parse(opendate);
 		java.util.Date date2 = sdf.parse(duedate);

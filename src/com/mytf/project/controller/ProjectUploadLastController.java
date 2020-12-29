@@ -9,6 +9,10 @@ public class ProjectUploadLastController implements Controller{
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		String projectNo=request.getParameter("projectNo");
+		
+		request.setAttribute("projectNo", projectNo);
+		
 		return "/projectManager/projectUpload4.jsp";
 	}
 

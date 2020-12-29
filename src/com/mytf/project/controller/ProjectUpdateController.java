@@ -23,7 +23,6 @@ public class ProjectUpdateController implements Controller{
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
 		request.setAttribute("projectNo", projectNo);
 		request.setAttribute("vo", vo);
 		

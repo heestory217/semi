@@ -311,6 +311,7 @@ $(function(){
 						<!-- ***********************************************가은 추가 끝*********************************************** -->
 													
 						<div style="text-align: center; margin: 20px 0;">
+							<a href="<c:url value='/projectManager/projectUpload2.do?projectNo=${projectNo }'/>"><p class="button-2">이전</p></a>
 							<input type="submit" class="button" value="저장하기">
 							<a href="<c:url value='/projectManager/projectUpload4.do?projectNo=${projectNo }'/>"><p class="button-2">다음</p></a>
 						</div>

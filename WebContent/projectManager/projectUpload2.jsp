@@ -54,86 +54,74 @@
 
 
 <script type="text/javascript">
-	var oEditors = [];
-	$(function() {
-		//달력 - 프로젝트 오픈일
-		$('#opendate').datepicker(
-				{
-					dateFormat : 'yy-mm-dd',
-					changeYear : true,
-					dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
-					monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
-							'8월', '9월', '10월', '11월', '12월' ],
-					showOn : "button",
-					buttonImage : "<c:url value='/icons/calendar.svg'/>",
-					buttonImageOnly : true,
+var oEditors = [];
+$(function() {
+	//달력 - 프로젝트 오픈일
+	$('#opendate').datepicker(
+			{
+				dateFormat : 'yy-mm-dd',
+				changeYear : true,
+				dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
+				monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
+						'8월', '9월', '10월', '11월', '12월' ],
+				showOn : "button",
+				buttonImage : "<c:url value='/icons/calendar.svg'/>",
+				buttonImageOnly : true,
 
-					onClose : function(selectedDate) {
-						// 시작일(fromDate) datepicker가 닫힐때
-						// 종료일(toDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
-						$("#duedate").datepicker("option", "minDate",
-								selectedDate);
-					},
+				onClose : function(selectedDate) {
+					// 시작일(fromDate) datepicker가 닫힐때
+					// 종료일(toDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
+					$("#duedate").datepicker("option", "minDate",
+							selectedDate);
+				},
 
-					//날짜선택하면
-					onSelect : function() {
-						var day1 = $("#opendate").datepicker('getDate')
-								.getDate();
-						var month1 = $("#opendate").datepicker('getDate')
-								.getMonth() + 1;
-						var year1 = $("#opendate").datepicker('getDate')
-								.getFullYear();
-						var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
-						$('#page_output1').html(fullDate);
-					}
+				//날짜선택하면
+				onSelect : function() {
+					var day1 = $("#opendate").datepicker('getDate')
+							.getDate();
+					var month1 = $("#opendate").datepicker('getDate')
+							.getMonth() + 1;
+					var year1 = $("#opendate").datepicker('getDate')
+							.getFullYear();
+					var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
+					$('#page_output1').html(fullDate);
+				}
 
-				}).datepicker('setDate', new Date()).datepicker("option",
-				"minDate", new Date());
+			}).datepicker('setDate', new Date()).datepicker("option",
+			"minDate", new Date());
 
-		//달력 - 프로젝트 마감일
-		$('#duedate').datepicker(
-				{
-					dateFormat : 'yy-mm-dd',
-					changeYear : true,
-					dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
-					monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
-							'8월', '9월', '10월', '11월', '12월' ],
-					showOn : "button",
-					buttonImage : "<c:url value='/icons/calendar.svg'/>",
-					buttonImageOnly : true,
+	//달력 - 프로젝트 마감일
+	$('#duedate').datepicker(
+			{
+				dateFormat : 'yy-mm-dd',
+				changeYear : true,
+				dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
+				monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월',
+						'8월', '9월', '10월', '11월', '12월' ],
+				showOn : "button",
+				buttonImage : "<c:url value='/icons/calendar.svg'/>",
+				buttonImageOnly : true,
 
-					onClose : function(selectedDate) {
-						$("#opendate").datepicker("option", "maxDate",
-								selectedDate);
-					},
+				onClose : function(selectedDate) {
+					$("#opendate").datepicker("option", "maxDate",
+							selectedDate);
+				},
 
-					//날짜선택하면
-					onSelect : function() {
-						var day1 = $("#duedate").datepicker('getDate')
-								.getDate();
-						var month1 = $("#duedate").datepicker('getDate')
-								.getMonth() + 1;
-						var year1 = $("#duedate").datepicker('getDate')
-								.getFullYear();
-						var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
-						$('#page_output_end').html(fullDate);
-					}
+				//날짜선택하면
+				onSelect : function() {
+					var day1 = $("#duedate").datepicker('getDate')
+							.getDate();
+					var month1 = $("#duedate").datepicker('getDate')
+							.getMonth() + 1;
+					var year1 = $("#duedate").datepicker('getDate')
+							.getFullYear();
+					var fullDate = year1 + "년" + month1 + "월" + day1 + "일";
+					$('#page_output_end').html(fullDate);
+				}
 
-				}).datepicker("option", "maxDate", $("#opendate") + 60);
+			}).datepicker("option", "maxDate", $("#opendate") + 60);
 
-		//유효성 검사
-		$('form[name=pjUploadFrm]').submit(function() {
-			if ($('#projectName').val().length < 1) {
-				alert('프로젝트 제목을 입력하세요.');
-				event.preventDefault();
-				$('#projectName').focus();
-			} else if ($('#projectDetail').val().length < 1) {
-				alert('프로젝트 요약을 입력하세요.');
-				event.preventDefault();
-				$('#projectDetail').focus();
-			}
-		});
-	});//readyend
+});//readyend
 </script>
 
 </head>
@@ -361,6 +349,7 @@
 						</div>
 
 						<div style="text-align: center; margin: 20px 0;">
+							<a href="<c:url value='/projectManager/projectUpload.do?projectNo=${projectNo }'/>"><p class="button-2">이전</p></a>
 							<input type="submit" class="button" value="저장하기">
 							<a href="<c:url value='/projectManager/projectUpload3.do?projectNo=${projectNo }'/>"><p class="button-2">다음</p></a>
 						</div>

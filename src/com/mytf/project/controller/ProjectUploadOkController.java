@@ -79,7 +79,13 @@ public class ProjectUploadOkController implements Controller {
 						System.out.println("기존파일 삭제여부"+bool);
 					}
 				}
+				/*
+				request.setAttribute("msg", "성공적으로 저장하였습니다.");
+				request.setAttribute("url", "/projectManager/projectUpload.do?projectNo="+projectNo);
+				return "/common/message.jsp";
+				*/
 			}
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -88,7 +94,7 @@ public class ProjectUploadOkController implements Controller {
 			System.out.println("10M 이상의 파일. Error");
 			request.setAttribute("msg", "10M이상의 파일은 업로드할 수 없습니다.");
 			request.setAttribute("url", "/projectManager/projectUpload.do");
-			return "/common/message";
+			return "/common/message.jsp";
 		}
 		return "/projectManager/projectUpload.do?projectNo="+projectNo;
 	}

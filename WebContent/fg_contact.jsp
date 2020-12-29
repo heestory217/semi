@@ -77,12 +77,7 @@
 	   /////////// 메일 보내기 끝  
    }
    
-   
-   
 %>
-
-
-
 
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=de5c22ba5fabd256158cb202c3fbe747"></script>
@@ -132,7 +127,7 @@
 
 <div class="page-title sp"
 	style="background-image: 
-	url(<%=request.getContextPath()%>/img/contact-bg.jpg)">
+	url(<c:url value='/img/contact-bg.jpg' />)">
 	<div class="container text-center">
 		<h2>펀딩고에 문의하기</h2>
 		<p style="color: #000;">이메일로 문의를 남겨주세요. 영업일 기준 2일 내에 답변 드리겠습니다.</p>

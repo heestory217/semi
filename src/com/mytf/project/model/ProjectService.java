@@ -51,8 +51,8 @@ public class ProjectService {
 		return pDao.selectByProjKeword(keyword);
 	}
 
-	public ArrayList<ProjectVO> selectByProjCategory(String ctno) throws SQLException {
-		return pDao.selectByProjCategory(ctno);
+	public ArrayList<ProjectVO> selectByProjCategory() throws SQLException {
+		return pDao.selectByProjCategory();
 	}
 	
 	//자연

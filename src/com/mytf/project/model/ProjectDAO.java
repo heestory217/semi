@@ -423,7 +423,7 @@ public class ProjectDAO {
 	}
 
 	/*카테고리별프로젝트*/
-	public ArrayList<ProjectVO> selectByProjCategory(String ctno) throws SQLException {
+	public ArrayList<ProjectVO> selectByProjCategory() throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -444,11 +444,9 @@ public class ProjectDAO {
 			.append(" GIFTINFO, PROJECTSTORY, READCOUNT,  \n ")
 			.append(" REGDATE,CTNAME \n ")
 			.append(" FROM PROJECT p,category c \n ")
-			.append(" where p.ctno = c.ctno \n ")
-			.append(" and p.ctno = ? ");
+			.append(" where p.ctno = c.ctno \n ");
 
 			ps=con.prepareStatement(sql.toString());
-			ps.setString(1, ctno);
 
 			//4. exec
 			rs=ps.executeQuery();

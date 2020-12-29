@@ -187,14 +187,24 @@ public class ProjectVO {
 		this.readCount = readCount;
 	}
 
+	public String getCtName() {
+		return ctName;
+	}
+
+	public void setCtName(String ctName) {
+		this.ctName = ctName;
+	}
+
 	@Override
 	public String toString() {
 		return "ProjectVO [projectNo=" + projectNo + ", projectName=" + projectName + ", projectDetail=" + projectDetail
 				+ ", fileName=" + fileName + ", fileSize=" + fileSize + ", originalFileName=" + originalFileName
 				+ ", ctNo=" + ctNo + ", memberNo=" + memberNo + ", goalAmount=" + goalAmount + ", opendate=" + opendate
 				+ ", duedate=" + duedate + ", projectPolicy=" + projectPolicy + ", giftInfo=" + giftInfo
-				+ ", projectStory=" + projectStory + ", readCount=" + readCount + "]";
+				+ ", projectStory=" + projectStory + ", readCount=" + readCount + ", ctName=" + ctName + "]";
 	}
+
+	
 	
 	
 }

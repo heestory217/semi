@@ -2,14 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-	
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>펀딩고 :: FUNDINGO</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -23,8 +20,6 @@
 <script src="<%=request.getContextPath() %>/js/vendor/loopcounter.js"></script>
 <script src="<%=request.getContextPath() %>/js/vendor/slicknav.min.js"></script>
 <script src="<%=request.getContextPath() %>/js/active.js"></script>
-
-
 
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/owl.carousel.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/barfiller.css">
@@ -42,10 +37,11 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/feeAndFundingPolicy.css">
 
 <!-- Spoca Han Sans 폰트 -->
-<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+<!--  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'> 
- 
+-->
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"> 
 
 <script type="text/javascript">
 	$(function(){
@@ -85,7 +81,7 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 		<div class="search-wrapper">
 			<div class="container search-header">
 				<div class="search-icon">
-					<img src="<%=request.getContextPath() %>/img/search.png">
+					<img src="<c:url value='/img/search.png'/>">
 				</div>
 				<div class="search-input">
 					<form action="<c:url value='/search.do'/>" name="keyword" class="search-input-detail" method="post">
@@ -97,7 +93,7 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 				<div class="close-button">
 					<div class="close-button-wrapper">
 						<div class="close-button">
-							<a href="#"><img src="<%=request.getContextPath() %>/img/close.png" alt=""></a>
+							<a href="#"><img src="<c:url value='/img/close.png'/>" alt=""></a>
 						</div>
 					</div>
 				</div>

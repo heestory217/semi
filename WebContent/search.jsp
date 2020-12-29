@@ -13,8 +13,8 @@
 <div>
    <div class="container">
       <div class="search-desc">
-         <span class="search-title">검색어 : ${param.keyword }</span>&nbsp;&nbsp;
-         <span class="search-qty">${fn:length(projList_search)}건</span>검색되었습니다.
+         <span class="search-title">검색어 : ${param.keyword } </span>
+         <span class="search-qty">${fn:length(projList_search)}건 </span>검색되었습니다.
       </div>
    </div>
 </div>
@@ -36,7 +36,7 @@
                      </div>
                   </div>
                   <div class="project-content">
-                     <a href="#"><h5>${dto.projectName }</h5></a>
+                     <a href="<c:url value='/Project_Thumbnail/${dto.fileName }'/>"><h5>${dto.projectName }</h5></a>
                      <div class="goal-percent">
                         <span>78</span>%달성
                      </div>

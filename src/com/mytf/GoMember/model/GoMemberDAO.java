@@ -208,4 +208,26 @@ public class GoMemberDAO {
 		
 	}
 	
+	//탈퇴!
+	public int GoMemberOut(String email) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+			//12
+			con=pool.getConnection();
+			//3
+			String sql="update GoMember set outdate=sysdate where email=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, email);
+			//4
+			int cnt=ps.executeUpdate();
+			System.out.println("회원 탈퇴 결과 cnt="+cnt+", 매개변수 email="+email);
+			return cnt;
+			
+		} finally {
+			pool.dbClose(ps, con);
+		}
+	}
+	
 }

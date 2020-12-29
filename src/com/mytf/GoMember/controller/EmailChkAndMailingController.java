@@ -62,8 +62,10 @@ public class EmailChkAndMailingController implements Controller{
 				
 				if (cnt>0) {
 					
-					  String title="fundingo, 비밀번호 안내메일입니다."; String content="안녕하세요. fundingo입니다. "
-					  + "새로운 임시 비밀번호는 "+newPw+" 입니다." + "fundingo에서 로그인 후 새로운 비밀번호로 변경하여주시기 바랍니다.";
+					  String title="fundingo, 비밀번호 안내메일입니다."; 
+					  String content="안녕하세요. fundingo입니다. <br>"
+					  + "새로운 임시 비밀번호는 "+newPw+" 입니다.<br>" 
+				      + "fundingo에서 로그인 후 새로운 비밀번호로 변경하여주시기 바랍니다.";
 					  GmailSend.send(title, content, email);
 					 
 					

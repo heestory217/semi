@@ -35,7 +35,7 @@
 			 <label for="pwCheck" class="memOutLB">탈퇴를 원하시면 비밀번호를 입력해주세요.</label><br>
 			 <input type="text" name="pwCheck" id="pwCheck"> 
 			 <input type="submit" id="submit" value="회원탈퇴">
-			 <input type="reset" value="취소" onclick="location.href='<c:url vlaue="/GoMember/MypageOption.do"/>'">
+			 <input type="reset" value="취소" onclick="location.href='<c:url value="/GoMember/MypageOption.do"/>'">
 			 <div class="outTooltip">탈퇴 후 재가입 시 이용했던 아이디를 사용할 수 없습니다.</div>
 			 
 		</form>

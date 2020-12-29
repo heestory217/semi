@@ -39,4 +39,8 @@ public class GoMemberService {
 	public int updateNewPW(GoMemberVO gVo) throws SQLException {
 		return gDao.updateNewPW(gVo);
 	}
+	public int GoMemberOut(String email) throws SQLException {
+		return gDao.GoMemberOut(email);
+		
+	}
 }

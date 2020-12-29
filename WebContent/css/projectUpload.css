@@ -81,7 +81,7 @@
 .projectBox label {
 	width: 150px;
 	color:#2d3666;
-	font-weight: 400;
+	font-size: 1.3em;
 }
 
 .projectBox div input[type='radio'] {
@@ -94,6 +94,6 @@
 
 .card-body > p{
 	color:#2d3666;
-	font-weight: 600;
+	font-size: 1.5em;
 }
 

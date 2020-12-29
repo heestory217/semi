@@ -142,7 +142,7 @@
 							<h3>제3조 공개검토 절차</h3>
 							<p>
 								① 창작자는 ‘<a
-									href="<c:url value='/projectManager/projectUpload.do'/>">프로젝트
+									href="<c:url value='/projectManager/projectUpload_before.do'/>">프로젝트
 									올리기</a>’를 통해 직접 프로젝트 내용을 작성하고 필수 서류를 제출하여야 하며, 작성이 완료되었을 때 공개검토를
 								요청할 수 있습니다.
 							</p>

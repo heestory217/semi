@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/*****************************
+	*NAV css code*
+ ***************************** */
+ 
+.navSection {
+	margin-top: 0;
+	top: 0;
+}
+
+.jbMenu {
+	text-align: left;
+	background-color: yellow;
+	width: 100%;
+}
+
+.jbContent {
+	
+}
+
+.jbFixed {
+	position: fixed;
+	top: -20px;
+}
+
+.jbMenu>ul {
+	margin-left: 20%;
+	margin-top: 0px;
+	padding-top: 5px;
+}
+
+.jbMenu ul, li{
+	text-decoration: none;
+	list-style: none;
+	display: inline;
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	color: gray;
+	font-size: 14px;
+	letter-spacing: -1.5px;
+}
+
+.jbMenu li, a:hover {
+	color: black;
+}
+
+.jbMenu hr {
+	margin-top: 15px;
+	border: 0.1px solid #E8E8E8;
+}

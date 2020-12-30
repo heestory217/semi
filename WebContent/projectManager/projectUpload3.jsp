@@ -185,7 +185,7 @@ $(function(){
 					<!-- *******************************************가은 추가************************************ -->
 					<form action="" name="GiftFrm" method="post">
 							
-						<input type="text" name="projectNo" value="${projectNo}"/>
+						<input type="hidden" name="projectNo" value="${projectNo}"/>
 							
 						<p style="color: #2d3666;font-size: 1.5em;">선물 구성</p>
 						<div class="projectBox">

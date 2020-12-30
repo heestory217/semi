@@ -143,8 +143,8 @@ function check(){
 				<!-- 프로젝트 기본등록 폼 입력 시작 : 프로젝트 테이블 insert-->
 				<form action="<c:url value='/projectManager/projectUpload_ok.do'/>" name="pjUploadFrm" method="post" enctype="multipart/form-data"> 
 					
-					<input type="text" name="projectNo" value="${projectNo}"/>
-					<input type="text" name="oldfileName" value="${oldfileName}">
+					<input type="hidden" name="projectNo" value="${projectNo}"/>
+					<input type="hidden" name="oldfileName" value="${oldfileName}">
 					
 					<p style="color: #2d3666;font-size: 1.5em;" >프로젝트개요</p>
 					<div class="projectBox">

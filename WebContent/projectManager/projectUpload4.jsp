@@ -135,7 +135,7 @@ $(function(){
 					<!--창작자 정보 수정 (회원 수정 페이지로 이동): /GoMember/memberEdit.do-->
 					<form action="<c:url value='/projectManager/projectUpload4_ok.do'/>" name="BankFrm" method="post">
 						
-						<input type="text" name="projectNo" value="${projectNo}"/>
+						<input type="hidden" name="projectNo" value="${projectNo}"/>
 							
 							<p style="color: #2d3666;font-size: 1.5em;">이메일</p>
 							<div class="projectBox">

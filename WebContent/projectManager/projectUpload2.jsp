@@ -187,7 +187,7 @@ $(function() {
 					<form action="<c:url value='/projectManager/projectUpload2_ok.do'/>"
 						name="pjUpdateFrm" method="post">
 						
-						<input type="text" name="projectNo" value="${projectNo}"/>
+						<input type="hidden" name="projectNo" value="${projectNo}"/>
 						
 						<p style="color: #2d3666;font-size: 1.5em;">펀딩 목표 설정</p>
 						<div class="projectBox">

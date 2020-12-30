@@ -9,6 +9,7 @@ public class postVO {
 	private String title;			
 	private Timestamp postDate;	
 	private String postContent;
+	
 	/* 자연 */
 	private String projectName; 
 	private String fileName;

@@ -15,15 +15,16 @@ public class WriteAllController implements Controller{
 		  => write.jsp 
 		*/
 		//1. 요청 파라미터 읽어오기
+		String projectNo = request.getParameter("projectNo");
 		
+		/*
 		  HttpSession session=request.getSession(); 
 		  int memberNo=(int)session.getAttribute("memberNo");
 		  String name=(String)session.getAttribute("name");
 		  String email=(String)session.getAttribute("email");
-		 		  
 		  System.out.println("memberNo="+memberNo);
+		  */
 		
-		String projectNo = request.getParameter("projectNo");
 		//2. 디비작업
 		//3. 저장
 		//4.뷰페이지 포워드

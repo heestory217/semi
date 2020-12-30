@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="../css/detail_chooseOp.css">
 
 
+
 			                        <!-- 만약 클릭된게 옵션 1이면  -->
 			<div class="content">
 				<div class="single-item_lineup">
@@ -12,7 +13,7 @@
 								후원금 (선택)</label><br> 
 							</div>
 
-					<form action="<%=request.getContextPath() %>/checkoutPage/checkoutPage.jsp" method="post" name="pdAdd">
+					<form action="<%=request.getContextPath() %>/checkoutPage/checkoutPage.do" target=" self" method="get" name="pdAdd">
 						<div>
 							<input type="text" name="bonusPrice" placeholder="0" value=""
 								style="margin-top: 10px; margin-bottom: 10px;"> 

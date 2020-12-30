@@ -3,16 +3,16 @@ package com.mytf.GoComment.model;
 import java.sql.Timestamp;
 
 public class GoCommentVO {
-	
+
 	private int commentNo;
 	private int memberNo;
 	private String commentContent;
 	private Timestamp commentDate;
 	private String delFlag;
 	private int postNo;
+
 	public GoCommentVO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public GoCommentVO(int commentNo, int memberNo, String commentContent, Timestamp commentDate, String delFlag,
 			int postNo) {
@@ -65,7 +65,7 @@ public class GoCommentVO {
 		return "CommentVO [commentNo=" + commentNo + ", memberNo=" + memberNo + ", commentContent=" + commentContent
 				+ ", commentDate=" + commentDate + ", delFlag=" + delFlag + ", postNo=" + postNo + "]";
 	}
-	
-	
-	
+
+
+
 }

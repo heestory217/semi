@@ -59,5 +59,10 @@ public class ProjectService {
 	public List<ProjectVO> selectByMemberNo(int memberNo) throws SQLException {
 		return pDao.selectByMemberNo(memberNo);	
 	}
+	
+	//카테명
+	public String selectCtName(String projectNo) throws SQLException {
+		return pDao.selectCtName(projectNo);
+	}
 
 }

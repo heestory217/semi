@@ -40,8 +40,6 @@ public class GoCommentController implements Controller{
 				e.printStackTrace();
 			}
 			      
-		
-			
 			GoCommentService service2 = new GoCommentService();
 			List<GoCommentVO> clist=null;
 			try {
@@ -55,8 +53,6 @@ public class GoCommentController implements Controller{
 			request.setAttribute("list", list);
 			request.setAttribute("clist", clist);
 			
-		
-		
 		return "/GoComment/GoComment.jsp";
 	}
 

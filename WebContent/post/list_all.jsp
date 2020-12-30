@@ -72,6 +72,7 @@
    </thead> 
    <tbody>  
    <%
+   //post list
      	if(list==null || list.isEmpty()){
      %>
    		<tr>
@@ -94,8 +95,8 @@
    	     %>   
 	         <tr style="text-align:center">
 	            <td><%=vo.getPostNo()%></td>
-	            <td><%=vo.getTitle()%></a></td>
-	            <td><%=vo.getName()%></td>
+	            <td><%=vo.getTitle()%></td>
+	            <td>${name }</td>
 	            <td><%=vo.getProjectNo()%></td>
 	            <td><%=sdf.format(vo.getPostDate())%></td>
 	         </tr> 

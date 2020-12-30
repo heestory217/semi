@@ -6,6 +6,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -112,7 +113,7 @@
 	});
 	
 	
-	<!-- iframe부분 제이쿼리!!!! -->	
+	<!-- iframe부분 제이쿼리 -->	
 	function calcHeight(){
 
 	 //find the height of the internal page
@@ -238,11 +239,10 @@
 
 
 	<!--지원 상세 부분 시작!!!  (프로젝트이미지있고) -->
-	<%
+<%-- 	<%
 		ProjectVO vo = (ProjectVO)request.getAttribute("vo");
-	
-		List<postVO> list = (List<postVO>)request.getAttribute("list");
-	%>
+		List<postVO> list = (List<postVO>) request.getAttribute("list");
+	%> --%>
 	<div class="header" style="margin: 3% 0;">
 		<div class="container">
 			<div class="detailPageTop">
@@ -251,7 +251,7 @@
 						class="categ_cal"></a>
 				</div>
 				<div>
-					<h2><%=vo.getProjectName() %></h2>
+					<h2>${projectVo.projectName}</h2>
 				</div>
 				<span><a href=""><img src="../img/authorLogo.png"
 						alt="창작자 로고" class="author_logo"></a></span> <span><a href=""><img
@@ -309,11 +309,11 @@
 			<hr>
 			<ul class="projectNave">
 				<li class="current" data-tab="tab1"><a
-					href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=<%=vo.getProjectNo() %>"
+					href="<c:url value='/detail/detail_first.do?projectNo=${projectNo}'/>"
 					style="color: gray;">스토리</a></li>
 				<li data-tab="tab2"><a href="#" style="color: gray;">커뮤니티</a></li>
 				<li data-tab="tab3"><a
-					href="<%=request.getContextPath() %>/detail/detail_fund.do?projectNo=<%=vo.getProjectNo() %>"
+					href="<c:url value='/detail/detail_fund.do?projectNo=${projectNo}'/>"
 					style="color: gray;">펀딩 안내</a></li>
 			</ul>
 			<hr>
@@ -346,8 +346,6 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 				</div>
 
 
-
-
 				<div class="subcontainer">
 
 					<!-- 내부 메뉴 -->
@@ -355,7 +353,7 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 						<li class="tab2link" data-tab="tab_All"><a href="#"
 							style="color: gray;">모든게시글</a></li>
 						<li class="tab2-link" data-tab="tab_Update"><a
-							href="<%=request.getContextPath() %>/detail/detail_commUp.do"
+							href="<c:url value='/detail/detail_commUp.do'/>"
 							style="color: gray;">창작자 업데이트</a></li>
 					</ul>
 
@@ -363,39 +361,35 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 
 					<div id="commPageOne" class="commcontent current">
 						<!--  게시글 "내용"끌어와서 보여주기 -->
-
-						<%
-							 if(list==null || list.isEmpty()){ %>
-						<div
-							style="background-color: #fff; width: 100%; height: 60px; margin: 25px, 25px; text-align: center; padding-top: 20px; color: gray; font-weight: bold;">
-							<p>해당 프로젝트에는 게시글이 없습니다.</p>
-						</div>
+						
+						<!-- 게시글 없을때 -->
+						<c:if test="${empty postList}">
+							<div
+								style="background-color: #fff; width: 100%; height: 60px; margin: 25px, 25px; text-align: center; padding-top: 20px; color: gray; font-weight: bold;">
+								<p>해당 프로젝트에는 게시글이 없습니다.</p>
+							</div>
+						</c:if>
 						
 						
-						<div
-							style="width: 98%; height: 15px; margin-left: 5px; background-color: #F6F5F5;"></div>
-
-						<button style="margin-top: 8px;" id="viewPostBtn"
-							onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=<%=vo.getProjectNo() %>'">전체보기</button>
-						<div style="float: right; margin-top: 8px;">
-							<button id="writePostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=<%=vo.getProjectNo() %>'">글쓰기</button>
-							<button id="editPostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=<%=vo.getPostNo() %>'">수정</button>
-							<button id="deletePostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=<%=vo.getProjectNo() %>'">삭제</button>
-						</div>
-<%} %>
-
-						
-
+						<!-- 게시글 있을 때 -->
+						<c:if test="${!empty postList}">
+						<c:forEach var="i" begin="1" end="${fn:length(postList)}">
+		                     <c:set var="pVo" value="${postList[i]}" />
+							<div
+								style="width: 98%; height: 15px; margin-left: 5px; background-color: #F6F5F5;"></div>
+	
+							<button style="margin-top: 8px;" id="viewPostBtn"
+								onclick="location.href='<c:url value='/post/view_all.do?projectNo=${projectNo}'/>'">전체보기</button>
+							<div style="float: right; margin-top: 8px;">
+								<button id="writePostBtn"
+									onclick="location.href='<c:url value='/post/write_all.do?projectNo=${projectNo}'/>'">글쓰기</button>
+								<button id="editPostBtn"
+									onclick="location.href='<c:url value='/post/edit_all.do?postNo=${pVo.postNo}'/>'">수정</button>
+								<button id="deletePostBtn"
+									onclick="location.href='<c:url value='/post/delete_all.do?projectNo=${projectNo}'/>'">삭제</button>
+							</div>
 
 						<div style="width: 100%; height: 100%; margin-top: 10px;";>
-							
-						<%
-							for(int i=0; i<list.size(); i++){
-								postVO poVo=list.get(i);
-							%>	
 							
 							<div class="community_contents">
 
@@ -419,15 +413,12 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 									</div>
 								</div>
 
-
-
-
 								<!--  게시글 "내용"끌어와서 보여주기 -->
 								<div class="comm_moreContents">
 
 									<div>
 										<p>
-											<b>제목: <%=poVo.getTitle() %></b>
+											<b>제목: ${pVo.title}</b>
 										</p>
 									</div>
 									<div style="float: left;">
@@ -435,13 +426,13 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 									</div>
 									<div style="float: right;">
 										<p>
-											등록일:
-											<%=poVo.getPostDate() %></p>
+											등록일: ${pVo.postDate}
+										</p>
 									</div>
 									<div style="height: 100%;">
 										<div
 											style="width: 100%; margin-top: 60px; margin-bottom: 60px; border: none; overflow: hidden;">
-											<%=poVo.getPostContent() %>
+											${pVo.postContent}
 										</div>
 									</div>
 								</div>
@@ -454,7 +445,7 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 								<div id="communityCommentImg">
 
 									<!-- 								<img src="../img/pngegg.png" id="commentImg" -->
-									<a href="<%=request.getContextPath()%>/GoComment/GoComment.do?projectNo=<%=vo.getProjectNo()%>&postNo=<%=poVo.getPostNo()%>">
+									<a href="<c:url value='/GoComment/GoComment.do?projectNo=${projectNo}&postNo=${pVo.postNo}'/>">
 										<img src="../img/communityComment.PNG"
 										style="width: 35px; margin-left: -13px; margin-top: 8px; margin-bottom: -14px;">
 									</a>
@@ -464,60 +455,62 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 								
 							</div>
 
-							<div
-								style="width: 110%; height: 15px; margin-left: -25px; background-color: #F6F5F5;"></div>
-
-							<button style="margin-top: 8px;" id="viewPostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${vo.getProjectNo}'">전체보기</button>
-							<div style="float: right; margin-top: 8px;">
-								<button id="writePostBtn"
-									onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${vo.getProjectNo}'">글쓰기</button>
-								<button id="editPostBtn"
-									onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${param.postNo }'">수정</button>
-								<button id="deletePostBtn"
-									onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${vo.getProjectNo}'">삭제</button>
-							</div>
 
 						</div>
-							<%}	%>
+	
 
 
+						</c:forEach>
+						</c:if>
+						
+						
+							<div style="width: 110%; height: 15px; margin-left: -25px; background-color: #F6F5F5;"></div>
+
+							<button style="margin-top: 8px;" id="viewPostBtn"
+								onclick="location.href='<c:url value='/post/view_all.do?projectNo=${projectNo}'/>">전체보기</button>
+							<div style="float: right; margin-top: 8px;">
+								<button id="writePostBtn"
+									onclick="location.href='<c:url value='/post/write_all.do?projectNo=${projectNo}'/>'">글쓰기</button>
+								<button id="editPostBtn"
+									onclick="location.href='<c:url value='/post/edit_all.do?postNo=${param.postNo }'/>'">수정</button>
+								<button id="deletePostBtn"
+									onclick="location.href='<c:url value='/post/delete_all.do?projectNo=${projectNo}'/>'">삭제</button>
+							</div>
+							
+							
 					</div>
 				</div>
 			</div>
+		</div>
+
 <!-- aside 부분!!!!!!!! -->
 	<div class="asideView"
 		style="width: 22%; background-color: #F6F5F5; border: 0.5px solid gray; float: left; margin-left: 11px; margin-top: -1px;">
-
-
 		<div class="asidePage1">
 			<div id="asideP1">
 				<b>창작자 소개</b>
 			</div>
 			<div class="asideAboutWriter">
-				<!-- 창작자 로고/이름 끌어와서 보여주기 -->
-				<div><%=goGo.getName() %></div>
-				<div>
-					<img src="../img/authorLogo.png"
-						style="width: 35px; margin-left: 0px;"> <a href=""><img
-						src="../img/authorName.png"
-						style="width: 83px; margin-bottom: 2px;"></a>
-				</div>
-				<div id="writerIntroContents">
-					<p><%=goGo.getMemberIntro() %></p>
-				</div>
-				<hr>
-				<div id="asideAboutWriter2">
-					<p style="color: #696969; font-size: 9px; letter-spacing: -0.4px;">
-						진행한 프로젝트 <b>0</b> &nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트 <b>0</b>
-					</p>
-				</div>
-			</div>
-		</div>
-
-
-		</div>
-	</div>
+						<!-- 창작자 로고/이름 끌어와서 보여주기 -->
+						<div>${gVo.name}</div>
+						<div>
+							<img src="../img/authorLogo.png"
+								style="width: 35px; margin-left: 0px;"> <a href=""><img
+								src="../img/authorName.png"
+								style="width: 83px; margin-bottom: 2px;"></a>
+						</div>
+						<div id="writerIntroContents">
+							<p>${gVo.memberIntro}</p>
+						</div>
+						<hr>
+						<div id="asideAboutWriter2">
+							<p style="color: #696969; font-size: 9px; letter-spacing: -0.4px;">
+								진행한 프로젝트 <b>0</b> &nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트 <b>0</b>
+							</p>
+						</div>
+			</div><!-- asideAboutWriter -->
+		</div><!-- asidePage1 -->
+	</div><!-- asideView -->
 </body>
 </html>
 

@@ -1,6 +1,8 @@
 package com.mytf.detail.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -29,8 +31,10 @@ public class DetailFirstController implements Controller{
 		ProjectService service = new ProjectService();
 		ProjectVO vo=null;
 		
+		String ctName = null;
 		try {
 			vo=service.selectByProjNo(projectNo);
+			ctName = service.selectCtName(projectNo);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -47,6 +51,7 @@ public class DetailFirstController implements Controller{
 				      
 		
 		//3
+		request.setAttribute("ctName", ctName);
 		request.setAttribute("vo", vo);
 		request.setAttribute("goGo", goGo);
 		

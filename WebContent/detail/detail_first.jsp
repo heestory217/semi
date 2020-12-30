@@ -39,9 +39,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/login.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/feeAndFundingPolicy.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/detailPage_css.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/Detail.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/detail_chooseOp.css">
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/detail_commTab.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/RealFinal.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/Detail.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <!--  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
@@ -87,33 +87,20 @@
 	});
 	
 	
-	<!-- iframe부분 제이쿼리!!!! -->	
+	<!-- iframe부분 제이쿼리 -->	
 	function calcHeight(){
-
 	 //find the height of the internal page
 
-
-
 	 var the_height=
-
 	 document.getElementById('#asideIframe').contentWindow.
-
 	 document.body.scrollHeight;
 
-
-
 	 //change the height of the iframe
-
 	 document.getElementById('#asideIframe').height=
-
 	 the_height;
 
-
-
 	 //document.getElementById('the_iframe').scrolling = "no";
-
 	 document.getElementById('#asideIframe').style.overflow = "hidden";
-
 	}
 
 	//
@@ -163,7 +150,7 @@
 					</nav>
 				</div>
 				
-				<div class="logo-column">
+				<div class="logo-column" style="width:160px;padding-top:18px;">
 					<a href="<c:url value='/mainArticle.do'/>" class="f_logo"> 
 						<img src="<c:url value='/img/topLogo.png'/>" alt="로고 이미지">
 					</a>
@@ -200,24 +187,25 @@
 		</div>
 	</header>
 	<!-- 윗부분 -->
-<!-- top 여기서 끝!!!! -->
 <%
 	ProjectVO vo = (ProjectVO)request.getAttribute("vo");
 	GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 %>
+<!-- top 여기서 끝!!!! -->
 <!--지원 상세 부분 시작!!!  (프로젝트이미지있고) -->
 <div class="header" style="margin:3% 0;">
 	<div class="container">
 		<div class="detailPageTop">
-				<div><a href=""><img src="../img/categ_calender.PNG" alt="문구.캘린더" class="categ_cal"></a></div>
+		
+				<div style="margin-bottom: 10px;"><a href="<c:url value='/category.do'/>" style="text-align: center;"><h4>${ctName}</h4></a></div>
 				<div><h2><%=vo.getProjectName()%></h2></div>
-				<span><a href=""><img src="../img/authorLogo.png" alt="창작자 로고" class="author_logo"></a></span>
-				<span><a href=""><img src="../img/authorName.png" alt="창작자 " class="author_name"></a></span>	
+				<!-- <span><a href=""><img src="../img/authorLogo.png" alt="창작자 로고" class="author_logo"></a></span>
+				<div style="margin-top:30px;text-align: center;"><h6><%=goGo.getName() %></h6></div> -->
 		</div>
 	
 	
 	  	<div class="projectMainDetail">
-	  		<div><img src="../img/detailPageprojImage.jpeg" id="projImage" alt="프로젝트 이미지" class="projDetailImage">
+	  		<div><img src="../Project_Thumbnail/<%=vo.getFileName()%>" id="projImage" alt="프로젝트 이미지" class="projDetailImage">
 	  			  <div class="projectMainDetail2">
 	  				<div class="projectMainDetail2_1">
 	  				
@@ -269,7 +257,7 @@
 
 <!-- Story 부분 시작!!!!!!! -->
 <div style="background-color: #F6F5F5; width: 100%; height: 100%;">
-	<div id="detailContainer" style="width:42%; margin-left: 220px; border:0.5px solid gray; background-color: #fff; float:left;">
+	<div id="detailContainer" style="width:42%; margin-left: 17%; border:0.5px solid gray; background-color: #fff; float:left;">
 		<div id="tab1" class="tabcontent current">
 			<div id="tabs-story">
 				<div id="storyPage">
@@ -305,12 +293,12 @@
 			<div class="asideAboutWriter">
 				<!-- 창작자 로고/이름 끌어와서 보여주기 -->
 				<div><%=goGo.getName() %></div>
-				<div>
+			<!-- 	<div>
 					<img src="../img/authorLogo.png"
 						style="width: 35px; margin-left: 0px;"> <a href=""><img
 						src="../img/authorName.png"
 						style="width: 83px; margin-bottom: 2px;"></a>
-				</div>
+				</div> -->
 				<div id="writerIntroContents">
 					<p><%=goGo.getMemberIntro() %></p>
 				</div>
@@ -333,8 +321,8 @@
 				</p>
 			</div>
 
-			<iframe id="asideIframe" src="<%=request.getContextPath() %>/detailPage_REAL/detail_choose.do" scrolling=""
-				style="margin-left: -8px; width: 285px; height: 450px;"
+			<iframe id="asideIframe" src="<%=request.getContextPath() %>/detailPage_REAL/detail_choose.do"
+				style="margin-left: -8px; width: 100%;height:650px;"
 				name="option_redirect"></iframe>
 
 		</div>

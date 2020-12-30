@@ -542,6 +542,38 @@ public class ProjectDAO {
 			pool.dbClose(ps, con);
 		}
 	}
+	
+	public String selectCtName(String projectNo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		try {
+			//1, 2
+			con=pool.getConnection();
+			//3.ps
+			StringBuffer sql = new StringBuffer()
+					.append(" select c.ctname from project p  \n ")
+					.append(" join category c  \n ")
+					.append(" on c.ctno=p.ctno \n ")
+					.append(" where p.projectno=? ");
+			
+			ps=con.prepareStatement(sql.toString());
+			ps.setString(1, projectNo);
+			
+			//4. exec
+			rs=ps.executeQuery();
+			String ctName = null;
+			if(rs.next()) {
+				ctName = rs.getString(1);
+			}
+			System.out.println("카테고리명 조회결과 ctName="+ctName);
+			return ctName;
+			
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
 
 	
 	

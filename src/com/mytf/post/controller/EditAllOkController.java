@@ -36,9 +36,6 @@ public class EditAllOkController implements Controller{
 						
 			postVO vo = new postVO();
 			vo.setPostContent(postContent);
-			vo.setEmail(email);
-			vo.setName(name);
-			vo.setPwd(pwd);
 			vo.setPostNo(Integer.parseInt(postNo));
 			vo.setTitle(title);
 			

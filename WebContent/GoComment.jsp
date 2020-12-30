@@ -402,9 +402,9 @@ List<GoCommentVO> clist = (List<GoCommentVO>)request.getAttribute("clist");
 
 								<!-- 해당 게시글에 대한 코멘트 불러오기 -->
 							<%
-							
+							GoCommentVO cVo=null;
 							for(int j=0; j<clist.size(); j++){
-								GoCommentVO cVo=clist.get(i);
+								cVo=clist.get(i);
 							%>
 								<div class="moreComments" id="targetComment" style="width: 100%; height: 100%; background-color:#fff;">
 										<div style="width:96%; height: 100%; margin-top:7px; margin-bottom: 7px; padding:15px, 15px;">

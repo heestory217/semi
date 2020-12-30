@@ -23,7 +23,7 @@ public class ListAllController implements Controller{
 		//1.
 		HttpSession session=request.getSession();
 		String projectNo=(String)session.getAttribute("projectNo");
-		
+		String name = (String) session.getAttribute("name");
 		
 		//2.
 		postService service = new postService();
@@ -49,6 +49,7 @@ public class ListAllController implements Controller{
 		 */ 
 		 //3. 
 		request.setAttribute("list", list);
+		request.setAttribute("name", name);
 		/*  request.setAttribute("pageVo",
 		 * pageVo);
 		 */

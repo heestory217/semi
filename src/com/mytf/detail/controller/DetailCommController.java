@@ -22,46 +22,40 @@ public class DetailCommController implements Controller{
 		String projectNo = request.getParameter("projectNo");
 		System.out.println("이전페이지에서 넘어온 projectNo="+ projectNo);
 		
-
-
-		//3
-		 
-		
-		
 		//2
-		ProjectService service3 = new ProjectService();
-		ProjectVO vo=null;
-		
+		ProjectService service = new ProjectService();
+		ProjectVO projectVo=null;
 		try {
-			vo=service3.selectByProjNo(projectNo);
+			projectVo=service.selectByProjNo(projectNo);
+			System.out.println("현재 projectVo: "+projectVo);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		
 		
-		postService service = new postService();
-		List<postVO> list=null;
+		postService pService = new postService();
+		List<postVO> postList=null;
 		try {
-			list=service.selectAll(projectNo);
+			postList=pService.selectAll(projectNo);
+			System.out.println("현재 postList: "+postList);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 		      
-		
-		GoMemberService_Add service2 = new GoMemberService_Add();
-		GoMemberVO_Add goGo = null;
-
+		GoMemberService_Add gService = new GoMemberService_Add();
+		GoMemberVO_Add gVo = null;
 		try {
-			goGo=service2.selectMemberByPojectNo(projectNo);
+			gVo=gService.selectMemberByPojectNo(projectNo);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
 				      
 		
 		//3
-		request.setAttribute("vo", vo);
-		request.setAttribute("list", list);
-		request.setAttribute("goGo", goGo);
+		request.setAttribute("projectNo", projectNo);
+		request.setAttribute("projectVo", projectVo);
+		request.setAttribute("postList", postList);
+		request.setAttribute("gVo", gVo);
 		
 		//4
 	

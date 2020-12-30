@@ -71,7 +71,7 @@
           else {
             $( '.jbMenu' ).removeClass( 'jbFixed' );
           }
-        });
+        }); 
         
         $('ul.projectNave li').click(function() {
 			var activeTab = $(this).attr('data-tab');

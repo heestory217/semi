@@ -31,7 +31,7 @@
                         alt="project-image">
                      <div class="hover-content">
                         <div>
-                           <a href="#" class="button">프로젝트 보러가기</a>
+                           <a href="<c:url value='/detailPage_REAL/detail_first.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
                         </div>
                      </div>
                   </div>

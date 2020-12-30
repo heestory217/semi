@@ -133,7 +133,7 @@ $(function(){
 				<div class="card-body">
 					<!--계좌 정보 폼 입력 시작 : bank 테이블 insert-->
 					<!--창작자 정보 수정 (회원 수정 페이지로 이동): /GoMember/memberEdit.do-->
-					<form action="" name="BankFrm" method="post">
+					<form action="<c:url value='/projectManager/projectUpload4_ok.do'/>" name="BankFrm" method="post">
 						
 						<input type="text" name="projectNo" value="${projectNo}"/>
 							

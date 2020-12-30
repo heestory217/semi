@@ -265,5 +265,44 @@ public class postDAO {
 		}
 	}
 
+	/* 자연 */
+
+	public List<postVO> selectMyPost(int memberNo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		List<postVO>list=new ArrayList<postVO>();
+		
+		postVO vo = new postVO();
+		try {
+			//1,2
+			con=pool.getConnection();
+			
+			//3
+			String sql="select * from post where memberNo=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, memberNo);
+			
+			//4
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				
+				vo.setPostNo(rs.getInt("postNo")); 
+				vo.setProjectNo(rs.getString("projectNo")); 
+				vo.setMemberNo(rs.getInt("memberNo"));
+				vo.setTitle(rs.getString("title"));
+				vo.setPostContent(rs.getString("postContent"));
+				vo.setPostDate(rs.getTimestamp("postDate"));
+				list.add(vo);
+		
+			}
+			System.out.println("글 상세보기 결과 list = "+list.size() + ",매개변수 memberNo=" + memberNo);
+			return list;
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+	}
+	
+	
 
 }

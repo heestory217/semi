@@ -9,7 +9,13 @@ public class postVO {
 	private String title;			
 	private Timestamp postDate;	
 	private String postContent;
+	/* 자연 */
+	private String projectName; 
+	private String fileName;
+	private Timestamp duedate;
 	
+	
+
 	
 	public postVO() {
 		super();
@@ -24,6 +30,21 @@ public class postVO {
 		this.title = title;
 		this.postDate = postDate;
 		this.postContent = postContent;
+	}
+
+
+	public postVO(int postNo, String projectNo, int memberNo, String title, Timestamp postDate, String postContent,
+			String projectName, String fileName, Timestamp duedate) {
+		super();
+		this.postNo = postNo;
+		this.projectNo = projectNo;
+		this.memberNo = memberNo;
+		this.title = title;
+		this.postDate = postDate;
+		this.postContent = postContent;
+		this.projectName = projectName;
+		this.fileName = fileName;
+		this.duedate = duedate;
 	}
 
 
@@ -86,11 +107,43 @@ public class postVO {
 		this.postContent = postContent;
 	}
 
+	/* 자연 */
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+
+	public String getFileName() {
+		return fileName;
+	}
+
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+
+	public Timestamp getDuedate() {
+		return duedate;
+	}
+
+
+	public void setDuedate(Timestamp duedate) {
+		this.duedate = duedate;
+	}
+
 
 	@Override
 	public String toString() {
 		return "postVO [postNo=" + postNo + ", projectNo=" + projectNo + ", memberNo=" + memberNo + ", title=" + title
-				+ ", postDate=" + postDate + ", postContent=" + postContent + "]";
+				+ ", postDate=" + postDate + ", postContent=" + postContent + ", projectName=" + projectName
+				+ ", fileName=" + fileName + ", duedate=" + duedate + "]";
 	}
 	
 	

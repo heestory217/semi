@@ -38,6 +38,11 @@ public class postService {
 	public postVO selectByPostNo(int postNo) throws SQLException {
 		return postDao.selectByPostNo(postNo);
 	}
+	
+	/* 자연 */
+	public List<postVO> selectMyPost(int memberNo) throws SQLException {
+		return postDao.selectMyPost(memberNo);
+	}
 
 
 }

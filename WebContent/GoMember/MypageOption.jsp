@@ -41,7 +41,7 @@
 			</div>
 			<div class="myPageOption-bottom">
 				<div class="myPageOption">
-					<a href="#">커뮤니티</a>
+					<a href="<c:url value='/GoMember/myPost.do'/>">커뮤니티</a>
 				</div>
 			
 				<div  class="myPageOption"> 

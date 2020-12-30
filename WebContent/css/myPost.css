@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+.MyPostOuter {
+    width: 800;
+    margin: 0 auto;
+    margin-top: 60;
+}
+
+textarea.PTA {
+    width: 600;
+    height: 300;
+}
+
+h4 {}
+
+.myPTitle>h4 {
+    color: gray;
+    margin-bottom: 89px;
+    border-bottom: 1px solid #9E9E9E;
+    padding-bottom: 19px;
+}
+
+p {}
+
+.PTitle p {
+    font-size: large;
+    color: gray;
+}
+
+.PWriter {
+    display: inline-block;
+    float: left;
+    margin-right: 393px;
+}
+
+.PpostDate {
+    display: inline-block;
+    float: right;
+}
+
+textarea.PTA {
+    width: 800px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 4px;
+    text-align: left;
+    margin-bottom: 200;
+    height: 441px;
+}
+.divideline {
+    border: 1px solid gray;
+    margin-bottom: 100px;
+}
+
+textarea.PTA {
+    margin-bottom: 50;
+}
+
+.myPTitle>h4 {
+    margin-bottom: 50px;
+}
+
+.myPOstContainer {
+    margin-top: 76px;
+}
+a
+.divideline {}
+
+.Pjname {font-size: large;color: #ff95a8;}
+
+.PjPic {
+    text-align: center;
+    border-radius: 4px;
+}
+
+.Pjdate {color: gray;padding-left: 5;}
+
+.myPOstContainer {
+    margin-top: 20;
+    /* border-bottom: 1px solid; */
+}
+
+textarea.PTA {
+    height: 250;
+}
+.postWrapper {
+    /* border-top: 1px solid #80808061; */
+    padding: 10;
+}
+
+textarea.PTA {
+    width: 776px;
+}
+
+p {}
+
+.PWriter {
+    margin-right: 333px;
+    /* margin-bottom: -13px; */
+}
+
+.PpostDate {
+    margin-right: 10px;
+}
+
+p {}
+
+p {}
+
+.PTitle {
+    /* border-top: 1px solid gray; */
+    border-bottom: 1px solid gray;
+}
+
+.myPOstContainer {
+    margin-top: 3px;
+    margin-bottom: 11px;
+}
+
+.PTitle {
+    margin-bottom: 0px;
+}
+
+.PTitle p {
+    margin-bottom: 5;
+    /* border-color: #7d3f3f; */
+}
+
+p {}
+
+.PWriter>p {
+    margin-bottom: 1px;
+}
+
+.PpostDate>p {
+    margin-bottom: 1px;
+}
+
+.NoneData {
+    font-size: x-large;
+    color: gray;
+    text-align: center;
+    margin-top: 200;
+}
+
+.NoneData {
+    margin-bottom: 377px;
+}
+
+body {}
+
+.PjPic>img {
+    border-radius: 4px;
+}
+
+.Pjname {
+    text-align: center;
+    font-size: large;
+}
+
+.Pjdate {text-align: -webkit-right;margin-right: 82px;}
+
+p {}
+
+.PTitle p {
+    margin-top: 50;
+}
+body {}
+
+.PjPic>img {
+    border-radius: 4px;
+}
+
+.Pjname {
+    text-align: center;
+    font-size: large;
+}
+
+.Pjdate {text-align: -webkit-right;margin-right: 82px;}
+
+p {}
+
+.PTitle p {
+    margin-top: 50;
+}
+
+.blockSection {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 18px;
+}
+
+.divideline {
+    margin-bottom: 21px;
+}
+
+.blockSection {}

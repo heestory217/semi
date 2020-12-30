@@ -144,14 +144,16 @@ $(function(){
 <body>
 	<!-- 타이틀 시작 -->
 	<div class="announce_title">
-		<p><a href="<%=request.getContextPath() %>/helpCenter/mainCenter.jsp">결제 프로젝트 이름과 선택한 옵션이 들어간 배너</a></p>
+		<div style="width: 100%; heigth: 140px; margin: auto; background-color: #191970;  text-align: center; font-weight: bold; color: #fff;">
+		<p>결제 페이지입니다.</p>
+		</div>
 	</div>
 	<!-- 타이틀 끝 -->
 
 		<div class="container">
 		
 
-          <iframe id="checkoutIframe" src="checkout_chooseAccount.jsp" scrolling="no" style="width: 1100px; height: 800px;"
+          <iframe id="checkoutIframe" src="checkout_chooseAccount.do" scrolling="no" style="width: 1100px; margin-top: 50px;height: 800px;"
             		name="option_redirect"></iframe>
        
        

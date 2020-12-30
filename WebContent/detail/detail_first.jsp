@@ -281,7 +281,7 @@
 
 
 								<div>
-								<%=vo.getProjectStory() %>
+								<%=vo.getProjectStory() %> <br>
 								<%=vo.getProjectDetail() %>
 							</div>
 						</div>
@@ -332,18 +332,19 @@
 					<b>선물선택</b>
 				</p>
 			</div>
-<!-- 
-			<iframe id="asideIframe" src="detail_choose.jsp" scrolling=""
-				style="margin-left: -8px; width: 296px; height: 600px;"
+
+			<iframe id="asideIframe" src="<%=request.getContextPath() %>/detailPage_REAL/detail_choose.do" scrolling=""
+				style="margin-left: -8px; width: 285px; height: 450px;"
 				name="option_redirect"></iframe>
- -->
+
 		</div>
 
 	</div>
 	
 </div>	
 	
-	
+	</body>
+	</html>
 	
 	
 	

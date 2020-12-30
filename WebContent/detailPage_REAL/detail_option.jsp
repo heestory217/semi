@@ -12,11 +12,11 @@
 								후원금 (선택)</label><br> 
 							</div>
 
-					<form action="checkoutPage.jsp" method="post" name="pdAdd">
+					<form action="<%=request.getContextPath() %>/checkoutPage/checkoutPage.jsp" method="post" name="pdAdd">
 						<div>
 							<input type="text" name="bonusPrice" placeholder="0" value=""
 								style="margin-top: 10px; margin-bottom: 10px;"> 
-								<input type="submit" id="bonusBtn" name="customer_op1" value="---원 밀어주기">
+								<input type="submit" id="bonusBtn" name="customer_op1" value="밀어주기">
 							<br> 
 							<input type="button" id="backBtn" value="이전옵션으로"
 								onclick="history.back(-1);">
@@ -40,7 +40,7 @@
 						<label>set 구성품 A</label>
 					</div>
 	
-			<form action="checkoutPage.jsp" method="post" name="pdAdd">
+			<form action="<%=request.getContextPath() %>/checkoutPage/checkoutPage.do" target=" self" method="get" name="pdAdd">
 					<div>
 						<label style="font-size: 12px; color: gray; font-weight: bold;">추가
 							후원금 (선택)</label><br> 
@@ -48,7 +48,7 @@
 							후원해주시면 프로젝트 성사가 더 앞당겨집니다.</label><br> <input type="text"
 							name="bonusPrice" placeholder="0" value=""
 							style="margin-top: 10px; margin-bottom: 10px;"> 
-							<input type="submit" id="bonusBtn" name="customer_op1" value="------밀어주기">
+							<input type="submit" id="bonusBtn" name="customer_op1" value="밀어주기">
 						<br> <input type="button" id="backBtn" value="이전옵션으로"
 							onclick="history.back(-1);">
 					</div>

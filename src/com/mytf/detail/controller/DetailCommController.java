@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.controller.Controller;
+import com.mytf.detail.model.GoMemberService_Add;
+import com.mytf.detail.model.GoMemberVO_Add;
 import com.mytf.post.model.postService;
 import com.mytf.post.model.postVO;
+import com.mytf.project.model.ProjectService;
+import com.mytf.project.model.ProjectVO;
 
 public class DetailCommController implements Controller{
 
@@ -25,6 +29,16 @@ public class DetailCommController implements Controller{
 		
 		
 		//2
+		ProjectService service3 = new ProjectService();
+		ProjectVO vo=null;
+		
+		try {
+			vo=service3.selectByProjNo(projectNo);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		
+		
 		postService service = new postService();
 		List<postVO> list=null;
 		try {
@@ -34,8 +48,20 @@ public class DetailCommController implements Controller{
 		}
 		      
 		
+		GoMemberService_Add service2 = new GoMemberService_Add();
+		GoMemberVO_Add goGo = null;
+
+		try {
+			goGo=service2.selectMemberByPojectNo(projectNo);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+				      
+		
 		//3
+		request.setAttribute("vo", vo);
 		request.setAttribute("list", list);
+		request.setAttribute("goGo", goGo);
 		
 		//4
 	

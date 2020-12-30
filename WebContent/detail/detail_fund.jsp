@@ -259,8 +259,8 @@
     <div class="jbMenu">
 	    <hr>
 			<ul class="projectNave">
-				<li class="current" data-tab="tab1"><a href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=${vo.projectNo}" style="color:gray;">스토리</a></li>
-				<li data-tab="tab2"><a href="<%=request.getContextPath() %>/detail/detail_comm.do?projectNo=${vo.projectNo}" style="color:gray;">커뮤니티</a></li>
+				<li class="current" data-tab="tab1"><a href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=<%=vo.getProjectNo() %>" style="color:gray;">스토리</a></li>
+				<li data-tab="tab2"><a href="<%=request.getContextPath() %>/detail/detail_comm.do?projectNo=<%=vo.getProjectNo() %>" style="color:gray;">커뮤니티</a></li>
 				<li data-tab="tab3"><a href="#" style="color:gray;">펀딩 안내</a></li>
 			</ul>
 	    <hr>
@@ -280,20 +280,33 @@
 					<p>
 						<b>이 프로젝트의 환불 및 교환 정책</b>
 					</p>
-					<div><p>
 						<!-- 창작자 정책 -->
-						<%=vo.getProjectPolicy() %>} </p>
+		<% if(vo.getProjectPolicy() ==null || vo.getProjectPolicy().isEmpty()){%>
+								
+					<div style="font-weight: bold, color: gray;">
+						<p>해당 프로젝트의 환불 및 교환 정책이 없습니다.</p>
+					</div>
+		<% } %>
+					<div><p>
+						<%=vo.getProjectPolicy() %> </p>
 					</div>
 
 				</div>
 
 				<div id="productInfo_contents">
 					<p>
-						<b>상품정보 고시</b>
-					</p>
+						<b>상품정보 고시</b> </p>
+	
+		<% if(vo.getGiftInfo() ==null || vo.getGiftInfo().isEmpty()){%>
+								
+					<div style="font-weight: bold, color: gray;">
+						<p>해당 프로젝트의 상품정보 고시정보가 없습니다.</p>
+					</div>
+		<% } %>			
+				
 					<div>
 						<p><!-- 창작자 정책 -->
-						<%=vo.getGiftInfo() %>} </p>
+						<%=vo.getGiftInfo() %> </p>
 					</div>
 
 				</div>
@@ -301,5 +314,7 @@
 		</div>
 	</div>
 	</div>
+	</body>
+	</html>
 	
 

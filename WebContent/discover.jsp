@@ -39,12 +39,12 @@
                         alt="project-image">
                      <div class="hover-content">
                         <div>
-                           <a href="<c:url value='/detailPage_REAL/detail_first.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
+                           <a href="<c:url value='/detail/detail_first.do?projectNo=${dto.projectNo }'/>" class="button">프로젝트 보러가기</a>
                         </div>
                      </div>
                   </div>
                   <div class="project-content">
-                     <a href="<c:url value='/detailPage_REAL/detail_first.do?projectNo=${dto.projectNo }'/>"><h5>${dto.projectName }</h5></a>
+                     <a href="<c:url value='/detail/detail_first.do?projectNo=${dto.projectNo }'/>"><h5>${dto.projectName }</h5></a>
                      <div class="goal-percent">
                         <span>78</span>%달성
                      </div>

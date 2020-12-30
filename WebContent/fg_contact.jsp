@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 	
 <!-- header 위치 -->
 <%@ include file="inc/top.jsp"%>
@@ -50,14 +50,14 @@
 	           });
 	      
 	      Message msg = new MimeMessage(mailSession);
-	      msg.setFrom(new InternetAddress(from, MimeUtility.encodeText(fromName,"UTF-8","B")));//보내는 사람 설정
+	      msg.setFrom(new InternetAddress(from, MimeUtility.encodeText(fromName,"utf-8","B")));//보내는 사람 설정
 	      
 	      InternetAddress[] address = {new InternetAddress(to)};
       
 	      
 	      msg.setRecipients(Message.RecipientType.TO, address);//받는 사람설정
 
-	      msg.setSubject(MimeUtility.encodeText(subject,"UTF-8","B"));// 제목 설정
+	      msg.setSubject(MimeUtility.encodeText(subject,"utf-8","B"));// 제목 설정
 	      //msg.setSubject(subject);// 제목 설정
 	      msg.setSentDate(new java.util.Date());// 보내는 날짜 설정
 	      msg.setContent(body.toString(),"text/html;charset=euc-kr"); // 내용 설정 (HTML 형식)

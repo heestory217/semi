@@ -260,11 +260,17 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 
 <div id="detailContainer">
 
-		<ul class="detailTab">
-			<li data-tab="tab1"><a href="#">스토리</a></li>
-			<li class="current" data-tab="tab2"><a href="#">커뮤니티</a></li>
-			<li data-tab="tab3"><a href="#">펀딩 안내</a></li>
-		</ul>
+<div class="navSection">
+    <div class="jbMenu">
+	    <hr>
+			<ul class="projectNave">
+				<li class="current" data-tab="tab1"><a href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo="+${param.projectNo} style="color:gray;">스토리</a></li>
+				<li data-tab="tab2"><a href="<%=request.getContextPath() %>/detail/detail_comm.do?projectNo="+${param.projectNo}>커뮤니티</a></li>
+				<li data-tab="tab3"><a href="<%=request.getContextPath() %>/detail/detail_fund.do?projectNo="+${param.projectNo} style="color:gray;">펀딩 안내</a></li>
+			</ul>
+	    <hr>
+    </div>
+</div>
 
 		<div id="tab1" class="tabcontent">
 			<div id="tabs-story">
@@ -379,6 +385,13 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 						</div>
 						</div>
 						<div style="width:110%; height:15px; margin-left:-25px; background-color: #F6F5F5;"></div>
+						
+						<button style="margin-top: 8px;" id="viewPostBtn" onclick="location.href='<%=request.getContextPath()%>/post/detail_comm.do?projectNo=${vo.getProjectNo}'">전체보기</button>
+<div style="float: right; margin-top: 8px;">	
+<button id="writePostBtn" onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${vo.getProjectNo}'">글쓰기</button>
+<button id="editPostBtn" onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${param.postNo }'">수정</button>
+<button id="deletePostBtn" onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${vo.getProjectNo}'">삭제</button>
+</div>
 							<%}	%>
 					
 					</div>
@@ -445,12 +458,7 @@ if(t_fileName!=null&&!t_fileName.isEmpty()){
 </div>
 </div>
 
-<button style="margin-top: 8px;" id="viewPostBtn" onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${vo.getProjectNo}'">전체보기</button>
-<div style="float: right; margin-top: 8px;">	
-<button id="writePostBtn" onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${vo.getProjectNo}'">글쓰기</button>
-<button id="editPostBtn" onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${param.postNo }'">수정</button>
-<button id="deletePostBtn" onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${vo.getProjectNo}'">삭제</button>
-</div>
+
 
 
 </div>

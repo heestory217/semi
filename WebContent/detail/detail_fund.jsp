@@ -1,3 +1,4 @@
+<%@page import="com.mytf.project.model.ProjectVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -37,6 +38,8 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/feeAndFundingPolicy.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/detailPage_css.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/Detail.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/detail_chooseOp.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/detail_commTab.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <!--  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
@@ -80,6 +83,39 @@
 		//
 		
 	});
+	
+	
+	<!-- iframe부분 제이쿼리!!!! -->	
+	function calcHeight(){
+
+	 //find the height of the internal page
+
+
+
+	 var the_height=
+
+	 document.getElementById('#asideIframe').contentWindow.
+
+	 document.body.scrollHeight;
+
+
+
+	 //change the height of the iframe
+
+	 document.getElementById('#asideIframe').height=
+
+	 the_height;
+
+
+
+	 //document.getElementById('the_iframe').scrolling = "no";
+
+	 document.getElementById('#asideIframe').style.overflow = "hidden";
+
+	}
+
+	//
+
 </script>
 </head>
 <body>
@@ -166,6 +202,7 @@
 
 
 <!--지원 상세 부분 시작!!!  (프로젝트이미지있고) -->
+
 <div class="header" style="margin:3% 0;">
 	<div class="container">
 		<div class="detailPageTop">
@@ -214,12 +251,16 @@
 </div><!-- 상세 중간부분 (프로젝트이미지있고) -->
 
 <!-- NAV!!!!!!!!! -->
+<%
+	ProjectVO vo = (ProjectVO)request.getAttribute("vo");
+
+%>
 <div class="navSection">
     <div class="jbMenu">
 	    <hr>
 			<ul class="projectNave">
-				<li class="current" data-tab="tab1"><a href="#" style="color:gray;">스토리</a></li>
-				<li data-tab="tab2"><a href="#" style="color:gray;">커뮤니티</a></li>
+				<li class="current" data-tab="tab1"><a href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=${vo.projectNo}" style="color:gray;">스토리</a></li>
+				<li data-tab="tab2"><a href="<%=request.getContextPath() %>/detail/detail_comm.do?projectNo=${vo.projectNo}" style="color:gray;">커뮤니티</a></li>
 				<li data-tab="tab3"><a href="#" style="color:gray;">펀딩 안내</a></li>
 			</ul>
 	    <hr>
@@ -227,4 +268,38 @@
 </div>
 
 
+<!-- 펀딩안내 부분 시작!!!!!!! -->
+<div style="background-color: #F6F5F5; width: 100%; height: 100%; margin-bottom: 30px;">
+	<div id="detailContainer" style="width:42%; margin-left: 220px; border:0.5px solid gray; background-color: #fff; float:left;">
+
+		<div id="tab3" class="tabcontent">
+
+			<div id="fundPage">
+				<div id="refundPolicy_contents" id="#move3">
+
+					<p>
+						<b>이 프로젝트의 환불 및 교환 정책</b>
+					</p>
+					<div><p>
+						<!-- 창작자 정책 -->
+						<%=vo.getProjectPolicy() %>} </p>
+					</div>
+
+				</div>
+
+				<div id="productInfo_contents">
+					<p>
+						<b>상품정보 고시</b>
+					</p>
+					<div>
+						<p><!-- 창작자 정책 -->
+						<%=vo.getGiftInfo() %>} </p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
 

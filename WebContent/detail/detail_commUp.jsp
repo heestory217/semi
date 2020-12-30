@@ -1,3 +1,5 @@
+<%@page import="com.mytf.post.model.postVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -37,6 +39,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/feeAndFundingPolicy.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/detailPage_css.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/Detail.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/detail_chooseOp.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <!--  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
@@ -80,6 +83,39 @@
 		//
 		
 	});
+	
+	
+	<!-- iframe부분 제이쿼리!!!! -->	
+	function calcHeight(){
+
+	 //find the height of the internal page
+
+
+
+	 var the_height=
+
+	 document.getElementById('#asideIframe').contentWindow.
+
+	 document.body.scrollHeight;
+
+
+
+	 //change the height of the iframe
+
+	 document.getElementById('#asideIframe').height=
+
+	 the_height;
+
+
+
+	 //document.getElementById('the_iframe').scrolling = "no";
+
+	 document.getElementById('#asideIframe').style.overflow = "hidden";
+
+	}
+
+	//
+
 </script>
 </head>
 <body>
@@ -219,12 +255,96 @@
 	    <hr>
 			<ul class="projectNave">
 				<li class="current" data-tab="tab1"><a href="#" style="color:gray;">스토리</a></li>
-				<li data-tab="tab2"><a href="#" style="color:gray;">커뮤니티</a></li>
-				<li data-tab="tab3"><a href="#" style="color:gray;">펀딩 안내</a></li>
+				<li data-tab="tab2"><a href="<%=request.getContextPath() %>/detail/detail_comm.do" style="color:gray;">커뮤니티</a></li>
+				<li data-tab="tab3"><a href="<%=request.getContextPath() %>/detail/detail_fund.do" style="color:gray;">펀딩 안내</a></li>
 			</ul>
 	    <hr>
     </div>
 </div>
 
 
+<!-- 커뮤니티 부분 시작!!!!!!! -->
 
+
+		<div id="tab2" class="tabcontent current" style="padding-bottom: 20px;">
+
+			<div class="writerFlag" id="#move2">
+				<div>
+					<img class="storyWriterImage" src="../img/storydivWriterImg.png"
+						alt="창작자/후원자 사진" style="width: 35px;">
+				</div>
+				<div class="storyDivFlag">
+					<p>
+						<b>후원자만 글을 쓸 수 있어요</b>
+					</p>
+				</div>
+			</div>
+
+
+<div class="subcontainer">
+
+
+	<ul class="commTab">
+		<li class="tab2-link current" data-tab="tab_All"><a href="<%=request.getContextPath() %>/detail/detail_comm.do" style="color:gray;">모든게시글</a></li>
+		<li class="tab2-link" data-tab="tab_Update"><a href="#" style="color:gray;">창작자 업데이트</a></li>
+	</ul>
+	
+	<div id="tab_Update" class="tab-content">
+	<div class="communityContainer">
+
+						<!-- 반복문 돌려서 -->
+<%-- 						 <% for int i=0; i<스토리게시글size나 length만큼 돌렸을때; i++ %>  <!-- 창작자 로고/이름 끌어와서 보여주기 -->
+ --%>					
+ 
+ 							<div style="padding-left: 15px; padding-top: -10px; margin-top:-10px;">
+							<div>
+								<img src="../img/writerUpdate.PNG" style="width: 80px;">
+							</div>
+							<div>
+								<img src="../img/authorLogo.png"
+									style="width: 37px; margin-left: 0px;"> <a href=""><img
+									src="../img/authorName.png"
+									style="width: 85px; margin-bottom: 2px;"></a> <img
+									src="../img/writeMark.PNG"
+									style="width: 41px; margin-bottom: 9px; margin-left: -16px;">
+							</div>
+						</div>
+
+
+						<!--  게시글 "내용"끌어와서 보여주기 -->
+<%-- 						<%=스토리게시글no%> 로 가져오기?
+ --%>						<div class="community_contents">
+<%-- 						<%=스토리게시글no%> 로 가져오기? #communityContents에 넣기?			
+ --%>				<div class="comm_moreContents">
+								
+								<div>
+									<p>창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자
+									업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자
+									업데이트 창작자 업데이트 창작자 업데이트ㅍ창작자 업데이트 창작자 업데이트창작자 업데이트ㅍ 창작자 창작자 업데이트
+									창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트
+									창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트 창작자 업데이트
+									</p>
+								</div>
+
+							</div>
+
+						</div>
+
+
+						<!--  댓글 끌어와서 보여주기 -->
+						<div id="community_comments">
+							<hr>
+							<div id="communityCommentImg">
+								<img src="../img/communityComment.PNG"
+									style="width: 35px; margin-left: -13px; margin-top: 8px; margin-bottom: -14px;">
+							</div>
+
+							<!-- 해당 게시글에 대한 코멘트 불러오기 -->
+							<div class="moreComments"></div>
+
+						</div>
+					</div>
+</div>
+</div>
+
+	

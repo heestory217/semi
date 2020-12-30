@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/feeAndFundingPolicy.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/detailPage_css.css">
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/Detail.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/detail_chooseOp.css">
 
 <!-- Spoca Han Sans 폰트 -->
 <!--  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
@@ -227,4 +228,122 @@
 </div>
 
 
+<!-- Story 부분 시작!!!!!!! -->
+<div style="background-color: #F6F5F5; width: 100%; height: 100%;">
+	<div id="detailContainer" style="width:42%; margin-left: 220px; border:0.5px solid gray; background-color: #fff; float:left;">
+		<div id="tab1" class="tabcontent current">
+			<div id="tabs-story">
+				<div id="storyPage">
+					<div class="storyContainer" id="#sc">
+						<div class="storyDiv">
+							<!-- 창작자 스토리 불러오기 -->
+							<h1>
+								<창작자가 하고 싶은 말 / 스토리>
+							</h1>
+							<br>
+							<h1>예능 뽀시래기 팝니다</h1>
+							<br> <img src="../img/story_content_example.gif"
+								style="width: 84%; margin-left: 42px;"><br>
+								<div>
+							내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
+								내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	
+	
+<!-- aside 부분!!!!!!!! -->
+	<div class="asideView"
+		style="width: 22%; background-color: #F6F5F5; border: 0.5px solid gray; float: left; margin-left: 11px; margin-top: -1px;">
+
+
+		<div class="asidePage1">
+			<div id="asideP1">
+				<b>창작자 소개</b>
+			</div>
+			<div class="asideAboutWriter">
+				<!-- 창작자 로고/이름 끌어와서 보여주기 -->
+				<div>
+					<img src="../img/authorLogo.png"
+						style="width: 35px; margin-left: 0px;"> <a href=""><img
+						src="../img/authorName.png"
+						style="width: 83px; margin-bottom: 2px;"></a>
+				</div>
+				<div id="writerIntroContents">
+					<p>프로고민러 랩은 소셜 벤처 ST.END LAB 청년연구소에서 청년들의 고민을 해결하기 위해 만든 '고민
+						문구' 브랜드입니다. 코칭, 심리학, 상담, 교육계의 전문가들과 함께 청년들이 겪는 문제들을 연구하고, 온라인으로는
+						유형 테스트 및 웹 / 앱 서비스 개발, 오프라인으로는 문구, 교구, 출판물, 워크숍 콘텐츠 개발 등을 통해 새로운
+						고민 문화를 만들고 있습니다.</p>
+				</div>
+				<hr>
+				<div id="asideAboutWriter2">
+					<p style="color: #696969; font-size: 9px; letter-spacing: -0.4px;">
+						진행한 프로젝트 <b>0</b> &nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트 <b>0</b>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+<!-- 선물 밀어주기!!!! 홉션 선택 테이블 -->
+
+		<div class="asidePage2">
+			<div id="choose" style="margin-top: 15px;">
+				<p>
+					<b>선물선택</b>
+				</p>
+			</div>
+<!-- 
+			<iframe id="asideIframe" src="detail_choose.jsp" scrolling=""
+				style="margin-left: -8px; width: 296px; height: 600px;"
+				name="option_redirect"></iframe>
+ -->
+		</div>
+
+	</div>
+	
+</div>	
+	
+	
+	
+	
+	
+<!-- iframe부분 제이쿼리!!!! -->	
+<script type="text/javascript"> 
+
+
+function calcHeight(){
+
+ //find the height of the internal page
+
+
+
+ var the_height=
+
+ document.getElementById('#asideIframe').contentWindow.
+
+ document.body.scrollHeight;
+
+
+
+ //change the height of the iframe
+
+ document.getElementById('#asideIframe').height=
+
+ the_height;
+
+
+
+ //document.getElementById('the_iframe').scrolling = "no";
+
+ document.getElementById('#asideIframe').style.overflow = "hidden";
+
+}
+
+//
+
+</script>

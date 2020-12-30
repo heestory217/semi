@@ -230,4 +230,7 @@ public class GoMemberDAO {
 		}
 	}
 	
+	
+	
+	
 }

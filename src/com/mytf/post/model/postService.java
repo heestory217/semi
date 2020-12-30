@@ -44,5 +44,4 @@ public class postService {
 		return postDao.selectMyPost(memberNo);
 	}
 
-
 }

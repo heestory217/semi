@@ -274,18 +274,19 @@ public class postDAO {
 		List<postVO>list=new ArrayList<postVO>();
 		
 		postVO vo = new postVO();
+		
 		try {
 			//1,2
 			con=pool.getConnection();
 			
 			//3
-			String sql="select * from post where memberNo=?";
+			String sql="select a.*, b.PROJECTNAME, b.FILENAME, b.duedate from post a join project b on a.projectNo=b.projectNo where a.memberNo=?";
 			ps=con.prepareStatement(sql);
 			ps.setInt(1, memberNo);
 			
 			//4
 			rs=ps.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				
 				vo.setPostNo(rs.getInt("postNo")); 
 				vo.setProjectNo(rs.getString("projectNo")); 
@@ -293,15 +294,21 @@ public class postDAO {
 				vo.setTitle(rs.getString("title"));
 				vo.setPostContent(rs.getString("postContent"));
 				vo.setPostDate(rs.getTimestamp("postDate"));
+				vo.setProjectName(rs.getString("projectName"));
+				vo.setFileName(rs.getString("fileName"));
+				vo.setDuedate(rs.getTimestamp("duedate"));
+				System.out.println("조회결과 vo="+vo+",매개변수 memberNo="+memberNo);
 				list.add(vo);
-		
+				
 			}
-			System.out.println("글 상세보기 결과 list = "+list.size() + ",매개변수 memberNo=" + memberNo);
+			System.out.println("글 상세보기 결과 list.size() = "+list.size() + ",매개변수 memberNo=" + memberNo);
 			return list;
 		}finally {
 			pool.dbClose(rs, ps, con);
 		}
 	}
+
+	
 	
 	
 

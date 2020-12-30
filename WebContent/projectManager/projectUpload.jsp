@@ -162,7 +162,7 @@ function check(){
 									<input type="file" name="upfile" value="${oldfileName}">
                         	   		<c:if test="${!empty vo.fileName}">
 	                        			<span><b>첨부된 파일 : </b></span>
-	                        	  		<span>${fileInfo}</span>
+	                        	  		<span>${vo.originalFileName}</span>
                         	  		</c:if> 
 								</div>
 							<br>

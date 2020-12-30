@@ -74,7 +74,6 @@ public class ProjectUploadOkController implements Controller {
 				if(fileName!=null&&!fileName.isEmpty()) {
 					File oldFile= new File(saveDir, oldfileName);
 					if(oldFile.exists()) {
-						session.setAttribute("fileName", fileName);//old파일 존재하면 세션에 파일네임셋팅 새로하기
 						boolean bool=oldFile.delete();
 						System.out.println("기존파일 삭제여부"+bool);
 					}

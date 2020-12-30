@@ -1,6 +1,6 @@
-<%@page import="com.mytf.detail.model.GoMemberVO_Add"%>
+<%@page import="com.mytf.GoComment.model.GoCommentVO"%>
+<%@page import="com.mytf.post.model.postVO"%>
 <%@page import="java.util.List"%>
-<%@page import="com.mytf.project.model.ProjectVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -86,6 +86,9 @@
 		
 	});
 	
+	$('#commentImg').click(function(){
+		$('#targetComment').slideToggle();
+	});
 	
 	<!-- iframe부분 제이쿼리!!!! -->	
 	function calcHeight(){
@@ -201,16 +204,16 @@
 	</header>
 	<!-- 윗부분 -->
 <!-- top 여기서 끝!!!! -->
-<%
-	ProjectVO vo = (ProjectVO)request.getAttribute("vo");
-	GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
-%>
+
+
 <!--지원 상세 부분 시작!!!  (프로젝트이미지있고) -->
+
+
 <div class="header" style="margin:3% 0;">
 	<div class="container">
 		<div class="detailPageTop">
 				<div><a href=""><img src="../img/categ_calender.PNG" alt="문구.캘린더" class="categ_cal"></a></div>
-				<div><h2><%=vo.getProjectName()%></h2></div>
+				<div><h2>당신에게 딱 맞는 MBTI 사고성향별 다이어리</h2></div>
 				<span><a href=""><img src="../img/authorLogo.png" alt="창작자 로고" class="author_logo"></a></span>
 				<span><a href=""><img src="../img/authorName.png" alt="창작자 " class="author_name"></a></span>	
 		</div>
@@ -252,14 +255,16 @@
 	  	</div>
 	  </div>
 </div><!-- 상세 중간부분 (프로젝트이미지있고) -->
-
+	<%
+							List<postVO> list = (List<postVO>)request.getAttribute("list");
+	%>
 <!-- NAV!!!!!!!!! -->
 <div class="navSection">
     <div class="jbMenu">
 	    <hr>
 			<ul class="projectNave">
-				<li class="current" data-tab="tab1"><a href="#" style="color:gray;">스토리</a></li>
-				<li data-tab="tab2"><a href="<%=request.getContextPath() %>/detail/detail_comm.do?projectNo=${vo.projectNo}" style="color:gray;">커뮤니티</a></li>
+				<li class="current" data-tab="tab1"><a href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=${vo.projectNo}" style="color:gray;">스토리</a></li>
+				<li data-tab="tab2"><a href="#" style="color:gray;">커뮤니티</a></li>
 				<li data-tab="tab3"><a href="<%=request.getContextPath() %>/detail/detail_fund.do?projectNo=${vo.projectNo}" style="color:gray;">펀딩 안내</a></li>
 			</ul>
 	    <hr>
@@ -267,84 +272,189 @@
 </div>
 
 
-<!-- Story 부분 시작!!!!!!! -->
-<div style="background-color: #F6F5F5; width: 100%; height: 100%;">
+<!-- 커뮤니티 부분 시작!!!!!!! -->
+
+<div style="background-color: #F6F5F5; width: 100%; height: 100%; margin-bottom: 20px;">
 	<div id="detailContainer" style="width:42%; margin-left: 220px; border:0.5px solid gray; background-color: #fff; float:left;">
-		<div id="tab1" class="tabcontent current">
-			<div id="tabs-story">
-				<div id="storyPage">
-					<div class="storyContainer" id="#sc">
-						<div class="storyDiv">
-							<!-- 창작자 스토리 불러오기 -->
 
+		<div id="tab2" class="tabcontent current" style="padding-bottom: 20px;">
 
-
-
-								<div>
-								<%=vo.getProjectStory() %> <br>
-								<%=vo.getProjectDetail() %>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	
-	
-<!-- aside 부분!!!!!!!! -->
-	<div class="asideView"
-		style="width: 22%; background-color: #F6F5F5; border: 0.5px solid gray; float: left; margin-left: 11px; margin-top: -1px;">
-
-
-		<div class="asidePage1">
-			<div id="asideP1">
-				<b>창작자 소개</b>
-			</div>
-			<div class="asideAboutWriter">
-				<!-- 창작자 로고/이름 끌어와서 보여주기 -->
-				<div><%=goGo.getName() %></div>
+			<div class="writerFlag" id="#move2">
 				<div>
-					<img src="../img/authorLogo.png"
-						style="width: 35px; margin-left: 0px;"> <a href=""><img
-						src="../img/authorName.png"
-						style="width: 83px; margin-bottom: 2px;"></a>
+					<img class="storyWriterImage" src="../img/storydivWriterImg.png"
+						alt="창작자/후원자 사진" style="width: 50px; padding-top: 10px;">
 				</div>
-				<div id="writerIntroContents">
-					<p><%=goGo.getMemberIntro() %></p>
-				</div>
-				<hr>
-				<div id="asideAboutWriter2">
-					<p style="color: #696969; font-size: 9px; letter-spacing: -0.4px;">
-						진행한 프로젝트 <b>0</b> &nbsp;&nbsp;&nbsp;&nbsp; 밀어준 프로젝트 <b>0</b>
+				<div class="storyDivFlag" style="padding-top: 25px;">
+					<p>
+						<b>후원자만 글을 쓸 수 있어요</b>
 					</p>
 				</div>
 			</div>
-		</div>
 
 
-<!-- 선물 밀어주기!!!! 홉션 선택 테이블 -->
 
-		<div class="asidePage2">
-			<div id="choose" style="margin-top: 15px;">
-				<p>
-					<b>선물선택</b>
-				</p>
+
+				<div class="subcontainer">
+
+<!-- 내부 메뉴 -->
+					<ul class="commTab">
+						<li class="tab2link" data-tab="tab_All"><a href="#"
+							style="color: gray;">모든게시글</a></li>
+						<li class="tab2-link" data-tab="tab_Update"><a
+							href="<%=request.getContextPath() %>/detail/detail_commUp.do"
+							style="color: gray;">창작자 업데이트</a></li>
+					</ul>
+
+
+
+			<div id="commPageOne" class="commcontent current">
+						<!--  게시글 "내용"끌어와서 보여주기 -->
+					
+<%
+List<GoCommentVO> clist = (List<GoCommentVO>)request.getAttribute("clist");
+%>
+
+								<div style="width: 98%; height: 15px; margin-left: 5px; background-color: #F6F5F5;"></div>
+		
+									<button style="margin-top: 8px;" id="viewPostBtn"
+										onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${vo.getProjectNo}'">전체보기</button>
+									<div style="float: right; margin-top: 8px;">
+									<button id="writePostBtn"
+										onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${vo.getProjectNo}'">글쓰기</button>
+									<button id="editPostBtn"
+										onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${param.postNo }'">수정</button>
+									<button id="deletePostBtn"
+										onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${vo.getProjectNo}'">삭제</button>
+								</div>
+										
+							<%
+							
+
+							for(int i=0; i<list.size(); i++){
+								postVO vo=list.get(i);
+							%>
+
+
+						<div style="width: 100%; height: 100%; margin-top: 10px;";>
+							<div class="community_contents">
+
+
+								<!-- 반복문 돌려서 -->
+								<!-- 창작자 로고/이름 끌어와서 보여주기 -->
+
+
+								<div
+									style="padding-left: 15px; padding-top: -10px; margin-top: -10px;">
+									<div>
+										<img src="../img/writerUpdate.PNG" style="width: 80px;">
+									</div>
+									<div>
+										<img src="../img/authorLogo.png"
+											style="width: 37px; margin-left: 0px;"> <a href=""><img
+											src="../img/authorName.png"
+											style="width: 85px; margin-bottom: 2px;"></a> <img
+											src="../img/writeMark.PNG"
+											style="width: 41px; margin-bottom: 9px; margin-left: -16px;">
+									</div>
+								</div>
+
+
+
+
+								<!--  게시글 "내용"끌어와서 보여주기 -->
+								<div class="comm_moreContents">
+								
+									<div>
+										<p>
+											<b>제목: <%=vo.getTitle() %></b>
+										</p>
+									</div>
+									<div style="float: left;">
+										<p>작성자: ${name }</p>
+									</div>
+									<div style="float: right;">
+										<p>
+											등록일:
+											<%=vo.getPostDate() %></p>
+									</div>
+									<div style="height: 100%;">
+										<div
+											style="width: 100%; margin-top: 60px; margin-bottom: 60px; border: none; overflow: hidden;">
+											<%=vo.getPostContent() %>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+
+							<!--  댓글 끌어와서 보여주기 -->
+							<div id="community_comments">
+								<hr>
+								<div id="communityCommentImg">
+								
+								
+								
+<!-- 								<img src="../img/pngegg.png" id="commentImg" -->
+									<img src="../img/communityComment.PNG"
+										style="width: 35px; margin-left: -13px; margin-top: 8px; margin-bottom: -14px;">
+								</div>
+
+								<!-- 해당 게시글에 대한 코멘트 불러오기 -->
+							<%
+							
+							for(int j=0; j<clist.size(); j++){
+								GoCommentVO cVo=clist.get(i);
+							%>
+								<div class="moreComments" id="targetComment" style="width: 100%; height: 100%; background-color:#fff;">
+										<div style="width:96%; height: 100%; margin-top:7px; margin-bottom: 7px; padding:15px, 15px;">
+											<%=cVo.getCommentContent() %> 
+										 </div>
+									</div>
+							</div>
+							<%} %>
+						
+						<!-- 댓글 작성창 -->
+						<div style="width: 100%; height:100%;">
+							<form name="frmComment" method="post"
+								action="<%=request.getContextPath() %>/GoComment/GoComment_ok.do">
+							<label>댓글 작성: </label>
+							<span>작성자: ${name}</span><span>등록일: <%=cVo.getCommentDate() %></span>
+							<div >
+							<input type="text" id="commentText" name="commentText" style="width:96%; height: 100%; background-color: #fff; border: 0.5px dotted gray;">
+							</div>
+							<input type="submit" id="commentBtn" name="commentBtn" value="댓글 등록" style="float:right; width: 60px; height:30px; background-color: gray; color: gray; padding-top: 10px; padding-bottom: 10px; font-weight:bold;">
+							</form>
+						</div>
+						
+						<!-- 버튼들 -->
+						<div style="width: 110%; height: 15px; margin-left: -25px; background-color: #F6F5F5;"></div>
+
+							<button style="margin-top: 8px;" id="viewPostBtn"
+								onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${vo.getProjectNo}'">전체보기</button>
+							<div style="float: right; margin-top: 8px;">
+							<button id="writePostBtn"
+								onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${vo.getProjectNo}'">글쓰기</button>
+							<button id="editPostBtn"
+								onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${param.postNo }'">수정</button>
+							<button id="deletePostBtn"
+								onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${vo.getProjectNo}'">삭제</button>
+						</div>
+						<%}	%>
+
+					</div> 
+
+
+
+
+
+
+
+				</div>
 			</div>
+</div>
 
-			<iframe id="asideIframe" src="<%=request.getContextPath() %>/detailPage_REAL/detail_choose.do" scrolling=""
-				style="margin-left: -8px; width: 285px; height: 450px;"
-				name="option_redirect"></iframe>
 
-		</div>
 
-	</div>
-	
-</div>	
-	
-	</body>
-	</html>
-	
-	
-	
+
+

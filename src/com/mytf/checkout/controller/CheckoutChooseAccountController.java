@@ -5,13 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.controller.Controller;
 
-public class CheckoutController implements Controller{
+public class CheckoutChooseAccountController implements Controller{
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		
-		
-		return "/checkoutPage/checkoutPage.jsp";
+		return "checkout_chooseAccount.jsp";
 	}
 
 	@Override

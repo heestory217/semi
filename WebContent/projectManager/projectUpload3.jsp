@@ -47,7 +47,6 @@
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
 <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css' rel='stylesheet' type='text/css'>
 
-
 <script type="text/javascript">
 var itemNum = 0;
 $(function(){
@@ -235,7 +234,7 @@ $(function(){
 																<thead>
 																	<tr style="display:flex; width:100%">
 																		<th style="flex-basis:92%; margin-right:5px;">아이템 이름</th>
-																		<th style="flex-basis:65px;">수량 설정</th>
+																		<th style="flex-basis:75px;">수량 설정</th>
 																	</tr>
 																</thead>
 																<tbody id="dynamicTbody">
@@ -266,7 +265,8 @@ $(function(){
 											선물 카드의 순서를 정해주세요. 혜택이 많은 선물 카드부터 나오도록 등록하시는 것이 좋습니다.
 										</p>
 										<br> 
-										<input type="number" name="giftCardSeq" value="1" style="width: 70px; padding:0 8px; margin-right: 5px;">
+										<input type="number" name="giftCardSeq" min="1"
+											 value="1" style="width: 70px; padding:0 8px; margin-right: 5px;">
 										<strong>번째로 보일 선물 카드입니다.</strong>
 									</div>
 									<hr>
@@ -295,7 +295,7 @@ $(function(){
 										<div style="display:flex;">
 											<div style="width:60%;">
 												<input type="checkbox" style="margin-right:5px;"><span ><strong>선물을</strong></span>
-												<input type="number" value="0" style="width: 70px; padding:0 8px; margin:0 5px; vertical-align:middle">
+												<input type="number" min="0" value="0" style="width: 70px; padding:0 8px; margin:0 5px; vertical-align:middle">
 												<span><strong>개로 제한합니다.</strong></span>
 											</div>
 											<div>

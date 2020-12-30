@@ -239,10 +239,9 @@
 
 	<!--지원 상세 부분 시작!!!  (프로젝트이미지있고) -->
 	<%
-		ProjectVO vo = (ProjectVO)request.getAttribute("vo");
-	
-		List<postVO> list = (List<postVO>)request.getAttribute("list");
+	ProjectVO vo = (ProjectVO)request.getAttribute("vo");
 	%>
+
 	<div class="header" style="margin: 3% 0;">
 		<div class="container">
 			<div class="detailPageTop">
@@ -309,11 +308,11 @@
 			<hr>
 			<ul class="projectNave">
 				<li class="current" data-tab="tab1"><a
-					href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=<%=vo.getProjectNo() %>"
+					href="<%=request.getContextPath() %>/detail/detail_first.do?projectNo=${vo.projectNo}"
 					style="color: gray;">스토리</a></li>
 				<li data-tab="tab2"><a href="#" style="color: gray;">커뮤니티</a></li>
 				<li data-tab="tab3"><a
-					href="<%=request.getContextPath() %>/detail/detail_fund.do?projectNo=<%=vo.getProjectNo() %>"
+					href="<%=request.getContextPath() %>/detail/detail_fund.do?projectNo=${vo.projectNo}"
 					style="color: gray;">펀딩 안내</a></li>
 			</ul>
 			<hr>
@@ -322,9 +321,10 @@
 
 
 	<!-- 커뮤니티 부분 시작!!!!!!! -->
-<%	
-GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
- %>	
+<%	GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
+List<postVO> list = (List<postVO>)request.getAttribute("list");%>
+
+
 	<div
 		style="background-color: #F6F5F5; width: 100%; height: 100%; margin-bottom: 20px;">
 		<div id="detailContainer"
@@ -376,14 +376,14 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 							style="width: 98%; height: 15px; margin-left: 5px; background-color: #F6F5F5;"></div>
 
 						<button style="margin-top: 8px;" id="viewPostBtn"
-							onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=<%=vo.getProjectNo() %>'">전체보기</button>
+							onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${vo.getProjectNo}'">전체보기</button>
 						<div style="float: right; margin-top: 8px;">
 							<button id="writePostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=<%=vo.getProjectNo() %>'">글쓰기</button>
+								onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${poVo.getProjectNo}'">글쓰기</button>
 							<button id="editPostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=<%=vo.getPostNo() %>'">수정</button>
+								onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${poVo.postNo }'">수정</button>
 							<button id="deletePostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=<%=vo.getProjectNo() %>'">삭제</button>
+								onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${poVo.getProjectNo}'">삭제</button>
 						</div>
 <%} %>
 
@@ -454,7 +454,7 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 								<div id="communityCommentImg">
 
 									<!-- 								<img src="../img/pngegg.png" id="commentImg" -->
-									<a href="<%=request.getContextPath()%>/GoComment/GoComment.do?projectNo=<%=vo.getProjectNo()%>&postNo=<%=poVo.getPostNo()%>">
+									<a href="<%=request.getContextPath()%>/GoComment/GoComment.do?projectNo=<%=poVo.getProjectNo()%>&postNo=<%=poVo.getPostNo()%>">
 										<img src="../img/communityComment.PNG"
 										style="width: 35px; margin-left: -13px; margin-top: 8px; margin-bottom: -14px;">
 									</a>
@@ -468,14 +468,14 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 								style="width: 110%; height: 15px; margin-left: -25px; background-color: #F6F5F5;"></div>
 
 							<button style="margin-top: 8px;" id="viewPostBtn"
-								onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${vo.getProjectNo}'">전체보기</button>
+								onclick="location.href='<%=request.getContextPath()%>/post/view_all.do?projectNo=${poVo.getProjectNo}'">전체보기</button>
 							<div style="float: right; margin-top: 8px;">
 								<button id="writePostBtn"
-									onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${vo.getProjectNo}'">글쓰기</button>
+									onclick="location.href='<%=request.getContextPath()%>/post/write_all.do?projectNo=${poVo.getProjectNo}'">글쓰기</button>
 								<button id="editPostBtn"
-									onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${param.postNo }'">수정</button>
+									onclick="location.href='<%=request.getContextPath()%>/post/edit_all.do?postNo=${poVo.postNo }'">수정</button>
 								<button id="deletePostBtn"
-									onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${vo.getProjectNo}'">삭제</button>
+									onclick="location.href='<%=request.getContextPath()%>/post/delete_all.do?projectNo=${poVo.getProjectNo}'">삭제</button>
 							</div>
 
 						</div>
@@ -513,7 +513,7 @@ GoMemberVO_Add goGo = (GoMemberVO_Add)request.getAttribute("goGo");
 					</p>
 				</div>
 			</div>
-		</div>
+		
 
 
 		</div>

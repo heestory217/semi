@@ -71,7 +71,7 @@ public class ProjectUploadLastOkController implements Controller{
 			}
 			
 			if(cnt>0) {
-				request.setAttribute("msg", "계좌정보 등록성공! ※회원정보 수정페이지에서 프로필 이미지등록 및 창작자님의 이력과 간단한 소개를 써 주세요.");
+				request.setAttribute("msg", "※회원정보 수정페이지에서 프로필 이미지등록 및 창작자님의 이력과 간단한 소개를 써 주세요.");
 				request.setAttribute("url", "/GoMember/memberEdit.do");
 				return "/common/message.jsp";
 			}

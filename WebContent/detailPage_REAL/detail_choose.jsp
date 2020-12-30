@@ -1,3 +1,5 @@
+<%@page import="com.mytf.project.model.ProjectVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
   <link rel="stylesheet" href="../css/detail_chooseOp.css">
@@ -5,10 +7,9 @@
 
 
 
-
 	<div class="aside_col-md-6">
 		<div class="faq">
-			<div class="single-item_lineup">
+			<div class="single-item_lineup" style="width:100%; background-color: #fff;'">
 
 				<form action="detail_option.jsp" method="get">
 				<div class="choosenOption">
@@ -16,7 +17,7 @@
 						target="option_redirect">
 						<p style="font-size: 18px; color: black; font-weight: bold;">1000원
 							+</p>
-						<p style="font-size: 12px; color: gray;">상품을 선택하지 않고 밀어만 줍니다.</p>
+						<p style="font-size: 12px; color: black;">상품을 선택하지 않고 밀어만 줍니다.</p>
 					</a>
 					</div>
 				</form>
